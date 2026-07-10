@@ -141,8 +141,3 @@ node --check assets/app.js
 | Pick maturity | Add `seeded`, `read`, `tested`, `picked`, and `rejected` states. |
 | Codex/Claude compatibility | Record whether each Skill works in Claude Code, Codex, Cursor, or Gemini CLI. |
 | Evidence artifacts | Attach screenshots, generated output, test logs, and review diffs. |
-
-## Credits
-
-- Source corpus: <https://github.com/ComposioHQ/awesome-claude-skills>
-- Review direction: Phoebe's agent Skill exploration workflow for Codex and Claude Code.
