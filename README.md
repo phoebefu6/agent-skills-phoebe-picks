@@ -9,7 +9,7 @@
 
 This project is not a human learning directory. It reviews Skills as **agent workflow packages**: reusable instructions, guardrails, scripts, references, and validation routines that help an AI coding agent produce real artifacts.
 
-The first source corpus is [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills), which frames Claude Skills as reusable instruction packages built around `SKILL.md`, optional scripts, references, and assets. The scoring layer turns that broad awesome list into **Phoebe Picks**: the Skills I would actually test, keep, or adapt into my own agent workflow library.
+The scoring layer turns that broad awesome list into **Phoebe Picks**: the Skills I would actually test, keep, or adapt into my own agent workflow library.
 
 ## Naming Direction
 
