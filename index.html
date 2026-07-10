@@ -17,25 +17,32 @@
         </span>
       </a>
       <nav class="top-nav" aria-label="Primary navigation">
-        <a href="#library">Picks</a>
+        <a href="#top-catalog">Catalog</a>
+        <a href="#library">Workbench</a>
         <a href="#method">Method</a>
         <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">Source</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero-section" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Phoebe's picks for Codex and Claude Code Skills</p>
-          <h1 id="hero-title">Agent Skills Phoebe Picks</h1>
-          <p class="hero-summary">A curated review board for the agent Skills I actually want to try, reuse, or turn into coding workflows. Each pick gets scored for agent fit, coding leverage, portability, validation, and risk control.</p>
-          <div class="source-card">
-            <span>Starting corpus</span>
-            <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">ComposioHQ/awesome-claude-skills</a>
+      <section class="hero-section catalog-top" id="top-catalog" aria-labelledby="hero-title">
+        <div class="catalog-hero-panel">
+          <div class="catalog-heading">
+            <div>
+              <p class="eyebrow">Phoebe's picks for Codex and Claude Code Skills</p>
+              <h1 id="hero-title">Skill Catalog</h1>
+            </div>
+            <p>A curated shortlist of agent Skills I want to test, reuse, or turn into coding workflows. Pick a row to inspect the evidence and next test plan below.</p>
           </div>
+          <div class="top-catalog-list" id="topCatalogList" aria-live="polite"></div>
         </div>
-        <aside class="score-panel" aria-label="Review snapshot">
-          <div class="score-hero">
+        <aside class="category-panel" aria-label="Skill clusters and review snapshot">
+          <div class="category-panel-top">
+            <p class="eyebrow">Categories</p>
+            <h2>Clusters on the right, picks on the left.</h2>
+          </div>
+          <div class="category-list" id="topCategoryList"></div>
+          <div class="score-hero compact">
             <span>Mean score</span>
             <strong id="avgScore">0</strong>
           </div>
@@ -45,7 +52,10 @@
             <span><strong id="categoryCount">0</strong> clusters</span>
             <span><strong id="topScore">0</strong> top score</span>
           </div>
-          <div class="sparkline" id="scoreSparkline" aria-label="Score distribution"></div>
+          <div class="source-card">
+            <span>Starting corpus</span>
+            <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">ComposioHQ/awesome-claude-skills</a>
+          </div>
         </aside>
       </section>
 

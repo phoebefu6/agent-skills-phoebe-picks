@@ -60,6 +60,7 @@
     const categoryCount = byId("categoryCount");
     const topScore = byId("topScore");
     const sparkline = byId("scoreSparkline");
+    const topCategoryList = byId("topCategoryList");
 
     if (avgScore) avgScore.textContent = Math.round(average);
     if (reviewCount) reviewCount.textContent = reviews.length;
@@ -72,6 +73,33 @@
         .sort((a, b) => b.score - a.score)
         .map((review) => `<span title="${review.name}: ${review.score}" style="height:${review.score}%"></span>`)
         .join("");
+    }
+    if (topCategoryList) {
+      topCategoryList.innerHTML = categories
+        .filter((category) => category !== "All")
+        .map((category) => {
+          const clusterReviews = reviews.filter((review) => review.category === category);
+          const best = Math.max(...clusterReviews.map((review) => review.score));
+          return `
+            <button class="category-row" type="button" data-category="${category}">
+              <span><strong>${clusterReviews.length}</strong>${category}</span>
+              <i>${best}</i>
+            </button>
+          `;
+        })
+        .join("");
+      topCategoryList.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.category = button.dataset.category;
+          const select = byId("categorySelect");
+          if (select) select.value = state.category;
+          const firstVisible = filteredReviews()[0];
+          if (firstVisible) state.selectedId = firstVisible.id;
+          renderReviews();
+          renderDetail();
+          byId("library")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
     }
   }
 
@@ -94,6 +122,38 @@
     if (categorySelect && !categorySelect.children.length) {
       categorySelect.innerHTML = categories.map((category) => `<option value="${category}">${category}</option>`).join("");
     }
+  }
+
+  function renderTopCatalog() {
+    const root = byId("topCatalogList");
+    if (!root) return;
+    const catalog = [...reviews].sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+    root.innerHTML = catalog
+      .map((review, index) => `
+        <button class="top-skill-row" type="button" data-id="${review.id}">
+          <span class="top-skill-index">${String(index + 1).padStart(2, "0")}</span>
+          <span class="top-skill-main">
+            <strong>${review.name}</strong>
+            <small>${review.summary}</small>
+          </span>
+          <span class="top-skill-side">
+            <i>${statusLabel(review.status)}</i>
+            <b>${review.score}</b>
+          </span>
+        </button>
+      `)
+      .join("");
+    root.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.selectedId = button.dataset.id;
+        state.category = "All";
+        const select = byId("categorySelect");
+        if (select) select.value = state.category;
+        renderReviews();
+        renderDetail();
+        byId("library")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
   }
 
   function metricBars(review) {
@@ -229,6 +289,7 @@
   renderStats();
   renderRubric();
   renderControls();
+  renderTopCatalog();
   renderReviews();
   renderDetail();
   bindEvents();
