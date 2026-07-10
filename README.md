@@ -1,25 +1,41 @@
-# Agent Skills Lit Review
+# Agent Skills Phoebe Picks
 
-[![Live Site](https://img.shields.io/badge/live-GitHub%20Pages-111114?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-lit-review/)
+[![Live Site](https://img.shields.io/badge/live-GitHub%20Pages-111114?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Source Corpus](https://img.shields.io/badge/source-awesome--claude--skills-ff5a52?style=for-the-badge)](https://github.com/ComposioHQ/awesome-claude-skills)
-[![Review Matrix](https://img.shields.io/badge/reviews-scored%20agent%20Skills-7a5cff?style=for-the-badge)](data/reviews.js)
+[![Phoebe Picks](https://img.shields.io/badge/Phoebe%20Picks-curated%20agent%20Skills-7a5cff?style=for-the-badge)](data/reviews.js)
 [![Static](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-64d69e?style=for-the-badge)](#architecture)
 
-> A literature-review style repository for evaluating **agent-usable Skills** across Claude Code, Codex, Cursor, Gemini CLI, and other coding agents.
+> Phoebe's curated shortlist of **agent-usable Skills** worth trying with Claude Code, Codex, Cursor, Gemini CLI, and other coding agents.
 
 This project is not a human learning directory. It reviews Skills as **agent workflow packages**: reusable instructions, guardrails, scripts, references, and validation routines that help an AI coding agent produce real artifacts.
 
-The first source corpus is [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills), which frames Claude Skills as reusable instruction packages built around `SKILL.md`, optional scripts, references, and assets.
+The first source corpus is [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills), which frames Claude Skills as reusable instruction packages built around `SKILL.md`, optional scripts, references, and assets. The scoring layer turns that broad awesome list into **Phoebe Picks**: the Skills I would actually test, keep, or adapt into my own agent workflow library.
+
+## Naming Direction
+
+The GitHub repo and site identity are:
+
+```text
+Agent Skills Phoebe Picks
+```
+
+Clean repo slug:
+
+```text
+agent-skills-phoebe-picks
+```
+
+I use plural `picks` because this is a growing collection, not a single recommendation.
 
 ## What This Repo Does
 
 | Layer | Purpose |
 | --- | --- |
-| Review board | Modern searchable interface for reading scored Skill notes. |
+| Picks board | Modern searchable interface for reading scored Skill notes. |
 | Scoring rubric | Five-part evaluation model for agent usefulness. |
 | Evidence notes | Short source-backed notes from the upstream corpus. |
 | Test-next plans | Concrete experiments to run before promoting a Skill. |
-| Maturity tracking | `candidate`, `reviewed`, and `priority` states for ongoing exploration. |
+| Maturity tracking | `candidate`, `reviewed`, and `priority` states, where `priority` means Phoebe Pick. |
 
 ## Review Rubric
 
@@ -35,7 +51,7 @@ Each Skill is scored out of 100 using five 20-point dimensions:
 
 ## Seed Reviews
 
-The first pass includes 16 review entries, including:
+The first pass includes 16 review entries. The strongest current Phoebe Picks include:
 
 | Skill | Cluster | Score | Why it matters |
 | --- | --- | ---: | --- |
@@ -48,7 +64,7 @@ The first pass includes 16 review entries, including:
 ## Architecture
 
 ```text
-agent-skills-lit-review/
+agent-skills-phoebe-picks/
   index.html                  # Modern review board
   data/
     reviews.js                # Source-of-truth review matrix
@@ -122,7 +138,7 @@ node --check assets/app.js
 | --- | --- |
 | Corpus expansion | Add more entries from `awesome-claude-skills`. |
 | True lit-review notes | Add source excerpts, repo path, install notes, and observed behavior. |
-| Skill maturity | Add `seeded`, `read`, `tested`, `recommended`, and `rejected` states. |
+| Pick maturity | Add `seeded`, `read`, `tested`, `picked`, and `rejected` states. |
 | Codex/Claude compatibility | Record whether each Skill works in Claude Code, Codex, Cursor, or Gemini CLI. |
 | Evidence artifacts | Attach screenshots, generated output, test logs, and review diffs. |
 

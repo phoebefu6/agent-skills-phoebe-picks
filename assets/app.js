@@ -20,6 +20,7 @@
   }
 
   function statusLabel(status) {
+    if (status === "priority") return "Phoebe pick";
     return status.replace("-", " ");
   }
 
