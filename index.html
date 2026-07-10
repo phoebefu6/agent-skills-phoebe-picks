@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A modern literature-review style registry for agent-usable Claude Skills and Codex workflows.">
+    <title>Agent Skills Lit Review</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Agent Skills Lit Review home">
+        <span class="brand-mark">AS</span>
+        <span>
+          <strong>Agent Skills</strong>
+          <small>Lit Review</small>
+        </span>
+      </a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="#library">Library</a>
+        <a href="#method">Method</a>
+        <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">Source</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Systematic notes for Codex and Claude Code Skills</p>
+          <h1 id="hero-title">Agent Skills Literature Review</h1>
+          <p class="hero-summary">A modern review board for evaluating reusable agent instruction packages: what they teach, how well they code, where they are risky, and which ones deserve hands-on testing next.</p>
+          <div class="source-card">
+            <span>Primary corpus</span>
+            <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">ComposioHQ/awesome-claude-skills</a>
+          </div>
+        </div>
+        <aside class="score-panel" aria-label="Review snapshot">
+          <div class="score-hero">
+            <span>Mean score</span>
+            <strong id="avgScore">0</strong>
+          </div>
+          <div class="score-grid">
+            <span><strong id="reviewCount">0</strong> reviewed</span>
+            <span><strong id="priorityCount">0</strong> priority</span>
+            <span><strong id="categoryCount">0</strong> clusters</span>
+            <span><strong id="topScore">0</strong> top score</span>
+          </div>
+          <div class="sparkline" id="scoreSparkline" aria-label="Score distribution"></div>
+        </aside>
+      </section>
+
+      <section class="method-strip" id="method" aria-labelledby="method-title">
+        <div>
+          <p class="eyebrow">Review method</p>
+          <h2 id="method-title">Score the Skill as an agent workflow, not as a human tutorial.</h2>
+        </div>
+        <div class="rubric-grid" id="rubricGrid"></div>
+      </section>
+
+      <section class="library-section" id="library" aria-labelledby="library-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Review library</p>
+            <h2 id="library-title">Evidence notes, scores, risks, and next tests.</h2>
+          </div>
+          <div class="controls" aria-label="Review filters">
+            <label class="search-box">
+              <span>Search</span>
+              <input id="searchInput" type="search" placeholder="Try MCP, testing, artifact, React..." autocomplete="off">
+            </label>
+            <label class="select-box">
+              <span>Cluster</span>
+              <select id="categorySelect"></select>
+            </label>
+            <label class="select-box">
+              <span>Sort</span>
+              <select id="sortSelect">
+                <option value="score">Score</option>
+                <option value="name">A to Z</option>
+                <option value="status">Status</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="workbench">
+          <div class="review-list" id="reviewList" aria-live="polite"></div>
+          <aside class="detail-panel" id="detailPanel" aria-live="polite"></aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Agent Skills Lit Review</span>
+      <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">Source corpus</a>
+    </footer>
+
+    <script src="data/reviews.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
