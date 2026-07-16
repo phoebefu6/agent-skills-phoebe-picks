@@ -37,6 +37,7 @@ Check:
 - Each public Skill shows a source repo/reference and a dated GitHub star snapshot when the source is on GitHub.
 - Each public Skill promoted from exploring has a ground-up artifact, about 80% concept coverage, a rating out of 10, 3 strengths, and 3 improvement points.
 - Demo artifact pages under `demos/` load from the local server and have their JavaScript checked.
+- Demo pages do not need to match each other. Confirm each one independently showcases the Skill's functions, concepts, and practical value.
 - The public page does not expose internal LLM Wiki workflow content.
 - Mobile layout stays readable at narrow widths.
 - Long Skill names do not overflow cards.

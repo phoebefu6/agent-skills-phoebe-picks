@@ -33,6 +33,12 @@ Skill exploration is a field test, not a light impression. For each Skill Phoebe
 
 Do not publish a Skill review based only on reading, installing, planning, or using it for a small amendment. The Skill must help produce something new from zero.
 
+## Demo Artifact Direction
+
+The demo page is part of the evaluation, not a decorative subpage. It should showcase what the Skill can actually do and use as many relevant Skill features as practical.
+
+Do not make every demo look the same. A Skill demo may become a product prototype, decision flow, mindmap, diagram, interactive lab, visual critique, dashboard, report, or any other static artifact that best expresses the Skill's function. Keep the gallery homepage consistent for browsing, but let `demos/` pages vary widely when variety helps followers understand the Skill.
+
 ## Status Labels
 
 | Data value | Public label | Meaning |

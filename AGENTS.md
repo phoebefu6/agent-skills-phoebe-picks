@@ -32,6 +32,7 @@ Use `docs/wiki/llm-wiki.md` when the task involves agent memory, Claude Code, Co
 - Keep review data in `data/reviews.js`.
 - Keep internal workflow memory in `docs/wiki/`.
 - Do not add LLM Wiki sections to the public homepage unless Phoebe explicitly asks for public-facing education content.
+- Treat each `demos/` subpage as an independent Skill function showcase. Do not force demo pages to share the same layout, tone, or visual system; choose the page shape that best demonstrates that Skill's features and concepts.
 - Prefer small, inspectable changes over framework churn.
 - Preserve user edits in the dirty worktree. Do not revert unrelated changes.
 - Use `apply_patch` for manual file edits.
