@@ -1,65 +1,88 @@
 # Agent Skills Phoebe Picks
 
-A public gallery of AI agent Skills organized by the situations they help with.
+[![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
+[![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
+[![Latest Field Test](https://img.shields.io/badge/latest-grill--me-6f7cff?style=for-the-badge)](demos/grill-me-brief-builder/)
+[![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
-Use this repo when you want to discover Skills for design, UI/UX, frontend, data, reporting, automation, research, prompting, or agent workflow. Each serious pick is tested by learning the Skill, using most of its method to build something from scratch, then rating the result.
+A hands-on gallery of AI agent Skills I test by building real things from scratch.
+
+Instead of another long list of tools, this repo answers one practical question:
+
+> Which Skills are actually useful when you build with Codex, Claude Code, Hermes AI, and other AI agents?
+
+## Why Star This Repo
+
+Star this repo if you want a growing shortlist of Skills that can help you:
+
+- Build cleaner AI-assisted apps, pages, workflows, diagrams, reports, and automations.
+- Reduce repeated prompting by turning useful methods into reusable agent habits.
+- See what each Skill is good at, where it struggles, and when it is worth trying.
+- Follow my public learning journey as I test one Skill at a time with real artifacts.
+
+## Start Here
+
+| Link | What you get |
+| --- | --- |
+| [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
+| [Latest demo](demos/grill-me-brief-builder/) | See the `grill-me` Skill turned into a working brief builder. |
+| [Wishlist](wishlist.md) | See what I plan to explore next. |
 
 ## Latest Field Test
 
-| Skill | Ground-up artifact | Source snapshot | Concept coverage | Rating | Status |
-| --- | --- | --- | --- | --- | --- |
-| `grill-me` | [Grill-Me Brief Builder](demos/grill-me-brief-builder/) | [mio-openliven/codex-grill-me-skill](https://github.com/mio-openliven/codex-grill-me-skill), 2 stars checked 2026-07-16 | 7/8 core concepts used | 4/5 | Exploring |
+| Skill | Built from scratch | Source snapshot | Result |
+| --- | --- | --- | --- |
+| `grill-me` | [Brief Builder demo](demos/grill-me-brief-builder/) | [mio-openliven/codex-grill-me-skill](https://github.com/mio-openliven/codex-grill-me-skill), 2 stars checked 2026-07-16 | 7/8 core concepts used, 4/5 field rating |
 
-`grill-me` turns vague plans into sharper decisions by asking one hard question at a time, giving a recommended answer, explaining why it matters, and stopping once the next build step is clear.
+`grill-me` helps turn vague build ideas into sharper decisions before asking an agent to execute. It asks one question at a time, recommends an answer, explains why it matters, and stops once the next step is clear.
 
-## Browse By Scenario
+## What You Will Find
 
-| Scenario | What followers can find |
+| Scenario | Skills I am looking for |
 | --- | --- |
-| Design and UI/UX | Skills for taste, critique, visual polish, and better agent-built pages. |
-| Frontend | Skills that turn rough product ideas into usable screens. |
-| Data and Data Viz | Skills for analysis, charts, and visual explanation. |
-| Reporting | Skills for smart reports, executive summaries, and recurring updates. |
-| Automation | Skills that reduce repeated manual work. |
-| Research and Prompting | Skills that improve discovery, framing, and reusable instructions. |
-| Agent Workflow | Skills that make Codex, Claude Code, and other agents easier to steer. |
+| Design and UI/UX | Taste, critique, visual polish, layout, design systems, and better agent-built pages. |
+| Frontend | Skills that turn rough product ideas into usable screens and demos. |
+| Data and Data Viz | Analysis, charts, dashboards, and visual explanation. |
+| Reporting | Executive summaries, smart reports, recurring updates, and narrative structure. |
+| Automation | Skills that remove boring repeated work. |
+| Research and Prompting | Better discovery, framing, briefing, and reusable instructions. |
+| Agent Workflow | Skills that make Codex, Claude Code, Hermes AI, Cursor, and similar agents easier to steer. |
 
-## What Each Skill Card Shows
+## How A Skill Becomes A Pick
 
-| Field | Purpose |
-| --- | --- |
-| Skill name | What to search or install. |
-| Scenario | The situation where the Skill helps. |
-| Platform subtitle | The applicable AI agents, such as Claude Code, Codex, Hermes AI, or other fit. |
-| Source and stars | GitHub source repo, reference path, current star snapshot, and date checked. |
-| Ground-up test | What was built from scratch with the Skill. |
-| Concept coverage | Whether the test used about 80% of the Skill's key concepts. |
-| Rating | A high-level rating out of 5 after the build. |
-| Best use case | The fastest way to understand why it matters. |
-| Notes | 3 good points, 3 can-be-better points, use cases, demo/proof, source, and verdict. |
+Every serious Skill gets tested through a small field project:
 
-## Review Method
-
-Before a Skill becomes a public pick:
-
-1. Learn the Skill source.
+1. Read the Skill source.
 2. Identify the key concepts.
-3. Use about 80% of those concepts to build a ground-up artifact.
-4. Record source, stars, applicable AI agents, demo proof, and rating out of 5.
-5. Capture exactly 3 strengths and 3 improvement points.
+3. Use about 80% of those concepts to build something new from zero.
+4. Record the source, GitHub stars, applicable AI agents, demo proof, and rating out of 5.
+5. Capture exactly 3 things it does well and 3 things that could be better.
 
-## First Collection
+Weak, risky, or not-useful Skills do not become recommendations.
 
-The gallery starts with design, UI/UX, and frontend Skills:
+## Current Collection
 
-| Skill | Why it belongs first |
-| --- | --- |
-| `grill-me` | Helps pressure-test vague ideas before asking an agent to build. |
-| `frontend-design` | Helps turn a rough product idea into a usable first screen. |
-| `design-taste-frontend` | Helps avoid generic AI-looking UI. |
-| `design-review` | Turns screenshots into concrete critique and fixes. |
-| `high-end-visual-design` | Refines typography, spacing, hierarchy, and craft. |
-| `design-consultation` | Helps repeated design preferences become reusable guidance. |
+| Skill | Status | Why I am testing it |
+| --- | --- | --- |
+| `grill-me` | Exploring | Pressure-test vague ideas before asking an agent to build. |
+| `frontend-design` | Exploring | Turn rough product ideas into usable first screens. |
+| `design-taste-frontend` | Exploring | Avoid generic AI-looking UI. |
+| `design-review` | Wishlist | Turn screenshots into concrete critique and fixes. |
+| `high-end-visual-design` | Wishlist | Improve typography, spacing, hierarchy, and craft. |
+| `design-consultation` | Wishlist | Turn repeated design preferences into reusable guidance. |
+
+## Repo Map
+
+```text
+agent-skills-phoebe-picks/
+  index.html                         # Public gallery homepage
+  data/reviews.js                    # Skill reviews, sources, stars, ratings, notes
+  assets/design-options.css          # Active visual system
+  assets/design-options.js           # Search, filters, cards, detail drawer
+  demos/grill-me-brief-builder/      # Latest ground-up Skill demo
+  wishlist.md                        # Exploration queue
+  docs/wiki/                         # Internal agent memory for future work
+```
 
 ## Local Preview
 
@@ -73,7 +96,7 @@ Open:
 http://localhost:8000/
 ```
 
-Run checks:
+Checks:
 
 ```bash
 node --check data/reviews.js
