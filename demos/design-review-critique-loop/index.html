@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A design-review Skill showcase built as an interactive visual audit and before-after critique loop.">
+    <title>Design Review Critique Loop</title>
+    <link rel="stylesheet" href="../skill-demo.css">
+  </head>
+  <body class="review-page">
+    <header class="demo-topbar">
+      <div class="demo-shell demo-nav">
+        <a class="demo-brand" href="../../index.html"><span class="demo-mark">P</span>Agent Skills Phoebe Picks</a>
+        <span>design-review critique loop</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="demo-shell demo-hero">
+        <div class="reveal">
+          <span class="demo-kicker">Skill field test</span>
+          <h1 class="serif-title">Critique Loop</h1>
+          <p>A launch-check room for turning vague visual discomfort into specific findings, fixes, and before-after proof.</p>
+          <div class="demo-actions">
+            <a class="pill-button" href="#audit">Open audit board</a>
+            <a class="ghost-button" href="#fixes">See atomic fixes</a>
+          </div>
+        </div>
+
+        <aside class="card reveal" style="padding: 22px;">
+          <span class="label">Audit snapshot</span>
+          <div class="three-grid" style="margin-top: 18px;">
+            <article class="metric"><span>Findings</span><strong>5</strong><p>Visual issues converted into action.</p></article>
+            <article class="metric"><span>Fixes</span><strong>5</strong><p>One issue, one concrete change.</p></article>
+            <article class="metric"><span>Proof</span><strong>2</strong><p>Before and after screens.</p></article>
+          </div>
+        </aside>
+      </section>
+
+      <section class="demo-section" id="features">
+        <div class="demo-shell">
+          <div class="section-head">
+            <span class="eyebrow">Key features</span>
+            <h2>Review is a loop, not an opinion.</h2>
+            <p>The wrapper is compact, so this demo makes the implied workflow explicit: audit, prioritize, fix, compare, ship.</p>
+          </div>
+
+          <div class="feature-lab" data-feature-lab>
+            <nav class="feature-rail" aria-label="design-review concepts">
+              <button class="feature-button" type="button" data-feature="audit">Visual audit</button>
+              <button class="feature-button" type="button" data-feature="severity">Severity lens</button>
+              <button class="feature-button" type="button" data-feature="fixes">Atomic fixes</button>
+              <button class="feature-button" type="button" data-feature="proof">Before-after proof</button>
+              <button class="feature-button" type="button" data-feature="launch">Pre-launch decision</button>
+            </nav>
+            <div class="feature-panels">
+              <article class="feature-panel card" data-feature-panel="audit">
+                <span class="label">01</span>
+                <h3>Start with what the eye sees.</h3>
+                <ul>
+                  <li>Scan hierarchy, spacing, contrast, alignment, copy, and mobile risk.</li>
+                  <li>Name the actual visual issue instead of saying it looks off.</li>
+                  <li>Connect each issue to follower comprehension or trust.</li>
+                </ul>
+              </article>
+              <article class="feature-panel card" data-feature-panel="severity">
+                <span class="label">02</span>
+                <h3>Rank issues before editing.</h3>
+                <ul>
+                  <li>Critical: blocks understanding or action.</li>
+                  <li>Major: weakens trust or makes scanning harder.</li>
+                  <li>Minor: polish work after the page is clear.</li>
+                </ul>
+              </article>
+              <article class="feature-panel card" data-feature-panel="fixes">
+                <span class="label">03</span>
+                <h3>Make each fix atomic.</h3>
+                <ul>
+                  <li>One visual problem maps to one focused change.</li>
+                  <li>Fixes are small enough to test and revert.</li>
+                  <li>Design critique becomes a practical work queue.</li>
+                </ul>
+              </article>
+              <article class="feature-panel card" data-feature-panel="proof">
+                <span class="label">04</span>
+                <h3>Show the before and after.</h3>
+                <ul>
+                  <li>Followers can see what changed without reading a long method note.</li>
+                  <li>Before-after comparison keeps the review honest.</li>
+                  <li>Visual evidence is stronger than abstract design talk.</li>
+                </ul>
+              </article>
+              <article class="feature-panel card" data-feature-panel="launch">
+                <span class="label">05</span>
+                <h3>Decide if the page is ready.</h3>
+                <ul>
+                  <li>Do not keep polishing forever.</li>
+                  <li>Ship when comprehension, trust, and action are clear.</li>
+                  <li>Keep the remaining polish list visible.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="audit">
+        <div class="demo-shell before-after" data-before-after>
+          <div class="section-head">
+            <span class="eyebrow">Before and after</span>
+            <h2>Click once to see the review result.</h2>
+            <p>The before screen is intentionally vague. The after screen makes source, proof, and action visible.</p>
+            <button class="pill-button" type="button" data-before-after-toggle>Show after</button>
+          </div>
+
+          <div class="review-board">
+            <div class="screenshot-pair card">
+              <div class="screen-layer before">
+                <span class="label">Before</span>
+                <div class="mock-hero">
+                  <span class="mock-line big"></span>
+                  <span class="mock-line"></span>
+                  <span class="mock-line short"></span>
+                </div>
+                <div class="mock-card-grid">
+                  <span class="mock-card"></span>
+                  <span class="mock-card"></span>
+                  <span class="mock-card"></span>
+                </div>
+                <p>Weak hierarchy, generic copy, equal cards, unclear proof.</p>
+              </div>
+              <div class="screen-layer after">
+                <span class="label">After</span>
+                <div class="mock-hero">
+                  <span class="mock-line short"></span>
+                  <span class="mock-line big" style="background: var(--pop);"></span>
+                  <span class="mock-line"></span>
+                </div>
+                <div class="table-list">
+                  <article><strong>Source snapshot visible</strong><span class="chip">Trust</span></article>
+                  <article><strong>Demo proof visible</strong><span class="chip">Action</span></article>
+                  <article><strong>Use case first</strong><span class="chip">Clarity</span></article>
+                </div>
+              </div>
+            </div>
+
+            <aside class="review-notes card">
+              <span class="label">Audit findings</span>
+              <article class="finding"><strong>Hierarchy</strong><p>Lead with the user decision, not the internal process.</p></article>
+              <article class="finding"><strong>Spacing</strong><p>Give the hero and card grid different rhythms.</p></article>
+              <article class="finding"><strong>Contrast</strong><p>Make proof and action higher contrast than helper notes.</p></article>
+              <article class="finding"><strong>Copy</strong><p>Replace broad claims with concrete Skill outcomes.</p></article>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="fixes">
+        <div class="demo-shell">
+          <div class="section-head">
+            <span class="eyebrow">Atomic fix queue</span>
+            <h2>Each critique becomes one fix.</h2>
+          </div>
+          <div class="three-grid">
+            <article class="feature-card card" style="padding: 22px;"><span class="label">Fix 01</span><h3>Rename the hero.</h3><p>From generic AI promise to follower decision: Find Skills by real work.</p></article>
+            <article class="feature-card card" style="padding: 22px;"><span class="label">Fix 02</span><h3>Expose source proof.</h3><p>GitHub repo, star snapshot, and demo link move into the card surface.</p></article>
+            <article class="feature-card card" style="padding: 22px;"><span class="label">Fix 03</span><h3>Reduce equal cards.</h3><p>Use a main proof card plus smaller supporting notes for better rhythm.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <div class="demo-shell">
+          <div class="section-head">
+            <span class="eyebrow">Field rating</span>
+            <h2>What this Skill proved.</h2>
+          </div>
+          <div class="three-grid">
+            <article class="metric"><span>Rating</span><strong>8.0</strong><p>Useful for turning subjective design feedback into action.</p></article>
+            <article class="metric"><span>Coverage</span><strong>5/5</strong><p>Audit, severity, atomic fixes, proof, and launch decision are covered.</p></article>
+            <article class="metric"><span>Best for</span><strong>QA</strong><p>Strong before publishing a page that already works but feels weak.</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../skill-demo.js"></script>
+  </body>
+</html>

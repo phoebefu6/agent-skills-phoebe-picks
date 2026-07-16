@@ -37,16 +37,29 @@ const PICKS = [
     sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
     sourceRepo: "anthropics/skills",
     sourcePath: "skills/frontend-design",
-    githubStars: 161533,
+    githubStars: 161555,
     starsCheckedAt: "2026-07-16",
-    status: "exploring",
-    recommendation: "Testing through this gallery rebuild",
+    status: "published",
+    recommendation: "Published pick: useful when a rough product idea needs to become a real frontend screen with states and responsive behavior.",
     dateExplored: "2026-07-10",
     scenarios: ["frontend", "ui-ux", "design"],
     platforms: ["claude-code", "codex", "hermes"],
-    badges: ["UI build", "Static site", "GitHub Pages"],
+    badges: ["UI build", "States", "Responsive"],
     summary: "A frontend Skill for turning a product brief into polished, responsive interface code.",
     phoebeNote: "Use it when you want an agent to turn a rough product idea into a real first screen without repeating every UI rule.",
+    coreConcepts: [
+      "Understand the audience, job, domain, tone, and technical constraints before choosing the look.",
+      "Commit to one specific aesthetic direction instead of generic AI defaults.",
+      "Design the real interface with controls, empty, loading, error, and responsive states.",
+      "Build production-grade semantic frontend code using repo conventions where possible.",
+      "Refine typography, color, layout, motion, and component details.",
+      "Self-review mobile, desktop, focus states, overlap, AI visual tropes, and memorability before delivery."
+    ],
+    conceptCoverage: "6/6 key concepts are visible in the Scenario Console demo.",
+    groundUpBuild: "Built the Scenario Console product screen from scratch.",
+    rating: 8.2,
+    ratingScale: 10,
+    ratingSummary: "Strong for turning a rough brief into a usable screen, but still needs a taste pass for final polish.",
     good: [
       "Pushes for real interface states instead of a static poster.",
       "Keeps implementation close to the existing repo stack.",
@@ -62,8 +75,8 @@ const PICKS = [
       "Students can learn how UI decisions map into actual files.",
       "Leaders can prototype an internal AI tool before asking a team to build it."
     ],
-    demo: "This public gallery rebuild.",
-    galleryLink: "#gallery"
+    demo: "demos/frontend-design-interface/index.html",
+    galleryLink: "demos/frontend-design-interface/index.html"
   },
   {
     id: "design-taste-frontend",
@@ -72,7 +85,7 @@ const PICKS = [
     sourceUrl: "https://github.com/Leonxlnx/taste-skill",
     sourceRepo: "Leonxlnx/taste-skill",
     sourcePath: "Open Design wrapper: skills/taste-skill",
-    githubStars: 64010,
+    githubStars: 64018,
     starsCheckedAt: "2026-07-16",
     status: "published",
     recommendation: "Published pick: useful for turning generic AI-built pages into more deliberate, credible public pages.",
@@ -124,33 +137,45 @@ const PICKS = [
     sourceUrl: "https://github.com/garrytan/gstack",
     sourceRepo: "garrytan/gstack",
     sourcePath: "Open Design wrapper: skills/design-review",
-    githubStars: 122159,
+    githubStars: 122177,
     starsCheckedAt: "2026-07-16",
-    status: "wishlist",
-    recommendation: "Next Skill to test",
-    dateExplored: "",
+    status: "published",
+    recommendation: "Published pick: useful for turning subjective UI discomfort into a concrete critique-to-fix loop.",
+    dateExplored: "2026-07-16",
     scenarios: ["design", "ui-ux"],
     platforms: ["claude-code", "codex", "hermes"],
-    badges: ["Critique", "Screenshots", "QA"],
+    badges: ["Critique", "Before-after", "QA"],
     summary: "A review Skill for judging interface screenshots, hierarchy, spacing, copy, and usability.",
     phoebeNote: "Use it when a screenshot feels wrong but you need concrete fixes, not vague opinions.",
+    coreConcepts: [
+      "Run a visual audit before changing the design.",
+      "Translate visual discomfort into specific findings.",
+      "Rank critique by severity so launch-blocking issues come first.",
+      "Apply atomic fixes instead of broad redesign churn.",
+      "Keep before-after proof so the review is visible and accountable."
+    ],
+    conceptCoverage: "5/5 key concepts are visible in the Critique Loop demo.",
+    groundUpBuild: "Built the Critique Loop before-after audit board from scratch.",
+    rating: 8.0,
+    ratingScale: 10,
+    ratingSummary: "Very practical for pre-launch UI QA, though the local wrapper is sparse and needs judgment from the agent.",
     good: [
-      "Likely useful for choosing between multiple design directions.",
-      "Can turn visual discomfort into concrete fixes.",
-      "Pairs naturally with frontend build Skills."
+      "Turns vague feedback into concrete findings and small fixes.",
+      "Keeps visual proof visible through a before-after comparison.",
+      "Pairs naturally with frontend build Skills before publishing."
     ],
     improve: [
-      "Needs a real screenshot to be valuable.",
-      "May need clear priorities to avoid subjective over-editing.",
-      "Should produce fix lists that are small enough to act on."
+      "The local Skill wrapper is thin compared with a full review playbook.",
+      "Needs a screenshot or built page to be valuable.",
+      "Can become subjective if severity and launch criteria are not set."
     ],
     useCases: [
       "Vibe coders can ask for a sharper critique before shipping a page.",
       "Students can learn how to inspect UI beyond personal preference.",
       "AI learners can compare before and after screenshots from a Skill run."
     ],
-    demo: "Run after the first hybrid homepage screenshot.",
-    galleryLink: ""
+    demo: "demos/design-review-critique-loop/index.html",
+    galleryLink: "demos/design-review-critique-loop/index.html"
   },
   {
     id: "high-end-visual-design",
@@ -159,33 +184,48 @@ const PICKS = [
     sourceUrl: "https://github.com/Leonxlnx/taste-skill",
     sourceRepo: "Leonxlnx/taste-skill",
     sourcePath: "Open Design wrapper: skills/soft-skill",
-    githubStars: 64010,
+    githubStars: 64018,
     starsCheckedAt: "2026-07-16",
-    status: "wishlist",
-    recommendation: "Craft pass candidate",
-    dateExplored: "",
+    status: "published",
+    recommendation: "Published pick: useful for a deliberate craft pass when a page already works but still lacks premium visual confidence.",
+    dateExplored: "2026-07-16",
     scenarios: ["design", "ui-ux", "frontend"],
     platforms: ["claude-code", "codex", "hermes"],
     badges: ["Typography", "Layout polish", "Craft"],
     summary: "A visual craft Skill for refining typography, spacing, proportion, and finished-page confidence.",
     phoebeNote: "Use it when the structure works but the page needs stronger hierarchy, spacing, and visual confidence.",
+    coreConcepts: [
+      "Choose a premium vibe and layout archetype before generating the page.",
+      "Block common low-quality AI design defaults.",
+      "Use double-bezel nested surfaces for premium cards and containers.",
+      "Use nested CTA architecture with an inner icon button.",
+      "Use generous macro-whitespace and high-confidence typography.",
+      "Apply custom motion curves and entry motion without layout-triggering animation.",
+      "Respect performance guardrails for blur, z-index, and GPU-safe transforms.",
+      "Collapse asymmetric layouts carefully on mobile."
+    ],
+    conceptCoverage: "8/10 key concepts are visible in the High-End Visual Design Atelier demo; full scroll choreography and full-screen menu sequencing were kept lighter for this static gallery.",
+    groundUpBuild: "Built the High-End Visual Design Atelier page from scratch.",
+    rating: 7.9,
+    ratingScale: 10,
+    ratingSummary: "Excellent for visual elevation, but some rules are very opinionated and can conflict with simpler brand needs.",
     good: [
-      "Useful for final refinement after the structure is settled.",
-      "Can help tune visual hierarchy and spacing.",
-      "May improve the site without adding unnecessary features."
+      "Pushes the agent away from cheap-looking AI defaults.",
+      "Gives concrete craft patterns like double-bezel surfaces and nested CTAs.",
+      "Makes motion and mobile collapse part of the quality bar."
     ],
     improve: [
-      "Needs concrete before and after evidence.",
-      "Could become subjective without a clear product goal.",
-      "Should not override readability or simplicity."
+      "Some absolute bans are too rigid for practical product work.",
+      "The premium style can overpower follower value if used too early.",
+      "Needs a clear brand goal so high-end polish does not become decoration."
     ],
     useCases: [
       "Creators can make public pages feel more trustworthy.",
       "Leaders can improve presentation quality for internal AI demos.",
       "Students can study how small spacing choices change perception."
     ],
-    demo: "Run after the hybrid direction is in place.",
-    galleryLink: ""
+    demo: "demos/high-end-visual-design-showcase/index.html",
+    galleryLink: "demos/high-end-visual-design-showcase/index.html"
   },
   {
     id: "design-consultation",
@@ -194,33 +234,45 @@ const PICKS = [
     sourceUrl: "https://github.com/garrytan/gstack",
     sourceRepo: "garrytan/gstack",
     sourcePath: "gstack design-consultation skill",
-    githubStars: 122159,
+    githubStars: 122177,
     starsCheckedAt: "2026-07-16",
-    status: "wishlist",
-    recommendation: "Use after direction is locked",
-    dateExplored: "",
+    status: "published",
+    recommendation: "Published pick: useful when a product needs reusable visual rules before more pages are built.",
+    dateExplored: "2026-07-16",
     scenarios: ["design", "agent-workflow"],
     platforms: ["claude-code", "codex", "hermes"],
     badges: ["Design system", "Tokens", "Guidelines"],
     summary: "A design system Skill for turning product intent into durable visual rules and documentation.",
     phoebeNote: "Use it later when repeated design preferences need to become a short source of truth.",
+    coreConcepts: [
+      "Start with a design workshop brief and product truth.",
+      "Create a complete design system from scratch.",
+      "Take creative risks while keeping them explicit.",
+      "Show realistic product mockups instead of abstract rules only.",
+      "Produce handoff rules that future agents can reuse."
+    ],
+    conceptCoverage: "5/5 key concepts are visible in the System Room demo.",
+    groundUpBuild: "Built the System Room design-system workshop from scratch.",
+    rating: 8.1,
+    ratingScale: 10,
+    ratingSummary: "Useful for making design direction reusable, though the wrapper needs more operational detail for larger systems.",
     good: [
-      "Can create a stable design source of truth.",
-      "Useful when multiple agents will work on the repo.",
-      "Helps reduce repeated design instructions over time."
+      "Turns repeated taste preferences into reusable tokens and rules.",
+      "Forces design choices to connect back to audience and product purpose.",
+      "Makes future agent work easier by showing mockups plus handoff rules."
     ],
     improve: [
-      "Too heavy for the earliest exploration phase.",
-      "Needs a chosen direction before it can be efficient.",
-      "Should result in a short practical guide, not a giant theory document."
+      "The local Skill wrapper is broad and does not provide a detailed worksheet.",
+      "Can become too heavy if used before the product direction is clear.",
+      "Needs discipline to stay practical instead of becoming a long brand document."
     ],
     useCases: [
       "Teams can keep AI-generated UI consistent across sessions.",
       "Builders can stop repeating color, spacing, and typography preferences.",
       "C-suite readers can understand why a prototype has a coherent system."
     ],
-    demo: "Create a compact design source of truth after launch v1.",
-    galleryLink: ""
+    demo: "demos/design-consultation-system-room/index.html",
+    galleryLink: "demos/design-consultation-system-room/index.html"
   }
 ];
 

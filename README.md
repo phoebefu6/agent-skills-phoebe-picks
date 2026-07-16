@@ -2,7 +2,7 @@
 
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Latest Pick](https://img.shields.io/badge/latest%20pick-design--taste--frontend-6f7cff?style=for-the-badge)](demos/design-taste-frontend-studio/)
+[![Published Picks](https://img.shields.io/badge/published%20picks-5-6f7cff?style=for-the-badge)](#published-products)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A hands-on gallery of AI agent Skills I test by building real things from scratch.
@@ -25,16 +25,20 @@ Star this repo if you want a growing shortlist of Skills that can help you:
 | Link | What you get |
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
-| [Latest pick](demos/design-taste-frontend-studio/) | See `design-taste-frontend` turned into an interactive taste lab. |
+| [Published products](#published-products) | Open the demo products built from each published Skill. |
 | [Wishlist](wishlist.md) | See what I plan to explore next. |
 
-## Latest Pick
+## Published Products
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
-| `design-taste-frontend` | [Design Taste Frontend Lab](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 64,010 stars, explored 2026-07-16 | Published pick, 8.5/10 overall rating |
+| `frontend-design` | [Scenario Console](demos/frontend-design-interface/) | [anthropics/skills](https://github.com/anthropics/skills), 161,555 stars, explored 2026-07-16 | Published pick, 8.2/10 overall rating |
+| `design-taste-frontend` | [Design Taste Frontend Lab](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 64,018 stars, explored 2026-07-16 | Published pick, 8.5/10 overall rating |
+| `design-review` | [Critique Loop](demos/design-review-critique-loop/) | [garrytan/gstack](https://github.com/garrytan/gstack), 122,177 stars, explored 2026-07-16 | Published pick, 8.0/10 overall rating |
+| `high-end-visual-design` | [Visual Design Atelier](demos/high-end-visual-design-showcase/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 64,018 stars, explored 2026-07-16 | Published pick, 7.9/10 overall rating |
+| `design-consultation` | [System Room](demos/design-consultation-system-room/) | [garrytan/gstack](https://github.com/garrytan/gstack), 122,177 stars, explored 2026-07-16 | Published pick, 8.1/10 overall rating |
 
-`design-taste-frontend` helps turn generic AI-built pages into more deliberate, credible public pages by forcing a design read, setting taste dials, and running an anti-slop pre-flight.
+Each product page lists the Skill's key features in a visual, interactive format so followers can see what the Skill changes in practice.
 
 ## What You Will Find
 
@@ -65,11 +69,11 @@ Weak, risky, or not-useful Skills do not become recommendations.
 
 | Skill | Status | Why it matters |
 | --- | --- | --- |
+| `frontend-design` | Published | Turn rough product ideas into usable first screens. |
 | `design-taste-frontend` | Published | Avoid generic AI-looking UI. |
-| `frontend-design` | Exploring | Turn rough product ideas into usable first screens. |
-| `design-review` | Wishlist | Turn screenshots into concrete critique and fixes. |
-| `high-end-visual-design` | Wishlist | Improve typography, spacing, hierarchy, and craft. |
-| `design-consultation` | Wishlist | Turn repeated design preferences into reusable guidance. |
+| `design-review` | Published | Turn screenshots into concrete critique and fixes. |
+| `high-end-visual-design` | Published | Improve typography, spacing, hierarchy, and craft. |
+| `design-consultation` | Published | Turn repeated design preferences into reusable guidance. |
 
 ## Repo Map
 
@@ -79,7 +83,13 @@ agent-skills-phoebe-picks/
   data/reviews.js                    # Skill reviews, sources, stars, ratings, notes
   assets/design-options.css          # Active visual system
   assets/design-options.js           # Search, filters, cards, detail drawer
-  demos/design-taste-frontend-studio/ # Latest ground-up Skill demo
+  demos/skill-demo.css               # Shared demo page styling
+  demos/skill-demo.js                # Shared demo page interactions
+  demos/frontend-design-interface/   # frontend-design demo
+  demos/design-taste-frontend-studio/ # design-taste-frontend demo
+  demos/design-review-critique-loop/ # design-review demo
+  demos/high-end-visual-design-showcase/ # high-end-visual-design demo
+  demos/design-consultation-system-room/ # design-consultation demo
   wishlist.md                        # Exploration queue
   docs/wiki/                         # Internal agent memory for future work
 ```
@@ -101,5 +111,6 @@ Checks:
 ```bash
 node --check data/reviews.js
 node --check assets/design-options.js
+node --check demos/skill-demo.js
 node --check demos/design-taste-frontend-studio/app.js
 ```

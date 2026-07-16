@@ -54,6 +54,7 @@ Run these checks after code changes:
 ```bash
 node --check data/reviews.js
 node --check assets/design-options.js
+node --check demos/skill-demo.js
 node --check demos/design-taste-frontend-studio/app.js
 ```
 

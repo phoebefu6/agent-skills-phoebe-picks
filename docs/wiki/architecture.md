@@ -36,6 +36,8 @@ The active UI is the audience-facing gallery. It should not expose internal LLM 
 
 Skill demo artifacts are plain static pages under `demos/<skill-or-artifact-name>/`. Link them from `galleryLink` when the artifact is public-facing proof.
 
+Shared demo helpers live at `demos/skill-demo.css` and `demos/skill-demo.js`. Use them for simple feature tabs, state switches, before-after toggles, palette buttons, and pre-flight checks when that keeps demo pages lightweight. A demo may still use its own CSS or JS when a Skill needs a more distinct artifact.
+
 Demo subpages are independent Skill function showcases, not a shared detail-page template. They may use different layouts, interaction models, visual styles, diagrams, flows, tools, or storytelling structures when that better demonstrates what the Skill can do. The homepage and gallery should stay coherent, but each demo page should be shaped around the Skill's own features and concepts.
 
 ## Pick Object Shape

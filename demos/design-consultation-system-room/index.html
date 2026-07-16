@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A design-consultation Skill showcase built as an interactive design system workshop and product mockup room.">
+    <title>Design Consultation System Room</title>
+    <link rel="stylesheet" href="../skill-demo.css">
+  </head>
+  <body class="system-room">
+    <header class="demo-topbar">
+      <div class="demo-shell demo-nav">
+        <a class="demo-brand" href="../../index.html"><span class="demo-mark">P</span>Agent Skills Phoebe Picks</a>
+        <span>design-consultation system room</span>
+      </div>
+    </header>
+
+    <main data-palette-target>
+      <section class="demo-shell demo-hero">
+        <div class="reveal">
+          <span class="demo-kicker">Skill field test</span>
+          <h1 class="serif-title">System Room</h1>
+          <p>A kickoff workshop artifact that turns a vague product direction into a compact design system, creative risk map, and realistic mockups.</p>
+          <div class="demo-actions">
+            <a class="pill-button" href="#system">Open system canvas</a>
+            <a class="ghost-button" href="#mockups">See mockups</a>
+          </div>
+        </div>
+
+        <aside class="card reveal" style="padding: 24px;">
+          <span class="label">Workshop output</span>
+          <div class="token-board">
+            <div class="token-row"><strong>Voice</strong><p>Helpful curator, not guru.</p></div>
+            <div class="token-row"><strong>Visual</strong><p>Museum gallery plus product catalog.</p></div>
+            <div class="token-row"><strong>Risk</strong><p>Too much process can overwhelm followers.</p></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="demo-section" id="features">
+        <div class="demo-shell">
+          <div class="section-head">
+            <span class="eyebrow">Key features</span>
+            <h2 class="serif-title">Consultation turns taste into reusable rules.</h2>
+            <p>The wrapper is a kickoff Skill, so the demo becomes a workshop board rather than a final landing page.</p>
+          </div>
+
+          <div class="feature-lab" data-feature-lab>
+            <nav class="feature-rail" aria-label="design-consultation concepts">
+              <button class="feature-button" type="button" data-feature="brief">Workshop brief</button>
+              <button class="feature-button" type="button" data-feature="system">Design system</button>
+              <button class="feature-button" type="button" data-feature="risks">Creative risks</button>
+              <button class="feature-button" type="button" data-feature="mockups">Mockups</button>
+              <button class="feature-button" type="button" data-feature="handoff">Handoff rules</button>
+            </nav>
+            <div class="feature-panels">
+              <article class="feature-panel card" data-feature-panel="brief">
+                <span class="label">01</span>
+                <h3 class="serif-title">Start from product truth.</h3>
+                <ul><li>Audience: followers who want useful Skills fast.</li><li>Promise: proof-first curation.</li><li>Boundary: internal SOP stays out of the public page.</li></ul>
+              </article>
+              <article class="feature-panel card" data-feature-panel="system">
+                <span class="label">02</span>
+                <h3 class="serif-title">Create reusable tokens.</h3>
+                <ul><li>Color roles, not random swatches.</li><li>Typography hierarchy for gallery and demo pages.</li><li>Component patterns for cards, chips, drawers, and proof links.</li></ul>
+              </article>
+              <article class="feature-panel card" data-feature-panel="risks">
+                <span class="label">03</span>
+                <h3 class="serif-title">Name creative risks early.</h3>
+                <ul><li>Too dry: followers lose interest.</li><li>Too decorative: proof gets buried.</li><li>Too much method: the page feels like homework.</li></ul>
+              </article>
+              <article class="feature-panel card" data-feature-panel="mockups">
+                <span class="label">04</span>
+                <h3 class="serif-title">Show realistic product surfaces.</h3>
+                <ul><li>Desktop gallery mockup.</li><li>Mobile Skill card mockup.</li><li>Proof drawer mockup.</li></ul>
+              </article>
+              <article class="feature-panel card" data-feature-panel="handoff">
+                <span class="label">05</span>
+                <h3 class="serif-title">Make it useful for future agents.</h3>
+                <ul><li>Rules are short enough to reuse.</li><li>Design choices connect to audience value.</li><li>Tokens and mockups guide future pages.</li></ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="system" data-palette-lab>
+        <div class="demo-shell system-canvas">
+          <div>
+            <div class="section-head">
+              <span class="eyebrow">System canvas</span>
+              <h2 class="serif-title">Pick a design direction, then make it reusable.</h2>
+              <p>The Skill is useful when it turns preferences into a system future agents can follow.</p>
+            </div>
+            <div class="palette-controls">
+              <button class="palette-button is-active" type="button" data-palette="gallery">Gallery calm</button>
+              <button class="palette-button" type="button" data-palette="operator">Operator green</button>
+              <button class="palette-button" type="button" data-palette="editorial">Editorial warm</button>
+            </div>
+          </div>
+
+          <aside class="card token-board">
+            <div class="token-row">
+              <strong>Colors</strong>
+              <div class="swatches">
+                <span class="swatch" style="background:#f5f4ef"></span>
+                <span class="swatch" style="background:#173f34"></span>
+                <span class="swatch" style="background:#dce8e0"></span>
+                <span class="swatch" style="background:#7b5146"></span>
+              </div>
+            </div>
+            <div class="token-row"><strong>Type</strong><p>Serif for editorial moments, system sans for product scanning.</p></div>
+            <div class="token-row"><strong>Cards</strong><p>8 to 18px radius, proof visible, no cards inside cards unless it is a framed tool.</p></div>
+            <div class="token-row"><strong>Voice</strong><p>Short, follower-facing, useful. Let the demo explain the method.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="demo-section" id="mockups">
+        <div class="demo-shell split-grid">
+          <div class="mockup-stack">
+            <article class="desktop-mock">
+              <div class="mini-toolbar"><strong>Skill Gallery Desktop</strong><span class="chip">Scenario first</span></div>
+              <div class="table-list" style="padding-top: 16px;">
+                <article><div><strong>Published pick</strong><p>Source, stars, proof, rating.</p></div><span class="chip">Trust</span></article>
+                <article><div><strong>Demo proof</strong><p>Open the product built from the Skill.</p></div><span class="chip">Action</span></article>
+                <article><div><strong>Day-to-day use</strong><p>For builders, students, leaders, operators.</p></div><span class="chip">Value</span></article>
+              </div>
+            </article>
+          </div>
+
+          <aside class="phone-mock">
+            <div class="mini-toolbar"><strong>Mobile Skill Card</strong><span class="chip">Pocket</span></div>
+            <div class="mini-feed" style="padding-top: 16px;">
+              <article><strong>Skill name</strong><p>Short description, platform subtitle.</p></article>
+              <article><strong>Proof</strong><p>Artifact link appears before long notes.</p></article>
+              <article><strong>Decision</strong><p>Published, wishlist, or rejected.</p></article>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <div class="demo-shell">
+          <div class="section-head">
+            <span class="eyebrow">Field rating</span>
+            <h2 class="serif-title">What this Skill proved.</h2>
+          </div>
+          <div class="three-grid">
+            <article class="metric"><span>Rating</span><strong>8.1</strong><p>Useful for turning loose taste preferences into a practical design system.</p></article>
+            <article class="metric"><span>Coverage</span><strong>5/5</strong><p>Brief, system, risks, mockups, and handoff rules are visible.</p></article>
+            <article class="metric"><span>Best for</span><strong>Kickoff</strong><p>Use when a new product needs coherent visual rules before pages multiply.</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../skill-demo.js"></script>
+  </body>
+</html>
