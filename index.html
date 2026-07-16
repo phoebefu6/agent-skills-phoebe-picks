@@ -3,109 +3,119 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Phoebe's curated picks for agent-usable Claude Code, Codex, and AI coding Skills.">
+    <meta name="description" content="Agent Skills Phoebe Picks is a public gallery of AI agent Skills organized by the situations they help with.">
+    <meta property="og:title" content="Agent Skills Phoebe Picks">
+    <meta property="og:description" content="Browse AI agent Skills by scenario: design, data, reporting, automation, research, prompting, and agent workflow.">
+    <meta property="og:type" content="website">
     <title>Agent Skills Phoebe Picks</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/design-options.css?v=grill-me-push">
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Agent Skills Phoebe Picks home">
-        <span class="brand-mark">PP</span>
-        <span>
-          <strong>Agent Skills</strong>
-          <small>Phoebe Picks</small>
-        </span>
-      </a>
-      <nav class="top-nav" aria-label="Primary navigation">
-        <a href="#top-catalog">Catalog</a>
-        <a href="#library">Workbench</a>
-        <a href="#method">Method</a>
-        <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">Source</a>
-      </nav>
+      <div class="shell nav">
+        <a class="brand" href="#top" aria-label="Agent Skills Phoebe Picks home">
+          <span class="brand-mark">P</span>
+          <span>Agent Skills Phoebe Picks</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#scenarios">Scenarios</a>
+          <a href="#gallery">Skills</a>
+          <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section class="hero-section catalog-top" id="top-catalog" aria-labelledby="hero-title">
-        <div class="catalog-hero-panel">
-          <div class="catalog-heading">
-            <div>
-              <p class="eyebrow">Phoebe's picks for Codex and Claude Code Skills</p>
-              <h1 id="hero-title">Skill Catalog</h1>
+    <main id="top">
+      <section class="hero">
+        <div class="shell hero-layout">
+          <div class="hero-copy">
+            <p class="kicker">Public Skill gallery</p>
+            <h1>Agent Skills Phoebe Picks</h1>
+            <p class="hero-subtitle">Browse AI agent Skills by the situation they help with, from design and data to reporting, automation, research, prompting, and agent workflow.</p>
+            <div class="button-row">
+              <a class="btn primary" href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Follow repo</a>
+              <a class="btn" href="#gallery">Browse Skills</a>
+              <a class="btn" href="demos/grill-me-brief-builder/">Latest demo</a>
             </div>
-            <p>A curated shortlist of agent Skills I want to test, reuse, or turn into coding workflows. Pick a row to inspect the evidence and next test plan below.</p>
           </div>
-          <div class="top-catalog-list" id="topCatalogList" aria-live="polite"></div>
+
+          <aside class="ledger" aria-label="Gallery snapshot">
+            <div class="ledger-head">
+              <span>Gallery snapshot</span>
+              <strong>Skills grouped by real work.</strong>
+            </div>
+            <p>Each Skill card shows what it helps with, where it runs, what was built from scratch, and the practical notes behind the pick.</p>
+            <a class="latest-card" href="demos/grill-me-brief-builder/" aria-label="Open latest grill-me field test demo">
+              <span>Latest field test</span>
+              <strong>grill-me: Brief Builder</strong>
+              <small>7/8 concept coverage · 4/5 rating</small>
+              <small>2 GitHub stars · checked 2026-07-16</small>
+            </a>
+            <div class="scenario-mini-list" aria-label="Example scenarios">
+              <span>Design</span>
+              <span>Data</span>
+              <span>Reporting</span>
+              <span>Automation</span>
+              <span>Prompting</span>
+              <span>Agent workflow</span>
+            </div>
+          </aside>
         </div>
-        <aside class="category-panel" aria-label="Skill clusters and review snapshot">
-          <div class="category-panel-top">
-            <p class="eyebrow">Categories</p>
-            <h2>Clusters on the right, picks on the left.</h2>
-          </div>
-          <div class="category-list" id="topCategoryList"></div>
-          <div class="score-hero compact">
-            <span>Mean score</span>
-            <strong id="avgScore">0</strong>
-          </div>
-          <div class="score-grid">
-            <span><strong id="reviewCount">0</strong> reviewed</span>
-            <span><strong id="priorityCount">0</strong> Phoebe picks</span>
-            <span><strong id="categoryCount">0</strong> clusters</span>
-            <span><strong id="topScore">0</strong> top score</span>
-          </div>
-          <div class="source-card">
-            <span>Starting corpus</span>
-            <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">ComposioHQ/awesome-claude-skills</a>
-          </div>
-        </aside>
       </section>
 
-      <section class="method-strip" id="method" aria-labelledby="method-title">
-        <div>
-          <p class="eyebrow">Review method</p>
-          <h2 id="method-title">A Phoebe Pick is a Skill worth testing in a real coding agent workflow.</h2>
-        </div>
-        <div class="rubric-grid" id="rubricGrid"></div>
-      </section>
-
-      <section class="library-section" id="library" aria-labelledby="library-title">
-        <div class="section-heading">
+      <section class="scenario-section" id="scenarios" aria-labelledby="scenario-title">
+        <div class="shell scenario-layout">
           <div>
-            <p class="eyebrow">Pick library</p>
-            <h2 id="library-title">My shortlist, evidence notes, risks, and next tests.</h2>
+            <p class="kicker">Scenario finder</p>
+            <h2 id="scenario-title">What do you want help with?</h2>
+            <p>Choose a situation, or search by Skill name, tool, use case, or platform.</p>
           </div>
-          <div class="controls" aria-label="Review filters">
-            <label class="search-box">
-              <span>Search</span>
-              <input id="searchInput" type="search" placeholder="Try MCP, testing, artifact, React..." autocomplete="off">
+          <div class="toolbar" aria-label="Skill finder">
+            <label class="search-wrap">
+              <span>Search Skills</span>
+              <input id="searchInput" type="search" placeholder="Try anti-slop, critique, tokens">
             </label>
-            <label class="select-box">
-              <span>Cluster</span>
-              <select id="categorySelect"></select>
-            </label>
-            <label class="select-box">
-              <span>Sort</span>
-              <select id="sortSelect">
-                <option value="score">Score</option>
-                <option value="name">A to Z</option>
-                <option value="status">Status</option>
-              </select>
-            </label>
+            <div class="search-actions" aria-label="Quick search examples">
+              <span id="searchStatus">Showing all Skills</span>
+              <button type="button" data-search-query="anti-slop">Anti-slop</button>
+              <button type="button" data-search-query="critique">Critique</button>
+              <button type="button" data-search-query="tokens">Tokens</button>
+              <button type="button" data-clear-search hidden>Clear</button>
+            </div>
+            <div class="filter-group" id="scenarioFilters" aria-label="Scenario filters"></div>
           </div>
         </div>
+      </section>
 
-        <div class="workbench">
-          <div class="review-list" id="reviewList" aria-live="polite"></div>
-          <aside class="detail-panel" id="detailPanel" aria-live="polite"></aside>
+      <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <div class="shell gallery-stack">
+          <div class="gallery-heading">
+            <div>
+              <p class="kicker">Skill gallery</p>
+              <h2 id="gallery-title">All Skills</h2>
+            </div>
+            <span class="count-pill" id="resultCount">0 Skills</span>
+          </div>
+          <div class="skill-grid" id="skillGrid" aria-live="polite"></div>
+          <div class="empty-state" id="emptyState" hidden>No Skills match this view yet.</div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <span>Agent Skills Phoebe Picks</span>
-      <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noreferrer">Source corpus</a>
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="drawer" id="detailDrawer" aria-labelledby="drawerTitle" aria-hidden="true">
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="Close detail panel">Close</button>
+      <div id="drawerContent"></div>
+    </aside>
+
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <span>Agent Skills Phoebe Picks</span>
+        <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Follow on GitHub</a>
+      </div>
     </footer>
 
-    <script src="data/reviews.js"></script>
-    <script src="assets/app.js"></script>
+    <script src="data/reviews.js?v=grill-me-push"></script>
+    <script src="assets/design-options.js?v=grill-me-push"></script>
   </body>
 </html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Catalog | Agent Skills Phoebe Picks</title>
+    <meta name="description" content="Product catalog direction for Agent Skills Phoebe Picks.">
+    <link rel="stylesheet" href="preview-styles.css">
+    <script src="preview.js" defer></script>
+  </head>
+  <body class="catalog">
+    <div class="page">
+      <header class="site-header">
+        <div class="shell nav">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">P</span>
+            <span>Agent Skills Phoebe Picks</span>
+          </a>
+          <nav class="nav-links" aria-label="Preview navigation">
+            <a href="../wishlist.md">Wishlist</a>
+            <a href="museum-gallery.html">Museum</a>
+            <a href="magazine-index.html">Magazine</a>
+            <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">GitHub</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="shell hero-grid">
+            <div>
+              <p class="kicker">Scenario-based Skill gallery</p>
+              <h1>Find the Skill for the work in front of you.</h1>
+              <p>A clean catalog of agent Skills Phoebe tests, demos, and recommends through real usage.</p>
+              <div class="button-row">
+                <a class="btn primary" href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Follow repo</a>
+                <a class="btn" href="#catalog">Browse Skills</a>
+              </div>
+            </div>
+            <div class="catalog-panel">
+              <div class="compact-row">
+                <div>
+                  <p class="kicker" style="margin-bottom: 10px;">Current focus</p>
+                  <h2 style="font-size: 34px; margin-bottom: 10px;">Design, UI, UX, frontend</h2>
+                  <p style="color: var(--muted); line-height: 1.5; margin-bottom: 18px;">The first batch helps us build the gallery while testing how useful each Skill is.</p>
+                </div>
+                <span class="badge">5 queued</span>
+              </div>
+              <figure class="image-card" style="aspect-ratio: 16 / 9; box-shadow: none;">
+                <img src="https://picsum.photos/seed/product-skill-catalog/1000/560" alt="Clean desk with organized cards and neutral tones">
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="catalog">
+          <div class="shell">
+            <h2>Skill catalog preview</h2>
+            <p class="section-intro">This direction prioritizes fast scanning, filters, badges, and a clear path from wishlist to published pick.</p>
+            <div class="filter-row" data-filter-group aria-label="Filter Skills by scenario">
+              <button class="filter-button is-active" type="button" data-filter="all">All</button>
+              <button class="filter-button" type="button" data-filter="design">Design</button>
+              <button class="filter-button" type="button" data-filter="frontend">Frontend</button>
+              <button class="filter-button" type="button" data-filter="review">Review</button>
+              <button class="filter-button" type="button" data-filter="system">System</button>
+            </div>
+
+            <div class="cards" style="margin-top: 18px;">
+              <article class="skill-card" data-scenario="design frontend">
+                <div class="card-meta"><span>Exploring</span><span>Started 2026-07-10</span></div>
+                <div class="compact-row">
+                  <div>
+                    <h3>frontend-design</h3>
+                    <p>Build polished frontend pages with responsive structure, complete UI states, and a clearer design direction.</p>
+                  </div>
+                  <span class="badge">Core</span>
+                </div>
+                <div class="badge-row">
+                  <span class="badge">Codex</span>
+                  <span class="badge">Claude Code</span>
+                  <span class="badge">Frontend</span>
+                </div>
+                <ul class="mini-list">
+                  <li>Best for: turning vague design goals into working static pages.</li>
+                  <li>Need to test: whether it can stay quiet and editorial.</li>
+                </ul>
+              </article>
+
+              <article class="skill-card" data-scenario="design review frontend">
+                <div class="card-meta"><span>Exploring</span><span>Started 2026-07-10</span></div>
+                <div class="compact-row">
+                  <div>
+                    <h3>design-taste-frontend</h3>
+                    <p>Applies stricter taste checks so the UI avoids loud gradients, generic cards, and fake polish.</p>
+                  </div>
+                  <span class="badge">Taste</span>
+                </div>
+                <div class="badge-row">
+                  <span class="badge">Anti-slop</span>
+                  <span class="badge">Visual QA</span>
+                  <span class="badge">Design</span>
+                </div>
+                <ul class="mini-list">
+                  <li>Best for: choosing style before coding too much.</li>
+                  <li>Need to test: token cost versus visual improvement.</li>
+                </ul>
+              </article>
+
+              <article class="skill-card" data-scenario="review">
+                <div class="card-meta"><span>Wishlist</span><span>Next review step</span></div>
+                <div class="compact-row">
+                  <div>
+                    <h3>design-review</h3>
+                    <p>Reviews visual output and catches weak hierarchy, spacing, mobile, and copy problems.</p>
+                  </div>
+                  <span class="badge">QA</span>
+                </div>
+                <div class="badge-row">
+                  <span class="badge">Screenshots</span>
+                  <span class="badge">Critique</span>
+                </div>
+                <ul class="mini-list">
+                  <li>Best for: selecting between preview directions.</li>
+                  <li>Need to test: screenshot-based feedback quality.</li>
+                </ul>
+              </article>
+
+              <article class="skill-card" data-scenario="design review frontend">
+                <div class="card-meta"><span>Wishlist</span><span>Craft pass</span></div>
+                <div class="compact-row">
+                  <div>
+                    <h3>high-end-visual-design</h3>
+                    <p>Looks at typography, spacing, rhythm, restraint, and the details that make a page feel premium.</p>
+                  </div>
+                  <span class="badge">Polish</span>
+                </div>
+                <div class="badge-row">
+                  <span class="badge">Typography</span>
+                  <span class="badge">Layout</span>
+                </div>
+                <ul class="mini-list">
+                  <li>Best for: final refinement before publishing.</li>
+                  <li>Need to test: whether it gives concrete, actionable changes.</li>
+                </ul>
+              </article>
+
+              <article class="skill-card" data-scenario="system design">
+                <div class="card-meta"><span>Wishlist</span><span>Later</span></div>
+                <div class="compact-row">
+                  <div>
+                    <h3>design-consultation</h3>
+                    <p>Creates a design source of truth once the product direction, palette, and content model settle.</p>
+                  </div>
+                  <span class="badge">System</span>
+                </div>
+                <div class="badge-row">
+                  <span class="badge">Tokens</span>
+                  <span class="badge">Guidelines</span>
+                </div>
+                <ul class="mini-list">
+                  <li>Best for: formalizing the gallery after direction choice.</li>
+                  <li>Need to test: whether the full workflow is worth the token cost.</li>
+                </ul>
+              </article>
+            </div>
+            <div class="empty-state" data-empty-state>No Skills match this filter yet.</div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="shell">
+            <h2>Recommendation record</h2>
+            <p class="section-intro">Each published card should tell readers why the Skill matters and what Phoebe learned while testing it.</p>
+            <div class="loop">
+              <div class="loop-item"><strong>Good points</strong><span>Three practical reasons the Skill helped.</span></div>
+              <div class="loop-item"><strong>Could improve</strong><span>Three honest limitations or friction points.</span></div>
+              <div class="loop-item"><strong>Use cases</strong><span>Daily scenarios for builders, leaders, students, and data people.</span></div>
+              <div class="loop-item"><strong>Demo</strong><span>A proof artifact linked from the card.</span></div>
+              <div class="loop-item"><strong>Decision</strong><span>Published only if Phoebe would use it again.</span></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="shell">
+          <span>Product Catalog preview</span>
+          <a href="index.html">Compare all directions</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

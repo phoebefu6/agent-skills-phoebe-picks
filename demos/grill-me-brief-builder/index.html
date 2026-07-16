@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A ground-up demo built with grill-me: turn a vague idea into a clear build brief one hard question at a time.">
+    <title>Grill-Me Brief Builder</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../../index.html">Agent Skills Phoebe Picks</a>
+      <span>grill-me field test</span>
+    </header>
+
+    <main class="app-shell">
+      <section class="hero-panel" aria-labelledby="page-title">
+        <div>
+          <p class="kicker">Ground-up artifact</p>
+          <h1 id="page-title">Grill-Me Brief Builder</h1>
+          <p class="subtitle">Stress-test a vague idea one hard question at a time, then turn the decisions into a build brief.</p>
+        </div>
+        <div class="method-card" aria-label="Skill concept coverage">
+          <span>Concept coverage</span>
+          <strong>7 / 8</strong>
+          <p>Uses one-question flow, recommended answer, why it matters, branch summaries, facts vs assumptions, scope pushback, and stop condition.</p>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Brief builder workspace">
+        <aside class="setup-panel">
+          <label for="ideaInput">Vague idea</label>
+          <textarea id="ideaInput" rows="7">Build a simple public page that helps people understand whether a Skill is useful before they try it.</textarea>
+
+          <label for="knownFacts">Facts I already know</label>
+          <textarea id="knownFacts" rows="5">Audience: LinkedIn followers, AI learners, builders.
+Constraint: static GitHub Pages.
+Tone: clean, practical, not too much talking.</textarea>
+
+          <div class="setup-actions">
+            <button class="primary" id="startButton" type="button">Start grilling</button>
+            <button id="resetButton" type="button">Reset</button>
+          </div>
+        </aside>
+
+        <section class="question-panel" aria-live="polite">
+          <div class="question-topline">
+            <span id="stepCounter">Step 1 of 5</span>
+            <span id="riskLabel">Decision branch</span>
+          </div>
+
+          <h2 id="questionText">What should this idea produce first?</h2>
+
+          <div class="recommendation">
+            <span>Recommended answer</span>
+            <p id="recommendedText">A small static demo page that produces a clear build brief from a vague idea.</p>
+            <button id="useRecommendationButton" type="button">Use recommendation</button>
+          </div>
+
+          <div class="why">
+            <span>Why it matters</span>
+            <p id="whyText">This prevents the work from turning into a broad platform before there is proof that the idea helps anyone.</p>
+          </div>
+
+          <label for="answerInput">Your answer</label>
+          <textarea id="answerInput" rows="4" placeholder="Use the recommendation, or write a sharper answer."></textarea>
+
+          <div class="pushback" id="pushbackBox" hidden>
+            <strong>Scope pushback</strong>
+            <p id="pushbackText"></p>
+          </div>
+
+          <div class="question-actions">
+            <button id="backButton" type="button">Back</button>
+            <button class="primary" id="nextButton" type="button">Save decision</button>
+          </div>
+        </section>
+
+        <aside class="decision-panel" aria-label="Decision summary">
+          <div>
+            <p class="kicker">Decision tree</p>
+            <ol id="decisionList"></ol>
+          </div>
+          <div class="coverage-card">
+            <span>Grill-me concepts used</span>
+            <ul>
+              <li>One question at a time</li>
+              <li>Recommended answer</li>
+              <li>Why it matters</li>
+              <li>Branch summary</li>
+              <li>Facts vs assumptions</li>
+              <li>Risk pushback</li>
+              <li>Stop when brief is clear</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="brief-panel" id="briefPanel" aria-labelledby="brief-title" hidden>
+        <div class="brief-heading">
+          <div>
+            <p class="kicker">Generated output</p>
+            <h2 id="brief-title">Build brief</h2>
+          </div>
+          <button id="copyButton" type="button">Copy brief</button>
+        </div>
+        <pre id="briefOutput"></pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

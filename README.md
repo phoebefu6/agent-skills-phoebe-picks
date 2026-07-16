@@ -1,117 +1,65 @@
 # Agent Skills Phoebe Picks
 
-[![Live Site](https://img.shields.io/badge/live-GitHub%20Pages-111114?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
-[![Source Corpus](https://img.shields.io/badge/source-awesome--claude--skills-ff5a52?style=for-the-badge)](https://github.com/ComposioHQ/awesome-claude-skills)
-[![Phoebe Picks](https://img.shields.io/badge/Phoebe%20Picks-curated%20agent%20Skills-7a5cff?style=for-the-badge)](data/reviews.js)
-[![Static](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-64d69e?style=for-the-badge)](#architecture)
+A public gallery of AI agent Skills organized by the situations they help with.
 
-> Phoebe's curated shortlist of **agent-usable Skills** worth trying with Claude Code, Codex, Cursor, Gemini CLI, and other coding agents.
+Use this repo when you want to discover Skills for design, UI/UX, frontend, data, reporting, automation, research, prompting, or agent workflow. Each serious pick is tested by learning the Skill, using most of its method to build something from scratch, then rating the result.
 
-This project is not a human learning directory. It reviews Skills as **agent workflow packages**: reusable instructions, guardrails, scripts, references, and validation routines that help an AI coding agent produce real artifacts.
+## Latest Field Test
 
-The first source corpus is [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills), which frames Claude Skills as reusable instruction packages built around `SKILL.md`, optional scripts, references, and assets. The scoring layer turns that broad awesome list into **Phoebe Picks**: the Skills I would actually test, keep, or adapt into my own agent workflow library.
+| Skill | Ground-up artifact | Source snapshot | Concept coverage | Rating | Status |
+| --- | --- | --- | --- | --- | --- |
+| `grill-me` | [Grill-Me Brief Builder](demos/grill-me-brief-builder/) | [mio-openliven/codex-grill-me-skill](https://github.com/mio-openliven/codex-grill-me-skill), 2 stars checked 2026-07-16 | 7/8 core concepts used | 4/5 | Exploring |
 
-## Naming Direction
+`grill-me` turns vague plans into sharper decisions by asking one hard question at a time, giving a recommended answer, explaining why it matters, and stopping once the next build step is clear.
 
-The GitHub repo and site identity are:
+## Browse By Scenario
 
-```text
-Agent Skills Phoebe Picks
-```
-
-Clean repo slug:
-
-```text
-agent-skills-phoebe-picks
-```
-
-I use plural `picks` because this is a growing collection, not a single recommendation.
-
-## What This Repo Does
-
-| Layer | Purpose |
+| Scenario | What followers can find |
 | --- | --- |
-| Picks board | Modern searchable interface for reading scored Skill notes. |
-| Scoring rubric | Five-part evaluation model for agent usefulness. |
-| Evidence notes | Short source-backed notes from the upstream corpus. |
-| Test-next plans | Concrete experiments to run before promoting a Skill. |
-| Maturity tracking | `candidate`, `reviewed`, and `priority` states, where `priority` means Phoebe Pick. |
+| Design and UI/UX | Skills for taste, critique, visual polish, and better agent-built pages. |
+| Frontend | Skills that turn rough product ideas into usable screens. |
+| Data and Data Viz | Skills for analysis, charts, and visual explanation. |
+| Reporting | Skills for smart reports, executive summaries, and recurring updates. |
+| Automation | Skills that reduce repeated manual work. |
+| Research and Prompting | Skills that improve discovery, framing, and reusable instructions. |
+| Agent Workflow | Skills that make Codex, Claude Code, and other agents easier to steer. |
 
-## Review Rubric
+## What Each Skill Card Shows
 
-Each Skill is scored out of 100 using five 20-point dimensions:
-
-| Dimension | Question |
+| Field | Purpose |
 | --- | --- |
-| Agent Fit | Does the Skill clearly teach an AI coding agent what to do? |
-| Actionability | Can it produce concrete code, files, tests, actions, or deployable artifacts? |
-| Portability | Can it transfer across Codex, Claude Code, Cursor, Gemini CLI, and similar agents? |
-| Validation | Does it support tests, screenshots, logs, review checks, or other verification? |
-| Risk Control | Does it avoid destructive actions, credential leakage, hallucination, and scope creep? |
+| Skill name | What to search or install. |
+| Scenario | The situation where the Skill helps. |
+| Platform subtitle | The applicable AI agents, such as Claude Code, Codex, Hermes AI, or other fit. |
+| Source and stars | GitHub source repo, reference path, current star snapshot, and date checked. |
+| Ground-up test | What was built from scratch with the Skill. |
+| Concept coverage | Whether the test used about 80% of the Skill's key concepts. |
+| Rating | A high-level rating out of 5 after the build. |
+| Best use case | The fastest way to understand why it matters. |
+| Notes | 3 good points, 3 can-be-better points, use cases, demo/proof, source, and verdict. |
 
-## Seed Reviews
+## Review Method
 
-The first pass includes 16 review entries. The strongest current Phoebe Picks include:
+Before a Skill becomes a public pick:
 
-| Skill | Cluster | Score | Why it matters |
-| --- | --- | ---: | --- |
-| `artifacts-builder` | Frontend Artifacts | 92 | High-leverage Skill for polished generated artifacts. |
-| `webapp-testing` | Validation | 91 | Essential QA layer for any visual/code output. |
-| `skill-creator` | Skill Authoring | 90 | Meta-Skill for turning workflows into reusable Skills. |
-| `mcp-builder` | Integration | 88 | Helps agents create durable connectors instead of one-off API scripts. |
-| `connect-apps` | Automation | 86 | Turns agents into app operators, with approval and auth risks to manage. |
+1. Learn the Skill source.
+2. Identify the key concepts.
+3. Use about 80% of those concepts to build a ground-up artifact.
+4. Record source, stars, applicable AI agents, demo proof, and rating out of 5.
+5. Capture exactly 3 strengths and 3 improvement points.
 
-## Architecture
+## First Collection
 
-```text
-agent-skills-phoebe-picks/
-  index.html                  # Modern review board
-  data/
-    reviews.js                # Source-of-truth review matrix
-  assets/
-    app.js                    # Filtering, scoring, selected evidence pane
-    styles.css                # Responsive editorial/dashboard design
-  .github/
-    workflows/pages.yml       # GitHub Pages deployment
-```
+The gallery starts with design, UI/UX, and frontend Skills:
 
-The app is intentionally static for now:
-
-| Choice | Reason |
+| Skill | Why it belongs first |
 | --- | --- |
-| Vanilla JS | Fast to publish, no build step, easy to inspect. |
-| Data file | Reviews stay readable and versioned in Git. |
-| GitHub Pages | Simple public publishing for a review corpus. |
-| GitHub Actions | Push-to-publish flow. |
-
-## Add A Review
-
-Edit `data/reviews.js` and append a new entry to `REVIEWS`:
-
-```js
-{
-  id: "skill-id",
-  name: "Skill Name",
-  category: "Validation",
-  status: "candidate",
-  score: 78,
-  sourceUrl: "https://github.com/...",
-  summary: "One-sentence literature review abstract.",
-  evidence: "Short source-backed evidence note.",
-  agentUse: "When Codex or Claude Code should use it.",
-  rubric: {
-    agentFit: 16,
-    actionability: 16,
-    portability: 16,
-    validation: 15,
-    riskControl: 15
-  },
-  strengths: ["Strength one", "Strength two"],
-  gaps: ["Gap one", "Gap two"],
-  testNext: "Concrete experiment to run next.",
-  tags: ["agent-skill", "validation"]
-}
-```
+| `grill-me` | Helps pressure-test vague ideas before asking an agent to build. |
+| `frontend-design` | Helps turn a rough product idea into a usable first screen. |
+| `design-taste-frontend` | Helps avoid generic AI-looking UI. |
+| `design-review` | Turns screenshots into concrete critique and fixes. |
+| `high-end-visual-design` | Refines typography, spacing, hierarchy, and craft. |
+| `design-consultation` | Helps repeated design preferences become reusable guidance. |
 
 ## Local Preview
 
@@ -119,25 +67,16 @@ Edit `data/reviews.js` and append a new entry to `REVIEWS`:
 python3 -m http.server 8000
 ```
 
-Then open:
+Open:
 
 ```text
 http://localhost:8000/
 ```
 
-Smoke checks:
+Run checks:
 
 ```bash
 node --check data/reviews.js
-node --check assets/app.js
+node --check assets/design-options.js
+node --check demos/grill-me-brief-builder/app.js
 ```
-
-## Roadmap
-
-| Track | Next move |
-| --- | --- |
-| Corpus expansion | Add more entries from `awesome-claude-skills`. |
-| True lit-review notes | Add source excerpts, repo path, install notes, and observed behavior. |
-| Pick maturity | Add `seeded`, `read`, `tested`, `picked`, and `rejected` states. |
-| Codex/Claude compatibility | Record whether each Skill works in Claude Code, Codex, Cursor, or Gemini CLI. |
-| Evidence artifacts | Attach screenshots, generated output, test logs, and review diffs. |

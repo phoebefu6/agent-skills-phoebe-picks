@@ -1,297 +1,285 @@
-const REVIEW_SOURCE = {
-  name: "ComposioHQ/awesome-claude-skills",
-  url: "https://github.com/ComposioHQ/awesome-claude-skills",
-  captured: "2026-07-10",
-  note: "Initial seed from public repository listing and README descriptions."
+const FILTERS = {
+  scenarios: [
+    { id: "design", label: "Design" },
+    { id: "ui-ux", label: "UI/UX" },
+    { id: "frontend", label: "Frontend" },
+    { id: "data", label: "Data" },
+    { id: "data-viz", label: "Data Viz" },
+    { id: "reporting", label: "Reporting" },
+    { id: "automation", label: "Automation" },
+    { id: "research", label: "Research" },
+    { id: "prompting", label: "Prompting" },
+    { id: "agent-workflow", label: "Agent Workflow" }
+  ],
+  platforms: [
+    { id: "claude-code", label: "Claude Code" },
+    { id: "codex", label: "Codex" },
+    { id: "hermes", label: "Hermes AI" },
+    { id: "cursor", label: "Cursor" },
+    { id: "gemini-cli", label: "Gemini CLI" },
+    { id: "opencode", label: "opencode" },
+    { id: "kimi", label: "Kimi" },
+    { id: "pi", label: "Pi" }
+  ],
+  statuses: [
+    { id: "exploring", label: "Exploring" },
+    { id: "wishlist", label: "Wishlist" },
+    { id: "published", label: "Published" },
+    { id: "rejected", label: "Rejected" }
+  ]
 };
 
-const RUBRIC = [
+const PICKS = [
   {
-    key: "agentFit",
-    label: "Agent Fit",
-    description: "How clearly the Skill teaches an AI coding agent what to do."
+    id: "frontend-design",
+    name: "frontend-design",
+    source: "Anthropic Skills",
+    sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+    sourceRepo: "anthropics/skills",
+    sourcePath: "skills/frontend-design",
+    githubStars: 161507,
+    starsCheckedAt: "2026-07-16",
+    status: "exploring",
+    recommendation: "Testing through this gallery rebuild",
+    dateExplored: "2026-07-10",
+    scenarios: ["frontend", "ui-ux", "design"],
+    platforms: ["claude-code", "codex", "hermes"],
+    badges: ["UI build", "Static site", "GitHub Pages"],
+    summary: "A frontend Skill for turning a product brief into polished, responsive interface code.",
+    phoebeNote: "Use it when you want an agent to turn a rough product idea into a real first screen without repeating every UI rule.",
+    good: [
+      "Pushes for real interface states instead of a static poster.",
+      "Keeps implementation close to the existing repo stack.",
+      "Connects design direction with production HTML, CSS, and JS."
+    ],
+    improve: [
+      "Still needs taste checks to avoid generic polish.",
+      "Can be broad when the product direction is not sharp yet.",
+      "Needs screenshot QA before I would call the output done."
+    ],
+    useCases: [
+      "Vibe coders can turn a rough product idea into a usable first screen.",
+      "Students can learn how UI decisions map into actual files.",
+      "Leaders can prototype an internal AI tool before asking a team to build it."
+    ],
+    demo: "This public gallery rebuild.",
+    galleryLink: "#gallery"
   },
   {
-    key: "actionability",
-    label: "Actionability",
-    description: "Whether the Skill can produce concrete code, files, tests, or deployable artifacts."
+    id: "design-taste-frontend",
+    name: "design-taste-frontend",
+    source: "Leonxlnx taste-skill",
+    sourceUrl: "https://github.com/Leonxlnx/taste-skill",
+    sourceRepo: "Leonxlnx/taste-skill",
+    sourcePath: "Open Design wrapper: skills/taste-skill",
+    githubStars: 63969,
+    starsCheckedAt: "2026-07-16",
+    status: "exploring",
+    recommendation: "Testing as the anti-slop design pass",
+    dateExplored: "2026-07-10",
+    scenarios: ["design", "ui-ux", "frontend"],
+    platforms: ["claude-code", "codex", "hermes"],
+    badges: ["Visual taste", "Anti-slop", "Editorial UI"],
+    summary: "A taste and frontend Skill that forces a design read before code and checks for common AI UI tells.",
+    phoebeNote: "Use it when a page feels polished but still too generic, noisy, or obviously AI-made.",
+    good: [
+      "Insists on a design read before jumping into implementation.",
+      "Has strong rules for copy, layout, color, and motion restraint.",
+      "Matches the clean museum and magazine direction I want."
+    ],
+    improve: [
+      "The instruction set is large, so it should be used only when visual quality matters.",
+      "Some rules need judgment, not blind obedience.",
+      "It benefits from a concrete screenshot review after implementation."
+    ],
+    useCases: [
+      "Builders can audit whether a landing page looks too much like AI output.",
+      "C-level readers can use it to evaluate whether a prototype feels credible.",
+      "Students can learn the difference between decoration and design direction."
+    ],
+    demo: "Design comparison previews and this hybrid build.",
+    galleryLink: "#gallery"
   },
   {
-    key: "portability",
-    label: "Portability",
-    description: "How easily the Skill can transfer across Codex, Claude Code, Cursor, and similar agents."
+    id: "design-review",
+    name: "design-review",
+    source: "garrytan gstack",
+    sourceUrl: "https://github.com/garrytan/gstack",
+    sourceRepo: "garrytan/gstack",
+    sourcePath: "Open Design wrapper: skills/design-review",
+    githubStars: 122147,
+    starsCheckedAt: "2026-07-16",
+    status: "wishlist",
+    recommendation: "Next Skill to test",
+    dateExplored: "",
+    scenarios: ["design", "ui-ux"],
+    platforms: ["claude-code", "codex", "hermes"],
+    badges: ["Critique", "Screenshots", "QA"],
+    summary: "A review Skill for judging interface screenshots, hierarchy, spacing, copy, and usability.",
+    phoebeNote: "Use it when a screenshot feels wrong but you need concrete fixes, not vague opinions.",
+    good: [
+      "Likely useful for choosing between multiple design directions.",
+      "Can turn visual discomfort into concrete fixes.",
+      "Pairs naturally with frontend build Skills."
+    ],
+    improve: [
+      "Needs a real screenshot to be valuable.",
+      "May need clear priorities to avoid subjective over-editing.",
+      "Should produce fix lists that are small enough to act on."
+    ],
+    useCases: [
+      "Vibe coders can ask for a sharper critique before shipping a page.",
+      "Students can learn how to inspect UI beyond personal preference.",
+      "AI learners can compare before and after screenshots from a Skill run."
+    ],
+    demo: "Run after the first hybrid homepage screenshot.",
+    galleryLink: ""
   },
   {
-    key: "validation",
-    label: "Validation",
-    description: "How well the Skill supports checking outputs with tests, screenshots, review, or logs."
+    id: "high-end-visual-design",
+    name: "high-end-visual-design",
+    source: "Leonxlnx taste-skill",
+    sourceUrl: "https://github.com/Leonxlnx/taste-skill",
+    sourceRepo: "Leonxlnx/taste-skill",
+    sourcePath: "Open Design wrapper: skills/soft-skill",
+    githubStars: 63969,
+    starsCheckedAt: "2026-07-16",
+    status: "wishlist",
+    recommendation: "Craft pass candidate",
+    dateExplored: "",
+    scenarios: ["design", "ui-ux", "frontend"],
+    platforms: ["claude-code", "codex", "hermes"],
+    badges: ["Typography", "Layout polish", "Craft"],
+    summary: "A visual craft Skill for refining typography, spacing, proportion, and finished-page confidence.",
+    phoebeNote: "Use it when the structure works but the page needs stronger hierarchy, spacing, and visual confidence.",
+    good: [
+      "Useful for final refinement after the structure is settled.",
+      "Can help tune visual hierarchy and spacing.",
+      "May improve the site without adding unnecessary features."
+    ],
+    improve: [
+      "Needs concrete before and after evidence.",
+      "Could become subjective without a clear product goal.",
+      "Should not override readability or simplicity."
+    ],
+    useCases: [
+      "Creators can make public pages feel more trustworthy.",
+      "Leaders can improve presentation quality for internal AI demos.",
+      "Students can study how small spacing choices change perception."
+    ],
+    demo: "Run after the hybrid direction is in place.",
+    galleryLink: ""
   },
   {
-    key: "riskControl",
-    label: "Risk Control",
-    description: "How well the Skill limits destructive actions, credential exposure, hallucination, and scope creep."
+    id: "design-consultation",
+    name: "design-consultation",
+    source: "garrytan gstack",
+    sourceUrl: "https://github.com/garrytan/gstack",
+    sourceRepo: "garrytan/gstack",
+    sourcePath: "gstack design-consultation skill",
+    githubStars: 122147,
+    starsCheckedAt: "2026-07-16",
+    status: "wishlist",
+    recommendation: "Use after direction is locked",
+    dateExplored: "",
+    scenarios: ["design", "agent-workflow"],
+    platforms: ["claude-code", "codex", "hermes"],
+    badges: ["Design system", "Tokens", "Guidelines"],
+    summary: "A design system Skill for turning product intent into durable visual rules and documentation.",
+    phoebeNote: "Use it later when repeated design preferences need to become a short source of truth.",
+    good: [
+      "Can create a stable design source of truth.",
+      "Useful when multiple agents will work on the repo.",
+      "Helps reduce repeated design instructions over time."
+    ],
+    improve: [
+      "Too heavy for the earliest exploration phase.",
+      "Needs a chosen direction before it can be efficient.",
+      "Should result in a short practical guide, not a giant theory document."
+    ],
+    useCases: [
+      "Teams can keep AI-generated UI consistent across sessions.",
+      "Builders can stop repeating color, spacing, and typography preferences.",
+      "C-suite readers can understand why a prototype has a coherent system."
+    ],
+    demo: "Create a compact design source of truth after launch v1.",
+    galleryLink: ""
+  },
+  {
+    id: "grill-me",
+    name: "grill-me",
+    source: "mio-openliven codex-grill-me-skill",
+    sourceUrl: "https://github.com/mio-openliven/codex-grill-me-skill",
+    sourceRepo: "mio-openliven/codex-grill-me-skill",
+    sourcePath: "skills/grill-me",
+    githubStars: 2,
+    starsCheckedAt: "2026-07-16",
+    status: "exploring",
+    recommendation: "Useful as a pre-build pressure test; keep exploring before publishing",
+    dateExplored: "2026-07-14",
+    scenarios: ["agent-workflow", "prompting", "automation"],
+    platforms: ["codex", "claude-code", "hermes"],
+    badges: ["Decision tree", "Briefing", "Risk check"],
+    summary: "A questioning Skill for turning vague or risky plans into clear decisions before execution.",
+    phoebeNote: "Use it before asking an agent to build, especially when your request is still too broad or you keep changing direction.",
+    coreConcepts: [
+      "Ask one concrete question at a time.",
+      "Include a recommended answer with each question.",
+      "Explain why the answer matters.",
+      "Walk the decision tree branch by branch.",
+      "Inspect available context before asking the user.",
+      "Separate facts from assumptions.",
+      "Push back when scope grows or risk is hidden.",
+      "Stop grilling once the next execution step is clear."
+    ],
+    conceptCoverage: "7/8 in the demo UI; source/context inspection was performed before building rather than automated inside the page.",
+    groundUpBuild: "Built the Grill-Me Brief Builder demo from scratch.",
+    rating: 4,
+    ratingSummary: "Strong lightweight pre-build discipline, but the Skill source is very small and needs richer examples.",
+    good: [
+      "Forces one decision at a time, which reduces messy over-briefing.",
+      "Pairs every question with a recommended answer, so the user is not left staring at a blank page.",
+      "Stops once execution is clear, which keeps the conversation from becoming endless planning."
+    ],
+    improve: [
+      "The installed local Skill is too minimal compared with the upstream source.",
+      "It needs example grilling flows for product, design, architecture, and release-risk use cases.",
+      "It does not define how to record final decisions unless the project adds its own template."
+    ],
+    useCases: [
+      "Builders can turn a vague app idea into a concrete build brief before using Codex or Claude Code.",
+      "Leaders can stress-test a product decision before asking a team to execute.",
+      "Students can learn how to separate facts, assumptions, tradeoffs, and next steps."
+    ],
+    demo: "demos/grill-me-brief-builder/index.html",
+    galleryLink: "demos/grill-me-brief-builder/index.html"
   }
 ];
 
-const REVIEWS = [
+const EVALUATION_STEPS = [
   {
-    id: "artifacts-builder",
-    name: "artifacts-builder",
-    category: "Frontend Artifacts",
-    status: "priority",
-    score: 92,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/artifacts-builder",
-    summary: "A strong candidate for teaching agents to create polished multi-component HTML artifacts using modern frontend patterns.",
-    evidence: "The awesome list describes it as a suite for elaborate Claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui.",
-    agentUse: "Best used when the user asks for a dashboard, prototype, report, or interactive artifact that needs actual visual polish.",
-    rubric: { agentFit: 19, actionability: 19, portability: 17, validation: 18, riskControl: 19 },
-    strengths: ["Clear artifact output", "Strong frontend fit", "Good bridge between design and code"],
-    gaps: ["Needs repo-specific install guidance", "Needs screenshot QA expectations"],
-    testNext: "Run it on one dashboard and one editorial artifact, then compare output quality against a vanilla Codex implementation.",
-    tags: ["react", "artifact", "frontend", "visual"]
+    title: "Learn the Skill",
+    body: "Read the Skill source and identify its key functions, methods, and concepts."
   },
   {
-    id: "webapp-testing",
-    name: "webapp-testing",
-    category: "Validation",
-    status: "priority",
-    score: 91,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/webapp-testing",
-    summary: "High-value validation Skill for checking local web apps with browser automation and screenshots.",
-    evidence: "Listed as testing local web applications with Playwright for frontend functionality, debugging UI behavior, and screenshot capture.",
-    agentUse: "Use after UI implementation, before final answer, to catch broken states, text overlap, missing assets, and responsive regressions.",
-    rubric: { agentFit: 18, actionability: 18, portability: 17, validation: 20, riskControl: 18 },
-    strengths: ["Validation-first", "Pairs well with any UI Skill", "Makes visual work inspectable"],
-    gaps: ["Depends on browser availability", "Needs fallback paths for environments without Playwright"],
-    testNext: "Attach it as the required QA step for every future visual artifact.",
-    tags: ["playwright", "qa", "screenshots", "frontend"]
+    title: "Map the 80%",
+    body: "Decide which core concepts must be used in the test, and note what will be skipped."
   },
   {
-    id: "skill-creator",
-    name: "skill-creator",
-    category: "Skill Authoring",
-    status: "priority",
-    score: 90,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-creator",
-    summary: "Core meta-Skill for turning useful workflows into reusable agent instruction packages.",
-    evidence: "The awesome list frames it as guidance for creating effective Claude Skills with specialized knowledge, workflows, and tool integrations.",
-    agentUse: "Use whenever Phoebe wants to convert a one-off successful coding workflow into a reusable Codex/Claude Code Skill.",
-    rubric: { agentFit: 20, actionability: 17, portability: 19, validation: 17, riskControl: 17 },
-    strengths: ["Teaches Skill structure", "Scales the whole library", "Works across domains"],
-    gaps: ["Needs stronger scoring rubric", "Should include bad-Skill examples"],
-    testNext: "Use it to create a real `react-bits-ui-builder` Skill and score the resulting SKILL.md.",
-    tags: ["meta", "skill-md", "authoring", "codex"]
+    title: "Build from zero",
+    body: "Use the Skill to create a new artifact from the ground up, not a small amendment."
   },
   {
-    id: "mcp-builder",
-    name: "mcp-builder",
-    category: "Integration",
-    status: "reviewed",
-    score: 88,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/mcp-builder",
-    summary: "Strong integration Skill for building MCP servers in Python or TypeScript.",
-    evidence: "Listed as guiding creation of high-quality MCP servers for external API and service integrations.",
-    agentUse: "Use when a project needs a durable connector rather than one-off API calls.",
-    rubric: { agentFit: 18, actionability: 19, portability: 17, validation: 17, riskControl: 17 },
-    strengths: ["Concrete build output", "Useful for agent tooling", "Good TypeScript/Python coverage"],
-    gaps: ["Security review must be explicit", "Needs examples for auth and rate limits"],
-    testNext: "Build a read-only MCP connector and evaluate generated docs, tests, and error handling.",
-    tags: ["mcp", "typescript", "python", "api"]
+    title: "Rate the field test",
+    body: "Give a high-level rating out of 5, then capture 3 strengths and 3 improvement points."
   },
   {
-    id: "connect-apps",
-    name: "connect-apps",
-    category: "Automation",
-    status: "reviewed",
-    score: 86,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/connect-apps",
-    summary: "Powerful action-taking Skill direction for connecting agents to external apps through Composio.",
-    evidence: "The source README highlights app actions such as sending emails, creating issues, and posting to Slack across hundreds of apps.",
-    agentUse: "Use when the desired output is not just code but a real-world action through authenticated services.",
-    rubric: { agentFit: 17, actionability: 20, portability: 16, validation: 16, riskControl: 17 },
-    strengths: ["High leverage", "Turns agents into operators", "Strong app ecosystem"],
-    gaps: ["Auth risk needs careful guardrails", "Actions need dry-run mode and confirmation gates"],
-    testNext: "Test only with a harmless sandbox app first, then document approval checkpoints.",
-    tags: ["automation", "composio", "apps", "actions"]
-  },
-  {
-    id: "full-page-screenshot",
-    name: "full-page-screenshot",
-    category: "Validation",
-    status: "reviewed",
-    score: 85,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills",
-    summary: "Focused Skill for capturing full-page screenshots through Chrome DevTools Protocol.",
-    evidence: "Listed as a zero-dependency full-page screenshot capability for web pages.",
-    agentUse: "Use as a final visual audit step for landing pages, reports, dashboards, and documentation sites.",
-    rubric: { agentFit: 17, actionability: 17, portability: 16, validation: 20, riskControl: 15 },
-    strengths: ["Narrow and useful", "Easy to compose with frontend Skills", "Strong visual evidence"],
-    gaps: ["Needs viewport presets", "Needs image comparison guidance"],
-    testNext: "Run against the new lit-review homepage at desktop and mobile sizes.",
-    tags: ["screenshots", "chrome", "visual-qa", "frontend"]
-  },
-  {
-    id: "test-driven-development",
-    name: "test-driven-development",
-    category: "Engineering Workflow",
-    status: "reviewed",
-    score: 84,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills",
-    summary: "Workflow Skill for making agents write tests before implementation.",
-    evidence: "The awesome list says to use it when implementing any feature or bugfix before writing implementation code.",
-    agentUse: "Best for backend logic, shared utilities, parsers, and bug fixes where expected behavior can be specified.",
-    rubric: { agentFit: 18, actionability: 17, portability: 19, validation: 19, riskControl: 11 },
-    strengths: ["Improves correctness", "Portable across languages", "Changes agent behavior early"],
-    gaps: ["Can slow UI prototyping", "Needs guidance for visual and exploratory work"],
-    testNext: "Use it on a small data parser and compare regressions against a no-TDD run.",
-    tags: ["tests", "tdd", "workflow", "quality"]
-  },
-  {
-    id: "subagent-driven-development",
-    name: "subagent-driven-development",
-    category: "Engineering Workflow",
-    status: "reviewed",
-    score: 83,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills",
-    summary: "Coordination Skill for splitting work across independent subagents with review checkpoints.",
-    evidence: "Listed as dispatching subagents for individual tasks with code review checkpoints between iterations.",
-    agentUse: "Use for larger projects where research, implementation, QA, and review can run in parallel.",
-    rubric: { agentFit: 18, actionability: 16, portability: 17, validation: 17, riskControl: 15 },
-    strengths: ["Good for complex builds", "Encourages review gates", "Scales exploration"],
-    gaps: ["Needs clear ownership boundaries", "Can create coordination overhead"],
-    testNext: "Run on a feature with one research subagent and one QA subagent, then audit duplicate work.",
-    tags: ["subagents", "planning", "review", "workflow"]
-  },
-  {
-    id: "d3-visualization",
-    name: "D3.js Visualization",
-    category: "Data Visualization",
-    status: "reviewed",
-    score: 82,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills",
-    summary: "Specialized visualization Skill for generating D3 charts and interactive data stories.",
-    evidence: "Listed as teaching Claude to produce D3 charts and interactive data visualizations.",
-    agentUse: "Use when a dashboard needs a bespoke interactive chart beyond standard chart components.",
-    rubric: { agentFit: 16, actionability: 18, portability: 15, validation: 16, riskControl: 17 },
-    strengths: ["High visual ceiling", "Useful for custom analysis", "Pairs well with reports"],
-    gaps: ["Can overcomplicate simple charts", "Needs pixel and data validation"],
-    testNext: "Build one small interactive skill-score chart and screenshot it across viewports.",
-    tags: ["d3", "visualization", "charts", "interactive"]
-  },
-  {
-    id: "langsmith-fetch",
-    name: "langsmith-fetch",
-    category: "Observability",
-    status: "candidate",
-    score: 80,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/langsmith-fetch",
-    summary: "Observability Skill for fetching and analyzing LangSmith traces.",
-    evidence: "Listed as debugging LangChain and LangGraph agents by fetching and analyzing execution traces from LangSmith Studio.",
-    agentUse: "Use when agent apps fail because the problem is hidden inside chain/tool execution traces.",
-    rubric: { agentFit: 16, actionability: 17, portability: 13, validation: 19, riskControl: 15 },
-    strengths: ["Strong debugging value", "Evidence-based", "Useful for agent stacks"],
-    gaps: ["LangSmith-specific", "Requires credential and workspace handling"],
-    testNext: "Use on a toy LangGraph trace and score whether it identifies root failure causes.",
-    tags: ["langsmith", "observability", "debugging", "agents"]
-  },
-  {
-    id: "root-cause-tracing",
-    name: "root-cause-tracing",
-    category: "Debugging",
-    status: "candidate",
-    score: 79,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills",
-    summary: "Debugging workflow for tracing deep execution errors back to original triggers.",
-    evidence: "Listed for use when errors occur deep in execution and the original trigger must be found.",
-    agentUse: "Use when stack traces are noisy, symptoms appear far from cause, or quick fixes keep failing.",
-    rubric: { agentFit: 17, actionability: 15, portability: 18, validation: 16, riskControl: 13 },
-    strengths: ["Good reasoning pattern", "Portable", "Reduces patching symptoms"],
-    gaps: ["Needs examples by language", "Needs stopping criteria"],
-    testNext: "Apply to a seeded bug with nested async calls and compare diagnosis quality.",
-    tags: ["debugging", "root-cause", "reasoning", "quality"]
-  },
-  {
-    id: "using-git-worktrees",
-    name: "using-git-worktrees",
-    category: "Repo Operations",
-    status: "candidate",
-    score: 78,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills",
-    summary: "Repo workflow Skill for creating isolated git worktrees safely.",
-    evidence: "Listed as creating isolated git worktrees with smart directory selection and safety verification.",
-    agentUse: "Use when the agent needs to explore a risky branch or parallel implementation without touching the main worktree.",
-    rubric: { agentFit: 16, actionability: 16, portability: 18, validation: 14, riskControl: 14 },
-    strengths: ["Protects user work", "Good for experiments", "Useful with multiple agents"],
-    gaps: ["Needs platform-specific paths", "Needs cleanup policy"],
-    testNext: "Create and remove a disposable worktree while preserving an intentionally dirty main tree.",
-    tags: ["git", "worktrees", "safety", "repo"]
-  },
-  {
-    id: "prompt-engineering",
-    name: "prompt-engineering",
-    category: "Prompting",
-    status: "candidate",
-    score: 77,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills",
-    summary: "Broad prompting Skill covering known techniques and agent persuasion patterns.",
-    evidence: "Listed as teaching well-known prompt engineering techniques and Anthropic best practices.",
-    agentUse: "Use to improve task framing, eval design, and instruction clarity before coding begins.",
-    rubric: { agentFit: 16, actionability: 13, portability: 20, validation: 13, riskControl: 15 },
-    strengths: ["Highly portable", "Improves upstream instructions", "Useful for ambiguous tasks"],
-    gaps: ["May stay too abstract", "Needs measurable eval examples"],
-    testNext: "Use it to rewrite three vague coding requests and measure whether implementation churn drops.",
-    tags: ["prompting", "instructions", "planning", "agent"]
-  },
-  {
-    id: "deep-research",
-    name: "deep-research",
-    category: "Research",
-    status: "candidate",
-    score: 76,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills",
-    summary: "Research Skill for autonomous multi-step research on markets, competitors, and literature.",
-    evidence: "Listed as executing autonomous multi-step research using Gemini Deep Research Agent.",
-    agentUse: "Use before building when source selection, competitive context, or literature mapping matters.",
-    rubric: { agentFit: 16, actionability: 14, portability: 14, validation: 17, riskControl: 15 },
-    strengths: ["Strong discovery fit", "Good for lit-review workflows", "Pairs with scoring matrix"],
-    gaps: ["External-agent dependency", "Citation quality must be audited"],
-    testNext: "Use it to expand this review corpus and compare sources against manual GitHub review.",
-    tags: ["research", "literature", "sources", "analysis"]
-  },
-  {
-    id: "brand-guidelines",
-    name: "brand-guidelines",
-    category: "Design Systems",
-    status: "candidate",
-    score: 74,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/brand-guidelines",
-    summary: "Design Skill for turning brand direction into reusable visual rules.",
-    evidence: "Repository folder appears in the source corpus as a dedicated Skill candidate.",
-    agentUse: "Use when agent-generated UI needs consistency across pages, decks, or artifacts.",
-    rubric: { agentFit: 15, actionability: 15, portability: 17, validation: 12, riskControl: 15 },
-    strengths: ["Helps visual consistency", "Reusable across artifacts", "Useful before frontend build"],
-    gaps: ["Needs concrete token output", "Needs visual QA rubric"],
-    testNext: "Generate one compact brand kit and enforce it across two generated pages.",
-    tags: ["brand", "design", "tokens", "frontend"]
-  },
-  {
-    id: "file-organizer",
-    name: "file-organizer",
-    category: "Productivity Automation",
-    status: "candidate",
-    score: 71,
-    sourceUrl: "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/file-organizer",
-    summary: "Automation Skill for organizing local files and project material.",
-    evidence: "Repository folder appears in the source corpus as a dedicated Skill candidate.",
-    agentUse: "Use for workspace cleanup, source grouping, and repeatable file hygiene after artifact generation.",
-    rubric: { agentFit: 14, actionability: 16, portability: 14, validation: 12, riskControl: 15 },
-    strengths: ["Practical output", "Useful after messy generation", "Can become a cleanup routine"],
-    gaps: ["Destructive file operations need approval gates", "Needs dry-run mode"],
-    testNext: "Run only in a sandbox folder and compare planned moves against actual moves.",
-    tags: ["files", "automation", "cleanup", "safety"]
+    title: "Publish or reject",
+    body: "Publish useful Skills with proof. Keep unsafe, weak, or under-tested Skills out of the gallery."
   }
 ];
 
-window.REVIEW_SOURCE = REVIEW_SOURCE;
-window.RUBRIC = RUBRIC;
-window.REVIEWS = REVIEWS;
+window.FILTERS = FILTERS;
+window.PICKS = PICKS;
+window.EVALUATION_STEPS = EVALUATION_STEPS;
+window.REVIEWS = PICKS;
