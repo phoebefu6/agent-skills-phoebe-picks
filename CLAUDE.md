@@ -16,6 +16,8 @@ Start with `AGENTS.md`. This file only adds Claude Code-specific habits for the 
 ```bash
 node --check data/reviews.js
 node --check assets/design-options.js
+node --check demos/grill-me-brief-builder/app.js
+node --check demos/design-taste-frontend-studio/app.js
 python3 -m http.server 8000
 ```
 

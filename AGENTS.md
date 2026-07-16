@@ -52,6 +52,8 @@ Run these checks after code changes:
 ```bash
 node --check data/reviews.js
 node --check assets/design-options.js
+node --check demos/grill-me-brief-builder/app.js
+node --check demos/design-taste-frontend-studio/app.js
 ```
 
 For visual changes, run a local server:

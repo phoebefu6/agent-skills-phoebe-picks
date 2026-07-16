@@ -2,7 +2,7 @@
 
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Latest Pick](https://img.shields.io/badge/latest%20pick-grill--me-6f7cff?style=for-the-badge)](demos/grill-me-brief-builder/)
+[![Latest Pick](https://img.shields.io/badge/latest%20pick-design--taste--frontend-6f7cff?style=for-the-badge)](demos/design-taste-frontend-studio/)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A hands-on gallery of AI agent Skills I test by building real things from scratch.
@@ -25,16 +25,16 @@ Star this repo if you want a growing shortlist of Skills that can help you:
 | Link | What you get |
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
-| [Latest pick](demos/grill-me-brief-builder/) | See the `grill-me` Skill turned into a working brief builder. |
+| [Latest pick](demos/design-taste-frontend-studio/) | See `design-taste-frontend` turned into a working taste pass studio. |
 | [Wishlist](wishlist.md) | See what I plan to explore next. |
 
 ## Latest Pick
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
-| `grill-me` | [Brief Builder demo](demos/grill-me-brief-builder/) | [mio-openliven/codex-grill-me-skill](https://github.com/mio-openliven/codex-grill-me-skill), 2 stars, explored 2026-07-14 | Published pick, 8/10 overall rating |
+| `design-taste-frontend` | [Taste Pass Studio](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 63,989 stars, explored 2026-07-16 | Published pick, 8.5/10 overall rating |
 
-`grill-me` helps turn vague build ideas into sharper decisions before asking an agent to execute. It asks one question at a time, recommends an answer, explains why it matters, and stops once the next step is clear.
+`design-taste-frontend` helps turn generic AI-built pages into more deliberate, credible public pages by forcing a design read, setting taste dials, and running an anti-slop pre-flight.
 
 ## What You Will Find
 
@@ -65,8 +65,8 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | Skill | Status | Why it matters |
 | --- | --- | --- |
 | `grill-me` | Published | Pressure-test vague ideas before asking an agent to build. |
+| `design-taste-frontend` | Published | Avoid generic AI-looking UI. |
 | `frontend-design` | Exploring | Turn rough product ideas into usable first screens. |
-| `design-taste-frontend` | Exploring | Avoid generic AI-looking UI. |
 | `design-review` | Wishlist | Turn screenshots into concrete critique and fixes. |
 | `high-end-visual-design` | Wishlist | Improve typography, spacing, hierarchy, and craft. |
 | `design-consultation` | Wishlist | Turn repeated design preferences into reusable guidance. |
@@ -79,7 +79,8 @@ agent-skills-phoebe-picks/
   data/reviews.js                    # Skill reviews, sources, stars, ratings, notes
   assets/design-options.css          # Active visual system
   assets/design-options.js           # Search, filters, cards, detail drawer
-  demos/grill-me-brief-builder/      # Latest ground-up Skill demo
+  demos/design-taste-frontend-studio/ # Latest ground-up Skill demo
+  demos/grill-me-brief-builder/       # Published grill-me demo
   wishlist.md                        # Exploration queue
   docs/wiki/                         # Internal agent memory for future work
 ```
@@ -102,4 +103,5 @@ Checks:
 node --check data/reviews.js
 node --check assets/design-options.js
 node --check demos/grill-me-brief-builder/app.js
+node --check demos/design-taste-frontend-studio/app.js
 ```

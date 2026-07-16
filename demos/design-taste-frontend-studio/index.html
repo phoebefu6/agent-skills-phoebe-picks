@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A ground-up design-taste-frontend demo that turns a generic AI-built page into a sharper public gallery section.">
+    <title>Design Taste Frontend Studio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../../index.html">Agent Skills Phoebe Picks</a>
+      <span>design-taste-frontend field test</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <span class="small-label">Design read</span>
+          <h1 id="page-title">Taste Pass Studio</h1>
+          <p>Turn a generic AI-built page into a sharper public Skill gallery section.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#studio">Open studio</a>
+            <a class="secondary-action" href="#preflight">Pre-flight</a>
+          </div>
+        </div>
+
+        <figure class="hero-media">
+          <img src="https://picsum.photos/seed/taste-gallery-study/960/1180" alt="Quiet editorial wall with framed gallery studies">
+          <figcaption>Public gallery, low-saturation, editorial product catalog.</figcaption>
+        </figure>
+      </section>
+
+      <section class="read-panel" aria-label="Skill configuration used">
+        <div>
+          <span>Variance</span>
+          <strong>6</strong>
+          <p>Asymmetric, but still readable.</p>
+        </div>
+        <div>
+          <span>Motion</span>
+          <strong>4</strong>
+          <p>State changes only, no theater.</p>
+        </div>
+        <div>
+          <span>Density</span>
+          <strong>3</strong>
+          <p>Airy enough for followers to scan.</p>
+        </div>
+      </section>
+
+      <section class="studio" id="studio" aria-labelledby="studio-title">
+        <div class="studio-intro">
+          <h2 id="studio-title">Before shipping, remove the AI tells.</h2>
+          <p>The Skill is useful because it turns taste into a checklist an agent can actually follow.</p>
+        </div>
+
+        <div class="studio-grid">
+          <aside class="control-panel" aria-label="Taste pass controls">
+            <div>
+              <label for="modeSelect">View mode</label>
+              <select id="modeSelect">
+                <option value="after">Taste pass</option>
+                <option value="before">Generic AI page</option>
+              </select>
+            </div>
+
+            <div class="audit-actions">
+              <button class="primary-action" id="runAuditButton" type="button">Run check</button>
+              <button class="secondary-action" id="resetButton" type="button">Reset</button>
+            </div>
+
+            <dl class="audit-readout">
+              <div>
+                <dt>Design system</dt>
+                <dd id="systemReadout">Native CSS, editorial gallery tokens</dd>
+              </div>
+              <div>
+                <dt>Accent lock</dt>
+                <dd id="accentReadout">Deep green throughout</dd>
+              </div>
+              <div>
+                <dt>Hero structure</dt>
+                <dd id="heroReadout">Split layout, short copy, visible CTA</dd>
+              </div>
+            </dl>
+          </aside>
+
+          <section class="preview-frame taste-mode" id="previewFrame" aria-label="Live landing-page preview">
+            <div class="preview-copy">
+              <span id="previewLabel">Taste pass</span>
+              <h3 id="previewTitle">Find Skills by real work.</h3>
+              <p id="previewBody">A gallery that shows source, proof, rating, and daily use cases before you try a Skill.</p>
+              <a id="previewCta" href="../../index.html">Browse picks</a>
+            </div>
+            <figure>
+              <img id="previewImage" src="https://picsum.photos/seed/skill-gallery-proof/920/760" alt="Neutral editorial table with design notes">
+            </figure>
+          </section>
+        </div>
+      </section>
+
+      <section class="preflight" id="preflight" aria-labelledby="preflight-title">
+        <div class="preflight-copy">
+          <h2 id="preflight-title">What the Skill caught</h2>
+          <p>These are the checks I used in the ground-up build.</p>
+        </div>
+
+        <div class="checklist" id="checklist" aria-live="polite">
+          <article data-check="read">
+            <strong>Read the room first</strong>
+            <p>Audience, vibe, references, and constraints shape the design.</p>
+          </article>
+          <article data-check="dials">
+            <strong>Set the dials</strong>
+            <p>Variance, motion, and density prevent random decoration.</p>
+          </article>
+          <article data-check="anti">
+            <strong>Remove AI tells</strong>
+            <p>No purple glow default, no generic hero, no filler copy.</p>
+          </article>
+          <article data-check="craft">
+            <strong>Audit craft</strong>
+            <p>Copy, contrast, CTA labels, rhythm, and mobile collapse pass.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

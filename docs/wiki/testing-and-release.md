@@ -8,6 +8,7 @@ Run:
 node --check data/reviews.js
 node --check assets/design-options.js
 node --check demos/grill-me-brief-builder/app.js
+node --check demos/design-taste-frontend-studio/app.js
 ```
 
 These catch syntax errors in the static data and renderer.
