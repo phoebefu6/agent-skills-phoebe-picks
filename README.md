@@ -2,7 +2,7 @@
 
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Latest Field Test](https://img.shields.io/badge/latest-grill--me-6f7cff?style=for-the-badge)](demos/grill-me-brief-builder/)
+[![Latest Pick](https://img.shields.io/badge/latest%20pick-grill--me-6f7cff?style=for-the-badge)](demos/grill-me-brief-builder/)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A hands-on gallery of AI agent Skills I test by building real things from scratch.
@@ -25,14 +25,14 @@ Star this repo if you want a growing shortlist of Skills that can help you:
 | Link | What you get |
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
-| [Latest demo](demos/grill-me-brief-builder/) | See the `grill-me` Skill turned into a working brief builder. |
+| [Latest pick](demos/grill-me-brief-builder/) | See the `grill-me` Skill turned into a working brief builder. |
 | [Wishlist](wishlist.md) | See what I plan to explore next. |
 
-## Latest Field Test
+## Latest Pick
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
-| `grill-me` | [Brief Builder demo](demos/grill-me-brief-builder/) | [mio-openliven/codex-grill-me-skill](https://github.com/mio-openliven/codex-grill-me-skill), 2 stars checked 2026-07-16 | 7/8 core concepts used, 4/5 field rating |
+| `grill-me` | [Brief Builder demo](demos/grill-me-brief-builder/) | [mio-openliven/codex-grill-me-skill](https://github.com/mio-openliven/codex-grill-me-skill), 2 stars checked 2026-07-16 | Published pick, 7/8 core concepts used, 4/5 field rating |
 
 `grill-me` helps turn vague build ideas into sharper decisions before asking an agent to execute. It asks one question at a time, recommends an answer, explains why it matters, and stops once the next step is clear.
 
@@ -62,9 +62,9 @@ Weak, risky, or not-useful Skills do not become recommendations.
 
 ## Current Collection
 
-| Skill | Status | Why I am testing it |
+| Skill | Status | Why it matters |
 | --- | --- | --- |
-| `grill-me` | Exploring | Pressure-test vague ideas before asking an agent to build. |
+| `grill-me` | Published | Pressure-test vague ideas before asking an agent to build. |
 | `frontend-design` | Exploring | Turn rough product ideas into usable first screens. |
 | `design-taste-frontend` | Exploring | Avoid generic AI-looking UI. |
 | `design-review` | Wishlist | Turn screenshots into concrete critique and fixes. |

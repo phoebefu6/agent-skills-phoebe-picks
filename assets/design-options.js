@@ -81,7 +81,7 @@
         return scenarioMatch && statusMatch && queryMatch;
       })
       .sort((a, b) => {
-        const order = { exploring: 0, published: 1, wishlist: 2, rejected: 3 };
+        const order = { published: 0, exploring: 1, wishlist: 2, rejected: 3 };
         return (order[a.status] ?? 9) - (order[b.status] ?? 9) || a.name.localeCompare(b.name);
       });
   }
