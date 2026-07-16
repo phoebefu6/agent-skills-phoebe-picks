@@ -34,7 +34,7 @@ Check:
 - Search examples narrow results. Do not use example terms that match almost every Skill.
 - Each public Skill shows an AI agent subtitle for all applicable platforms, such as Claude Code, Codex, Hermes AI, Cursor, Gemini CLI, opencode, Kimi, or Pi.
 - Each public Skill shows a source repo/reference and a dated GitHub star snapshot when the source is on GitHub.
-- Each public Skill promoted from exploring has a ground-up artifact, about 80% concept coverage, a rating out of 5, 3 strengths, and 3 improvement points.
+- Each public Skill promoted from exploring has a ground-up artifact, about 80% concept coverage, a rating out of 10, 3 strengths, and 3 improvement points.
 - Demo artifact pages under `demos/` load from the local server and have their JavaScript checked.
 - The public page does not expose internal LLM Wiki workflow content.
 - Mobile layout stays readable at narrow widths.

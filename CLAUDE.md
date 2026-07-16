@@ -33,4 +33,4 @@ The best Claude Code contribution here is usually one of these:
 
 ## Skill Exploration Standard
 
-When exploring a Skill, do not review it from a light planning angle. Learn the Skill, identify its key concepts, use about 80% of them to build an original artifact from the ground up, then record a rating out of 5, exactly 3 strengths, exactly 3 improvement points, daily use cases, source/stars, and proof.
+When exploring a Skill, do not review it from a light planning angle. Learn the Skill, identify its key concepts, use about 80% of them to build an original artifact from the ground up, then record a rating out of 10, exactly 3 strengths, exactly 3 improvement points, daily use cases, source/stars, and proof.

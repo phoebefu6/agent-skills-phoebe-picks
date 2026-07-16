@@ -125,12 +125,20 @@
     ];
 
     if (typeof pick.githubStars === "number") {
-      points.push(`GitHub stars: ${formatNumber(pick.githubStars)} checked ${pick.starsCheckedAt || "date pending"}`);
+      points.push(`GitHub stars: ${formatNumber(pick.githubStars)}${pick.starsCheckedAt ? ` snapshot ${pick.starsCheckedAt}` : ""}`);
     } else {
       points.push("GitHub stars: pending");
     }
+    if (pick.dateExplored) {
+      points.push(`Explored: ${pick.dateExplored}`);
+    }
 
     return listMarkup(points);
+  }
+
+  function ratingLabel(pick) {
+    const scale = pick.ratingScale || 10;
+    return `${pick.rating}/${scale} overall rating`;
   }
 
   function fieldTestPointList(pick) {
@@ -139,19 +147,11 @@
     if (pick.groundUpBuild) {
       points.push(`Ground-up build: ${pick.groundUpBuild}`);
     }
-    if (pick.conceptCoverage) {
-      points.push(`Concept coverage: ${pick.conceptCoverage}`);
-    }
     if (typeof pick.rating === "number") {
-      points.push(`Rating: ${pick.rating}/5${pick.ratingSummary ? ` - ${pick.ratingSummary}` : ""}`);
+      points.push(`Overall rating: ${ratingLabel(pick)}${pick.ratingSummary ? ` - ${pick.ratingSummary}` : ""}`);
     }
 
     return listMarkup(points.length ? points : ["Field test pending"]);
-  }
-
-  function optionalMindmapNode(title, items, tone) {
-    if (!items || (Array.isArray(items) && !items.length)) return "";
-    return mindmapNode(title, listMarkup(items), tone);
   }
 
   function platformSubtitle(pick) {
@@ -188,10 +188,10 @@
             <h3>${escapeHtml(pick.name)}</h3>
             <p class="agent-subtitle">${escapeHtml(platformSubtitle(pick))}</p>
             <p>${escapeHtml(pick.summary)}</p>
-            ${typeof pick.rating === "number" ? `<p class="rating-line">${escapeHtml(`${pick.rating}/5 field rating`)}</p>` : ""}
+            ${typeof pick.rating === "number" ? `<p class="rating-line">${escapeHtml(ratingLabel(pick))}</p>` : ""}
             <div class="source-meta" aria-label="Source and GitHub stars">
               <span>${escapeHtml(sourceMetaLabel(pick))}</span>
-              ${pick.starsCheckedAt ? `<span>Checked ${escapeHtml(pick.starsCheckedAt)}</span>` : ""}
+              ${pick.dateExplored ? `<span>Explored ${escapeHtml(pick.dateExplored)}</span>` : ""}
             </div>
             <span class="field-label">Best use case</span>
             <p class="card-note">${escapeHtml(pick.phoebeNote)}</p>
@@ -257,7 +257,6 @@
         <div class="mindmap-branches" aria-label="Skill notes as a mindmap">
           ${mindmapNode("What it helps with", listMarkup(pick.phoebeNote), "tone-help")}
           ${mindmapNode("Field test", fieldTestPointList(pick), "tone-proof")}
-          ${optionalMindmapNode("Core concepts used", pick.coreConcepts, "tone-help")}
           ${mindmapNode("3 good points", listMarkup(pick.good), "tone-good")}
           ${mindmapNode("3 can be better", listMarkup(pick.improve), "tone-improve")}
           ${mindmapNode("Day-to-day use cases", listMarkup(pick.useCases), "tone-use")}

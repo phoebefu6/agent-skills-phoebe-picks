@@ -161,11 +161,78 @@ label,
 }
 
 .method-card p,
-.coverage-card li,
+.flow-node small,
+.proof-card p,
 .why p,
 .recommendation p {
   color: var(--muted);
   line-height: 1.5;
+}
+
+.visual-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 22px;
+}
+
+.visual-strip article {
+  position: relative;
+  min-height: 150px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--accent-soft) 58%, transparent), transparent 74%),
+    var(--panel);
+}
+
+.visual-strip article::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, transparent 0 42%, color-mix(in srgb, var(--accent) 24%, transparent) 43% 45%, transparent 46%),
+    color-mix(in srgb, var(--paper) 76%, transparent);
+}
+
+.visual-strip span,
+.flow-card span,
+.proof-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 840;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.visual-strip strong {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 520;
+  line-height: 1.05;
+}
+
+.visual-strip p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 18ch;
+  color: var(--muted);
+  line-height: 1.45;
 }
 
 .workspace {
@@ -262,8 +329,7 @@ button:disabled {
 
 .recommendation,
 .why,
-.pushback,
-.coverage-card {
+.pushback {
   margin-bottom: 16px;
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) - 2px);
@@ -312,21 +378,110 @@ button:disabled {
   line-height: 1.42;
 }
 
+#decisionList .empty-decision {
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+  font-style: italic;
+}
+
 #decisionList li::marker {
   color: var(--pop);
   font-weight: 800;
 }
 
-.coverage-card {
-  margin-bottom: 0;
-  box-shadow: none;
+.flow-card {
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
 }
 
-.coverage-card ul {
+.flow-map {
+  position: relative;
   display: grid;
-  gap: 8px;
-  margin: 12px 0 0;
-  padding-left: 18px;
+  gap: 10px;
+}
+
+.flow-map::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 16px;
+  width: 1px;
+  background: color-mix(in srgb, var(--accent) 42%, var(--line));
+}
+
+.flow-node {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  min-height: 46px;
+  padding-left: 44px;
+}
+
+.flow-node::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid color-mix(in srgb, var(--accent) 58%, var(--line));
+  border-radius: 50%;
+  background: var(--panel);
+  box-shadow: 0 0 0 5px var(--panel);
+}
+
+.flow-node.is-active::before {
+  background: var(--pop);
+  border-color: var(--pop);
+}
+
+.flow-node b {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.flow-node small {
+  font-size: 13px;
+}
+
+.proof-card {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 14px;
+  align-items: center;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.score-ring {
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, var(--panel) 0 58%, transparent 59%),
+    conic-gradient(var(--pop) 0 80%, color-mix(in srgb, var(--line) 74%, var(--paper)) 80% 100%);
+}
+
+.score-ring strong {
+  margin: 6px 0 -22px;
+  color: var(--pop);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 520;
+}
+
+.score-ring small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.proof-card p {
+  margin: -4px 0 0;
 }
 
 .brief-panel {
@@ -362,7 +517,8 @@ pre {
 
 @media (max-width: 1060px) {
   .hero-panel,
-  .workspace {
+  .workspace,
+  .visual-strip {
     grid-template-columns: 1fr;
   }
 

@@ -32,7 +32,7 @@ Star this repo if you want a growing shortlist of Skills that can help you:
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
-| `grill-me` | [Brief Builder demo](demos/grill-me-brief-builder/) | [mio-openliven/codex-grill-me-skill](https://github.com/mio-openliven/codex-grill-me-skill), 2 stars checked 2026-07-16 | Published pick, 7/8 core concepts used, 4/5 field rating |
+| `grill-me` | [Brief Builder demo](demos/grill-me-brief-builder/) | [mio-openliven/codex-grill-me-skill](https://github.com/mio-openliven/codex-grill-me-skill), 2 stars, explored 2026-07-14 | Published pick, 8/10 overall rating |
 
 `grill-me` helps turn vague build ideas into sharper decisions before asking an agent to execute. It asks one question at a time, recommends an answer, explains why it matters, and stops once the next step is clear.
 
@@ -55,7 +55,7 @@ Every serious Skill gets tested through a small field project:
 1. Read the Skill source.
 2. Identify the key concepts.
 3. Use about 80% of those concepts to build something new from zero.
-4. Record the source, GitHub stars, applicable AI agents, demo proof, and rating out of 5.
+4. Record the source, GitHub stars, applicable AI agents, demo proof, and rating out of 10.
 5. Capture exactly 3 things it does well and 3 things that could be better.
 
 Weak, risky, or not-useful Skills do not become recommendations.

@@ -121,7 +121,12 @@
   }
 
   function renderDecisionList() {
-    nodes.decisionList.innerHTML = questions
+    const savedQuestions = questions.filter((question) => state.decisions[question.key]);
+    if (!savedQuestions.length) {
+      nodes.decisionList.innerHTML = '<li class="empty-decision">Answer the first question to start the path.</li>';
+      return;
+    }
+    nodes.decisionList.innerHTML = savedQuestions
       .filter((question) => state.decisions[question.key])
       .map((question) => `<li>${escapeHtml(summarizeDecision(question, state.decisions[question.key]))}</li>`)
       .join("");

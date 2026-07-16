@@ -42,7 +42,7 @@ Use `docs/wiki/llm-wiki.md` when the task involves agent memory, Claude Code, Co
 - Identify the Skill's key functions, methods, or concepts.
 - Use about 80% of those key concepts to build something from the ground up.
 - Do not treat installation, light planning, or a small amendment as enough evidence for a public pick.
-- After the build, capture a high-level rating out of 5, exactly 3 things the Skill does really well, exactly 3 things that can be improved, daily use cases, source/stars, and proof of the artifact.
+- After the build, capture a high-level rating out of 10, exactly 3 things the Skill does really well, exactly 3 things that can be improved, daily use cases, source/stars, and proof of the artifact.
 - Publish only useful, safe Skills. Keep weak or risky Skills in `wishlist.md` or reject them quietly.
 
 ## Validation

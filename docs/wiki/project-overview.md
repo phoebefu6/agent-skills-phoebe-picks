@@ -31,7 +31,7 @@ The project should help answer:
 - Which agent platforms does it fit first: Claude Code, Codex, Hermes AI, Cursor, Gemini CLI, opencode, Kimi, Pi, or another agent?
 - What original artifact did Phoebe build from the ground up with it?
 - Did the exploration use about 80% of the Skill's key concepts?
-- What high-level rating out of 5 did it earn after the build?
+- What high-level rating out of 10 did it earn after the build?
 - What are 3 good points?
 - What are 3 places it can be better?
 - How could builders, data people, leaders, students, or automation learners use it day to day?

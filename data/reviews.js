@@ -234,7 +234,8 @@ const PICKS = [
     ],
     conceptCoverage: "7/8 in the demo UI; source/context inspection was performed before building rather than automated inside the page.",
     groundUpBuild: "Built the Grill-Me Brief Builder demo from scratch.",
-    rating: 4,
+    rating: 8,
+    ratingScale: 10,
     ratingSummary: "Strong lightweight pre-build discipline, but the Skill source is very small and needs richer examples.",
     good: [
       "Forces one decision at a time, which reduces messy over-briefing.",
@@ -271,7 +272,7 @@ const EVALUATION_STEPS = [
   },
   {
     title: "Rate the field test",
-    body: "Give a high-level rating out of 5, then capture 3 strengths and 3 improvement points."
+    body: "Give a high-level rating out of 10, then capture 3 strengths and 3 improvement points."
   },
   {
     title: "Publish or reject",
