@@ -3,126 +3,162 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A ground-up design-taste-frontend demo that turns a generic AI-built page into a sharper public gallery section.">
-    <title>Design Taste Frontend Studio</title>
+    <meta name="description" content="An interactive design-taste-frontend showcase that turns the Skill's key features into a visual taste lab.">
+    <title>Design Taste Frontend Lab</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="topbar">
       <a href="../../index.html">Agent Skills Phoebe Picks</a>
-      <span>design-taste-frontend field test</span>
+      <span>design-taste-frontend showcase</span>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="page-title">
         <div class="hero-copy">
-          <span class="small-label">Design read</span>
-          <h1 id="page-title">Taste Pass Studio</h1>
-          <p>Turn a generic AI-built page into a sharper public Skill gallery section.</p>
+          <p class="design-read">Design read: editorial Skill gallery.</p>
+          <h1 id="page-title">Taste Lab</h1>
+          <p>Agent-made pages become intentional.</p>
           <div class="hero-actions">
-            <a class="primary-action" href="#studio">Open studio</a>
-            <a class="secondary-action" href="#preflight">Pre-flight</a>
+            <a class="primary-action" href="#feature-map">Open feature map</a>
+            <a class="secondary-action" href="#preflight">Run pre-flight</a>
           </div>
         </div>
 
-        <figure class="hero-media">
-          <img src="https://picsum.photos/seed/taste-gallery-study/960/1180" alt="Quiet editorial wall with framed gallery studies">
-          <figcaption>Public gallery, low-saturation, editorial product catalog.</figcaption>
-        </figure>
-      </section>
-
-      <section class="read-panel" aria-label="Skill configuration used">
-        <div>
-          <span>Variance</span>
-          <strong>6</strong>
-          <p>Asymmetric, but still readable.</p>
-        </div>
-        <div>
-          <span>Motion</span>
-          <strong>4</strong>
-          <p>State changes only, no theater.</p>
-        </div>
-        <div>
-          <span>Density</span>
-          <strong>3</strong>
-          <p>Airy enough for followers to scan.</p>
+        <div class="hero-stage" aria-label="Taste lab visual specimen">
+          <figure class="hero-photo hero-photo-large">
+            <img src="https://picsum.photos/seed/editorial-interface-proof/900/1080" alt="Quiet editorial workspace with printed interface studies">
+          </figure>
+          <figure class="hero-photo hero-photo-small">
+            <img src="https://picsum.photos/seed/design-system-material/640/760" alt="Minimal studio table with paper swatches and interface notes">
+          </figure>
+          <div class="hero-panel" aria-label="Skill dials">
+            <span>Variance 8</span>
+            <span>Motion 6</span>
+            <span>Density 4</span>
+          </div>
         </div>
       </section>
 
-      <section class="studio" id="studio" aria-labelledby="studio-title">
-        <div class="studio-intro">
-          <h2 id="studio-title">Before shipping, remove the AI tells.</h2>
-          <p>The Skill is useful because it turns taste into a checklist an agent can actually follow.</p>
+      <section class="feature-lab" id="feature-map" aria-labelledby="feature-title">
+        <div class="section-intro">
+          <h2 id="feature-title">The key features are the controls.</h2>
+          <p>Choose a Skill feature. The specimen updates with the rule, the proof, and the page behavior it changes.</p>
         </div>
 
-        <div class="studio-grid">
-          <aside class="control-panel" aria-label="Taste pass controls">
-            <div>
-              <label for="modeSelect">View mode</label>
-              <select id="modeSelect">
-                <option value="after">Taste pass</option>
-                <option value="before">Generic AI page</option>
-              </select>
-            </div>
+        <div class="lab-shell">
+          <nav class="feature-rail" aria-label="design-taste-frontend key features">
+            <button class="is-active" type="button" data-feature="read">Design read</button>
+            <button type="button" data-feature="dials">Taste dials</button>
+            <button type="button" data-feature="system">System choice</button>
+            <button type="button" data-feature="defaults">AI tell removal</button>
+            <button type="button" data-feature="type">Type and color</button>
+            <button type="button" data-feature="layout">Layout discipline</button>
+            <button type="button" data-feature="visuals">Real visuals</button>
+            <button type="button" data-feature="motion">Motivated motion</button>
+            <button type="button" data-feature="states">States and access</button>
+            <button type="button" data-feature="preflight">Final pre-flight</button>
+          </nav>
 
-            <div class="audit-actions">
-              <button class="primary-action" id="runAuditButton" type="button">Run check</button>
-              <button class="secondary-action" id="resetButton" type="button">Reset</button>
+          <section class="specimen" aria-live="polite">
+            <div class="specimen-head">
+              <span id="featureNumber">01</span>
+              <h3 id="featureName">Read the room first</h3>
             </div>
-
-            <dl class="audit-readout">
+            <div class="specimen-body">
               <div>
-                <dt>Design system</dt>
-                <dd id="systemReadout">Native CSS, editorial gallery tokens</dd>
+                <p id="featureSummary">Infer page kind, audience, references, assets, and constraints before writing code.</p>
+                <ul class="feature-points" id="featurePoints"></ul>
               </div>
-              <div>
-                <dt>Accent lock</dt>
-                <dd id="accentReadout">Deep green throughout</dd>
+              <div class="living-preview" id="livingPreview">
+                <span id="previewLabel">Public gallery read</span>
+                <strong id="previewTitle">Builder audience, editorial product tone.</strong>
+                <p id="previewProof">The page starts by naming the audience and design language before showing any interface.</p>
               </div>
-              <div>
-                <dt>Hero structure</dt>
-                <dd id="heroReadout">Split layout, short copy, visible CTA</dd>
-              </div>
-            </dl>
-          </aside>
-
-          <section class="preview-frame taste-mode" id="previewFrame" aria-label="Live landing-page preview">
-            <div class="preview-copy">
-              <span id="previewLabel">Taste pass</span>
-              <h3 id="previewTitle">Find Skills by real work.</h3>
-              <p id="previewBody">A gallery that shows source, proof, rating, and daily use cases before you try a Skill.</p>
-              <a id="previewCta" href="../../index.html">Browse picks</a>
             </div>
-            <figure>
-              <img id="previewImage" src="https://picsum.photos/seed/skill-gallery-proof/920/760" alt="Neutral editorial table with design notes">
-            </figure>
           </section>
+
+          <aside class="coverage-meter">
+            <span>Visible features</span>
+            <strong>10</strong>
+            <p>All key concepts are listed here. The live build uses them as interaction rules, not a static checklist.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="compare" aria-labelledby="compare-title">
+        <div class="section-intro compact">
+          <h2 id="compare-title">Generic page, taste pass, studio mode.</h2>
+          <p>Switch states to see how the Skill changes structure, language, contrast, and visual confidence.</p>
+        </div>
+
+        <div class="compare-board">
+          <div class="mode-switch" role="group" aria-label="Preview mode">
+            <button class="is-active" type="button" data-mode="taste">Taste pass</button>
+            <button type="button" data-mode="generic">Generic AI</button>
+            <button type="button" data-mode="studio">Studio system</button>
+          </div>
+
+          <article class="page-specimen taste" id="pageSpecimen">
+            <div class="mini-nav">
+              <span id="miniBrand">Phoebe Picks</span>
+              <a id="miniAction" href="../../index.html">Browse</a>
+            </div>
+            <div class="mini-layout">
+              <div class="mini-copy">
+                <span id="miniLabel">Proof before picks</span>
+                <h3 id="miniTitle">Find Skills by real work.</h3>
+                <p id="miniBody">Source, rating, and demo proof stay visible before anyone tries a Skill.</p>
+              </div>
+              <figure class="mini-image">
+                <img id="miniImage" src="https://picsum.photos/seed/gallery-artifact-proof/840/760" alt="Editorial table with interface studies and notes">
+              </figure>
+            </div>
+          </article>
+
+          <aside class="critique-panel">
+            <h3 id="critiqueTitle">What improved</h3>
+            <ul id="critiqueList"></ul>
+          </aside>
         </div>
       </section>
 
       <section class="preflight" id="preflight" aria-labelledby="preflight-title">
-        <div class="preflight-copy">
-          <h2 id="preflight-title">What the Skill caught</h2>
-          <p>These are the checks I used in the ground-up build.</p>
+        <div class="section-intro compact">
+          <h2 id="preflight-title">Pre-flight as an instrument.</h2>
+          <p>Run the check. The page marks which taste rules are actively covered by the build.</p>
         </div>
 
-        <div class="checklist" id="checklist" aria-live="polite">
-          <article data-check="read">
-            <strong>Read the room first</strong>
-            <p>Audience, vibe, references, and constraints shape the design.</p>
+        <div class="preflight-grid" id="preflightGrid" aria-live="polite">
+          <article data-check="Brief inference">
+            <strong>Brief inference</strong>
+            <p>One design read appears before the interface.</p>
           </article>
-          <article data-check="dials">
-            <strong>Set the dials</strong>
-            <p>Variance, motion, and density prevent random decoration.</p>
+          <article data-check="Dial values">
+            <strong>Dial values</strong>
+            <p>Variance, motion, and density guide the page.</p>
           </article>
-          <article data-check="anti">
-            <strong>Remove AI tells</strong>
-            <p>No purple glow default, no generic hero, no filler copy.</p>
+          <article data-check="No AI defaults">
+            <strong>No AI defaults</strong>
+            <p>Generic purple glow and filler copy are isolated as the bad state.</p>
           </article>
-          <article data-check="craft">
-            <strong>Audit craft</strong>
-            <p>Copy, contrast, CTA labels, rhythm, and mobile collapse pass.</p>
+          <article data-check="Real visuals">
+            <strong>Real visuals</strong>
+            <p>The page uses real image assets and a real mini interface preview.</p>
           </article>
+          <article data-check="Motion discipline">
+            <strong>Motion discipline</strong>
+            <p>Motion is used for state transitions and disabled when requested.</p>
+          </article>
+          <article data-check="Mobile and dark mode">
+            <strong>Mobile and dark mode</strong>
+            <p>Layouts collapse explicitly, and tokens respond to system color preference.</p>
+          </article>
+        </div>
+
+        <div class="preflight-actions">
+          <button class="primary-action" id="runPreflight" type="button">Run pre-flight</button>
+          <p id="preflightResult">0 checks passed</p>
         </div>
       </section>
     </main>

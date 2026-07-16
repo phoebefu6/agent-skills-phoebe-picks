@@ -38,6 +38,8 @@ Do not publish a Skill review based only on reading, installing, planning, or us
 
 The demo page is part of the evaluation, not a decorative subpage. It should showcase what the Skill can actually do and use as many relevant Skill features as practical.
 
+Every explored Skill subpage should list the Skill's key features in a visual, interactive format. Treat the features as controls, cards, branches, maps, diagrams, toggles, or live states so followers can see what the Skill changes in practice. Avoid hiding the feature list inside long prose.
+
 Do not make every demo look the same. A Skill demo may become a product prototype, decision flow, mindmap, diagram, interactive lab, visual critique, dashboard, report, or any other static artifact that best expresses the Skill's function. Keep the gallery homepage consistent for browsing, but let `demos/` pages vary widely when variety helps followers understand the Skill.
 
 ## Status Labels

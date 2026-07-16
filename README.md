@@ -25,14 +25,14 @@ Star this repo if you want a growing shortlist of Skills that can help you:
 | Link | What you get |
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
-| [Latest pick](demos/design-taste-frontend-studio/) | See `design-taste-frontend` turned into a working taste pass studio. |
+| [Latest pick](demos/design-taste-frontend-studio/) | See `design-taste-frontend` turned into an interactive taste lab. |
 | [Wishlist](wishlist.md) | See what I plan to explore next. |
 
 ## Latest Pick
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
-| `design-taste-frontend` | [Taste Pass Studio](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 63,989 stars, explored 2026-07-16 | Published pick, 8.5/10 overall rating |
+| `design-taste-frontend` | [Design Taste Frontend Lab](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 64,010 stars, explored 2026-07-16 | Published pick, 8.5/10 overall rating |
 
 `design-taste-frontend` helps turn generic AI-built pages into more deliberate, credible public pages by forcing a design read, setting taste dials, and running an anti-slop pre-flight.
 
