@@ -55,8 +55,9 @@ Every serious Skill gets tested through a small field project:
 1. Read the Skill source.
 2. Identify the key concepts.
 3. Use about 80% of those concepts to build something new from zero.
-4. Record the source, GitHub stars, applicable AI agents, demo proof, and rating out of 10.
-5. Capture exactly 3 things it does well and 3 things that could be better.
+4. Confirm the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof.
+5. Record the source, GitHub stars or ranking proof, applicable AI agents, demo proof, and rating out of 10.
+6. Capture exactly 3 things it does well and 3 things that could be better.
 
 Weak, risky, or not-useful Skills do not become recommendations.
 
@@ -64,7 +65,6 @@ Weak, risky, or not-useful Skills do not become recommendations.
 
 | Skill | Status | Why it matters |
 | --- | --- | --- |
-| `grill-me` | Published | Pressure-test vague ideas before asking an agent to build. |
 | `design-taste-frontend` | Published | Avoid generic AI-looking UI. |
 | `frontend-design` | Exploring | Turn rough product ideas into usable first screens. |
 | `design-review` | Wishlist | Turn screenshots into concrete critique and fixes. |
@@ -80,7 +80,6 @@ agent-skills-phoebe-picks/
   assets/design-options.css          # Active visual system
   assets/design-options.js           # Search, filters, cards, detail drawer
   demos/design-taste-frontend-studio/ # Latest ground-up Skill demo
-  demos/grill-me-brief-builder/       # Published grill-me demo
   wishlist.md                        # Exploration queue
   docs/wiki/                         # Internal agent memory for future work
 ```
@@ -102,6 +101,5 @@ Checks:
 ```bash
 node --check data/reviews.js
 node --check assets/design-options.js
-node --check demos/grill-me-brief-builder/app.js
 node --check demos/design-taste-frontend-studio/app.js
 ```

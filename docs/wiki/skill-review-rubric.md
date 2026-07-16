@@ -15,7 +15,7 @@ Each published Skill should capture:
 | 3 can-be-better points | What friction, limits, or improvement areas did Phoebe notice? |
 | Use cases | How could data people, AI builders, C-suite readers, students, or automation learners use it day to day? |
 | Demo evidence | What product, demo, flowchart, mindmap, screenshot, or critique was produced while testing it? |
-| Source and stars | What GitHub repo or reference path is the Skill from, and what dated star snapshot supports the note? |
+| Source credibility | What GitHub repo or reference path is the Skill from, and does it have at least 10k stars or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof? |
 | Recommendation decision | Is it published, still exploring, on the wishlist, or rejected quietly? |
 
 ## 80% Ground-Up Skill Trial
@@ -29,7 +29,8 @@ Skill exploration is a field test, not a light impression. For each Skill Phoebe
 5. Give a high-level rating out of 10 after the build.
 6. Capture exactly 3 things the Skill does really well.
 7. Capture exactly 3 things that can be further improved.
-8. Decide whether it becomes a public pick, stays exploring, or gets rejected quietly.
+8. Verify the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof.
+9. Decide whether it becomes a public pick, stays exploring, or gets rejected quietly.
 
 Do not publish a Skill review based only on reading, installing, planning, or using it for a small amendment. The Skill must help produce something new from zero.
 
@@ -62,6 +63,7 @@ Promote a Skill to `published` only when it has:
 - 3 honest improvement points.
 - At least three day-to-day use cases for the target audience.
 - A source URL, source repo/reference path, and dated GitHub star snapshot when the source is on GitHub.
+- At least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof.
 - Acceptable safety and maintenance profile.
 
 ## Current First Sprint

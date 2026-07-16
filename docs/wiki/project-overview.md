@@ -28,6 +28,7 @@ The project should help answer:
 
 - What situation does this Skill help with?
 - Which GitHub source, reference path, and star snapshot support the pick?
+- Does the source pass the credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof?
 - Which agent platforms does it fit first: Claude Code, Codex, Hermes AI, Cursor, Gemini CLI, opencode, Kimi, Pi, or another agent?
 - What original artifact did Phoebe build from the ground up with it?
 - Did the exploration use about 80% of the Skill's key concepts?

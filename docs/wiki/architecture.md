@@ -71,6 +71,8 @@ Each public Skill entry should include:
 
 For GitHub-hosted Skills, `githubStars` is a dated snapshot, not a live counter. Refresh it from GitHub before publishing a new pick or after a meaningful update pass.
 
+Public picks must pass the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof. If a Skill is useful but fails the gate, keep it in `wishlist.md` as rejected or internal learning evidence instead of listing it in `data/reviews.js`.
+
 Render `platforms` as a visible AI agent subtitle on cards and detail views. Do not rely only on small badges for Claude Code, Codex, Hermes AI, or future agent compatibility.
 
 Public picks should eventually include `coreConcepts`, `conceptCoverage`, `groundUpBuild`, `rating`, and `ratingSummary`. These fields support Phoebe's 80% ground-up Skill trial: learn the Skill, use most of its method to build something from zero, then rate it after the build.

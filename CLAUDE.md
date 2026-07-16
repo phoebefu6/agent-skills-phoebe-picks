@@ -16,7 +16,6 @@ Start with `AGENTS.md`. This file only adds Claude Code-specific habits for the 
 ```bash
 node --check data/reviews.js
 node --check assets/design-options.js
-node --check demos/grill-me-brief-builder/app.js
 node --check demos/design-taste-frontend-studio/app.js
 python3 -m http.server 8000
 ```
@@ -35,4 +34,4 @@ The best Claude Code contribution here is usually one of these:
 
 ## Skill Exploration Standard
 
-When exploring a Skill, do not review it from a light planning angle. Learn the Skill, identify its key concepts, use about 80% of them to build an original artifact from the ground up, then record a rating out of 10, exactly 3 strengths, exactly 3 improvement points, daily use cases, source/stars, and proof.
+When exploring a Skill, do not review it from a light planning angle. Learn the Skill, identify its key concepts, use about 80% of them to build an original artifact from the ground up, then record a rating out of 10, exactly 3 strengths, exactly 3 improvement points, daily use cases, source/stars or ranking proof, and proof. Publish only if the source has at least 10k GitHub stars or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof.

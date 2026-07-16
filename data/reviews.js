@@ -221,56 +221,6 @@ const PICKS = [
     ],
     demo: "Create a compact design source of truth after launch v1.",
     galleryLink: ""
-  },
-  {
-    id: "grill-me",
-    name: "grill-me",
-    source: "mio-openliven codex-grill-me-skill",
-    sourceUrl: "https://github.com/mio-openliven/codex-grill-me-skill",
-    sourceRepo: "mio-openliven/codex-grill-me-skill",
-    sourcePath: "skills/grill-me",
-    githubStars: 2,
-    starsCheckedAt: "2026-07-16",
-    status: "published",
-    recommendation: "Published pick: useful as a pre-build pressure test before asking an agent to build.",
-    dateExplored: "2026-07-14",
-    scenarios: ["agent-workflow", "prompting", "automation"],
-    platforms: ["codex", "claude-code", "hermes"],
-    badges: ["Decision tree", "Briefing", "Risk check"],
-    summary: "A questioning Skill for turning vague or risky plans into clear decisions before execution.",
-    phoebeNote: "Use it before asking an agent to build, especially when your request is still too broad or you keep changing direction.",
-    coreConcepts: [
-      "Ask one concrete question at a time.",
-      "Include a recommended answer with each question.",
-      "Explain why the answer matters.",
-      "Walk the decision tree branch by branch.",
-      "Inspect available context before asking the user.",
-      "Separate facts from assumptions.",
-      "Push back when scope grows or risk is hidden.",
-      "Stop grilling once the next execution step is clear."
-    ],
-    conceptCoverage: "7/8 in the demo UI; source/context inspection was performed before building rather than automated inside the page.",
-    groundUpBuild: "Built the Grill-Me Brief Builder demo from scratch.",
-    rating: 8,
-    ratingScale: 10,
-    ratingSummary: "Strong lightweight pre-build discipline, but the Skill source is very small and needs richer examples.",
-    good: [
-      "Forces one decision at a time, which reduces messy over-briefing.",
-      "Pairs every question with a recommended answer, so the user is not left staring at a blank page.",
-      "Stops once execution is clear, which keeps the conversation from becoming endless planning."
-    ],
-    improve: [
-      "The installed local Skill is too minimal compared with the upstream source.",
-      "It needs example grilling flows for product, design, architecture, and release-risk use cases.",
-      "It does not define how to record final decisions unless the project adds its own template."
-    ],
-    useCases: [
-      "Builders can turn a vague app idea into a concrete build brief before using Codex or Claude Code.",
-      "Leaders can stress-test a product decision before asking a team to execute.",
-      "Students can learn how to separate facts, assumptions, tradeoffs, and next steps."
-    ],
-    demo: "demos/grill-me-brief-builder/index.html",
-    galleryLink: "demos/grill-me-brief-builder/index.html"
   }
 ];
 
