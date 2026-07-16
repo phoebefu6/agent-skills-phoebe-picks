@@ -20,8 +20,20 @@
     drawer: byId("detailDrawer"),
     drawerContent: byId("drawerContent"),
     drawerClose: byId("drawerClose"),
-    drawerBackdrop: byId("drawerBackdrop")
+    drawerBackdrop: byId("drawerBackdrop"),
+    productRail: byId("productRail")
   };
+
+  const demoTitles = {
+    "frontend-design": "Scenario Console",
+    "design-taste-frontend": "Taste Lab",
+    "design-review": "Critique Loop",
+    "high-end-visual-design": "Visual Atelier",
+    "design-consultation": "System Room"
+  };
+
+  let entranceMotionPlayed = false;
+  let revealObserver = null;
 
   function escapeHtml(value) {
     return String(value || "")
@@ -106,6 +118,10 @@
     }
   }
 
+  function demoTitle(pick) {
+    return demoTitles[pick.id] || pick.name;
+  }
+
   function formatNumber(value) {
     return typeof value === "number" ? value.toLocaleString("en-US") : value;
   }
@@ -159,6 +175,32 @@
     return values.length ? `For ${values.join(", ")}` : "For AI agents";
   }
 
+  function renderProductRail() {
+    if (!nodes.productRail) return;
+
+    const published = picks
+      .filter((pick) => pick.status === "published" && pick.galleryLink)
+      .slice(0, 5);
+
+    nodes.productRail.innerHTML = published
+      .map((pick) => {
+        const scenario = labelForScenario((pick.scenarios || [])[0] || "design");
+        const stars = typeof pick.githubStars === "number"
+          ? `${formatNumber(pick.githubStars)} stars`
+          : "Stars pending";
+        const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Rating pending";
+
+        return `
+          <a class="rail-card" href="${escapeHtml(pick.galleryLink)}" data-motion-card>
+            <span>${escapeHtml(scenario)}</span>
+            <strong>${escapeHtml(demoTitle(pick))}</strong>
+            <small>${escapeHtml(pick.name)} | ${escapeHtml(rating)} | ${escapeHtml(stars)}</small>
+          </a>
+        `;
+      })
+      .join("");
+  }
+
   function renderCards() {
     const items = visiblePicks();
     nodes.count.textContent = `${items.length} ${items.length === 1 ? "Skill" : "Skills"}`;
@@ -207,11 +249,15 @@
         `;
       })
       .join("");
+
+    hydrateMotion();
   }
 
   function render() {
+    renderProductRail();
     renderFilters();
     renderCards();
+    playEntranceMotion();
   }
 
   function listMarkup(items) {
@@ -278,6 +324,103 @@
     nodes.drawer.setAttribute("aria-hidden", "true");
     nodes.drawerBackdrop.hidden = true;
     document.body.classList.remove("drawer-open");
+  }
+
+  function reducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function playEntranceMotion() {
+    if (entranceMotionPlayed || reducedMotion()) return;
+    entranceMotionPlayed = true;
+
+    const targets = [
+      ...document.querySelectorAll(".hero-copy > *"),
+      ...document.querySelectorAll(".proof-preview, .proof-card")
+    ];
+
+    targets.forEach((target, index) => {
+      target.animate(
+        [
+          { opacity: 0, transform: "translateY(22px)" },
+          { opacity: 1, transform: "translateY(0)" }
+        ],
+        {
+          duration: 680,
+          delay: index * 58,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          fill: "both"
+        }
+      );
+    });
+  }
+
+  function bindMotionCards() {
+    if (reducedMotion()) return;
+
+    document.querySelectorAll("[data-motion-card], .skill-card").forEach((card) => {
+      if (card.dataset.motionBound === "true") return;
+      card.dataset.motionBound = "true";
+
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `translate3d(${(x * 7).toFixed(2)}px, ${(y * 5).toFixed(2)}px, 0) rotateX(${(-y * 2.4).toFixed(2)}deg) rotateY(${(x * 3).toFixed(2)}deg)`;
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
+
+  function observeRevealTargets() {
+    if (reducedMotion()) return;
+
+    const targets = document.querySelectorAll(".product-proof-section, .scenario-section, .gallery-section, .skill-card, .rail-card");
+    if (!("IntersectionObserver" in window)) return;
+
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const target = entry.target;
+          const animation = target.animate(
+            [
+              { opacity: 0, transform: "translateY(18px)" },
+              { opacity: 1, transform: "translateY(0)" }
+            ],
+            {
+              duration: 560,
+              easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+              fill: "both"
+            }
+          );
+
+          animation.finished
+            .then(() => {
+              target.style.opacity = "";
+              target.style.transform = "";
+            })
+            .catch(() => {});
+          revealObserver.unobserve(target);
+        });
+      }, { threshold: 0.12 });
+    }
+
+    targets.forEach((target) => {
+      if (target.dataset.revealBound === "true") return;
+      target.dataset.revealBound = "true";
+      target.style.opacity = "0";
+      target.style.transform = "translateY(18px)";
+      revealObserver.observe(target);
+    });
+  }
+
+  function hydrateMotion() {
+    bindMotionCards();
+    observeRevealTargets();
   }
 
   function bindEvents() {

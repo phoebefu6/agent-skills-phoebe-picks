@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Agent Skills Phoebe Picks is a public gallery of AI agent Skills organized by the situations they help with.">
+    <meta name="description" content="Agent Skills Phoebe Picks is a public gallery of tested AI agent Skills with demos, ratings, sources, and GitHub star snapshots.">
     <meta property="og:title" content="Agent Skills Phoebe Picks">
-    <meta property="og:description" content="Browse AI agent Skills by scenario: design, data, reporting, automation, research, prompting, and agent workflow.">
+    <meta property="og:description" content="Browse tested AI agent Skills by scenario, with demos, ratings, sources, and GitHub star snapshots.">
     <meta property="og:type" content="website">
     <title>Agent Skills Phoebe Picks</title>
-    <link rel="stylesheet" href="assets/design-options.css?v=design-sprint">
+    <link rel="stylesheet" href="assets/design-options.css?v=homepage-motion">
   </head>
   <body>
     <header class="site-header">
@@ -29,37 +29,52 @@
       <section class="hero">
         <div class="shell hero-layout">
           <div class="hero-copy">
-            <p class="kicker">Public Skill gallery</p>
-            <h1>Agent Skills Phoebe Picks</h1>
-            <p class="hero-subtitle">Browse AI agent Skills by the situation they help with, from design and data to reporting, automation, research, prompting, and agent workflow.</p>
+            <p class="kicker">Agent Skills Phoebe Picks</p>
+            <h1>Find agent Skills by real work.</h1>
+            <p class="hero-subtitle">A clean gallery of tested AI agent Skills, with demos, ratings, sources, and GitHub star snapshots.</p>
             <div class="button-row">
-              <a class="btn primary" href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Follow repo</a>
+              <a class="btn primary" href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Star repo</a>
               <a class="btn" href="#gallery">Browse Skills</a>
-              <a class="btn" href="#gallery">Published products</a>
+              <a class="btn" href="#productProof">View demos</a>
+            </div>
+            <div class="hero-metrics" aria-label="Current gallery proof">
+              <span><strong>5</strong> published demos</span>
+              <span><strong>10k+</strong> star source gate</span>
+              <span><strong>10</strong> rating scale</span>
             </div>
           </div>
 
-          <aside class="ledger" aria-label="Gallery snapshot">
-            <div class="ledger-head">
-              <span>Gallery snapshot</span>
-              <strong>Skills grouped by real work.</strong>
+          <aside class="proof-wall" aria-label="Published Skill demos">
+            <div class="proof-preview">
+              <iframe src="demos/design-taste-frontend-studio/index.html" title="Design Taste Frontend demo preview" loading="lazy" tabindex="-1"></iframe>
+              <a class="preview-link" href="demos/design-taste-frontend-studio/index.html">Open Taste Lab</a>
             </div>
-            <p>Each Skill card shows what it helps with, where it runs, what was built from scratch, and the practical notes behind the pick.</p>
-            <a class="latest-card" href="#gallery" aria-label="Browse the published Skill product demos">
-              <span>Published product sprint</span>
-              <strong>5 Skills, 5 demo products</strong>
-              <small>Frontend, taste, review, visual craft, design system</small>
-              <small>Sources pass the 10k star gate</small>
+            <a class="proof-card is-featured" href="demos/frontend-design-interface/index.html" data-motion-card>
+              <span>frontend-design</span>
+              <strong>Scenario Console</strong>
+              <small>8.2/10 | 161,555 stars</small>
             </a>
-            <div class="scenario-mini-list" aria-label="Example scenarios">
-              <span>Design</span>
-              <span>Data</span>
-              <span>Reporting</span>
-              <span>Automation</span>
-              <span>Prompting</span>
-              <span>Agent workflow</span>
-            </div>
+            <a class="proof-card" href="demos/design-review-critique-loop/index.html" data-motion-card>
+              <span>design-review</span>
+              <strong>Critique Loop</strong>
+              <small>8.0/10 | 122,177 stars</small>
+            </a>
+            <a class="proof-card" href="demos/high-end-visual-design-showcase/index.html" data-motion-card>
+              <span>high-end-visual-design</span>
+              <strong>Visual Atelier</strong>
+              <small>7.9/10 | 64,018 stars</small>
+            </a>
           </aside>
+        </div>
+      </section>
+
+      <section class="product-proof-section" id="productProof" aria-labelledby="product-proof-title">
+        <div class="shell product-proof-layout">
+          <div class="product-proof-copy">
+            <p class="kicker">Published products</p>
+            <h2 id="product-proof-title">Open the artifacts first.</h2>
+          </div>
+          <div class="product-rail" id="productRail" aria-label="Published demo products"></div>
         </div>
       </section>
 
@@ -115,7 +130,7 @@
       </div>
     </footer>
 
-    <script src="data/reviews.js?v=design-sprint"></script>
-    <script src="assets/design-options.js?v=design-sprint"></script>
+    <script src="data/reviews.js?v=homepage-motion"></script>
+    <script src="assets/design-options.js?v=homepage-motion"></script>
   </body>
 </html>
