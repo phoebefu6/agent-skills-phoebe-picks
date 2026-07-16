@@ -193,8 +193,8 @@
         return `
           <a class="rail-card" href="${escapeHtml(pick.galleryLink)}" data-motion-card>
             <span>${escapeHtml(scenario)}</span>
-            <strong>${escapeHtml(demoTitle(pick))}</strong>
-            <small>${escapeHtml(pick.name)} | ${escapeHtml(rating)} | ${escapeHtml(stars)}</small>
+            <strong>${escapeHtml(pick.name)}</strong>
+            <small>Demo: ${escapeHtml(demoTitle(pick))} | ${escapeHtml(rating)} | ${escapeHtml(stars)}</small>
           </a>
         `;
       })

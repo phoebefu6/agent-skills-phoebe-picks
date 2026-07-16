@@ -369,11 +369,12 @@ h1 {
 
 .proof-card strong,
 .rail-card strong {
-  color: var(--ink);
+  color: var(--pop-strong);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 25px;
   font-weight: 560;
   line-height: 1.02;
+  overflow-wrap: anywhere;
 }
 
 .proof-card small,
