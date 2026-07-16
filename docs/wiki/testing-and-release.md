@@ -44,3 +44,9 @@ Check:
 ## GitHub Pages
 
 The site is static and should publish through GitHub Pages from the repository contents. Avoid changes that require server-side routing.
+
+After every shipped update, include the live site link in the final user-facing response:
+
+```text
+https://phoebefu6.github.io/agent-skills-phoebe-picks/
+```

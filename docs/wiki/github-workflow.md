@@ -22,6 +22,14 @@ Before opening a PR, confirm:
 - Internal wiki pages do not leak into the public gallery unless intended.
 - No secrets or private credentials were added.
 
+## Ship Response
+
+After pushing a repo update, always include the live GitHub Pages link in the final response so Phoebe can open the shipped site directly:
+
+```text
+https://phoebefu6.github.io/agent-skills-phoebe-picks/
+```
+
 ## Issue Ideas
 
 Good future issues:
