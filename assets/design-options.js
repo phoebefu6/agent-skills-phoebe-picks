@@ -29,7 +29,8 @@
     "design-taste-frontend": "Taste Lab",
     "design-review": "Critique Loop",
     "high-end-visual-design": "Visual Atelier",
-    "design-consultation": "System Room"
+    "design-consultation": "System Room",
+    "find-skills": "Discovery Desk"
   };
 
   let entranceMotionPlayed = false;

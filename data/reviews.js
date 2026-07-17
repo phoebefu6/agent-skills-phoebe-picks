@@ -273,6 +273,54 @@ const PICKS = [
     ],
     demo: "demos/design-consultation-system-room/index.html",
     galleryLink: "demos/design-consultation-system-room/index.html"
+  },
+  {
+    id: "find-skills",
+    name: "find-skills",
+    source: "joe-bell cva",
+    sourceUrl: "https://github.com/joe-bell/cva/tree/main/.agents/skills/find-skills",
+    sourceRepo: "joe-bell/cva",
+    sourcePath: ".agents/skills/find-skills",
+    githubStars: 6861,
+    starsCheckedAt: "2026-07-17",
+    status: "exploring",
+    recommendation: "Explored artifact: useful discovery workflow, but held back from published-pick status because the installed source is below the 10k-star credibility gate.",
+    dateExplored: "2026-07-17",
+    scenarios: ["agent-workflow", "research", "prompting", "automation"],
+    platforms: ["codex", "claude-code", "hermes", "cursor", "gemini-cli"],
+    badges: ["Skill discovery", "Source gate", "Install decision"],
+    summary: "A meta Skill for finding, vetting, and installing other agent Skills without recommending weak sources too quickly.",
+    phoebeNote: "Use it as an internal discovery desk before adding new Skills, especially when a follower asks whether a useful Skill already exists.",
+    coreConcepts: [
+      "Clarify the user's domain, task, inputs, outputs, and constraints before searching.",
+      "Check existing local Skills before adding another external Skill.",
+      "Check trusted public sources or leaderboards before broad search.",
+      "Search with specific keywords and alternate terms when the first query is weak.",
+      "Verify install count, source reputation, GitHub stars, and source fit before recommending.",
+      "Present a clear install, hold, reject, or direct-help decision."
+    ],
+    conceptCoverage: "5/6 concepts were exercised directly in the Discovery Desk build; the npx CLI search step was modeled but not executed because it would run third-party package code without explicit trust.",
+    groundUpBuild: "Built the Skill Discovery Desk from scratch as an interactive source-aware recommendation flow.",
+    rating: 7.1,
+    ratingScale: 10,
+    ratingSummary: "Useful as a thinking workflow for Skill discovery, but not a full Phoebe Pick until source credibility and safer search tooling improve.",
+    good: [
+      "Stops the agent from recommending a Skill just because a keyword matches.",
+      "Turns Skill discovery into a repeatable brief, search, verify, decide workflow.",
+      "Makes source quality visible before installation."
+    ],
+    improve: [
+      "The installed source does not pass the 10k-star gate yet.",
+      "The recommended CLI path depends on external package execution, so it needs explicit trust.",
+      "It needs a richer scoring template for installs, source reputation, and artifact proof."
+    ],
+    useCases: [
+      "Builders can compare Skills before adding more agent instructions.",
+      "Students can learn how to judge AI tooling sources instead of chasing lists.",
+      "Leaders can ask for evidence before adopting a new workflow Skill."
+    ],
+    demo: "demos/find-skills-discovery-desk/index.html",
+    galleryLink: "demos/find-skills-discovery-desk/index.html"
   }
 ];
 

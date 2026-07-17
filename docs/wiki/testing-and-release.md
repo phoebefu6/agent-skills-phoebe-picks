@@ -9,6 +9,7 @@ node --check data/reviews.js
 node --check assets/design-options.js
 node --check demos/skill-demo.js
 node --check demos/design-taste-frontend-studio/app.js
+node --check demos/find-skills-discovery-desk/app.js
 ```
 
 These catch syntax errors in the static data and renderer.
@@ -37,6 +38,7 @@ Check:
 - Each public Skill shows a source repo/reference and a dated GitHub star snapshot when the source is on GitHub.
 - Each public Skill passes the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof.
 - Each public Skill promoted from exploring has a ground-up artifact, about 80% concept coverage, a rating out of 10, 3 strengths, and 3 improvement points.
+- Exploring artifacts may appear in the gallery only when clearly labeled; do not describe them as full public picks until they pass the source credibility gate.
 - Demo artifact pages under `demos/` load from the local server and have their JavaScript checked.
 - Demo pages do not need to match each other. Confirm each one independently showcases the Skill's functions, concepts, and practical value.
 - The public page does not expose internal LLM Wiki workflow content.

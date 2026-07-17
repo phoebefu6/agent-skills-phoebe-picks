@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An interactive find-skills field test that turns Skill discovery into a source-aware recommendation desk.">
+    <title>Find Skills Discovery Desk</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../../index.html">Agent Skills Phoebe Picks</a>
+      <span>find-skills field test</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="kicker">Explored Skill</p>
+          <h1 id="page-title"><span>Skill</span><span>Discovery</span><span>Desk</span></h1>
+          <p>Find useful agent Skills without falling for noisy search results.</p>
+          <div class="hero-actions">
+            <a href="#desk" class="primary-action">Try the desk</a>
+            <a href="#gate" class="secondary-action">View source gate</a>
+          </div>
+        </div>
+
+        <div class="discovery-stage" aria-label="Skill discovery workflow">
+          <div class="flow-line"></div>
+          <article class="stage-card need">
+            <span>01</span>
+            <strong>Need</strong>
+            <p>Clarify the job before searching.</p>
+          </article>
+          <article class="stage-card search">
+            <span>02</span>
+            <strong>Search</strong>
+            <p>Look for matching Skills and sources.</p>
+          </article>
+          <article class="stage-card verify">
+            <span>03</span>
+            <strong>Verify</strong>
+            <p>Check stars, source, and fit.</p>
+          </article>
+          <article class="stage-card decide">
+            <span>04</span>
+            <strong>Decide</strong>
+            <p>Recommend, hold, or reject.</p>
+          </article>
+          <span class="float-chip chip-one">source first</span>
+          <span class="float-chip chip-two">install last</span>
+          <span class="float-chip chip-three">use case fit</span>
+        </div>
+      </section>
+
+      <section class="feature-map" id="feature-map" aria-labelledby="feature-title">
+        <div class="section-intro">
+          <p class="kicker">Key features</p>
+          <h2 id="feature-title">The Skill is a search workflow, not just a search bar.</h2>
+          <p>Tap each feature to see what it changes in the recommendation process.</p>
+        </div>
+
+        <div class="feature-layout">
+          <nav class="feature-buttons" aria-label="find-skills key features">
+            <button class="is-active" type="button" data-feature="brief">Clarify need</button>
+            <button type="button" data-feature="local">Check local Skills</button>
+            <button type="button" data-feature="leaderboard">Check leaderboard</button>
+            <button type="button" data-feature="search">Search ecosystem</button>
+            <button type="button" data-feature="quality">Verify quality</button>
+            <button type="button" data-feature="decision">Present decision</button>
+          </nav>
+
+          <article class="feature-card" aria-live="polite">
+            <span id="featureStep">01</span>
+            <h3 id="featureName">Clarify the user need</h3>
+            <p id="featureSummary">Translate the request into domain, task, input, output, and constraints before searching.</p>
+            <ul id="featurePoints"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="desk" id="desk" aria-labelledby="desk-title">
+        <div class="section-intro compact">
+          <p class="kicker">Interactive demo</p>
+          <h2 id="desk-title">Pick a situation. The desk creates a safer Skill-search brief.</h2>
+        </div>
+
+        <div class="desk-grid">
+          <div class="scenario-panel">
+            <button class="scenario-button is-active" type="button" data-scenario="design">Improve AI-built UI</button>
+            <button class="scenario-button" type="button" data-scenario="data">Build a data report</button>
+            <button class="scenario-button" type="button" data-scenario="automation">Automate repeated work</button>
+            <button class="scenario-button" type="button" data-scenario="research">Research a new topic</button>
+          </div>
+
+          <article class="brief-output" aria-live="polite">
+            <div class="brief-top">
+              <span id="briefDomain">Design</span>
+              <strong id="briefQuery">frontend design Skill</strong>
+            </div>
+            <dl>
+              <div>
+                <dt>Task</dt>
+                <dd id="briefTask">Find a Skill that turns rough agent-built screens into polished UI.</dd>
+              </div>
+              <div>
+                <dt>Quality gate</dt>
+                <dd id="briefGate">Prefer 10k+ star source or verified top-ranked proof.</dd>
+              </div>
+              <div>
+                <dt>Decision</dt>
+                <dd id="briefDecision">Recommend only after a ground-up artifact proves the method.</dd>
+              </div>
+            </dl>
+          </article>
+
+          <aside class="route-panel">
+            <span>Search route</span>
+            <ol id="routeList">
+              <li>Check local Skills already installed.</li>
+              <li>Check trusted public sources.</li>
+              <li>Search exact domain terms.</li>
+              <li>Verify repo stars and source fit.</li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section class="gate" id="gate" aria-labelledby="gate-title">
+        <div class="section-intro compact">
+          <p class="kicker">Source gate</p>
+          <h2 id="gate-title">This field test is useful, but not a full public pick yet.</h2>
+        </div>
+
+        <div class="gate-board">
+          <article class="gate-result">
+            <span>Installed source</span>
+            <h3>find-skills</h3>
+            <p>Source: joe-bell/cva, .agents/skills/find-skills</p>
+            <div class="meter" aria-label="GitHub star gate">
+              <span style="width: 68.61%"></span>
+            </div>
+            <strong>6,861 / 10,000 stars</strong>
+            <small>Snapshot: 2026-07-17</small>
+          </article>
+
+          <article class="gate-note hold">
+            <span>Decision</span>
+            <h3>Hold as explored artifact</h3>
+            <p>The workflow is useful for discovery, but the installed source does not meet Phoebe's credibility gate yet.</p>
+          </article>
+
+          <article class="gate-note">
+            <span>Safety finding</span>
+            <h3>CLI step needs care</h3>
+            <p>The Skill recommends `npx skills find`. In this field test, direct third-party package execution was not used.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="verdict" aria-labelledby="verdict-title">
+        <div class="section-intro compact">
+          <p class="kicker">Field notes</p>
+          <h2 id="verdict-title">What the build proved.</h2>
+        </div>
+
+        <div class="verdict-grid">
+          <article>
+            <h3>3 strong points</h3>
+            <ul>
+              <li>It stops the agent from recommending a Skill just because a keyword matches.</li>
+              <li>It turns discovery into a repeatable brief, search, verify, decide workflow.</li>
+              <li>It makes source quality visible before installation.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>3 can be better</h3>
+            <ul>
+              <li>The source used here does not pass the 10k-star gate yet.</li>
+              <li>The CLI path depends on external package execution, so it needs explicit trust.</li>
+              <li>It needs a richer scoring template for installs, source reputation, and artifact proof.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Day-to-day use</h3>
+            <ul>
+              <li>Builders can compare Skills before adding more agent instructions.</li>
+              <li>Students can learn how to judge AI tooling sources instead of chasing lists.</li>
+              <li>Leaders can ask for evidence before adopting a new workflow Skill.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

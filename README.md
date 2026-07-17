@@ -3,6 +3,7 @@
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
 [![Published Picks](https://img.shields.io/badge/published%20picks-5-6f7cff?style=for-the-badge)](#published-products)
+[![Field Tests](https://img.shields.io/badge/field%20tests-6-ffbc91?style=for-the-badge)](#field-tested-artifacts)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A hands-on gallery of AI agent Skills I test by building real things from scratch.
@@ -40,6 +41,14 @@ Star this repo if you want a growing shortlist of Skills that can help you:
 
 Each product page lists the Skill's key features in a visual, interactive format so followers can see what the Skill changes in practice.
 
+## Field-Tested Artifacts
+
+These are useful learning artifacts, but not full public picks yet.
+
+| Skill | Built from scratch | Source snapshot | Decision |
+| --- | --- | --- | --- |
+| `find-skills` | [Skill Discovery Desk](demos/find-skills-discovery-desk/) | [joe-bell/cva](https://github.com/joe-bell/cva/tree/main/.agents/skills/find-skills), 6,861 stars, explored 2026-07-17 | Exploring: useful workflow, held back because it is below the 10k-star source gate |
+
 ## What You Will Find
 
 | Scenario | Skills I am looking for |
@@ -74,6 +83,7 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `design-review` | Published | Turn screenshots into concrete critique and fixes. |
 | `high-end-visual-design` | Published | Improve typography, spacing, hierarchy, and craft. |
 | `design-consultation` | Published | Turn repeated design preferences into reusable guidance. |
+| `find-skills` | Exploring | Find and vet other Skills before installing or recommending them. |
 
 ## Repo Map
 
@@ -90,6 +100,7 @@ agent-skills-phoebe-picks/
   demos/design-review-critique-loop/ # design-review demo
   demos/high-end-visual-design-showcase/ # high-end-visual-design demo
   demos/design-consultation-system-room/ # design-consultation demo
+  demos/find-skills-discovery-desk/ # find-skills field test
   wishlist.md                        # Exploration queue
   docs/wiki/                         # Internal agent memory for future work
 ```
@@ -113,4 +124,5 @@ node --check data/reviews.js
 node --check assets/design-options.js
 node --check demos/skill-demo.js
 node --check demos/design-taste-frontend-studio/app.js
+node --check demos/find-skills-discovery-desk/app.js
 ```

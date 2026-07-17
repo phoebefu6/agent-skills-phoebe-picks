@@ -34,6 +34,8 @@ Skill exploration is a field test, not a light impression. For each Skill Phoebe
 
 Do not publish a Skill review based only on reading, installing, planning, or using it for a small amendment. The Skill must help produce something new from zero.
 
+Explored artifacts can be visible in the gallery when they help followers understand the testing journey, but keep them labeled `exploring` if the source credibility gate is still pending or failed. Do not call them published picks.
+
 ## Demo Artifact Direction
 
 The demo page is part of the evaluation, not a decorative subpage. It should showcase what the Skill can actually do and use as many relevant Skill features as practical.
