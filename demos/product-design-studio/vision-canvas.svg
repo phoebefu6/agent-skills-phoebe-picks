@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" role="img" aria-labelledby="title desc">
+  <title id="title">Quiet Leverage product design canvas</title>
+  <desc id="desc">A calm abstract product design canvas showing exploration, verification, and decision layers.</desc>
+  <rect width="960" height="680" fill="#fff8e6"/>
+  <rect x="0" y="0" width="960" height="226" fill="#ffbc91" opacity="0.74"/>
+  <rect x="0" y="226" width="960" height="228" fill="#fff1c7" opacity="0.82"/>
+  <rect x="0" y="454" width="960" height="226" fill="#c6e7f8" opacity="0.78"/>
+  <g opacity="0.18" stroke="#161611" stroke-width="1">
+    <path d="M120 0V680"/>
+    <path d="M240 0V680"/>
+    <path d="M360 0V680"/>
+    <path d="M480 0V680"/>
+    <path d="M600 0V680"/>
+    <path d="M720 0V680"/>
+    <path d="M840 0V680"/>
+  </g>
+  <g fill="none" stroke="#2e604d" stroke-width="2">
+    <path d="M170 176 C270 128 340 132 440 190 S626 266 762 170"/>
+    <path d="M182 370 C326 330 452 400 596 358 S742 300 818 364"/>
+    <path d="M146 536 C278 492 418 558 552 520 S744 484 828 548"/>
+  </g>
+  <g fill="#fffdf7" stroke="#ead8bd" stroke-width="2">
+    <rect x="118" y="112" width="172" height="124" rx="8"/>
+    <rect x="392" y="160" width="214" height="128" rx="8"/>
+    <rect x="680" y="98" width="158" height="146" rx="8"/>
+    <rect x="176" y="314" width="230" height="132" rx="8"/>
+    <rect x="548" y="306" width="242" height="138" rx="8"/>
+    <rect x="230" y="496" width="208" height="116" rx="8"/>
+    <rect x="574" y="488" width="202" height="118" rx="8"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#2e604d" font-weight="700" font-size="15">
+    <text x="142" y="148">EXPLORE</text>
+    <text x="418" y="196">VERIFY</text>
+    <text x="706" y="136">DECIDE</text>
+    <text x="202" y="350">PRODUCT SCREEN</text>
+    <text x="574" y="342">MOTION POLISH</text>
+    <text x="256" y="532">SOURCE GATE</text>
+    <text x="604" y="524">PUBLISH PICK</text>
+  </g>
+  <g font-family="Georgia, serif" fill="#8f3f31" font-size="44" font-weight="700">
+    <text x="142" y="200">Brief</text>
+    <text x="418" y="250">Proof</text>
+    <text x="706" y="198">Trust</text>
+  </g>
+  <g fill="#161611">
+    <circle cx="170" cy="176" r="6"/>
+    <circle cx="440" cy="190" r="6"/>
+    <circle cx="762" cy="170" r="6"/>
+    <circle cx="182" cy="370" r="6"/>
+    <circle cx="596" cy="358" r="6"/>
+    <circle cx="828" cy="548" r="6"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#756b5c" font-size="13">
+    <text x="118" y="650">Quiet Leverage: curiosity becomes a product decision through source, proof, and interaction craft.</text>
+  </g>
+</svg>

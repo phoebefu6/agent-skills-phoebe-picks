@@ -2,6 +2,7 @@ const FILTERS = {
   scenarios: [
     { id: "design", label: "Design" },
     { id: "ui-ux", label: "UI/UX" },
+    { id: "product-design", label: "Product Design" },
     { id: "frontend", label: "Frontend" },
     { id: "data", label: "Data" },
     { id: "data-viz", label: "Data Viz" },
@@ -37,16 +38,16 @@ const PICKS = [
     sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
     sourceRepo: "anthropics/skills",
     sourcePath: "skills/frontend-design",
-    githubStars: 161555,
-    starsCheckedAt: "2026-07-16",
+    githubStars: 161869,
+    starsCheckedAt: "2026-07-17",
     status: "published",
     recommendation: "Published pick: useful when a rough product idea needs to become a real frontend screen with states and responsive behavior.",
-    dateExplored: "2026-07-10",
-    scenarios: ["frontend", "ui-ux", "design"],
-    platforms: ["claude-code", "codex", "hermes"],
-    badges: ["UI build", "States", "Responsive"],
-    summary: "A frontend Skill for turning a product brief into polished, responsive interface code.",
-    phoebeNote: "Use it when you want an agent to turn a rough product idea into a real first screen without repeating every UI rule.",
+    dateExplored: "2026-07-17",
+    scenarios: ["product-design", "frontend", "ui-ux", "design"],
+    platforms: ["claude-code", "codex", "hermes", "cursor", "gemini-cli"],
+    badges: ["Product screen", "States", "Responsive"],
+    summary: "A frontend Skill for turning a product brief into distinctive, working interface screens.",
+    phoebeNote: "Use it when a product idea needs a real screen with honest content, states, and a visual point of view.",
     coreConcepts: [
       "Understand the audience, job, domain, tone, and technical constraints before choosing the look.",
       "Commit to one specific aesthetic direction instead of generic AI defaults.",
@@ -55,28 +56,128 @@ const PICKS = [
       "Refine typography, color, layout, motion, and component details.",
       "Self-review mobile, desktop, focus states, overlap, AI visual tropes, and memorability before delivery."
     ],
-    conceptCoverage: "6/6 key concepts are visible in the Scenario Console demo.",
-    groundUpBuild: "Built the Scenario Console product screen from scratch.",
-    rating: 8.2,
+    conceptCoverage: "6/6 key concepts are visible in the Product Design Studio product screen.",
+    groundUpBuild: "Built the Signal Desk product screen inside Product Design Studio from scratch.",
+    rating: 8.6,
     ratingScale: 10,
-    ratingSummary: "Strong for turning a rough brief into a usable screen, but still needs a taste pass for final polish.",
+    ratingSummary: "Very strong for turning a product idea into a credible screen, especially when paired with a motion or critique Skill.",
     good: [
+      "Forces the product subject, audience, job, tone, and constraints before visual choices.",
       "Pushes for real interface states instead of a static poster.",
-      "Keeps implementation close to the existing repo stack.",
       "Connects design direction with production HTML, CSS, and JS."
     ],
     improve: [
-      "Still needs taste checks to avoid generic polish.",
-      "Can be broad when the product direction is not sharp yet.",
-      "Needs screenshot QA before I would call the output done."
+      "Still benefits from a second Skill for final interaction polish.",
+      "Can become broad when the product direction is not sharp yet.",
+      "Needs screenshot QA because distinctive layouts can break at small widths."
     ],
     useCases: [
       "Vibe coders can turn a rough product idea into a usable first screen.",
       "Students can learn how UI decisions map into actual files.",
       "Leaders can prototype an internal AI tool before asking a team to build it."
     ],
-    demo: "demos/frontend-design-interface/index.html",
-    galleryLink: "demos/frontend-design-interface/index.html"
+    demo: "demos/product-design-studio/index.html#frontend-design",
+    galleryLink: "demos/product-design-studio/index.html#frontend-design"
+  },
+  {
+    id: "canvas-design",
+    name: "canvas-design",
+    source: "Anthropic Skills",
+    sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+    sourceRepo: "anthropics/skills",
+    sourcePath: "skills/canvas-design",
+    githubStars: 161869,
+    starsCheckedAt: "2026-07-17",
+    status: "published",
+    recommendation: "Published pick: useful when a product needs a visual philosophy or campaign-like concept before screens are built.",
+    dateExplored: "2026-07-17",
+    scenarios: ["product-design", "design", "ui-ux"],
+    platforms: ["claude-code", "codex", "hermes", "cursor", "gemini-cli"],
+    badges: ["Visual philosophy", "Moodboard", "Canvas"],
+    summary: "A visual-design Skill for creating a philosophy, art direction, and canvas artifact around a product idea.",
+    phoebeNote: "Use it before UI work when the product needs a memorable visual world, not just another set of cards.",
+    coreConcepts: [
+      "Create a named visual philosophy before making the visual artifact.",
+      "Express ideas through space, form, color, composition, and minimal text.",
+      "Keep the design 90% visual and 10% essential labels.",
+      "Embed a subtle reference that people familiar with the subject can sense.",
+      "Push expert-level craft through alignment, typography, color, and containment.",
+      "Refine the existing composition rather than adding more decoration.",
+      "Output a durable philosophy and visual artifact."
+    ],
+    conceptCoverage: "6/7 key concepts are visible in Product Design Studio; the artifact is published as philosophy.md plus an SVG canvas instead of a binary PDF/PNG so it stays inspectable on GitHub Pages.",
+    groundUpBuild: "Built the Quiet Leverage visual philosophy and product-design canvas from scratch.",
+    rating: 7.8,
+    ratingScale: 10,
+    ratingSummary: "Excellent for visual direction and product storytelling, but it needs another Skill to turn the idea into working UI.",
+    good: [
+      "Forces a product to have a visual worldview before screens are assembled.",
+      "Makes mood, hierarchy, and concept visible through composition instead of prose.",
+      "Useful for followers who need a brand-like direction before asking an agent to code."
+    ],
+    improve: [
+      "It is less directly useful for functional app screens.",
+      "The full upstream flow expects PNG/PDF output, which is heavier than a static gallery needs.",
+      "It can become too abstract if the product job is not clearly named first."
+    ],
+    useCases: [
+      "Builders can create a visual north star before coding a product page.",
+      "Leaders can use it to brief teams on product mood without writing a long brand document.",
+      "Students can learn how visual direction influences later UI decisions."
+    ],
+    demo: "demos/product-design-studio/index.html#canvas-design",
+    galleryLink: "demos/product-design-studio/index.html#canvas-design"
+  },
+  {
+    id: "emil-design-eng",
+    name: "emil-design-eng",
+    source: "Emil Kowalski Skills",
+    sourceUrl: "https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng",
+    sourceRepo: "emilkowalski/skills",
+    sourcePath: "skills/emil-design-eng",
+    githubStars: 15002,
+    starsCheckedAt: "2026-07-17",
+    status: "published",
+    recommendation: "Published pick: useful when a product screen already works but needs interaction polish, motion judgment, and component craft.",
+    dateExplored: "2026-07-17",
+    scenarios: ["product-design", "ui-ux", "frontend"],
+    platforms: ["claude-code", "codex", "hermes", "cursor", "gemini-cli"],
+    badges: ["Motion", "Micro-interactions", "Craft"],
+    summary: "A design-engineering Skill for making UI interactions feel fast, intentional, and carefully handled.",
+    phoebeNote: "Use it when the page is functional but still feels flat, sluggish, or not quite premium in the hands.",
+    coreConcepts: [
+      "Treat taste as trained judgment, not personal preference.",
+      "Decide whether an interaction should animate based on frequency and purpose.",
+      "Use custom easing, short durations, and avoid ease-in for responsive UI.",
+      "Make buttons feel responsive with subtle active scale.",
+      "Avoid scale(0) entry motion; start with a visible shape and opacity.",
+      "Make popovers origin-aware instead of scaling from the wrong place.",
+      "Prefer transitions, transform, and opacity for performant, interruptible UI.",
+      "Respect reduced motion and touch-device hover constraints.",
+      "Review UI changes with Before, After, Why reasoning."
+    ],
+    conceptCoverage: "8/9 key concepts are visible in Product Design Studio; gesture physics were not used because the static gallery demo does not include drag dismissal.",
+    groundUpBuild: "Built the interaction polish lab inside Product Design Studio from scratch.",
+    rating: 8.4,
+    ratingScale: 10,
+    ratingSummary: "Excellent for final product feel and motion judgment, but it is a polish Skill rather than a complete product-design generator.",
+    good: [
+      "Turns vague polish into specific interaction rules that can be tested.",
+      "Improves perceived speed through press feedback, easing, and animation restraint.",
+      "Gives a clear Before, After, Why review format for product UI fixes."
+    ],
+    improve: [
+      "It needs an existing screen or component to be most useful.",
+      "Some guidance assumes modern frontend animation APIs that may not fit every static site.",
+      "It can over-focus on motion unless the product goal stays visible."
+    ],
+    useCases: [
+      "Vibe coders can make buttons, popovers, and toasts feel more professional.",
+      "Product leaders can judge whether a prototype feels credible in use, not only in screenshots.",
+      "Students can learn practical motion rules without studying a full animation course first."
+    ],
+    demo: "demos/product-design-studio/index.html#emil-design-eng",
+    galleryLink: "demos/product-design-studio/index.html#emil-design-eng"
   },
   {
     id: "design-taste-frontend",

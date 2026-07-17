@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A product-design field test for frontend-design, canvas-design, and emil-design-eng.">
+    <title>Product Design Studio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../../index.html">Agent Skills Phoebe Picks</a>
+      <span>product design field test</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="kicker">Installed and field tested</p>
+          <h1 id="page-title">Product Design Studio</h1>
+          <p>A ground-up product-design build using `frontend-design`, `canvas-design`, and `emil-design-eng` together.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#frontend-design">Open product screen</a>
+            <a class="secondary-action" href="#canvas-design">View visual canvas</a>
+            <a class="secondary-action" href="#emil-design-eng">Test motion</a>
+          </div>
+        </div>
+
+        <aside class="hero-board" aria-label="Product design studio overview">
+          <div class="board-strip peach">
+            <span>frontend-design</span>
+            <strong>Useful screens</strong>
+          </div>
+          <div class="board-strip cream">
+            <span>canvas-design</span>
+            <strong>Visual philosophy</strong>
+          </div>
+          <div class="board-strip blue">
+            <span>emil-design-eng</span>
+            <strong>Micro-interaction craft</strong>
+          </div>
+          <div class="board-note">
+            <span>Product concept</span>
+            <strong>Signal Desk</strong>
+            <p>A small product for choosing which AI Skill to try, verify, and publish.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="skill-section" id="frontend-design" aria-labelledby="frontend-title">
+        <div class="section-head">
+          <p class="kicker">frontend-design</p>
+          <h2 id="frontend-title">The Skill becomes a real product screen.</h2>
+          <p>It starts with audience, job, tone, content, states, and one justified aesthetic risk before code.</p>
+        </div>
+
+        <div class="product-shell" data-ui-state="review">
+          <nav class="side-nav" aria-label="Signal Desk">
+            <strong>Signal Desk</strong>
+            <button class="is-active" type="button" data-product-state="review">Review queue</button>
+            <button type="button" data-product-state="empty">Empty state</button>
+            <button type="button" data-product-state="published">Published</button>
+          </nav>
+
+          <article class="product-screen">
+            <div class="screen-top">
+              <div>
+                <span id="stateLabel">Review queue</span>
+                <h3 id="stateTitle">3 Skills need a product-design proof.</h3>
+              </div>
+              <button class="press-button" type="button" data-toast="Product brief saved">Save brief</button>
+            </div>
+
+            <div class="signal-grid" id="signalGrid"></div>
+          </article>
+        </div>
+
+        <div class="concept-grid">
+          <article><span>Brief</span><p>Audience, job, tone, and technical constraints set before layout.</p></article>
+          <article><span>States</span><p>Review, empty, and published states are real, not placeholder posters.</p></article>
+          <article><span>Craft</span><p>Color, type, motion, and structure carry the product purpose.</p></article>
+        </div>
+      </section>
+
+      <section class="skill-section canvas-section" id="canvas-design" aria-labelledby="canvas-title">
+        <div class="section-head">
+          <p class="kicker">canvas-design</p>
+          <h2 id="canvas-title">The Skill turns product strategy into a visual philosophy.</h2>
+          <p>The artifact uses minimal text and expresses the journey from curiosity to trusted pick through space, color, and structure.</p>
+        </div>
+
+        <div class="canvas-layout">
+          <figure class="vision-canvas">
+            <img src="vision-canvas.svg" alt="Quiet Leverage product design canvas">
+          </figure>
+          <aside class="philosophy-card">
+            <span>Movement</span>
+            <h3>Quiet Leverage</h3>
+            <p>Warm exploration, cream judgment, and pale-blue confidence form the product's visual operating system.</p>
+            <a href="philosophy.md">Open philosophy note</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="skill-section" id="emil-design-eng" aria-labelledby="emil-title">
+        <div class="section-head">
+          <p class="kicker">emil-design-eng</p>
+          <h2 id="emil-title">The Skill is tested through invisible interaction details.</h2>
+          <p>Small choices make the product feel faster: active press feedback, origin-aware popovers, tight easing, and reduced-motion support.</p>
+        </div>
+
+        <div class="motion-lab">
+          <article class="interaction-card">
+            <div class="interaction-top">
+              <span>Press feedback</span>
+              <button class="press-button" type="button" data-toast="Skill added to shortlist">Add Skill</button>
+            </div>
+            <p>Buttons scale to 0.97 on active press and transition only transform for a crisp response.</p>
+          </article>
+
+          <article class="interaction-card popover-demo">
+            <div class="interaction-top">
+              <span>Origin-aware popover</span>
+              <button class="press-button" type="button" id="popoverTrigger">Open fit check</button>
+            </div>
+            <div class="popover" id="fitPopover" hidden>
+              <strong>Use when</strong>
+              <p>A Skill needs source, proof, and interaction quality before being recommended.</p>
+            </div>
+          </article>
+
+          <article class="interaction-card">
+            <div class="interaction-top">
+              <span>Tooltip behavior</span>
+              <button class="tooltip-button" type="button" aria-describedby="tipOne">Source</button>
+              <span class="tooltip" id="tipOne">Check stars before trust.</span>
+            </div>
+            <p>Tooltips are short, delayed only enough to prevent accidental activation, and do not block work.</p>
+          </article>
+        </div>
+
+        <div class="review-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Before</th><th>After</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>`transition: all`</td><td>`transition: transform 160ms`</td><td>Only animate cheap properties.</td></tr>
+              <tr><td>`scale(0)`</td><td>`scale(0.95) + opacity`</td><td>Nothing appears from nothing.</td></tr>
+              <tr><td>Slow hover motion</td><td>Short hover and active states</td><td>Repeated UI should feel immediate.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="app.js"></script>
+  </body>
+</html>

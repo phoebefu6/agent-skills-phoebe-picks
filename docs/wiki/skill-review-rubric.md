@@ -44,6 +44,8 @@ Every explored Skill subpage should list the Skill's key features in a visual, i
 
 Do not make every demo look the same. A Skill demo may become a product prototype, decision flow, mindmap, diagram, interactive lab, visual critique, dashboard, report, or any other static artifact that best expresses the Skill's function. Keep the gallery homepage consistent for browsing, but let `demos/` pages vary widely when variety helps followers understand the Skill.
 
+A single demo page may cover multiple related Skills when the sections are clearly separated, each Skill has its own anchor link, and each Skill record still captures concept coverage, rating, 3 strengths, 3 improvement points, source, stars, and use cases.
+
 ## Status Labels
 
 | Data value | Public label | Meaning |
@@ -79,3 +81,5 @@ The first sprint focuses on design, UI, UX, and frontend Skills because they hel
 - `design-review`
 - `high-end-visual-design`
 - `design-consultation`
+- `canvas-design`
+- `emil-design-eng`

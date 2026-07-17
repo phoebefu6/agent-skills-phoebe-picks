@@ -25,7 +25,9 @@
   };
 
   const demoTitles = {
-    "frontend-design": "Scenario Console",
+    "frontend-design": "Product Screen",
+    "canvas-design": "Product Canvas",
+    "emil-design-eng": "Motion Lab",
     "design-taste-frontend": "Taste Lab",
     "design-review": "Critique Loop",
     "high-end-visual-design": "Visual Atelier",
@@ -181,7 +183,7 @@
 
     const published = picks
       .filter((pick) => pick.status === "published" && pick.galleryLink)
-      .slice(0, 5);
+      .slice(0, 7);
 
     nodes.productRail.innerHTML = published
       .map((pick) => {

@@ -57,6 +57,7 @@ node --check assets/design-options.js
 node --check demos/skill-demo.js
 node --check demos/design-taste-frontend-studio/app.js
 node --check demos/find-skills-discovery-desk/app.js
+node --check demos/product-design-studio/app.js
 ```
 
 For visual changes, run a local server:
