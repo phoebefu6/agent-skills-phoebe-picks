@@ -15,7 +15,7 @@ The site should feel calm, neat, editorial, and community-minded. It should not 
 - Avoid highly saturated colors.
 - Avoid generic purple-blue AI gradients.
 - Avoid decorative blobs, bokeh, noisy backgrounds, or ornamental SVGs.
-- Use Georgia only as an editorial heading voice, paired with a system sans body.
+- Prefer system sans typography for the public homepage. Avoid oversized serif hero type unless Phoebe explicitly asks for a magazine/poster direction.
 - Keep radius modest around 10px, with pill buttons for actions and filters.
 - Use a light gallery theme by default. Do not switch to dark mode unless Phoebe explicitly asks.
 

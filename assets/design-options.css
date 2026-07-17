@@ -1,25 +1,25 @@
 :root {
   color-scheme: light;
-  --paper: #fffbf7;
-  --paper-soft: #fff3df;
-  --panel: #fffefa;
+  --paper: #f7f8f5;
+  --paper-soft: #f1f4ee;
+  --panel: #fbfcf8;
   --panel-strong: #ffffff;
-  --ink: #171a15;
-  --muted: #686b64;
-  --line: #e7ded2;
-  --accent: #b8dcf0;
-  --accent-strong: #25566a;
-  --accent-soft: #d8edf8;
-  --pop: #b8dcf0;
-  --pop-strong: #25566a;
+  --ink: #161814;
+  --muted: #62675f;
+  --line: #dde3d8;
+  --accent: #c8e5ee;
+  --accent-strong: #24586a;
+  --accent-soft: #edf7fa;
+  --pop: #c8e5ee;
+  --pop-strong: #24586a;
   --sage: #dfe7d2;
   --sage-strong: #315947;
   --pop-soft: #eef8fc;
   --wash-peach: #ffe4cc;
   --wash-cream: #fff8e7;
   --wash-blue: #e4f4fb;
-  --soft-shadow: 0 24px 72px rgb(70 52 36 / 0.08);
-  --fine-shadow: 0 10px 34px rgb(70 52 36 / 0.07);
+  --soft-shadow: 0 18px 60px rgb(45 54 43 / 0.08);
+  --fine-shadow: 0 8px 28px rgb(45 54 43 / 0.07);
   --radius: 8px;
   --motion: cubic-bezier(0.22, 1, 0.36, 1);
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -39,9 +39,7 @@ html {
 body {
   min-width: 320px;
   margin: 0;
-  background:
-    linear-gradient(180deg, #fffbf7 0%, #fbfaf4 42%, #f4fbfd 100%),
-    var(--paper);
+  background: var(--paper);
   color: var(--ink);
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -133,15 +131,16 @@ input:focus-visible {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 66px 0 54px;
+  padding: 72px 0 64px;
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  inset: auto 0 0;
-  height: 38%;
-  background: linear-gradient(180deg, transparent, rgb(184 220 240 / 0.28));
+  inset: 0;
+  background:
+    radial-gradient(circle at 76% 22%, rgb(200 229 238 / 0.34), transparent 34%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.78), transparent 58%);
   pointer-events: none;
 }
 
@@ -149,13 +148,13 @@ input:focus-visible {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.76fr);
-  gap: clamp(34px, 6vw, 72px);
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.78fr);
+  gap: clamp(40px, 7vw, 92px);
   align-items: center;
 }
 
 .hero-copy {
-  padding-top: clamp(10px, 2.4vw, 34px);
+  padding-top: 0;
 }
 
 .kicker {
@@ -175,21 +174,21 @@ p {
 }
 
 h1 {
-  max-width: 11ch;
-  margin-bottom: 18px;
+  max-width: 13ch;
+  margin-bottom: 20px;
   font-family: inherit;
-  font-size: clamp(46px, 6vw, 76px);
-  font-weight: 780;
-  line-height: 0.98;
+  font-size: clamp(44px, 5.4vw, 68px);
+  font-weight: 760;
+  line-height: 1.02;
   letter-spacing: 0;
 }
 
 .hero-subtitle {
-  max-width: 470px;
-  margin-bottom: 28px;
+  max-width: 520px;
+  margin-bottom: 30px;
   color: var(--muted);
-  font-size: 19px;
-  line-height: 1.48;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .button-row {
@@ -237,8 +236,13 @@ h1 {
 .proof-wall {
   position: relative;
   display: grid;
-  gap: 12px;
+  gap: 0;
   align-content: start;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  background: color-mix(in srgb, var(--panel-strong) 92%, transparent);
+  box-shadow: var(--soft-shadow);
 }
 
 .proof-summary,
@@ -254,23 +258,13 @@ h1 {
 
 .proof-summary {
   display: grid;
-  min-height: 214px;
-  align-content: space-between;
-  gap: 18px;
-  padding: 24px;
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.82), rgb(201 232 248 / 0.26)),
-    var(--panel-strong);
-  box-shadow: var(--fine-shadow);
-}
-
-.proof-summary::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto auto 0;
-  width: 72px;
-  height: 3px;
-  background: var(--accent);
+  min-height: auto;
+  gap: 12px;
+  padding: 0 0 20px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .proof-summary span,
@@ -286,11 +280,11 @@ h1 {
 
 .proof-summary strong {
   display: block;
-  max-width: 11ch;
+  max-width: none;
   color: var(--ink);
-  font-size: clamp(30px, 3.2vw, 44px);
-  font-weight: 780;
-  line-height: 1.02;
+  font-size: 26px;
+  font-weight: 760;
+  line-height: 1.14;
 }
 
 .proof-summary p {
@@ -327,10 +321,14 @@ h1 {
 .proof-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  min-height: 82px;
-  align-items: end;
+  min-height: auto;
+  align-items: center;
   gap: 6px 14px;
-  padding: 15px 16px;
+  padding: 16px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
   overflow: hidden;
   transition:
     transform 220ms var(--motion),
@@ -356,7 +354,7 @@ h1 {
 .proof-card:hover,
 .rail-card:hover,
 .stack-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-1px);
   border-color: color-mix(in srgb, var(--pop) 42%, var(--line));
   box-shadow: var(--fine-shadow);
 }
@@ -368,6 +366,10 @@ h1 {
   transform: scaleX(1);
 }
 
+.proof-card::after {
+  display: none;
+}
+
 .proof-card span {
   grid-column: 1 / -1;
 }
@@ -377,8 +379,8 @@ h1 {
 .stack-card strong {
   color: var(--ink);
   font-family: inherit;
-  font-size: 18px;
-  font-weight: 780;
+  font-size: 16px;
+  font-weight: 760;
   line-height: 1.12;
   overflow-wrap: anywhere;
 }
@@ -398,37 +400,7 @@ h1 {
 }
 
 .proof-card.is-featured {
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 64%, transparent), transparent 74%),
-    var(--panel-strong);
-}
-
-.proof-kpis {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding-top: 4px;
-}
-
-.proof-kpis span {
-  display: grid;
-  gap: 4px;
-  border-top: 1px solid var(--line);
-  padding-top: 12px;
-}
-
-.proof-kpis strong {
-  color: var(--ink);
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.proof-kpis small {
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 720;
-  line-height: 1.25;
+  background: transparent;
 }
 
 .skill-stack-section {
@@ -474,7 +446,6 @@ h1 {
   padding: 12px;
   background:
     linear-gradient(145deg, rgb(255 255 255 / 0.74), transparent 38%, rgb(216 237 248 / 0.34)),
-    repeating-linear-gradient(90deg, rgb(49 89 71 / 0.04) 0 1px, transparent 1px 56px),
     color-mix(in srgb, var(--panel) 78%, var(--sage));
   box-shadow: var(--soft-shadow);
 }
@@ -1491,10 +1462,6 @@ h1 {
   .proof-card small {
     justify-self: start;
     text-align: left;
-  }
-
-  .proof-kpis {
-    grid-template-columns: 1fr;
   }
 
   .product-proof-section {
