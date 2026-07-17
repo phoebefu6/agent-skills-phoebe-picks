@@ -23,6 +23,7 @@ The site should feel calm, neat, editorial, and community-minded. It should not 
 
 - Lead with the gallery purpose: browse agent Skills by scenario.
 - Public skeleton is hero, scenario finder, Skill gallery, and Skill detail drawer.
+- A public Stack section is allowed when it shows the audience-facing role of explored Skills, such as discover, taste, build, critique, system, canvas, and motion. Do not turn it into an internal SOP explanation.
 - Keep wishlist, testing queue, and SOP notes out of the public homepage.
 - Keep the hero short: promise, short intro, follow repo CTA, and current focus panel.
 - Use scenario filters because Phoebe wants Skills organized by situations, not abstract ratings.

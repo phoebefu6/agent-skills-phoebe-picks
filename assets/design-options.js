@@ -21,8 +21,55 @@
     drawerContent: byId("drawerContent"),
     drawerClose: byId("drawerClose"),
     drawerBackdrop: byId("drawerBackdrop"),
-    productRail: byId("productRail")
+    productRail: byId("productRail"),
+    skillStack: byId("skillStack")
   };
+
+  const stackRoles = {
+    "find-skills": {
+      role: "Discover",
+      line: "Finds candidates and checks the source before another Skill enters the repo."
+    },
+    "design-taste-frontend": {
+      role: "Taste",
+      line: "Keeps the gallery away from generic AI-page patterns."
+    },
+    "frontend-design": {
+      role: "Screens",
+      line: "Turns the idea into usable interface states."
+    },
+    "design-review": {
+      role: "Critique",
+      line: "Converts visual discomfort into concrete fixes."
+    },
+    "high-end-visual-design": {
+      role: "Polish",
+      line: "Raises type, spacing, surface, and hierarchy quality."
+    },
+    "design-consultation": {
+      role: "System",
+      line: "Turns repeated design choices into reusable rules."
+    },
+    "canvas-design": {
+      role: "Canvas",
+      line: "Gives each build a visual philosophy before the screen."
+    },
+    "emil-design-eng": {
+      role: "Motion",
+      line: "Makes the page feel responsive in the hand."
+    }
+  };
+
+  const stackOrder = [
+    "find-skills",
+    "design-taste-frontend",
+    "frontend-design",
+    "design-review",
+    "high-end-visual-design",
+    "design-consultation",
+    "canvas-design",
+    "emil-design-eng"
+  ];
 
   const demoTitles = {
     "frontend-design": "Product Screen",
@@ -204,6 +251,32 @@
       .join("");
   }
 
+  function renderSkillStack() {
+    if (!nodes.skillStack) return;
+
+    const ordered = stackOrder
+      .map((id) => picks.find((pick) => pick.id === id))
+      .filter(Boolean);
+
+    nodes.skillStack.innerHTML = ordered
+      .map((pick, index) => {
+        const role = stackRoles[pick.id] || { role: labelForStatus(pick.status), line: pick.summary };
+        const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : labelForStatus(pick.status);
+        const href = pick.galleryLink || pick.sourceUrl || "#gallery";
+        const status = labelForStatus(pick.status);
+
+        return `
+          <a class="stack-card stack-card-${index + 1}" href="${escapeHtml(href)}" data-motion-card>
+            <span>${escapeHtml(role.role)}</span>
+            <strong>${escapeHtml(pick.name)}</strong>
+            <p>${escapeHtml(role.line)}</p>
+            <small>${escapeHtml(status)} | ${escapeHtml(rating)}</small>
+          </a>
+        `;
+      })
+      .join("");
+  }
+
   function renderCards() {
     const items = visiblePicks();
     nodes.count.textContent = `${items.length} ${items.length === 1 ? "Skill" : "Skills"}`;
@@ -258,6 +331,7 @@
 
   function render() {
     renderProductRail();
+    renderSkillStack();
     renderFilters();
     renderCards();
     playEntranceMotion();
@@ -381,7 +455,7 @@
   function observeRevealTargets() {
     if (reducedMotion()) return;
 
-    const targets = document.querySelectorAll(".product-proof-section, .scenario-section, .gallery-section, .skill-card, .rail-card");
+    const targets = document.querySelectorAll(".skill-stack-section, .product-proof-section, .scenario-section, .gallery-section, .stack-card, .skill-card, .rail-card");
     if (!("IntersectionObserver" in window)) return;
 
     if (!revealObserver) {

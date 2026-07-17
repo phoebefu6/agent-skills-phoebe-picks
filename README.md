@@ -6,7 +6,7 @@
 [![Field Tests](https://img.shields.io/badge/field%20tests-8-ffbc91?style=for-the-badge)](#field-tested-artifacts)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
-A hands-on gallery of AI agent Skills I test by building real things from scratch.
+A public shelf of AI agent Skills that survived a real build.
 
 Instead of another long list of tools, this repo answers one practical question:
 
@@ -14,12 +14,12 @@ Instead of another long list of tools, this repo answers one practical question:
 
 ## Why Star This Repo
 
-Star this repo if you want a growing shortlist of Skills that can help you:
+Star this repo if you want a growing shortlist of Skills that show their work:
 
-- Build cleaner AI-assisted apps, pages, workflows, diagrams, reports, and automations.
-- Reduce repeated prompting by turning useful methods into reusable agent habits.
-- See what each Skill is good at, where it struggles, and when it is worth trying.
-- Follow my public learning journey as I test one Skill at a time with real artifacts.
+- Exact Skill names, not vague tool lists.
+- Demo proof built from scratch.
+- Source repo, star snapshot, and credibility gate.
+- Rating, strengths, limits, and day-to-day use cases.
 
 ## Start Here
 

@@ -8,7 +8,7 @@
     <meta property="og:description" content="Browse tested AI agent Skills by scenario, with demos, ratings, sources, and GitHub star snapshots.">
     <meta property="og:type" content="website">
     <title>Agent Skills Phoebe Picks</title>
-    <link rel="stylesheet" href="assets/design-options.css?v=product-design-sprint">
+    <link rel="stylesheet" href="assets/design-options.css?v=atlas-revamp">
   </head>
   <body>
     <header class="site-header">
@@ -18,6 +18,7 @@
           <span>Agent Skills Phoebe Picks</span>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#stack">Stack</a>
           <a href="#scenarios">Scenarios</a>
           <a href="#gallery">Skills</a>
           <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">GitHub</a>
@@ -30,28 +31,27 @@
         <div class="shell hero-layout">
           <div class="hero-copy">
             <p class="kicker">Agent Skills Phoebe Picks</p>
-            <h1>AI agent Skills, tested through real builds.</h1>
-            <p class="hero-subtitle">Open each pick to see the exact Skill name, demo proof, source stars, rating, and day-to-day use cases.</p>
+            <h1>AI Skills that survived a real build.</h1>
+            <p class="hero-subtitle">I test agent Skills by building demos, then publish the ones worth your time.</p>
             <div class="skill-flutter" aria-label="Featured exact Skill names">
-              <span style="--x: 4%; --y: 14%; --dur: 15s; --delay: -3s; --tilt: -8deg;">frontend-design</span>
-              <span style="--x: 39%; --y: 8%; --dur: 18s; --delay: -7s; --tilt: 6deg;">design-taste-frontend</span>
-              <span style="--x: 68%; --y: 48%; --dur: 16s; --delay: -5s; --tilt: -5deg;">design-review</span>
-              <span style="--x: 7%; --y: 58%; --dur: 20s; --delay: -9s; --tilt: 5deg;">high-end-visual-design</span>
-              <span style="--x: 45%; --y: 66%; --dur: 17s; --delay: -2s; --tilt: -7deg;">design-consultation</span>
-              <span style="--x: 73%; --y: 12%; --dur: 19s; --delay: -11s; --tilt: 4deg;">find-skills</span>
-              <span style="--x: 19%; --y: 38%; --dur: 18s; --delay: -13s; --tilt: 7deg;">canvas-design</span>
-              <span style="--x: 58%; --y: 36%; --dur: 21s; --delay: -15s; --tilt: -4deg;">emil-design-eng</span>
+              <span style="--x: 6%; --y: 12%; --dur: 15s; --delay: -3s; --tilt: -8deg;">frontend-design</span>
+              <span style="--x: 42%; --y: 13%; --dur: 18s; --delay: -7s; --tilt: 6deg;">design-taste-frontend</span>
+              <span style="--x: 72%; --y: 22%; --dur: 19s; --delay: -11s; --tilt: 4deg;">find-skills</span>
+              <span style="--x: 12%; --y: 43%; --dur: 18s; --delay: -13s; --tilt: 7deg;">canvas-design</span>
+              <span style="--x: 43%; --y: 48%; --dur: 21s; --delay: -15s; --tilt: -4deg;">emil-design-eng</span>
+              <span style="--x: 72%; --y: 55%; --dur: 16s; --delay: -5s; --tilt: -5deg;">design-review</span>
+              <span style="--x: 5%; --y: 72%; --dur: 20s; --delay: -9s; --tilt: 5deg;">high-end-visual-design</span>
+              <span style="--x: 42%; --y: 73%; --dur: 17s; --delay: -2s; --tilt: -7deg;">design-consultation</span>
             </div>
             <div class="button-row">
               <a class="btn primary" href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Star repo</a>
-              <a class="btn" href="#gallery">Browse Skills</a>
-              <a class="btn" href="#productProof">View demos</a>
+              <a class="btn" href="#gallery">Browse gallery</a>
             </div>
             <div class="hero-delivery" aria-label="What each published pick gives followers">
-              <span><strong>Exact Skill</strong><small>Name first, no guessing</small></span>
-              <span><strong>Demo proof</strong><small>Built from scratch</small></span>
-              <span><strong>Source + stars</strong><small>Credibility snapshot</small></span>
-              <span><strong>Rating + use</strong><small>When to try it</small></span>
+              <span><strong>7 published picks</strong><small>Only useful Skills make the shelf</small></span>
+              <span><strong>8 field tests</strong><small>Every pick has artifact proof</small></span>
+              <span><strong>10k+ source gate</strong><small>Stars or ranked proof required</small></span>
+              <span><strong>Use-case notes</strong><small>For builders, leaders, learners</small></span>
             </div>
           </div>
 
@@ -79,11 +79,22 @@
         </div>
       </section>
 
+      <section class="skill-stack-section" id="stack" aria-labelledby="stack-title">
+        <div class="shell stack-layout">
+          <div class="stack-statement">
+            <p class="kicker">Explored Skill stack</p>
+            <h2 id="stack-title">One gallery, eight lenses.</h2>
+            <p>The repo is rebuilt with the same Skills it recommends: discovery, taste, screens, critique, systems, canvas, and motion.</p>
+          </div>
+          <div class="stack-canvas" id="skillStack" aria-label="How explored Skills shape this gallery"></div>
+        </div>
+      </section>
+
       <section class="product-proof-section" id="productProof" aria-labelledby="product-proof-title">
         <div class="shell product-proof-layout">
           <div class="product-proof-copy">
             <p class="kicker">Published products</p>
-            <h2 id="product-proof-title">Exact Skill names first.</h2>
+            <h2 id="product-proof-title">Open the artifacts.</h2>
           </div>
           <div class="product-rail" id="productRail" aria-label="Published demo products"></div>
         </div>
@@ -93,7 +104,7 @@
         <div class="shell scenario-layout">
           <div>
             <p class="kicker">Scenario finder</p>
-            <h2 id="scenario-title">What do you want help with?</h2>
+            <h2 id="scenario-title">Find by situation.</h2>
             <p>Choose a situation, or search by Skill name, tool, use case, or platform.</p>
           </div>
           <div class="toolbar" aria-label="Skill finder">
@@ -120,7 +131,7 @@
           <div class="gallery-heading">
             <div>
               <p class="kicker">Skill gallery</p>
-              <h2 id="gallery-title">All Skills</h2>
+              <h2 id="gallery-title">Published and field-tested Skills</h2>
             </div>
             <span class="count-pill" id="resultCount">0 Skills</span>
           </div>
@@ -143,7 +154,7 @@
       </div>
     </footer>
 
-    <script src="data/reviews.js?v=product-design-sprint"></script>
-    <script src="assets/design-options.js?v=product-design-sprint"></script>
+    <script src="data/reviews.js?v=atlas-revamp"></script>
+    <script src="assets/design-options.js?v=atlas-revamp"></script>
   </body>
 </html>
