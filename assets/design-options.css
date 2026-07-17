@@ -1,25 +1,25 @@
 :root {
   color-scheme: light;
-  --paper: #fffaf0;
-  --paper-soft: #ffe0b8;
-  --panel: #fffdf7;
-  --panel-strong: #fffffb;
+  --paper: #fffbf7;
+  --paper-soft: #fff3df;
+  --panel: #fffefa;
+  --panel-strong: #ffffff;
   --ink: #171a15;
-  --muted: #6a655c;
-  --line: #e7d6bd;
+  --muted: #686b64;
+  --line: #e7ded2;
   --accent: #b8dcf0;
   --accent-strong: #25566a;
   --accent-soft: #d8edf8;
-  --pop: #f0a171;
-  --pop-strong: #7d3b2e;
+  --pop: #b8dcf0;
+  --pop-strong: #25566a;
   --sage: #dfe7d2;
   --sage-strong: #315947;
-  --pop-soft: #ffe2ca;
-  --wash-peach: #ffbd91;
-  --wash-cream: #fff6d8;
-  --wash-blue: #c9e8f8;
-  --soft-shadow: 0 24px 84px rgb(111 70 35 / 0.11);
-  --fine-shadow: 0 10px 36px rgb(111 70 35 / 0.08);
+  --pop-soft: #eef8fc;
+  --wash-peach: #ffe4cc;
+  --wash-cream: #fff8e7;
+  --wash-blue: #e4f4fb;
+  --soft-shadow: 0 24px 72px rgb(70 52 36 / 0.08);
+  --fine-shadow: 0 10px 34px rgb(70 52 36 / 0.07);
   --radius: 8px;
   --motion: cubic-bezier(0.22, 1, 0.36, 1);
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -40,9 +40,7 @@ body {
   min-width: 320px;
   margin: 0;
   background:
-    linear-gradient(180deg, rgb(255 189 145 / 0.38) 0 230px, rgb(255 246 216 / 0.6) 230px 540px, rgb(201 232 248 / 0.38) 540px 880px, transparent 880px),
-    repeating-linear-gradient(90deg, rgb(45 93 115 / 0.04) 0 1px, transparent 1px 84px),
-    repeating-linear-gradient(0deg, rgb(125 59 46 / 0.026) 0 1px, transparent 1px 84px),
+    linear-gradient(180deg, #fffbf7 0%, #fbfaf4 42%, #f4fbfd 100%),
     var(--paper);
   color: var(--ink);
   text-rendering: optimizeLegibility;
@@ -135,7 +133,7 @@ input:focus-visible {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 58px 0 44px;
+  padding: 66px 0 54px;
 }
 
 .hero::before {
@@ -151,91 +149,9 @@ input:focus-visible {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(440px, 1.08fr);
-  gap: 48px;
-  align-items: start;
-}
-
-.skill-flutter {
-  position: relative;
-  width: min(100%, 620px);
-  height: 146px;
-  margin: 0 0 22px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.78), rgb(201 232 248 / 0.26)),
-    repeating-linear-gradient(135deg, rgb(49 89 71 / 0.05) 0 1px, transparent 1px 18px),
-    color-mix(in srgb, var(--panel) 80%, var(--wash-blue));
-  box-shadow: 0 18px 60px rgb(111 70 35 / 0.055);
-  pointer-events: none;
-}
-
-.skill-flutter::after {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgb(37 86 106 / 0.08);
-  border-radius: calc(var(--radius) - 2px);
-}
-
-.skill-flutter span {
-  position: absolute;
-  top: var(--y);
-  left: var(--x);
-  display: inline-flex;
-  max-width: 220px;
-  min-height: 30px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.76fr);
+  gap: clamp(34px, 6vw, 72px);
   align-items: center;
-  border: 1px solid color-mix(in srgb, var(--accent-strong) 20%, var(--line));
-  border-radius: 999px;
-  padding: 0 12px;
-  background: color-mix(in srgb, var(--panel-strong) 84%, transparent);
-  box-shadow: 0 14px 42px rgb(111 70 35 / 0.08);
-  color: var(--accent-strong);
-  font-size: 12px;
-  font-weight: 820;
-  opacity: 0.56;
-  transform: rotate(var(--tilt));
-  white-space: nowrap;
-  animation: skillFlutter var(--dur) ease-in-out infinite;
-  animation-delay: var(--delay);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.skill-flutter span:nth-child(even) {
-  border-color: color-mix(in srgb, var(--pop) 28%, var(--line));
-  color: var(--pop-strong);
-}
-
-.skill-flutter span:nth-child(3n) {
-  border-color: color-mix(in srgb, var(--sage-strong) 24%, var(--line));
-  color: var(--sage-strong);
-}
-
-@keyframes skillFlutter {
-  0%,
-  100% {
-    opacity: 0.42;
-    transform: translate3d(0, 0, 0) rotate(var(--tilt));
-  }
-
-  24% {
-    opacity: 0.72;
-    transform: translate3d(10px, -9px, 0) rotate(calc(var(--tilt) + 4deg));
-  }
-
-  52% {
-    opacity: 0.58;
-    transform: translate3d(-8px, 7px, 0) rotate(calc(var(--tilt) - 3deg));
-  }
-
-  76% {
-    opacity: 0.68;
-    transform: translate3d(7px, 10px, 0) rotate(calc(var(--tilt) + 3deg));
-  }
 }
 
 .hero-copy {
@@ -259,21 +175,21 @@ p {
 }
 
 h1 {
-  max-width: 760px;
-  margin-bottom: 20px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(50px, 6.2vw, 82px);
-  font-weight: 520;
-  line-height: 0.94;
+  max-width: 11ch;
+  margin-bottom: 18px;
+  font-family: inherit;
+  font-size: clamp(46px, 6vw, 76px);
+  font-weight: 780;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
 .hero-subtitle {
-  max-width: 560px;
+  max-width: 470px;
   margin-bottom: 28px;
   color: var(--muted);
-  font-size: 20px;
-  line-height: 1.55;
+  font-size: 19px;
+  line-height: 1.48;
 }
 
 .button-row {
@@ -318,92 +234,14 @@ h1 {
   color: var(--paper);
 }
 
-.hero-metrics,
-.hero-delivery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.hero-metrics span,
-.hero-delivery span {
-  display: inline-flex;
-  min-height: 40px;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0 13px;
-  background: color-mix(in srgb, var(--panel) 64%, var(--wash-blue));
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 720;
-  box-shadow: 0 8px 24px rgb(37 43 38 / 0.04);
-}
-
-.hero-metrics strong {
-  color: var(--pop-strong);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  font-weight: 620;
-  line-height: 1;
-}
-
-.hero-delivery {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  max-width: 660px;
-}
-
-.hero-delivery span {
-  min-height: 76px;
-  display: grid;
-  align-content: center;
-  border-radius: var(--radius);
-  padding: 10px 13px;
-}
-
-.hero-delivery strong {
-  color: var(--pop-strong);
-  font-size: 14px;
-  line-height: 1.2;
-}
-
-.hero-delivery small {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 720;
-  line-height: 1.35;
-}
-
 .proof-wall {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.14fr) minmax(178px, 0.86fr);
-  gap: 14px;
-  min-height: 520px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 16px;
-  background:
-    linear-gradient(120deg, rgb(255 255 255 / 0.82), transparent 30%, rgb(184 220 240 / 0.18) 70%, rgb(255 255 255 / 0.72)),
-    linear-gradient(135deg, rgb(255 255 255 / 0.78), rgb(255 255 255 / 0.18) 44%, transparent),
-    linear-gradient(180deg, color-mix(in srgb, var(--wash-peach) 44%, var(--panel)), color-mix(in srgb, var(--wash-blue) 28%, var(--panel)));
-  box-shadow: var(--soft-shadow);
-  transform-style: preserve-3d;
+  gap: 12px;
+  align-content: start;
 }
 
-.proof-wall::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgb(135 65 47 / 0.08);
-  border-radius: calc(var(--radius) - 2px);
-  pointer-events: none;
-}
-
-.proof-preview,
+.proof-summary,
 .proof-card,
 .rail-card,
 .stack-card {
@@ -414,46 +252,85 @@ h1 {
   background: var(--panel-strong);
 }
 
-.proof-preview {
-  grid-row: 1 / span 3;
-  min-height: 492px;
-  overflow: hidden;
+.proof-summary {
+  display: grid;
+  min-height: 214px;
+  align-content: space-between;
+  gap: 18px;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 0.82), rgb(201 232 248 / 0.26)),
+    var(--panel-strong);
   box-shadow: var(--fine-shadow);
 }
 
-.proof-preview iframe {
-  width: 920px;
-  height: 900px;
-  border: 0;
-  transform: scale(0.55);
-  transform-origin: 0 0;
-  pointer-events: none;
+.proof-summary::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 72px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.proof-summary span,
+.proof-card span,
+.rail-card span,
+.stack-card span {
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 820;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.proof-summary strong {
+  display: block;
+  max-width: 11ch;
+  color: var(--ink);
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 780;
+  line-height: 1.02;
+}
+
+.proof-summary p {
+  max-width: 30ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .preview-link {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
   display: inline-flex;
-  min-height: 36px;
+  min-height: 38px;
   align-items: center;
+  justify-content: center;
+  justify-self: start;
   border: 1px solid rgb(255 255 255 / 0.74);
   border-radius: 999px;
-  padding: 0 13px;
-  background: rgb(23 26 23 / 0.86);
+  padding: 0 15px;
+  background: var(--ink);
   color: var(--paper);
   font-size: 13px;
   font-weight: 780;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  transition:
+    transform 160ms var(--motion),
+    background 180ms var(--motion);
+}
+
+.preview-link:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--ink) 92%, var(--accent-strong));
 }
 
 .proof-card {
   display: grid;
-  min-height: 146px;
-  align-content: space-between;
-  gap: 10px;
-  padding: 16px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 82px;
+  align-items: end;
+  gap: 6px 14px;
+  padding: 15px 16px;
   overflow: hidden;
   transition:
     transform 220ms var(--motion),
@@ -491,40 +368,67 @@ h1 {
   transform: scaleX(1);
 }
 
-.proof-card span,
-.rail-card span,
-.stack-card span {
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 820;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.proof-card span {
+  grid-column: 1 / -1;
 }
 
 .proof-card strong,
 .rail-card strong,
 .stack-card strong {
-  color: var(--pop-strong);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
-  font-weight: 560;
-  line-height: 1.02;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 780;
+  line-height: 1.12;
   overflow-wrap: anywhere;
 }
 
 .proof-card small,
 .rail-card small,
 .stack-card small {
-  color: var(--pop-strong);
+  color: var(--muted);
   font-size: 12px;
   font-weight: 780;
   line-height: 1.35;
 }
 
+.proof-card small {
+  justify-self: end;
+  text-align: right;
+}
+
 .proof-card.is-featured {
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--pop-soft) 60%, transparent), transparent 74%),
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 64%, transparent), transparent 74%),
     var(--panel-strong);
+}
+
+.proof-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.proof-kpis span {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.proof-kpis strong {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.proof-kpis small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 720;
+  line-height: 1.25;
 }
 
 .skill-stack-section {
@@ -547,10 +451,9 @@ h1 {
 .stack-statement h2 {
   max-width: 10ch;
   margin: 0 0 14px;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(42px, 5vw, 70px);
-  font-weight: 520;
-  line-height: 0.95;
+  font-weight: 780;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
@@ -640,9 +543,8 @@ h1 {
 
 .product-proof-copy h2 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 38px;
-  font-weight: 520;
+  font-weight: 780;
   line-height: 1.02;
   letter-spacing: 0;
 }
@@ -697,9 +599,8 @@ h1 {
 }
 
 .ledger-head strong {
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 34px;
-  font-weight: 520;
+  font-weight: 780;
   line-height: 1.05;
 }
 
@@ -750,8 +651,8 @@ h1 {
 
 .ledger-stats dd {
   margin: 6px 0 0;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 32px;
+  font-weight: 780;
   line-height: 1;
 }
 
@@ -841,9 +742,8 @@ h1 {
   display: block;
   margin-bottom: 10px;
   max-width: 12ch;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 25px;
-  font-weight: 520;
+  font-weight: 780;
   line-height: 1.05;
 }
 
@@ -899,9 +799,8 @@ h1 {
 .gallery-heading h2,
 .gallery-intro h2 {
   margin-bottom: 14px;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 44px;
-  font-weight: 520;
+  font-weight: 780;
   line-height: 1.02;
   letter-spacing: 0;
 }
@@ -1239,9 +1138,8 @@ h1 {
 
 .drawer h2 {
   margin-bottom: 10px;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 48px;
-  font-weight: 520;
+  font-weight: 780;
   line-height: 1;
   letter-spacing: 0;
 }
@@ -1487,11 +1385,6 @@ h1 {
   .drawer {
     transition: none;
   }
-
-  .skill-flutter span {
-    animation: none;
-    opacity: 0.22;
-  }
 }
 
 @media (max-width: 1080px) {
@@ -1525,10 +1418,6 @@ h1 {
 
   .stack-canvas {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .skill-flutter span {
-    opacity: 0.34;
   }
 
   .gallery-intro {
@@ -1581,9 +1470,7 @@ h1 {
     padding: 0 12px;
   }
 
-  .button-row,
-  .hero-metrics,
-  .hero-delivery {
+  .button-row {
     display: grid;
     width: 100%;
     max-width: calc(100vw - 24px);
@@ -1591,62 +1478,23 @@ h1 {
     gap: 10px;
   }
 
-  .hero-metrics span,
-  .hero-delivery span {
-    min-width: 0;
-    justify-content: center;
-    padding: 0 10px;
-  }
-
-  .hero-delivery span {
-    min-height: 58px;
-    text-align: center;
-  }
-
-  .skill-flutter span {
-    max-width: 170px;
-    min-height: 28px;
-    font-size: 11px;
-    opacity: 0.2;
-  }
-
-  .skill-flutter {
-    height: 92px;
-  }
-
-  .skill-flutter span:nth-child(n+3) {
-    display: none;
-  }
-
   .proof-wall {
-    grid-template-columns: 1fr;
     width: 100%;
     max-width: calc(100vw - 24px);
-    overflow: hidden;
-  }
-
-  .proof-preview {
-    grid-row: auto;
-    min-height: 320px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .proof-preview iframe {
-    width: 760px;
-    height: 700px;
-    transform: scale(0.46);
-    transform-origin: 0 0;
   }
 
   .proof-card {
-    min-height: 126px;
+    min-height: auto;
+    grid-template-columns: 1fr;
   }
 
-  .preview-link {
-    right: 10px;
-    left: 10px;
-    justify-content: center;
+  .proof-card small {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .proof-kpis {
+    grid-template-columns: 1fr;
   }
 
   .product-proof-section {

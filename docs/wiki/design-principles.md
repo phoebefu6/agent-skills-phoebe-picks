@@ -26,6 +26,7 @@ The site should feel calm, neat, editorial, and community-minded. It should not 
 - A public Stack section is allowed when it shows the audience-facing role of explored Skills, such as discover, taste, build, critique, system, canvas, and motion. Do not turn it into an internal SOP explanation.
 - Keep wishlist, testing queue, and SOP notes out of the public homepage.
 - Keep the hero short: promise, short intro, follow repo CTA, and current focus panel.
+- Hero proof should stay compact: one latest build panel, tidy Skill rows, and clear demo links. Avoid screenshot collages, fake diagrams, faux screenshots, or large blank preview frames.
 - Use scenario filters because Phoebe wants Skills organized by situations, not abstract ratings.
 - Use cards only for repeated Skill entries and framed panels.
 - Skill detail should use a visual map or node layout where possible, not a long plain note page.

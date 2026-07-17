@@ -181,7 +181,7 @@
     const stars = typeof pick.githubStars === "number"
       ? `${formatNumber(pick.githubStars)} GitHub stars`
       : "GitHub stars pending";
-    return `${repo} · ${stars}`;
+    return `${repo}, ${stars}`;
   }
 
   function sourcePointList(pick) {
@@ -244,7 +244,7 @@
           <a class="rail-card" href="${escapeHtml(pick.galleryLink)}" data-motion-card>
             <span>${escapeHtml(scenario)}</span>
             <strong>${escapeHtml(pick.name)}</strong>
-            <small>Demo: ${escapeHtml(demoTitle(pick))} | ${escapeHtml(rating)} | ${escapeHtml(stars)}</small>
+            <small>Demo: ${escapeHtml(demoTitle(pick))}, ${escapeHtml(rating)}, ${escapeHtml(stars)}</small>
           </a>
         `;
       })
@@ -270,7 +270,7 @@
             <span>${escapeHtml(role.role)}</span>
             <strong>${escapeHtml(pick.name)}</strong>
             <p>${escapeHtml(role.line)}</p>
-            <small>${escapeHtml(status)} | ${escapeHtml(rating)}</small>
+            <small>${escapeHtml(status)}, ${escapeHtml(rating)}</small>
           </a>
         `;
       })
@@ -413,7 +413,7 @@
 
     const targets = [
       ...document.querySelectorAll(".hero-copy > *"),
-      ...document.querySelectorAll(".proof-preview, .proof-card")
+      ...document.querySelectorAll(".proof-summary, .proof-card")
     ];
 
     targets.forEach((target, index) => {

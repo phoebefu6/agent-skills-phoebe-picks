@@ -33,6 +33,7 @@ http://localhost:8000/
 
 Check:
 
+- For homepage or major visual redesigns, add an independent reviewer agent before publishing. Ask it to review like an experienced high-taste product/visual designer and return severity-ranked findings. Do not ship while it flags dead space, fake proof, overlapping text, weak hierarchy, or generic AI-gallery patterns.
 - Category filters update counts and cards.
 - Search examples narrow results. Do not use example terms that match almost every Skill.
 - Each public Skill shows an AI agent subtitle for all applicable platforms, such as Claude Code, Codex, Hermes AI, Cursor, Gemini CLI, opencode, Kimi, or Pi.
