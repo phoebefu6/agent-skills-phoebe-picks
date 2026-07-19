@@ -376,6 +376,60 @@ const PICKS = [
     galleryLink: "demos/design-consultation-system-room/index.html"
   },
   {
+    id: "impeccable",
+    name: "impeccable",
+    source: "Paul Bakaus Impeccable",
+    sourceUrl: "https://github.com/pbakaus/impeccable",
+    sourceRepo: "pbakaus/impeccable",
+    sourcePath: ".agents/skills/impeccable/SKILL.md",
+    githubStars: 47939,
+    starsCheckedAt: "2026-07-19",
+    status: "published",
+    recommendation: "Published pick: useful when a frontend needs a deliberate direction, shared design vocabulary, and a rigorous mock-to-production quality loop.",
+    dateExplored: "2026-07-19",
+    scenarios: ["design", "ui-ux", "product-design", "frontend", "agent-workflow"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["Design direction", "23 commands", "UI detector"],
+    summary: "A frontend design system for shaping, critiquing, auditing, refining, and shipping interfaces with explicit visual judgment.",
+    phoebeNote: "Use it when a page needs more than polish: choose a direction, compare real mockups, build the winner, and inspect the result before shipping.",
+    coreConcepts: [
+      "Capture product context and choose the correct brand or product register before designing.",
+      "Shape the interface purpose, content, scope, and visual direction before writing code.",
+      "Confirm a palette and typography contract before generating full-page mockups.",
+      "Compare structurally different directions instead of producing recolored variants.",
+      "Treat the approved mock as a contract for hierarchy, composition, density, and motifs.",
+      "Use systematic spacing, hierarchy, typography, and OKLCH color roles.",
+      "Keep copy specific, concise, and action-oriented.",
+      "Adapt composition for desktop and mobile rather than simply shrinking it.",
+      "Use purposeful motion with visible defaults and reduced-motion support.",
+      "Preserve semantic HTML, accessibility, real controls, and realistic interface states.",
+      "Run visual critique and mechanical detector checks as separate sources of evidence.",
+      "Polish against the approved direction after browser inspection."
+    ],
+    conceptCoverage: "11/12 concept clusters were exercised in the homepage rebuild; live-mode asset slicing was skipped because the approved ingredients could be built semantically or used existing artifact screenshots.",
+    groundUpBuild: "Redesigned and rebuilt the Agent Skills Phoebe Picks homepage from zero through palette exploration, five mock directions, a user-selected hybrid, production implementation, and responsive QA.",
+    rating: 9.0,
+    ratingScale: 10,
+    ratingSummary: "The strongest end-to-end design Skill tested so far: excellent at converting subjective taste into an inspectable workflow, but deliberately heavier than a quick visual tweak.",
+    good: [
+      "Turns vague visual preferences into named decisions, approval gates, and a concrete mock contract.",
+      "Combines creative direction with practical checks for layout, copy, responsiveness, accessibility, motion, and AI design tells.",
+      "Its separate visual assessment and deterministic detector catch different classes of defects before release."
+    ],
+    improve: [
+      "The multi-gate craft flow is too heavy for small, already-scoped interface changes.",
+      "The broad command and reference library takes time to navigate and can overwhelm a first-time user.",
+      "Some absolute aesthetic bans still require human judgment so a distinctive brand voice is not flattened into compliance."
+    ],
+    useCases: [
+      "Builders can take a homepage from rough intent through mock selection, implementation, and responsive release checks.",
+      "Design and product teams can share precise commands for critique, layout, typography, color, motion, and polish.",
+      "Students can compare multiple directions and see how a chosen visual idea survives contact with real code."
+    ],
+    demo: "Agent Skills Phoebe Picks homepage redesign",
+    galleryLink: "index.html#top"
+  },
+  {
     id: "find-skills",
     name: "find-skills",
     source: "joe-bell cva",

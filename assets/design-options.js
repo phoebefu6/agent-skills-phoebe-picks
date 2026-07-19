@@ -84,6 +84,7 @@
 
   let entranceMotionPlayed = false;
   let revealObserver = null;
+  let lastFocusedElement = null;
 
   function escapeHtml(value) {
     return String(value || "")
@@ -154,7 +155,8 @@
     container.innerHTML = options
       .map((item) => {
         const active = state[kind] === item.id ? " is-active" : "";
-        return `<button class="filter-button${active}" type="button" data-kind="${kind}" data-value="${escapeHtml(item.id)}">${escapeHtml(item.label)}</button>`;
+        const pressed = state[kind] === item.id ? "true" : "false";
+        return `<button class="filter-button${active}" type="button" data-kind="${kind}" data-value="${escapeHtml(item.id)}" aria-pressed="${pressed}">${escapeHtml(item.label)}</button>`;
       })
       .join("");
   }
@@ -233,18 +235,30 @@
       .slice(0, 7);
 
     nodes.productRail.innerHTML = published
-      .map((pick) => {
+      .map((pick, index) => {
         const scenario = labelForScenario((pick.scenarios || [])[0] || "design");
         const stars = typeof pick.githubStars === "number"
           ? `${formatNumber(pick.githubStars)} stars`
           : "Stars pending";
         const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Rating pending";
 
+        const artifactImages = {
+          "design-taste-frontend": "assets/artifact-design-taste-lab.png",
+          "canvas-design": "demos/product-design-studio/vision-canvas.svg"
+        };
+        const artifact = artifactImages[pick.id];
+        const artifactMarkup = artifact
+          ? `<span class="artifact-tile" aria-hidden="true"><img src="${escapeHtml(artifact)}" alt=""></span>`
+          : "";
+
         return `
-          <a class="rail-card" href="${escapeHtml(pick.galleryLink)}" data-motion-card>
-            <span>${escapeHtml(scenario)}</span>
-            <strong>${escapeHtml(pick.name)}</strong>
-            <small>Demo: ${escapeHtml(demoTitle(pick))}, ${escapeHtml(rating)}, ${escapeHtml(stars)}</small>
+          <a class="rail-card${artifact ? " has-artifact" : ""}" href="${escapeHtml(pick.galleryLink)}" data-motion-card style="--i:${index}">
+            ${artifactMarkup}
+            <span class="rail-copy">
+              <span>${escapeHtml(scenario)}</span>
+              <strong>${escapeHtml(pick.name)}</strong>
+              <small>${escapeHtml(demoTitle(pick))}<br>${escapeHtml(rating)} · ${escapeHtml(stars)}</small>
+            </span>
           </a>
         `;
       })
@@ -291,36 +305,29 @@
     nodes.empty.hidden = items.length !== 0;
 
     nodes.grid.innerHTML = items
-      .map((pick, index) => {
-        const featured = index < 2 ? " featured" : "";
-        const scenarioBadges = (pick.scenarios || []).slice(0, 3).map(labelForScenario);
-        const badges = [...scenarioBadges, ...(pick.badges || [])].slice(0, 5);
-        const primaryScenario = scenarioBadges[0] || "Skill";
+      .map((pick) => {
+        const primaryScenario = labelForScenario((pick.scenarios || [])[0] || "design");
+        const platforms = (pick.platforms || []).slice(0, 2).map(labelForPlatform).join(", ") || "AI agents";
+        const source = pick.sourceRepo || pick.source || "Source pending";
+        const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Pending";
 
         return `
-          <article class="skill-card${featured}" data-pick-id="${escapeHtml(pick.id)}">
-            <div class="card-top">
-              <span class="status-chip ${escapeHtml(pick.status)}">${escapeHtml(labelForStatus(pick.status))}</span>
-              <span class="source-chip">${escapeHtml(primaryScenario)}</span>
+          <article class="skill-row" data-pick-id="${escapeHtml(pick.id)}">
+            <div class="skill-identity">
+              <strong>${escapeHtml(pick.name)}</strong>
+              <span>${escapeHtml(pick.summary)}</span>
+              <span class="mobile-evidence">${escapeHtml(primaryScenario)} · ${escapeHtml(platforms)} · ${escapeHtml(rating)} · ${escapeHtml(source)}</span>
             </div>
-            <h3>${escapeHtml(pick.name)}</h3>
-            <p class="agent-subtitle">${escapeHtml(platformSubtitle(pick))}</p>
-            <p>${escapeHtml(pick.summary)}</p>
-            ${typeof pick.rating === "number" ? `<p class="rating-line">${escapeHtml(ratingLabel(pick))}</p>` : ""}
-            <div class="source-meta" aria-label="Source and GitHub stars">
-              <span>${escapeHtml(sourceMetaLabel(pick))}</span>
-              ${pick.dateExplored ? `<span>Explored ${escapeHtml(pick.dateExplored)}</span>` : ""}
+            <div class="skill-cell"><strong>Helps with</strong>${escapeHtml(primaryScenario)}</div>
+            <div class="skill-cell"><strong>Built for</strong>${escapeHtml(platforms)}</div>
+            <div class="proof-strip" aria-label="Evidence summary">
+              <span class="proof-chip">Demo</span>
+              <span class="proof-chip">${escapeHtml(rating)}</span>
+              <span class="proof-chip">Source</span>
             </div>
-            <span class="field-label">Best use case</span>
-            <p class="card-note">${escapeHtml(pick.phoebeNote)}</p>
-            <div class="badge-row">
-              ${badges.map((badge) => `<span class="badge">${escapeHtml(badge)}</span>`).join("")}
-            </div>
-            <div class="card-actions">
-              <button class="card-button" type="button" data-open-detail="${escapeHtml(pick.id)}">Open Skill</button>
-              ${pick.galleryLink ? `<a class="card-button" href="${escapeHtml(pick.galleryLink)}">Demo</a>` : ""}
-              ${pick.sourceUrl ? `<a class="card-button" href="${escapeHtml(pick.sourceUrl)}" target="_blank" rel="noreferrer">Source</a>` : ""}
-            </div>
+            <span class="status-chip ${escapeHtml(pick.status)}">${escapeHtml(labelForStatus(pick.status))}</span>
+            <button class="open-skill" type="button" data-open-detail="${escapeHtml(pick.id)}" aria-label="Open ${escapeHtml(pick.name)} details">→</button>
+            <span class="sr-only">Source: ${escapeHtml(source)}</span>
           </article>
         `;
       })
@@ -389,6 +396,11 @@
       </section>
     `;
 
+    lastFocusedElement = document.activeElement;
+    nodes.drawer.inert = false;
+    document.querySelector("header")?.setAttribute("inert", "");
+    document.querySelector("main")?.setAttribute("inert", "");
+    document.querySelector("footer")?.setAttribute("inert", "");
     nodes.drawerBackdrop.hidden = false;
     nodes.drawer.classList.add("is-open");
     nodes.drawer.setAttribute("aria-hidden", "false");
@@ -400,7 +412,12 @@
     nodes.drawer.classList.remove("is-open");
     nodes.drawer.setAttribute("aria-hidden", "true");
     nodes.drawerBackdrop.hidden = true;
+    nodes.drawer.inert = true;
+    document.querySelector("header")?.removeAttribute("inert");
+    document.querySelector("main")?.removeAttribute("inert");
+    document.querySelector("footer")?.removeAttribute("inert");
     document.body.classList.remove("drawer-open");
+    if (lastFocusedElement instanceof HTMLElement) lastFocusedElement.focus();
   }
 
   function reducedMotion() {
@@ -413,7 +430,7 @@
 
     const targets = [
       ...document.querySelectorAll(".hero-copy > *"),
-      ...document.querySelectorAll(".proof-summary, .proof-card")
+      ...document.querySelectorAll(".route-node, .proof-stamp, .survival-checklist")
     ];
 
     targets.forEach((target, index) => {
@@ -435,7 +452,7 @@
   function bindMotionCards() {
     if (reducedMotion()) return;
 
-    document.querySelectorAll("[data-motion-card], .skill-card").forEach((card) => {
+    document.querySelectorAll("[data-motion-card]").forEach((card) => {
       if (card.dataset.motionBound === "true") return;
       card.dataset.motionBound = "true";
 
@@ -455,7 +472,7 @@
   function observeRevealTargets() {
     if (reducedMotion()) return;
 
-    const targets = document.querySelectorAll(".skill-stack-section, .product-proof-section, .scenario-section, .gallery-section, .stack-card, .skill-card, .rail-card");
+    const targets = document.querySelectorAll(".featured-build, .gallery-column, .product-proof-copy, .rail-card");
     if (!("IntersectionObserver" in window)) return;
 
     if (!revealObserver) {
@@ -489,8 +506,6 @@
     targets.forEach((target) => {
       if (target.dataset.revealBound === "true") return;
       target.dataset.revealBound = "true";
-      target.style.opacity = "0";
-      target.style.transform = "translateY(18px)";
       revealObserver.observe(target);
     });
   }
@@ -543,6 +558,20 @@
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && nodes.drawer.classList.contains("is-open")) {
         closeDrawer();
+      }
+      if (event.key === "Tab" && nodes.drawer.classList.contains("is-open")) {
+        const focusable = [...nodes.drawer.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+          .filter((element) => !element.hasAttribute("hidden"));
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (!first || !last) return;
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     });
   }
