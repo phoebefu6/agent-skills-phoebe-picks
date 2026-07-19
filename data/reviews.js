@@ -426,8 +426,8 @@ const PICKS = [
       "Design and product teams can share precise commands for critique, layout, typography, color, motion, and polish.",
       "Students can compare multiple directions and see how a chosen visual idea survives contact with real code."
     ],
-    demo: "Agent Skills Phoebe Picks homepage redesign",
-    galleryLink: "index.html#top"
+    demo: "Impeccable Design Flight Deck",
+    galleryLink: "demos/impeccable-design-flight-deck/index.html"
   },
   {
     id: "find-skills",

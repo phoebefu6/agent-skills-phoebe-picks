@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An interactive Impeccable Skill field test for shaping, comparing, critiquing, and polishing interface directions.">
+    <title>Impeccable Design Flight Deck</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../../index.html" aria-label="Back to Agent Skills Phoebe Picks">
+        <span>PF</span>
+        <strong>Impeccable Flight Deck</strong>
+      </a>
+      <div class="run-state"><i aria-hidden="true"></i> Field test 08 · live</div>
+      <a class="exit-link" href="../../index.html#gallery">Back to gallery ↗</a>
+    </header>
+
+    <main>
+      <section class="intro shell">
+        <div>
+          <span class="kicker">Design the direction before polishing the pixels</span>
+          <h1>Make taste<br><em>inspectable.</em></h1>
+        </div>
+        <div class="intro-copy">
+          <p>A working cockpit for turning a vague interface request into a chosen direction, responsive contract, and shippable visual result.</p>
+          <a href="#deck">Enter the flight deck ↓</a>
+        </div>
+      </section>
+
+      <section class="deck shell" id="deck" aria-label="Interactive design flight deck">
+        <aside class="mission-panel">
+          <p class="panel-label">01 / Mission brief</p>
+          <h2>Skill gallery homepage</h2>
+          <dl>
+            <div><dt>Purpose</dt><dd>Help builders choose useful Skills by proof.</dd></div>
+            <div><dt>Audience</dt><dd>AI-native makers and design leads.</dd></div>
+            <div><dt>Register</dt><dd>Editorial evidence room, not SaaS dashboard.</dd></div>
+            <div><dt>Primary action</dt><dd>Open a live product.</dd></div>
+          </dl>
+          <div class="constraint-list" aria-label="Design constraints">
+            <span>Specific copy</span><span>Real controls</span><span>Mobile composition</span><span>Reduced motion</span>
+          </div>
+        </aside>
+
+        <div class="workbench">
+          <div class="workbench-bar">
+            <div>
+              <span>02 / Direction lab</span>
+              <strong data-direction-name>Signal Map</strong>
+            </div>
+            <div class="segmented" aria-label="Choose visual direction">
+              <button class="is-active" type="button" data-direction="signal" aria-pressed="true">A · Signal</button>
+              <button type="button" data-direction="ledger" aria-pressed="false">B · Ledger</button>
+              <button type="button" data-direction="poster" aria-pressed="false">C · Poster</button>
+            </div>
+          </div>
+
+          <div class="canvas-wrap">
+            <div class="device-tools" aria-label="Preview size">
+              <button class="is-active" type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+              <button type="button" data-device="mobile" aria-pressed="false">Mobile</button>
+            </div>
+            <div class="preview-frame" data-preview data-direction="signal" data-device="desktop">
+              <div class="mock-page">
+                <nav><b>AGENT SKILLS</b><span>Explore&nbsp;&nbsp; Products&nbsp;&nbsp; Method</span><button>Browse ↗</button></nav>
+                <div class="mock-hero">
+                  <div class="mock-copy">
+                    <small>PROVEN THROUGH REAL BUILDS</small>
+                    <h3 data-mock-title>Find the skill<br>for the job.</h3>
+                    <p data-mock-copy>Nine field-tested methods. Each one has source, critique, and a product you can open.</p>
+                    <button>Open the gallery →</button>
+                  </div>
+                  <div class="mock-visual" aria-hidden="true">
+                    <i class="node n1">N</i><i class="node n2">S</i><i class="node n3">B</i><i class="node n4">✓</i>
+                    <svg viewBox="0 0 420 230"><path d="M20 46 C108 15 113 116 202 91 S300 197 402 128"/></svg>
+                  </div>
+                </div>
+                <div class="mock-list"><b>canvas-design</b><span>Product design</span><mark>Live demo</mark><b>8.1/10</b></div>
+                <div class="mock-list"><b>impeccable</b><span>Design system</span><mark>Live demo</mark><b>9.0/10</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="system-panel">
+          <p class="panel-label">03 / System contract</p>
+          <div class="token-group">
+            <span>Palette roles</span>
+            <div class="swatches"><i></i><i></i><i></i><i></i></div>
+            <small>Petrol / paper / coral / signal</small>
+          </div>
+          <div class="token-group">
+            <span>Type tension</span>
+            <strong class="type-sample">CONDENSED<br><em>+ humanist</em></strong>
+          </div>
+          <div class="token-group">
+            <span>Spacing rhythm</span>
+            <div class="rhythm"><i></i><i></i><i></i><i></i></div>
+            <small>4 / 8 / 16 / 32</small>
+          </div>
+          <label class="motion-control">
+            <span>Purposeful motion</span>
+            <input type="checkbox" checked data-motion-toggle>
+            <i aria-hidden="true"></i>
+          </label>
+        </aside>
+      </section>
+
+      <section class="audit shell" id="audit">
+        <div class="audit-heading">
+          <span class="kicker">04 / Two kinds of evidence</span>
+          <h2>Critique with eyes.<br>Check with instruments.</h2>
+          <p>Visual judgment and mechanical detection catch different failures. The Skill asks for both before polish is called done.</p>
+        </div>
+        <div class="audit-console">
+          <div class="console-head">
+            <span>Release scan</span>
+            <button type="button" data-run-audit>Run all checks →</button>
+          </div>
+          <div class="checks">
+            <article data-check><i>01</i><div><b>Visual hierarchy</b><span>One unmistakable promise and action.</span></div><em>Ready</em></article>
+            <article data-check><i>02</i><div><b>Responsive composition</b><span>Recomposed at 390px, not simply shrunk.</span></div><em>Ready</em></article>
+            <article data-check><i>03</i><div><b>Semantic controls</b><span>Buttons, labels, states, and visible focus.</span></div><em>Ready</em></article>
+            <article data-check><i>04</i><div><b>AI-tell detector</b><span>No gradient headline, card soup, or ornamental clutter.</span></div><em>Ready</em></article>
+          </div>
+          <div class="score" aria-live="polite"><strong data-score>0/4</strong><span data-score-note>Checks waiting</span></div>
+        </div>
+      </section>
+
+      <section class="verdict shell">
+        <div><span>Field verdict</span><strong>9.0<small>/10</small></strong></div>
+        <p>Impeccable is strongest when a page needs an explicit design direction and a rigorous mock-to-production quality loop—not just a quick coat of polish.</p>
+        <a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noreferrer">Inspect the source ↗</a>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

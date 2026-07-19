@@ -310,6 +310,15 @@
         const platforms = (pick.platforms || []).slice(0, 2).map(labelForPlatform).join(", ") || "AI agents";
         const source = pick.sourceRepo || pick.source || "Source pending";
         const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Pending";
+        const demoLink = pick.galleryLink
+          ? `<a class="proof-chip proof-link" href="${escapeHtml(pick.galleryLink)}" aria-label="Open ${escapeHtml(pick.name)} live demo">Live demo</a>`
+          : `<span class="proof-chip is-disabled" aria-disabled="true">Demo soon</span>`;
+        const mobileDemoLink = pick.galleryLink
+          ? `<a class="mobile-demo-link" href="${escapeHtml(pick.galleryLink)}">Open live demo →</a>`
+          : "";
+        const sourceLink = pick.sourceUrl
+          ? `<a class="proof-chip proof-link" href="${escapeHtml(pick.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(pick.name)} source">Source</a>`
+          : `<span class="proof-chip is-disabled" aria-disabled="true">Source</span>`;
 
         return `
           <article class="skill-row" data-pick-id="${escapeHtml(pick.id)}">
@@ -317,13 +326,14 @@
               <strong>${escapeHtml(pick.name)}</strong>
               <span>${escapeHtml(pick.summary)}</span>
               <span class="mobile-evidence">${escapeHtml(primaryScenario)} · ${escapeHtml(platforms)} · ${escapeHtml(rating)} · ${escapeHtml(source)}</span>
+              ${mobileDemoLink}
             </div>
             <div class="skill-cell"><strong>Helps with</strong>${escapeHtml(primaryScenario)}</div>
             <div class="skill-cell"><strong>Built for</strong>${escapeHtml(platforms)}</div>
             <div class="proof-strip" aria-label="Evidence summary">
-              <span class="proof-chip">Demo</span>
+              ${demoLink}
               <span class="proof-chip">${escapeHtml(rating)}</span>
-              <span class="proof-chip">Source</span>
+              ${sourceLink}
             </div>
             <span class="status-chip ${escapeHtml(pick.status)}">${escapeHtml(labelForStatus(pick.status))}</span>
             <button class="open-skill" type="button" data-open-detail="${escapeHtml(pick.id)}" aria-label="Open ${escapeHtml(pick.name)} details">→</button>
