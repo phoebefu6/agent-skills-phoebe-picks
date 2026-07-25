@@ -2,8 +2,8 @@
 
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Published Picks](https://img.shields.io/badge/published%20picks-8-6f7cff?style=for-the-badge)](#published-products)
-[![Field Tests](https://img.shields.io/badge/field%20tests-9-ffbc91?style=for-the-badge)](#field-tested-artifacts)
+[![Published Picks](https://img.shields.io/badge/published%20picks-10-6f7cff?style=for-the-badge)](#published-products)
+[![Field Tests](https://img.shields.io/badge/field%20tests-10-ffbc91?style=for-the-badge)](#field-tested-artifacts)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A public shelf of AI agent Skills that survived a real build.
@@ -27,7 +27,8 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
 | [Published products](#published-products) | Open the demo products built from each published Skill. |
-| [Wishlist](wishlist.md) | See what I plan to explore next. |
+| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 20 high-star candidates across product, design, data, ML, and AI agents. |
+| [Wishlist research notes](wishlist.md) | See the source evidence and planned proof build for each candidate. |
 
 ## Published Products
 
@@ -41,16 +42,14 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `high-end-visual-design` | [Visual Design Atelier](demos/high-end-visual-design-showcase/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 64,018 stars, explored 2026-07-16 | Published pick, 7.9/10 overall rating |
 | `design-consultation` | [System Room](demos/design-consultation-system-room/) | [garrytan/gstack](https://github.com/garrytan/gstack), 122,177 stars, explored 2026-07-16 | Published pick, 8.1/10 overall rating |
 | `impeccable` | [Homepage redesign](index.html#top) | [pbakaus/impeccable](https://github.com/pbakaus/impeccable), 47,939 stars, explored 2026-07-19 | Published pick, 9.0/10 overall rating |
+| `pm-skills` | [Lantern Product OS](demos/pm-decision-room/) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills), 24,430 stars, explored 2026-07-25 | Published pick, 8.9/10 overall rating, 65/65 Skills used |
+| `find-skills` | [Skill Discovery Desk](demos/find-skills-discovery-desk/) | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills), 27,182 stars and #1 all-time on Skills.sh with 2.7M installs, verified 2026-07-25 | Published pick, 7.8/10 overall rating |
 
 Each product page lists the Skill's key features in a visual, interactive format so followers can see what the Skill changes in practice.
 
 ## Field-Tested Artifacts
 
-These are useful learning artifacts, but not full public picks yet.
-
-| Skill | Built from scratch | Source snapshot | Decision |
-| --- | --- | --- | --- |
-| `find-skills` | [Skill Discovery Desk](demos/find-skills-discovery-desk/) | [joe-bell/cva](https://github.com/joe-bell/cva/tree/main/.agents/skills/find-skills), 6,861 stars, explored 2026-07-17 | Exploring: useful workflow, held back because it is below the 10k-star source gate |
+All current public field-test artifacts have now passed the publication gate. Upcoming candidates are visible in the [public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist), with deeper evidence in [the research notes](wishlist.md), until a ground-up build proves them.
 
 ## What You Will Find
 
@@ -58,6 +57,7 @@ These are useful learning artifacts, but not full public picks yet.
 | --- | --- |
 | Design and UI/UX | Taste, critique, visual polish, layout, design systems, and better agent-built pages. |
 | Product Design | Product screens, visual philosophy, micro-interactions, and product feel. |
+| Product Management | Discovery, strategy, prioritization, PRDs, outcome roadmaps, metrics, and go-to-market. |
 | Frontend | Skills that turn rough product ideas into usable screens and demos. |
 | Data and Data Viz | Analysis, charts, dashboards, and visual explanation. |
 | Reporting | Executive summaries, smart reports, recurring updates, and narrative structure. |
@@ -90,7 +90,8 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `high-end-visual-design` | Published | Improve typography, spacing, hierarchy, and craft. |
 | `design-consultation` | Published | Turn repeated design preferences into reusable guidance. |
 | `impeccable` | Published | Move from visual direction through mock approval, production build, and release-quality inspection. |
-| `find-skills` | Exploring | Find and vet other Skills before installing or recommending them. |
+| `pm-skills` | Published | Build a full product operating system across research, discovery, strategy, execution, analytics, growth, and GTM. |
+| `find-skills` | Published | Find and vet other Skills before installing or recommending them. |
 
 ## Repo Map
 
@@ -108,6 +109,7 @@ agent-skills-phoebe-picks/
   demos/high-end-visual-design-showcase/ # high-end-visual-design demo
   demos/design-consultation-system-room/ # design-consultation demo
   demos/find-skills-discovery-desk/ # find-skills field test
+  demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint
   wishlist.md                        # Exploration queue
   docs/wiki/                         # Internal agent memory for future work
@@ -134,4 +136,6 @@ node --check demos/skill-demo.js
 node --check demos/design-taste-frontend-studio/app.js
 node --check demos/find-skills-discovery-desk/app.js
 node --check demos/product-design-studio/app.js
+node --check demos/pm-decision-room/app.js
+node --check demos/pm-decision-room/skills-data.js
 ```

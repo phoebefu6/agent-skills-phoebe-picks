@@ -1,10 +1,12 @@
 (function () {
   const picks = window.PICKS || window.REVIEWS || [];
+  const wishlist = window.WISHLIST_CANDIDATES || [];
   const filters = window.FILTERS || { scenarios: [], statuses: [] };
   const state = {
     scenario: "all",
     status: "all",
-    query: ""
+    query: "",
+    wishlistCategory: "all"
   };
 
   const byId = (id) => document.getElementById(id);
@@ -22,7 +24,10 @@
     drawerClose: byId("drawerClose"),
     drawerBackdrop: byId("drawerBackdrop"),
     productRail: byId("productRail"),
-    skillStack: byId("skillStack")
+    skillStack: byId("skillStack"),
+    wishlistFilters: byId("wishlistFilters"),
+    wishlistGrid: byId("wishlistGrid"),
+    wishlistCount: byId("wishlistCount")
   };
 
   const stackRoles = {
@@ -79,8 +84,18 @@
     "design-review": "Critique Loop",
     "high-end-visual-design": "Visual Atelier",
     "design-consultation": "System Room",
+    "pm-skills": "Lantern Product OS",
     "find-skills": "Discovery Desk"
   };
+
+  const wishlistCategories = [
+    { id: "all", label: "All 20" },
+    { id: "product", label: "Product" },
+    { id: "design-art", label: "Design & art" },
+    { id: "data-analytics", label: "Data & analytics" },
+    { id: "data-science-ml", label: "Data science & ML" },
+    { id: "llm-agents", label: "LLMs & agents" }
+  ];
 
   let entranceMotionPlayed = false;
   let revealObserver = null;
@@ -231,8 +246,7 @@
     if (!nodes.productRail) return;
 
     const published = picks
-      .filter((pick) => pick.status === "published" && pick.galleryLink)
-      .slice(0, 7);
+      .filter((pick) => pick.status === "published" && pick.galleryLink);
 
     nodes.productRail.innerHTML = published
       .map((pick, index) => {
@@ -262,6 +276,46 @@
           </a>
         `;
       })
+      .join("");
+  }
+
+  function renderWishlist() {
+    if (!nodes.wishlistGrid || !nodes.wishlistFilters) return;
+
+    const visible = wishlist.filter((item) => (
+      state.wishlistCategory === "all" || item.category === state.wishlistCategory
+    ));
+
+    nodes.wishlistFilters.innerHTML = wishlistCategories
+      .map((item) => {
+        const active = state.wishlistCategory === item.id;
+        return `<button class="filter-button${active ? " is-active" : ""}" type="button" data-wishlist-filter="${escapeHtml(item.id)}" aria-pressed="${active}">${escapeHtml(item.label)}</button>`;
+      })
+      .join("");
+
+    if (nodes.wishlistCount) {
+      nodes.wishlistCount.textContent = `${visible.length} ${visible.length === 1 ? "candidate" : "candidates"} · 0 tested`;
+    }
+
+    nodes.wishlistGrid.innerHTML = visible
+      .map((item) => `
+        <article class="wishlist-card" data-wishlist-category="${escapeHtml(item.category)}">
+          <header>
+            <span class="wishlist-rank">#${escapeHtml(item.rank)}</span>
+            <span class="status-chip wishlist">Wishlist</span>
+          </header>
+          <div>
+            <span class="wishlist-focus">${escapeHtml(item.focus)}</span>
+            <h3>${escapeHtml(item.id)}</h3>
+            <p>${escapeHtml(item.buildTarget)}</p>
+          </div>
+          <footer>
+            <span><strong>${escapeHtml(formatNumber(item.githubStars))}</strong> repo stars</span>
+            <a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.id)} source in ${escapeHtml(item.sourceRepo)}">Inspect source →</a>
+          </footer>
+          <small title="${escapeHtml(item.sourcePath)}">${escapeHtml(item.sourceRepo)}</small>
+        </article>
+      `)
       .join("");
   }
 
@@ -348,6 +402,7 @@
 
   function render() {
     renderProductRail();
+    renderWishlist();
     renderSkillStack();
     renderFilters();
     renderCards();
@@ -482,7 +537,7 @@
   function observeRevealTargets() {
     if (reducedMotion()) return;
 
-    const targets = document.querySelectorAll(".featured-build, .gallery-column, .product-proof-copy, .rail-card");
+    const targets = document.querySelectorAll(".featured-build, .gallery-column, .wishlist-header, .wishlist-card, .product-proof-copy, .rail-card");
     if (!("IntersectionObserver" in window)) return;
 
     if (!revealObserver) {
@@ -545,6 +600,13 @@
         nodes.search.value = state.query;
         renderCards();
         nodes.search.focus();
+        return;
+      }
+
+      const wishlistFilter = event.target.closest("[data-wishlist-filter]");
+      if (wishlistFilter) {
+        state.wishlistCategory = wishlistFilter.dataset.wishlistFilter;
+        renderWishlist();
         return;
       }
 

@@ -30,7 +30,7 @@ The active UI is the audience-facing gallery. It should not expose internal LLM 
 
 ## Data Flow
 
-1. `data/reviews.js` defines `window.FILTERS`, `window.PICKS`, and `window.EVALUATION_STEPS`.
+1. `data/reviews.js` defines `window.FILTERS`, `window.PICKS`, `window.WISHLIST_CANDIDATES`, and `window.EVALUATION_STEPS`.
 2. `assets/design-options.js` reads those globals.
 3. The script renders scenario filters, search, Skill cards, and the detail drawer.
 
@@ -73,7 +73,9 @@ Each public Skill entry should include:
 
 For GitHub-hosted Skills, `githubStars` is a dated snapshot, not a live counter. Refresh it from GitHub before publishing a new pick or after a meaningful update pass.
 
-Public picks must pass the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof. If a Skill is useful but fails the gate, keep it in `wishlist.md` as rejected or internal learning evidence instead of listing it in `data/reviews.js`.
+Public picks must pass the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof. Public wishlist candidates may appear in `window.WISHLIST_CANDIDATES` before testing when their source and star snapshot have been verified, but they must remain visibly distinct from published recommendations. If a Skill fails the gate, keep it in `wishlist.md` as rejected or internal learning evidence instead of listing it publicly.
+
+When a Skill appears as an embedded copy in one repository but has a maintained canonical source, use the canonical source for publication evidence. Record leaderboard rank or install count as an additional signal, but keep the dated canonical repository star count as the credibility snapshot.
 
 Render `platforms` as a visible AI agent subtitle on cards and detail views. Do not rely only on small badges for Claude Code, Codex, Hermes AI, or future agent compatibility.
 

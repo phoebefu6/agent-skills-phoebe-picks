@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lantern Product OS: a ground-up product built with all 65 PM Skills.">
+    <title>Lantern Product OS · 100% PM Skills Field Test</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../../index.html">Agent Skills Phoebe Picks</a>
+      <nav aria-label="Page sections">
+        <a href="#product">Product</a>
+        <a href="#workspace">65-Skill workspace</a>
+        <a href="#verdict">Verdict</a>
+      </nav>
+      <span>Field test · 25 Jul 2026</span>
+    </header>
+
+    <main>
+      <section class="hero" id="product" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Built with every Skill in the installed marketplace</p>
+          <h1 id="page-title">Lantern</h1>
+          <p class="hero-line">The evidence trail behind every product bet.</p>
+          <p class="lede">A working product operating system shaped by all 65 PM Skills across research, discovery, strategy, execution, analytics, growth, go-to-market, and the PM toolkit.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#workspace">Open the product</a>
+            <button class="secondary-action" id="openCoverage" type="button">Inspect coverage</button>
+          </div>
+        </div>
+
+        <aside class="coverage-card" aria-label="Skill coverage">
+          <div class="coverage-ring" aria-hidden="true">
+            <span>100%</span>
+          </div>
+          <div>
+            <p class="eyebrow">Verified method coverage</p>
+            <strong>65 of 65 Skills</strong>
+            <p>Every Skill has a product artifact, evidence basis, and method trace in the workspace below.</p>
+          </div>
+          <div class="coverage-bar" aria-hidden="true"><i></i></div>
+          <dl>
+            <div><dt>8</dt><dd>product domains</dd></div>
+            <div><dt>65</dt><dd>visible artifacts</dd></div>
+            <div><dt>0</dt><dd>excluded Skills</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="product-preview" aria-labelledby="preview-title">
+        <div class="preview-head">
+          <div>
+            <p class="eyebrow">The product, not the paperwork</p>
+            <h2 id="preview-title">One bet. Every reason visible.</h2>
+          </div>
+          <div class="confidence">
+            <span>Decision confidence</span>
+            <strong>Medium</strong>
+            <small>2 assumptions still unproven</small>
+          </div>
+        </div>
+
+        <div class="decision-canvas">
+          <article class="bet-card">
+            <header><span>Active product bet</span><span class="state">Experiment ready</span></header>
+            <h3>Guided Decision Trail</h3>
+            <p>Help a product trio move from scattered evidence to one explainable, testable decision in under 20 minutes.</p>
+            <div class="bet-path" aria-label="Decision trail">
+              <div><span>01</span><strong>Evidence</strong><small>8 signals · 2 contradictory</small></div>
+              <i aria-hidden="true"></i>
+              <div><span>02</span><strong>Opportunity</strong><small>Score 0.78</small></div>
+              <i aria-hidden="true"></i>
+              <div><span>03</span><strong>Alternatives</strong><small>3 compared</small></div>
+              <i aria-hidden="true"></i>
+              <div><span>04</span><strong>Experiment</strong><small>Threshold set</small></div>
+            </div>
+          </article>
+
+          <aside class="signal-stack">
+            <article class="signal-card positive">
+              <span>Supports</span>
+              <strong>Teams explain decisions without a context meeting.</strong>
+              <small>Modeled prototype test · 4/5 trios</small>
+            </article>
+            <article class="signal-card caution">
+              <span>Contradicts</span>
+              <strong>Maintaining source links may become another weekly chore.</strong>
+              <small>Unproven assumption · test first</small>
+            </article>
+            <article class="signal-card neutral">
+              <span>Next decision gate</span>
+              <strong>Do 30% of invited teams submit a real messy decision?</strong>
+              <small>Concierge pretotype · skin in the game</small>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="workspace-section" id="workspace" aria-labelledby="workspace-title">
+        <div class="section-intro">
+          <p class="eyebrow">65-Skill evidence workspace</p>
+          <h2 id="workspace-title">See what each Skill changed.</h2>
+          <p>Filter by product domain or search for a framework. Open any artifact to inspect the result, its evidence basis, and the key method features used.</p>
+        </div>
+
+        <div class="workspace-shell">
+          <aside class="domain-sidebar">
+            <div class="sidebar-title">
+              <span>Product map</span>
+              <strong id="domainCount">65 artifacts</strong>
+            </div>
+            <nav id="domainNav" aria-label="Product domains"></nav>
+            <button class="excluded-button" id="excludedButton" type="button">
+              <span>Full coverage audit</span>
+              <strong>65 / 65</strong>
+            </button>
+          </aside>
+
+          <div class="workspace-main">
+            <header class="workspace-toolbar">
+              <div>
+                <p class="eyebrow" id="domainEyebrow">All domains</p>
+                <h3 id="domainTitle">The full decision system</h3>
+                <p id="domainQuestion">How does evidence move from market signal to product action?</p>
+              </div>
+              <label class="search-field">
+                <span>Search artifacts</span>
+                <input id="skillSearch" type="search" placeholder="Try “pricing”, “interview”, or “cohort”" autocomplete="off">
+              </label>
+            </header>
+
+            <div class="decision-banner" id="decisionBanner">
+              <span>Current decision</span>
+              <strong>Build the smallest trustworthy evidence-to-decision loop.</strong>
+            </div>
+
+            <div class="artifact-grid" id="artifactGrid"></div>
+            <p class="empty-state" id="emptyState" hidden>No artifacts match this search.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="analytics-proof" aria-labelledby="analytics-title">
+        <div class="section-intro compact">
+          <p class="eyebrow">Calculated proof, clearly labeled</p>
+          <h2 id="analytics-title">Modeled data shows how the decision would be made.</h2>
+          <p>These numbers demonstrate the analytics Skills; they are synthetic and must not be mistaken for live product performance.</p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="experiment-proof">
+            <header><span>A/B test · synthetic</span><strong>Ship behind guardrails</strong></header>
+            <div class="conversion-bars">
+              <div><span>Control</span><i style="--value:31%"></i><strong>31.0%</strong></div>
+              <div><span>Guided trail</span><i style="--value:41%"></i><strong>41.0%</strong></div>
+            </div>
+            <dl>
+              <div><dt>Relative lift</dt><dd>+32.3%</dd></div>
+              <div><dt>p-value</dt><dd>&lt; 0.001</dd></div>
+              <div><dt>95% interval</dt><dd>+6.2 to +13.9 pts</dd></div>
+            </dl>
+          </article>
+
+          <article class="cohort-proof">
+            <header><span>Cohort retention · synthetic</span><strong>Experiment step predicts return</strong></header>
+            <table>
+              <thead><tr><th>Cohort</th><th>W0</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th></tr></thead>
+              <tbody>
+                <tr><th>Baseline</th><td>100</td><td>56</td><td>41</td><td>32</td><td>27</td></tr>
+                <tr class="guided"><th>Guided</th><td>100</td><td>68</td><td>56</td><td>49</td><td>45</td></tr>
+              </tbody>
+            </table>
+            <p>Modeled week-four difference: <strong>+18 points</strong>. Next: interview abandoners and validate with live cohorts.</p>
+          </article>
+
+          <article class="metric-proof">
+            <span>North Star · defined, not observed</span>
+            <strong>Weekly evidence-backed decisions</strong>
+            <p>Unique decisions with at least two evidence links, one explicit assumption, and one thresholded experiment per active team per week.</p>
+            <div><b>Target 1.6</b><b>Alert below 0.8</b><b>Review weekly</b></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="verdict" id="verdict" aria-labelledby="verdict-title">
+        <div class="verdict-score">
+          <span>Marketplace field rating</span>
+          <strong>8.9<small>/10</small></strong>
+          <p>100% package coverage: every installed Skill has inspectable product evidence.</p>
+        </div>
+        <div class="verdict-copy">
+          <p class="eyebrow">Final verdict</p>
+          <h2 id="verdict-title">A complete PM operating system—if evidence remains more important than framework volume.</h2>
+          <div class="verdict-columns">
+            <article>
+              <span>Exactly 3 strengths</span>
+              <ol>
+                <li>Connects market learning, product choices, execution, measurement, and launch without losing the reasoning chain.</li>
+                <li>Turns vague PM judgment into inspectable artifacts, thresholds, trade-offs, and follow-up decisions.</li>
+                <li>Works across Claude Code, Codex, and other Skill-aware agents because the core Skills use portable markdown instructions.</li>
+              </ol>
+            </article>
+            <article>
+              <span>Exactly 3 improvements</span>
+              <ol>
+                <li>Needs a first-class provenance field that distinguishes sourced facts, modeled data, estimates, assumptions, and AI inference.</li>
+                <li>Needs shorter recommended paths so users do not apply overlapping canvases merely because they exist.</li>
+                <li>Needs more explicit stop rules when research quality is too weak to complete a framework responsibly.</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sources" aria-labelledby="sources-title">
+        <p class="eyebrow">Research boundary</p>
+        <h2 id="sources-title">What is sourced, modeled, and calculated</h2>
+        <div>
+          <article>
+            <strong>Official positioning sources</strong>
+            <p>Used only for the high-level competitor map and battlecard.</p>
+            <ul>
+              <li><a href="https://dovetail.com/">Dovetail</a></li>
+              <li><a href="https://www.productboard.com/platform/">Productboard</a></li>
+              <li><a href="https://www.atlassian.com/software/jira/product-discovery">Jira Product Discovery</a></li>
+              <li><a href="https://airfocus.com/product/">airfocus</a></li>
+              <li><a href="https://www.notion.com/product/notion-for-product-development">Notion</a></li>
+            </ul>
+          </article>
+          <article>
+            <strong>Modeled field-test data</strong>
+            <p>Personas, interview summary, sentiment, market sizing, pricing, cohorts, and launch targets are product hypotheses—not claims about real customers.</p>
+          </article>
+          <article>
+            <strong>Calculated synthetic analysis</strong>
+            <p>The A/B test statistics are calculated from disclosed synthetic counts. They demonstrate the method and do not prove Lantern’s performance.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="artifact-dialog" id="artifactDialog">
+      <button class="dialog-close" id="dialogClose" type="button" aria-label="Close artifact">×</button>
+      <div id="dialogContent"></div>
+    </dialog>
+
+    <dialog class="coverage-dialog" id="coverageDialog">
+      <button class="dialog-close" id="coverageClose" type="button" aria-label="Close coverage">×</button>
+      <div class="coverage-dialog-content">
+        <p class="eyebrow">Coverage ledger</p>
+        <h2>65 included. Nothing hidden.</h2>
+        <p>The build exercises every Skill in the 65-Skill local edition. Supporting toolkit artifacts are clearly bounded: legal and privacy outputs are informational review maps, and the hiring artifact uses a fictional candidate.</p>
+        <div id="coverageSummary"></div>
+        <h3>Excluded from this build</h3>
+        <div class="excluded-list" id="excludedList"></div>
+      </div>
+    </dialog>
+
+    <footer class="page-footer">
+      <a href="../../index.html">Return to the Skill gallery</a>
+      <span>Lantern · 65 of 65 PM Skills</span>
+      <a href="https://github.com/phuryn/pm-skills">Open source repository</a>
+    </footer>
+
+    <script src="skills-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

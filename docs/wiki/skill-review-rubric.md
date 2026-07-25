@@ -36,6 +36,8 @@ Do not publish a Skill review based only on reading, installing, planning, or us
 
 Explored artifacts can be visible in the gallery when they help followers understand the testing journey, but keep them labeled `exploring` if the source credibility gate is still pending or failed. Do not call them published picks.
 
+When a package-wide trial includes legal, privacy, compliance, hiring, or other high-risk supporting Skills, full coverage does not justify presenting their output as professional advice. Use fictional or synthetic inputs where personal data is unnecessary, mark informational artifacts clearly, and preserve professional-review gates in the public proof.
+
 ## Demo Artifact Direction
 
 The demo page is part of the evaluation, not a decorative subpage. It should showcase what the Skill can actually do and use as many relevant Skill features as practical.

@@ -45,7 +45,7 @@
       name: "Verify quality",
       summary: "Check source reputation, GitHub stars, install signals, and whether the Skill matches the task.",
       points: [
-        "Low-star sources are held back from public picks.",
+        "Stars and installs are evidence signals, not automatic recommendations.",
         "Official or highly trusted sources get priority.",
         "Safety and maintenance are part of usefulness."
       ]

@@ -3,6 +3,7 @@ const FILTERS = {
     { id: "design", label: "Design" },
     { id: "ui-ux", label: "UI/UX" },
     { id: "product-design", label: "Product Design" },
+    { id: "product-management", label: "Product Management" },
     { id: "frontend", label: "Frontend" },
     { id: "data", label: "Data" },
     { id: "data-viz", label: "Data Viz" },
@@ -20,7 +21,9 @@ const FILTERS = {
     { id: "gemini-cli", label: "Gemini CLI" },
     { id: "opencode", label: "opencode" },
     { id: "kimi", label: "Kimi" },
-    { id: "pi", label: "Pi" }
+    { id: "pi", label: "Pi" },
+    { id: "github-copilot", label: "GitHub Copilot" },
+    { id: "windsurf", label: "Windsurf" }
   ],
   statuses: [
     { id: "exploring", label: "Exploring" },
@@ -430,20 +433,70 @@ const PICKS = [
     galleryLink: "demos/impeccable-design-flight-deck/index.html"
   },
   {
+    id: "pm-skills",
+    name: "pm-skills",
+    source: "Paweł Huryn PM Skills Marketplace",
+    sourceUrl: "https://github.com/phuryn/pm-skills",
+    sourceRepo: "phuryn/pm-skills",
+    sourcePath: "All 65 Skills across pm-product-strategy, pm-product-discovery, pm-market-research, pm-execution, pm-data-analytics, pm-marketing-growth, pm-go-to-market, and pm-toolkit",
+    githubStars: 24430,
+    starsCheckedAt: "2026-07-25",
+    status: "published",
+    recommendation: "Published pick: all 65 installed Skills shaped a ground-up product operating system across market research, discovery, strategy, execution, analytics, growth, go-to-market, and supporting PM operations.",
+    dateExplored: "2026-07-25",
+    scenarios: ["product-management", "research", "data", "reporting", "agent-workflow"],
+    platforms: ["claude-code", "codex", "hermes", "cursor", "gemini-cli", "opencode"],
+    badges: ["65 of 65 tested", "100% coverage", "Product OS"],
+    summary: "A broad product-management Skill marketplace that turns common PM frameworks into a connected, inspectable product operating system.",
+    phoebeNote: "Use it when PM work is scattered across research, strategy, discovery, requirements, analytics, growth, and launch—and you need the evidence and trade-offs to remain coherent across all of them.",
+    coreConcepts: [
+      "Research the market through competitors, journeys, segments, sizing, sentiment, personas, and behavioral clusters.",
+      "Run initial and continuous discovery through interviews, assumptions, ideation, request analysis, opportunity trees, experiments, metrics, and prioritization.",
+      "Connect vision, value, business models, pricing, strategic canvases, macro forces, competitive forces, growth choices, and defensibility.",
+      "Translate strategy into OKRs, requirements, job and user stories, prioritized work, sprint capacity, tests, release notes, meeting decisions, and retrospectives.",
+      "Define and calculate product decisions through SQL logic, cohort analysis, and statistically rigorous A/B test interpretation.",
+      "Shape product growth through naming, positioning, segment messages, marketing ideas, and a seven-criteria North Star constellation.",
+      "Choose a beachhead, ICP, growth loop, motion stack, competitive battlecard, and phased go-to-market decision gates.",
+      "Support product operations with synthetic fixtures, targeted copy review, privacy and NDA legal-review maps, and an evidence-first PM hiring rubric."
+    ],
+    conceptCoverage: "All 65 installed Skills were exercised—100% package coverage across eight product domains. Every Skill has an inspectable artifact, evidence basis, and method trace; legal and privacy artifacts are explicitly informational and require professional review.",
+    groundUpBuild: "Built Lantern Product OS from scratch: an interactive product decision workspace with 65 inspectable artifacts, a full-coverage ledger, source/model/calculation labels, an evidence-to-decision product interface, delivery and operational safeguards, and calculated synthetic experiment proof.",
+    rating: 8.9,
+    ratingScale: 10,
+    ratingSummary: "A serious cross-functional PM operating system with excellent framework depth and handoffs; it still needs stronger provenance fields, shorter recommended paths, and explicit stop rules for weak evidence.",
+    good: [
+      "Connects market learning, product choices, execution, measurement, and launch without losing the reasoning chain.",
+      "Turns vague PM judgment into inspectable artifacts, thresholds, trade-offs, and follow-up decisions.",
+      "Works across multiple Skill-aware agents because the core methods use portable markdown instructions."
+    ],
+    improve: [
+      "Needs a first-class provenance field that distinguishes sourced facts, modeled data, estimates, assumptions, and AI inference.",
+      "Needs shorter recommended paths so users do not apply overlapping canvases merely because they exist.",
+      "Needs explicit stop rules when research quality is too weak to complete a framework responsibly."
+    ],
+    useCases: [
+      "Product managers can carry market evidence into a traceable strategy, PRD, roadmap, metric system, and launch plan.",
+      "AI builders can pressure-test a product through all 65 connected Skills before investing in production code.",
+      "Leaders, product-ops teams, and students can inspect how research and strategy choices flow through delivery, launch, safeguards, and team operations instead of reading disconnected templates."
+    ],
+    demo: "demos/pm-decision-room/index.html",
+    galleryLink: "demos/pm-decision-room/index.html"
+  },
+  {
     id: "find-skills",
     name: "find-skills",
-    source: "joe-bell cva",
-    sourceUrl: "https://github.com/joe-bell/cva/tree/main/.agents/skills/find-skills",
-    sourceRepo: "joe-bell/cva",
-    sourcePath: ".agents/skills/find-skills",
-    githubStars: 6861,
-    starsCheckedAt: "2026-07-17",
-    status: "exploring",
-    recommendation: "Explored artifact: useful discovery workflow, but held back from published-pick status because the installed source is below the 10k-star credibility gate.",
+    source: "Vercel Labs Skills",
+    sourceUrl: "https://github.com/vercel-labs/skills/tree/main/skills/find-skills",
+    sourceRepo: "vercel-labs/skills",
+    sourcePath: "skills/find-skills/SKILL.md",
+    githubStars: 27182,
+    starsCheckedAt: "2026-07-25",
+    status: "published",
+    recommendation: "Published pick: the canonical Skill is ranked #1 all-time on Skills.sh with 2.7M installs, and its 27,182-star source clears the gallery credibility gate.",
     dateExplored: "2026-07-17",
     scenarios: ["agent-workflow", "research", "prompting", "automation"],
-    platforms: ["codex", "claude-code", "hermes", "cursor", "gemini-cli"],
-    badges: ["Skill discovery", "Source gate", "Install decision"],
+    platforms: ["codex", "claude-code", "hermes", "cursor", "gemini-cli", "github-copilot", "windsurf"],
+    badges: ["#1 on Skills.sh", "2.7M installs", "Skill discovery"],
     summary: "A meta Skill for finding, vetting, and installing other agent Skills without recommending weak sources too quickly.",
     phoebeNote: "Use it as an internal discovery desk before adding new Skills, especially when a follower asks whether a useful Skill already exists.",
     coreConcepts: [
@@ -454,18 +507,18 @@ const PICKS = [
       "Verify install count, source reputation, GitHub stars, and source fit before recommending.",
       "Present a clear install, hold, reject, or direct-help decision."
     ],
-    conceptCoverage: "5/6 concepts were exercised directly in the Discovery Desk build; the npx CLI search step was modeled but not executed because it would run third-party package code without explicit trust.",
-    groundUpBuild: "Built the Skill Discovery Desk from scratch as an interactive source-aware recommendation flow.",
-    rating: 7.1,
+    conceptCoverage: "6/6 concepts were exercised across the Discovery Desk and a 20-Skill research pass: need framing, local inventory, leaderboard review, ecosystem search, source verification, and a publish-or-wishlist decision. Direct third-party CLI execution remained intentionally optional.",
+    groundUpBuild: "Built the Skill Discovery Desk from scratch as an interactive source-aware recommendation flow, then used the workflow to verify and rank 20 high-star product, design, data, ML, LLM, and AI-agent Skills.",
+    rating: 7.8,
     ratingScale: 10,
-    ratingSummary: "Useful as a thinking workflow for Skill discovery, but not a full Phoebe Pick until source credibility and safer search tooling improve.",
+    ratingSummary: "A strong, portable discovery workflow backed by the ecosystem’s top-ranked Skill; popularity bias, external package execution, and scoring depth still need care.",
     good: [
       "Stops the agent from recommending a Skill just because a keyword matches.",
       "Turns Skill discovery into a repeatable brief, search, verify, decide workflow.",
       "Makes source quality visible before installation."
     ],
     improve: [
-      "The installed source does not pass the 10k-star gate yet.",
+      "Leaderboard popularity can crowd out a lower-install Skill that fits a specialized task better.",
       "The recommended CLI path depends on external package execution, so it needs explicit trust.",
       "It needs a richer scoring template for installs, source reputation, and artifact proof."
     ],
@@ -476,6 +529,229 @@ const PICKS = [
     ],
     demo: "demos/find-skills-discovery-desk/index.html",
     galleryLink: "demos/find-skills-discovery-desk/index.html"
+  }
+];
+
+const WISHLIST_CANDIDATES = [
+  {
+    rank: 1,
+    id: "algorithmic-art",
+    sourceRepo: "anthropics/skills",
+    sourcePath: "skills/algorithmic-art/SKILL.md",
+    sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+    githubStars: 164075,
+    category: "design-art",
+    focus: "Design · Generative art",
+    buildTarget: "An original, seeded p5.js collection with live parameter exploration."
+  },
+  {
+    rank: 2,
+    id: "xlsx",
+    sourceRepo: "anthropics/skills",
+    sourcePath: "skills/xlsx/SKILL.md",
+    sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+    githubStars: 164075,
+    category: "data-analytics",
+    focus: "Data analysis · Spreadsheets",
+    buildTarget: "A formula-safe analytical workbook with charts, formatting, and recalculation QA."
+  },
+  {
+    rank: 3,
+    id: "skill-creator",
+    sourceRepo: "anthropics/skills",
+    sourcePath: "skills/skill-creator/SKILL.md",
+    sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+    githubStars: 164075,
+    category: "llm-agents",
+    focus: "AI agents · Skill engineering",
+    buildTarget: "A new Skill tested with prompt cases, quantitative checks, and iterative evaluation."
+  },
+  {
+    rank: 4,
+    id: "mcp-builder",
+    sourceRepo: "anthropics/skills",
+    sourcePath: "skills/mcp-builder/SKILL.md",
+    sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+    githubStars: 164075,
+    category: "llm-agents",
+    focus: "LLM tools · AI agents",
+    buildTarget: "A narrowly scoped MCP server judged by real task-completion quality."
+  },
+  {
+    rank: 5,
+    id: "artifacts-builder",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/artifacts-builder/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/artifacts-builder",
+    githubStars: 81448,
+    category: "design-art",
+    focus: "Product design · Interactive artifacts",
+    buildTarget: "A multi-component product artifact with a real information architecture and interaction model."
+  },
+  {
+    rank: 6,
+    id: "d3-visualization",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/d3-visualization/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/d3-visualization",
+    githubStars: 81448,
+    category: "data-analytics",
+    focus: "Data visualization · Design",
+    buildTarget: "An explanatory D3 experience where interaction materially improves understanding."
+  },
+  {
+    rank: 7,
+    id: "data-report",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/data-report/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/data-report",
+    githubStars: 81448,
+    category: "data-analytics",
+    focus: "Data analytics · Reporting",
+    buildTarget: "A bounded dataset turned into a KPI narrative, chart set, and inspectable table."
+  },
+  {
+    rank: 8,
+    id: "data-storytelling",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/business-analytics/skills/data-storytelling/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/business-analytics/skills/data-storytelling",
+    githubStars: 38211,
+    category: "data-analytics",
+    focus: "Analytics · Executive communication",
+    buildTarget: "An executive decision narrative using setup, conflict, evidence, and resolution."
+  },
+  {
+    rank: 9,
+    id: "kpi-dashboard-design",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/business-analytics/skills/kpi-dashboard-design/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/business-analytics/skills/kpi-dashboard-design",
+    githubStars: 38211,
+    category: "data-analytics",
+    focus: "BI · Dashboards · Product analytics",
+    buildTarget: "A governed KPI dashboard with consistent definitions, hierarchy, and action thresholds."
+  },
+  {
+    rank: 10,
+    id: "llm-evaluation",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-application-dev/skills/llm-evaluation/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/llm-evaluation",
+    githubStars: 38211,
+    category: "llm-agents",
+    focus: "LLM evaluation · ML",
+    buildTarget: "A model-quality comparison using automated metrics, human review, and regression tests."
+  },
+  {
+    rank: 11,
+    id: "rag-implementation",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-application-dev/skills/rag-implementation/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/rag-implementation",
+    githubStars: 38211,
+    category: "llm-agents",
+    focus: "RAG · LLM applications",
+    buildTarget: "A source-grounded retrieval prototype with separate retrieval and answer-quality measures."
+  },
+  {
+    rank: 12,
+    id: "agentic-eval",
+    sourceRepo: "github/awesome-copilot",
+    sourcePath: "skills/agentic-eval/SKILL.md",
+    sourceUrl: "https://github.com/github/awesome-copilot/tree/main/skills/agentic-eval",
+    githubStars: 37023,
+    category: "llm-agents",
+    focus: "AI agents · Evaluation",
+    buildTarget: "A generate–evaluate–critique–refine loop with a fixed rubric and stopping rule."
+  },
+  {
+    rank: 13,
+    id: "autoresearch",
+    sourceRepo: "github/awesome-copilot",
+    sourcePath: "skills/autoresearch/SKILL.md",
+    sourceUrl: "https://github.com/github/awesome-copilot/tree/main/skills/autoresearch",
+    githubStars: 37023,
+    category: "llm-agents",
+    focus: "AI agents · ML experimentation",
+    buildTarget: "A bounded autonomous experiment loop with a baseline, target, and keep-or-discard log."
+  },
+  {
+    rank: 14,
+    id: "exploratory-data-analysis",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/exploratory-data-analysis/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/exploratory-data-analysis",
+    githubStars: 31724,
+    category: "data-science-ml",
+    focus: "Data science · EDA",
+    buildTarget: "An authorized dataset audited for missingness, leakage, outliers, and sensitivity."
+  },
+  {
+    rank: 15,
+    id: "scientific-visualization",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/scientific-visualization/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/scientific-visualization",
+    githubStars: 31724,
+    category: "data-science-ml",
+    focus: "Data science · Visual communication",
+    buildTarget: "An accessible publication-ready figure that preserves uncertainty and missing data."
+  },
+  {
+    rank: 16,
+    id: "statsmodels",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/statsmodels/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/statsmodels",
+    githubStars: 31724,
+    category: "data-science-ml",
+    focus: "Statistics · ML · Econometrics",
+    buildTarget: "A reproducible inference study with model selection, diagnostics, and uncertainty."
+  },
+  {
+    rank: 17,
+    id: "product-manager",
+    sourceRepo: "alirezarezvani/claude-skills",
+    sourcePath: ".gemini/skills/product-manager/SKILL.md",
+    sourceUrl: "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/product-manager",
+    githubStars: 23170,
+    category: "product",
+    focus: "Product management · Prioritization",
+    buildTarget: "A vague request turned into a short outcome-led spec, trade-off, and success metric."
+  },
+  {
+    rank: 18,
+    id: "product-discovery",
+    sourceRepo: "alirezarezvani/claude-skills",
+    sourcePath: "product-team/skills/product-discovery/SKILL.md",
+    sourceUrl: "https://github.com/alirezarezvani/claude-skills/tree/main/product-team/skills/product-discovery",
+    githubStars: 23170,
+    category: "product",
+    focus: "Product discovery · Research",
+    buildTarget: "An opportunity map with ranked assumptions, interviews, prototypes, and decision gates."
+  },
+  {
+    rank: 19,
+    id: "product-analytics",
+    sourceRepo: "alirezarezvani/claude-skills",
+    sourcePath: "product-team/skills/product-analytics/SKILL.md",
+    sourceUrl: "https://github.com/alirezarezvani/claude-skills/tree/main/product-team/skills/product-analytics",
+    githubStars: 23170,
+    category: "product",
+    focus: "Product analytics · Data",
+    buildTarget: "A metric hierarchy with cohorts, retention, adoption, and stage-aware interpretation."
+  },
+  {
+    rank: 20,
+    id: "product-strategist",
+    sourceRepo: "alirezarezvani/claude-skills",
+    sourcePath: "product-team/skills/product-strategist/SKILL.md",
+    sourceUrl: "https://github.com/alirezarezvani/claude-skills/tree/main/product-team/skills/product-strategist",
+    githubStars: 23170,
+    category: "product",
+    focus: "Product strategy · OKRs",
+    buildTarget: "A strategy test spanning OKR cascades, alignment scoring, competition, and team design."
   }
 ];
 
@@ -504,5 +780,6 @@ const EVALUATION_STEPS = [
 
 window.FILTERS = FILTERS;
 window.PICKS = PICKS;
+window.WISHLIST_CANDIDATES = WISHLIST_CANDIDATES;
 window.EVALUATION_STEPS = EVALUATION_STEPS;
 window.REVIEWS = PICKS;
