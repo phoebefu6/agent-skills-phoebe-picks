@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="An interactive D3 field test mapping 65 source-backed AI agent Skills by category, repository, and GitHub stars.">
+    <meta name="description" content="An interactive D3 field test mapping 85 source-backed AI agent Skills by category, repository, and GitHub stars.">
     <title>Skill Constellation · D3 Field Test</title>
     <link rel="stylesheet" href="styles.css?v=20260726-11">
   </head>
@@ -27,7 +27,7 @@
         <div class="hero-copy">
           <span class="eyebrow">D3 field test · 26 Jul 2026</span>
           <h1>Skill<br>Constellation</h1>
-          <p class="hero-lede">A living map of the workbench: 65 candidates arranged by category, repository gravity, and source popularity.</p>
+          <p class="hero-lede">A living map of the workbench: 85 candidates arranged by category, repository gravity, and source popularity.</p>
           <div class="hero-actions">
             <a class="primary-action" href="#observatory">Enter the observatory <span aria-hidden="true">↓</span></a>
             <a class="text-action" href="https://github.com/jiannanya/snow-d3" target="_blank" rel="noreferrer">Inspect canonical source ↗</a>
@@ -37,9 +37,9 @@
         <div class="hero-instrument" aria-label="Dataset summary">
           <span class="orbit orbit-one" aria-hidden="true"></span>
           <span class="orbit orbit-two" aria-hidden="true"></span>
-          <span class="instrument-core" aria-hidden="true">65</span>
+          <span class="instrument-core" aria-hidden="true">85</span>
           <dl>
-            <div><dt id="heroSkills">65</dt><dd>Skills mapped</dd></div>
+            <div><dt id="heroSkills">85</dt><dd>Skills mapped</dd></div>
             <div><dt id="heroCategories">10</dt><dd>focus areas</dd></div>
             <div><dt id="heroRepos">10</dt><dd>source repos</dd></div>
           </dl>
@@ -98,7 +98,7 @@
             </div>
 
             <div class="chart-status" aria-live="polite">
-              <span id="visibleCount">65 Skills visible</span>
+              <span id="visibleCount">85 Skills visible</span>
               <span id="selectionStatus">Drag nodes · scroll to zoom · select for details</span>
             </div>
           </section>
@@ -117,7 +117,7 @@
             <div class="ring-panel">
               <div>
                 <span>Visible mix</span>
-                <strong id="ringTotal">65</strong>
+                <strong id="ringTotal">85</strong>
               </div>
               <svg id="categoryRing" role="img" aria-label="Donut chart showing visible Skills by focus area"></svg>
             </div>
@@ -180,8 +180,8 @@
         document.documentElement.dataset.runtimeError = String(event.reason || "Unhandled promise rejection");
       });
     </script>
-    <script src="../../data/reviews.js?v=wishlist-65-20260726"></script>
+    <script src="../../data/reviews.js?v=wishlist-85-20260726"></script>
     <script src="d3.min.js"></script>
-    <script src="app.js?v=20260726-8"></script>
+    <script src="app.js?v=20260726-10"></script>
   </body>
 </html>

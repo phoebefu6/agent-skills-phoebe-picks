@@ -560,7 +560,7 @@ const PICKS = [
       "Use geographic projections and paths when the analytical question has a spatial dimension."
     ],
     conceptCoverage: "9/10 key concept families were exercised: data joins, scales and color, SVG shapes, axes, transitions, zoom and drag, brushing, force simulation, and hierarchy. Geography was deliberately skipped because the Skill dataset has no meaningful spatial dimension.",
-    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 65 Skills, with a force-cluster map, logarithmic star map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
+    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 85 Skills, with a force-cluster map, logarithmic star map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
     rating: 8.3,
     ratingScale: 10,
     ratingSummary: "Broad and practical coverage of D3's core mental models, layouts, and interactions; the learning path and production guidance could be sharper.",
@@ -1299,6 +1299,226 @@ const WISHLIST_CANDIDATES = [
     category: "product",
     focus: "Product · Startup metrics",
     buildTarget: "A stage-aware metric system linking acquisition, activation, retention, revenue, efficiency, and explicit decision thresholds."
+  },
+  {
+    rank: 66,
+    id: "copy-editing",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/copy-editing/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/copy-editing",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Editing",
+    buildTarget: "A before-and-after editorial pass improving clarity, structure, voice, evidence, consistency, and conversion without changing meaning."
+  },
+  {
+    rank: 67,
+    id: "cold-email",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/cold-email/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/cold-email",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Cold outreach",
+    buildTarget: "A researched outreach sequence with relevant openings, concise value, credible proof, respectful follow-ups, and measurable replies."
+  },
+  {
+    rank: 68,
+    id: "emails",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/emails/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/emails",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Email sequences",
+    buildTarget: "A lifecycle email series with one job per message, coherent sequencing, useful personalization, clear calls to action, and success measures."
+  },
+  {
+    rank: 69,
+    id: "lead-magnets",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/lead-magnets/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/lead-magnets",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Lead magnets",
+    buildTarget: "A genuinely useful guide or toolkit connecting one audience problem, actionable content, trust signals, delivery, and follow-up."
+  },
+  {
+    rank: 70,
+    id: "public-relations",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/public-relations/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/public-relations",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Public relations",
+    buildTarget: "A media-ready narrative package with a defensible angle, supporting facts, spokesperson notes, outreach copy, and follow-up plan."
+  },
+  {
+    rank: 71,
+    id: "social",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/social/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/social",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Social content",
+    buildTarget: "A platform-aware social series with a clear point of view, useful hooks, proof, native formatting, repurposing, and response metrics."
+  },
+  {
+    rank: 72,
+    id: "programmatic-seo",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/programmatic-seo/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/programmatic-seo",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Programmatic SEO",
+    buildTarget: "A quality-controlled page system with a useful template, differentiated data, internal links, duplicate-content safeguards, and indexation checks."
+  },
+  {
+    rank: 73,
+    id: "ai-seo",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/ai-seo/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/ai-seo",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · AI search",
+    buildTarget: "A source-rich answer library designed for human usefulness, clear entities, quotable facts, retrieval visibility, and attribution monitoring."
+  },
+  {
+    rank: 74,
+    id: "offers",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/offers/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/offers",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Offer design",
+    buildTarget: "A written offer connecting outcome, audience, scope, evidence, risk reversal, pricing logic, objections, and a clear next step."
+  },
+  {
+    rank: 75,
+    id: "product-marketing",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/product-marketing/SKILL.md",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/product-marketing",
+    githubStars: 41754,
+    category: "content-writing",
+    focus: "Content writing · Product messaging",
+    buildTarget: "A messaging system linking audience problems, positioning, differentiated value, proof, launch narratives, sales enablement, and adoption content."
+  },
+  {
+    rank: 76,
+    id: "notion-spec-to-implementation",
+    sourceRepo: "openai/skills",
+    sourcePath: "skills/.curated/notion-spec-to-implementation/SKILL.md",
+    sourceUrl: "https://github.com/openai/skills/tree/main/skills/.curated/notion-spec-to-implementation",
+    githubStars: 24191,
+    category: "knowledge-base",
+    focus: "Knowledge base · Specs to delivery",
+    buildTarget: "A linked Notion workflow that turns a source specification into implementation tasks, decisions, progress evidence, and durable project memory."
+  },
+  {
+    rank: 77,
+    id: "defuddle",
+    sourceRepo: "kepano/obsidian-skills",
+    sourcePath: "skills/defuddle/SKILL.md",
+    sourceUrl: "https://github.com/kepano/obsidian-skills/tree/main/skills/defuddle",
+    githubStars: 43329,
+    category: "knowledge-base",
+    focus: "Knowledge base · Web capture",
+    buildTarget: "A clean web-to-knowledge capture flow preserving title, author, source, useful structure, metadata, citations, and readable Markdown."
+  },
+  {
+    rank: 78,
+    id: "json-canvas",
+    sourceRepo: "kepano/obsidian-skills",
+    sourcePath: "skills/json-canvas/SKILL.md",
+    sourceUrl: "https://github.com/kepano/obsidian-skills/tree/main/skills/json-canvas",
+    githubStars: 43329,
+    category: "knowledge-base",
+    focus: "Knowledge base · Visual maps",
+    buildTarget: "A machine-readable knowledge canvas connecting notes, sources, claims, questions, and decisions through inspectable nodes and edges."
+  },
+  {
+    rank: 79,
+    id: "obsidian-cli",
+    sourceRepo: "kepano/obsidian-skills",
+    sourcePath: "skills/obsidian-cli/SKILL.md",
+    sourceUrl: "https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-cli",
+    githubStars: 43329,
+    category: "knowledge-base",
+    focus: "Knowledge base · Vault automation",
+    buildTarget: "A safe vault-maintenance workflow for search, capture, metadata updates, link checks, and batch operations with backups and dry runs."
+  },
+  {
+    rank: 80,
+    id: "library-curator",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/library-curator/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/library-curator",
+    githubStars: 81644,
+    category: "knowledge-base",
+    focus: "Knowledge base · Library curation",
+    buildTarget: "A curated resource library with explicit inclusion rules, taxonomy, summaries, provenance, duplicate handling, quality signals, and maintenance cadence."
+  },
+  {
+    rank: 81,
+    id: "weread-year-in-review-video-template",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/weread-year-in-review-video-template/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/weread-year-in-review-video-template",
+    githubStars: 81644,
+    category: "knowledge-base",
+    focus: "Knowledge base · WeRead reflection",
+    buildTarget: "A WeRead year-in-review knowledge story connecting books, highlights, themes, reading patterns, memorable ideas, and an editable visual narrative."
+  },
+  {
+    rank: 82,
+    id: "cdutcm-library-search",
+    sourceRepo: "yoqalux-blip/cdutcm-library-search-skill",
+    sourcePath: "SKILL.md",
+    sourceUrl: "https://github.com/yoqalux-blip/cdutcm-library-search-skill",
+    githubStars: 0,
+    category: "knowledge-base",
+    focus: "Chinese medicine KB · Library research",
+    buildTarget: "A research-only literature workflow through authorized Chengdu University of Traditional Chinese Medicine library access, with source queues, citations, manual verification, and no diagnosis or treatment advice."
+  },
+  {
+    rank: 83,
+    id: "tcm-network-pharmacology",
+    sourceRepo: "YuLab-SMU/TCMDATA",
+    sourcePath: "inst/skills/tcm-network-pharmacology/SKILL.md",
+    sourceUrl: "https://github.com/YuLab-SMU/TCMDATA/tree/master/inst/skills/tcm-network-pharmacology",
+    githubStars: 15,
+    category: "knowledge-base",
+    focus: "Chinese medicine KB · Network pharmacology",
+    buildTarget: "A research-only, reproducible TCM evidence map distinguishing computational predictions from PubMed, experimental, and clinical evidence, with exact thresholds and no medical advice."
+  },
+  {
+    rank: 84,
+    id: "linglanmidian-systematic-evaluation-tcm",
+    sourceRepo: "ndpvt-web/arxiv-claude-skills",
+    sourcePath: "skills/linglanmidian-systematic-evaluation-tcm/SKILL.md",
+    sourceUrl: "https://github.com/ndpvt-web/arxiv-claude-skills/tree/master/skills/linglanmidian-systematic-evaluation-tcm",
+    githubStars: 6,
+    category: "knowledge-base",
+    focus: "Chinese medicine KB · LLM evaluation",
+    buildTarget: "A research-only TCM knowledge benchmark with synonym-tolerant scoring, hard subsets, source provenance, expert review, and no clinical decision support."
+  },
+  {
+    rank: 85,
+    id: "domain-ontology-mapping-tcm-and-ethnobotany",
+    sourceRepo: "HolobiomicsLab/asb-skill-collections",
+    sourcePath: "collections/metabolomics/v2/skills/domain-ontology-mapping-tcm-and-ethnobotany/SKILL.md",
+    sourceUrl: "https://github.com/HolobiomicsLab/asb-skill-collections/tree/main/collections/metabolomics/v2/skills/domain-ontology-mapping-tcm-and-ethnobotany",
+    githubStars: 14,
+    category: "knowledge-base",
+    focus: "Chinese medicine KB · Ontology mapping",
+    buildTarget: "A research-only terminology map reconciling TCM names, transliterations, organisms, preparations, structures, and references, with expert validation and license review."
   }
 ];
 

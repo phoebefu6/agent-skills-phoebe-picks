@@ -26,6 +26,7 @@
     office: "Office",
     "data-dashboard": "Data → dashboard",
     marketing: "Marketing",
+    "content-writing": "Content writing",
     "one-person-company": "One-person company"
   };
 
@@ -420,7 +421,10 @@
   function renderScatter(data) {
     if (simulation) simulation.stop();
     const x = d3.scaleLog()
-      .domain([d3.min(skills, (item) => item.stars) * 0.9, d3.max(skills, (item) => item.stars) * 1.08])
+      .domain([
+        Math.max(1, d3.min(skills, (item) => item.stars > 0 ? item.stars : Infinity) * 0.9),
+        d3.max(skills, (item) => item.stars) * 1.08
+      ])
       .range([0, plotWidth])
       .nice();
     const visibleCategories = state.category === "all" ? categories : [state.category];
@@ -428,27 +432,25 @@
       .domain(visibleCategories)
       .range([0, plotHeight])
       .padding(0.32);
-    const collisionOffsets = [
-      [0, 0],
-      [-16, -10],
-      [16, -10],
-      [-16, 10],
-      [16, 10],
-      [-32, 0],
-      [32, 0],
-      [0, -20],
-      [0, 20]
-    ];
     const scatterOffsets = new Map();
     d3.groups(data, (item) => `${item.category}|${item.stars}`).forEach(([, group]) => {
       group.slice().sort((a, b) => d3.ascending(a.id, b.id)).forEach((item, index) => {
-        scatterOffsets.set(item.id, collisionOffsets[index] || [0, (index - 4) * 9]);
+        const columns = Math.min(5, group.length);
+        const rows = Math.ceil(group.length / columns);
+        const row = Math.floor(index / columns);
+        const rowStart = row * columns;
+        const itemsInRow = Math.min(columns, group.length - rowStart);
+        const column = index - rowStart;
+        scatterOffsets.set(item.id, [
+          (column - (itemsInRow - 1) / 2) * 16,
+          (row - (rows - 1) / 2) * 14
+        ]);
       });
     });
     const scatterPoint = (item) => {
       const [dx, dy] = scatterOffsets.get(item.id) || [0, 0];
       return [
-        margin.left + x(item.stars) + dx,
+        margin.left + x(Math.max(1, item.stars)) + dx,
         margin.top + y(item.category) + y.bandwidth() / 2 + dy
       ];
     };

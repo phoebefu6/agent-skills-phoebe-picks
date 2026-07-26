@@ -90,7 +90,7 @@
   };
 
   const wishlistCategories = [
-    { id: "all", label: "All 65" },
+    { id: "all", label: "All 85" },
     { id: "product", label: "Product" },
     { id: "design-art", label: "Design & art" },
     { id: "data-analytics", label: "Data & analytics" },
@@ -100,6 +100,7 @@
     { id: "office", label: "Office" },
     { id: "data-dashboard", label: "Data → dashboard" },
     { id: "marketing", label: "Marketing" },
+    { id: "content-writing", label: "Content writing" },
     { id: "one-person-company", label: "One-person company" }
   ];
 
