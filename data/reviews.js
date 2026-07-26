@@ -529,6 +529,58 @@ const PICKS = [
     ],
     demo: "demos/find-skills-discovery-desk/index.html",
     galleryLink: "demos/find-skills-discovery-desk/index.html"
+  },
+  {
+    id: "d3-visualization",
+    name: "d3-visualization",
+    source: "snow-d3 via Open Design",
+    sourceUrl: "https://github.com/jiannanya/snow-d3",
+    sourceRepo: "jiannanya/snow-d3",
+    sourcePath: "SKILL.md; catalog wrapper: nexu-io/open-design/skills/d3-visualization/SKILL.md",
+    githubStars: 4,
+    starsCheckedAt: "2026-07-26",
+    status: "exploring",
+    recommendation: "Exploring: the ground-up build is complete, but the canonical Skill source has 4 stars and does not yet clear the gallery credibility gate. Its Open Design catalog wrapper is hosted in an 81,586-star repository.",
+    dateExplored: "2026-07-26",
+    scenarios: ["data-viz", "data", "reporting", "frontend"],
+    platforms: ["codex", "claude-code", "hermes", "cursor", "gemini-cli"],
+    badges: ["9/10 concepts", "D3 v7.9", "Credibility pending"],
+    summary: "A comprehensive D3 Skill for bespoke interactive charts, layouts, and data-driven SVG experiences.",
+    phoebeNote: "Use it when a standard chart cannot explain the structure, relationships, or hierarchy in the data and custom interaction materially improves understanding.",
+    coreConcepts: [
+      "Bind changing data to SVG elements with D3 selections and enter, update, and exit joins.",
+      "Map quantitative and categorical values with linear, logarithmic, ordinal, and color scales.",
+      "Construct SVG marks and paths directly instead of hiding the data-to-mark relationship behind a chart wrapper.",
+      "Make values readable through axes, ticks, legends, labels, and responsive view boxes.",
+      "Use transitions to preserve visual continuity when data, filters, or chart modes change.",
+      "Support direct exploration with zoom, pan, drag, hover, and click interactions.",
+      "Use brushing to select a bounded region and coordinate the selection with other views.",
+      "Model relationships with force simulation, links, collision, and clustered nodes.",
+      "Reveal nested structure with hierarchy utilities and space-filling layouts such as treemaps.",
+      "Use geographic projections and paths when the analytical question has a spatial dimension."
+    ],
+    conceptCoverage: "9/10 key concept families were exercised: data joins, scales and color, SVG shapes, axes, transitions, zoom and drag, brushing, force simulation, and hierarchy. Geography was deliberately skipped because the Skill dataset has no meaningful spatial dimension.",
+    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of 45 source-backed Skills with a force-cluster map, logarithmic star map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
+    rating: 8.3,
+    ratingScale: 10,
+    ratingSummary: "Broad and practical coverage of D3's core mental models, layouts, and interactions; the learning path and production guidance could be sharper.",
+    good: [
+      "The 30 working examples turn advanced D3 layouts and interactions into practical starting points.",
+      "The references connect chart choice, scales, joins, axes, layout, and interaction without hiding the underlying SVG model.",
+      "Its vanilla, no-build patterns are portable across prototypes, reports, and editorial data products."
+    ],
+    improve: [
+      "The catalog wrapper requires a separate upstream-source step before the full Skill is usable.",
+      "The breadth can overwhelm beginners because it lacks a short decision path from question and data type to one recommended pattern.",
+      "The examples need stronger production guidance for accessibility, data validation, annotation, and regression testing."
+    ],
+    useCases: [
+      "Data teams can build portfolio, KPI, and source landscapes when a standard dashboard cannot show relationships clearly.",
+      "AI builders can map agent, tool, model, or retrieval networks and inspect clusters or outliers.",
+      "Product leaders and students can compare force, scatter, and treemap explanations of the same evidence in one interactive artifact."
+    ],
+    demo: "demos/d3-skill-constellation/index.html",
+    galleryLink: "demos/d3-skill-constellation/index.html"
   }
 ];
 
@@ -590,14 +642,14 @@ const WISHLIST_CANDIDATES = [
   },
   {
     rank: 6,
-    id: "d3-visualization",
+    id: "dashboard",
     sourceRepo: "nexu-io/open-design",
-    sourcePath: "skills/d3-visualization/SKILL.md",
-    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/d3-visualization",
-    githubStars: 81448,
+    sourcePath: "design-templates/dashboard/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/design-templates/dashboard",
+    githubStars: 81586,
     category: "data-analytics",
-    focus: "Data visualization · Design",
-    buildTarget: "An explanatory D3 experience where interaction materially improves understanding."
+    focus: "Dashboard design · Information hierarchy",
+    buildTarget: "A decision dashboard with layered KPI hierarchy, filters, dense data, and clear action paths."
   },
   {
     rank: 7,

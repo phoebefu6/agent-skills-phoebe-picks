@@ -85,7 +85,8 @@
     "high-end-visual-design": "Visual Atelier",
     "design-consultation": "System Room",
     "pm-skills": "Lantern Product OS",
-    "find-skills": "Discovery Desk"
+    "find-skills": "Discovery Desk",
+    "d3-visualization": "Skill Constellation"
   };
 
   const wishlistCategories = [

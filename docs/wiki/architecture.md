@@ -40,6 +40,8 @@ Shared demo helpers live at `demos/skill-demo.css` and `demos/skill-demo.js`. Us
 
 Demo subpages are independent Skill function showcases, not a shared detail-page template. They may use different layouts, interaction models, visual styles, diagrams, flows, tools, or storytelling structures when that better demonstrates what the Skill can do. The homepage and gallery should stay coherent, but each demo page should be shaped around the Skill's own features and concepts.
 
+The D3 field test vendors a pinned `d3.min.js` file and its license inside `demos/d3-skill-constellation/`. Keep that dependency local so the static proof does not rely on a CDN and remains inspectable on GitHub Pages.
+
 ## Pick Object Shape
 
 Each public Skill entry should include:
@@ -73,7 +75,7 @@ Each public Skill entry should include:
 
 For GitHub-hosted Skills, `githubStars` is a dated snapshot, not a live counter. Refresh it from GitHub before publishing a new pick or after a meaningful update pass.
 
-Public picks must pass the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof. Public wishlist candidates may appear in `window.WISHLIST_CANDIDATES` before testing when their source and star snapshot have been verified, but they must remain visibly distinct from published recommendations. If a Skill fails the gate, keep it in `wishlist.md` as rejected or internal learning evidence instead of listing it publicly.
+Published picks must pass the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof. Public wishlist candidates may appear in `window.WISHLIST_CANDIDATES` before testing when their source and star snapshot have been verified, but they must remain visibly distinct from published recommendations. A completed, safe field test that misses the source gate may appear as `exploring` evidence when the UI and review clearly say it is not a recommendation; rejected or risky Skills remain in `wishlist.md` or internal learning evidence.
 
 When a Skill appears as an embedded copy in one repository but has a maintained canonical source, use the canonical source for publication evidence. Record leaderboard rank or install count as an additional signal, but keep the dated canonical repository star count as the credibility snapshot.
 

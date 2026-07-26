@@ -3,7 +3,7 @@
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
 [![Published Picks](https://img.shields.io/badge/published%20picks-10-6f7cff?style=for-the-badge)](#published-products)
-[![Field Tests](https://img.shields.io/badge/field%20tests-10-ffbc91?style=for-the-badge)](#field-tested-artifacts)
+[![Field Tests](https://img.shields.io/badge/field%20tests-11-ffbc91?style=for-the-badge)](#field-tested-artifacts)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A public shelf of AI agent Skills that survived a real build.
@@ -45,11 +45,13 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `pm-skills` | [Lantern Product OS](demos/pm-decision-room/) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills), 24,430 stars, explored 2026-07-25 | Published pick, 8.9/10 overall rating, 65/65 Skills used |
 | `find-skills` | [Skill Discovery Desk](demos/find-skills-discovery-desk/) | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills), 27,182 stars and #1 all-time on Skills.sh with 2.7M installs, verified 2026-07-25 | Published pick, 7.8/10 overall rating |
 
-Each product page lists the Skill's key features in a visual, interactive format so followers can see what the Skill changes in practice.
-
 ## Field-Tested Artifacts
 
-All current public field-test artifacts have now passed the publication gate. Upcoming candidates are visible in the [public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist), with deeper evidence in [the research notes](wishlist.md), until a ground-up build proves them.
+| Skill | Built from scratch | Source snapshot | Result |
+| --- | --- | --- | --- |
+| `d3-visualization` | [Skill Constellation](demos/d3-skill-constellation/) | Canonical [jiannanya/snow-d3](https://github.com/jiannanya/snow-d3), 4 stars; catalog wrapper in [nexu-io/open-design](https://github.com/nexu-io/open-design), 81,586 stars, verified 2026-07-26 | Exploring, 8.3/10, 9/10 concept families exercised; canonical source remains below the publication gate |
+
+Published products and exploring field tests both show their work. An exploring artifact is evidence of the method, not a recommendation, until the canonical source clears the credibility gate.
 
 ## What You Will Find
 
@@ -92,6 +94,7 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `impeccable` | Published | Move from visual direction through mock approval, production build, and release-quality inspection. |
 | `pm-skills` | Published | Build a full product operating system across research, discovery, strategy, execution, analytics, growth, and GTM. |
 | `find-skills` | Published | Find and vet other Skills before installing or recommending them. |
+| `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
 
 ## Repo Map
 
@@ -111,6 +114,7 @@ agent-skills-phoebe-picks/
   demos/find-skills-discovery-desk/ # find-skills field test
   demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint
+  demos/d3-skill-constellation/      # d3-visualization linked-view field test
   wishlist.md                        # Exploration queue
   docs/wiki/                         # Internal agent memory for future work
 ```
@@ -136,6 +140,7 @@ node --check demos/skill-demo.js
 node --check demos/design-taste-frontend-studio/app.js
 node --check demos/find-skills-discovery-desk/app.js
 node --check demos/product-design-studio/app.js
+node --check demos/d3-skill-constellation/app.js
 node --check demos/pm-decision-room/app.js
 node --check demos/pm-decision-room/skills-data.js
 ```

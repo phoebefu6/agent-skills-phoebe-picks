@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An interactive D3 field test mapping 45 source-backed AI agent Skills by category, repository, and GitHub stars.">
+    <title>Skill Constellation · D3 Field Test</title>
+    <link rel="stylesheet" href="styles.css?v=20260726-11">
+  </head>
+  <body>
+    <a class="skip-link" href="#observatory">Skip to visualization</a>
+
+    <header class="site-header">
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Agent Skills <strong>Phoebe Picks</strong></span>
+      </a>
+      <nav aria-label="Demo navigation">
+        <a href="../../index.html#gallery">Gallery</a>
+        <a href="../../index.html#wishlist">Wishlist</a>
+        <a href="#field-notes">Field notes</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">D3 field test · 26 Jul 2026</span>
+          <h1>Skill<br>Constellation</h1>
+          <p class="hero-lede">A living map of the workbench: 45 candidates arranged by category, repository gravity, and source popularity.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#observatory">Enter the observatory <span aria-hidden="true">↓</span></a>
+            <a class="text-action" href="https://github.com/jiannanya/snow-d3" target="_blank" rel="noreferrer">Inspect canonical source ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-instrument" aria-label="Dataset summary">
+          <span class="orbit orbit-one" aria-hidden="true"></span>
+          <span class="orbit orbit-two" aria-hidden="true"></span>
+          <span class="instrument-core" aria-hidden="true">45</span>
+          <dl>
+            <div><dt id="heroSkills">45</dt><dd>Skills mapped</dd></div>
+            <div><dt id="heroCategories">10</dt><dd>focus areas</dd></div>
+            <div><dt id="heroRepos">10</dt><dd>source repos</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="observatory" id="observatory" aria-labelledby="observatory-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Interactive evidence</span>
+            <h2 id="observatory-title">Change the question.<br>Watch the structure move.</h2>
+          </div>
+          <p>Cluster reveals source relationships. Star map compares popularity on a log scale. Treemap shows portfolio coverage. Hover, drag, zoom, brush, filter, or select a Skill.</p>
+        </div>
+
+        <div class="control-deck" aria-label="Visualization controls">
+          <div class="view-switcher" role="group" aria-label="Visualization view">
+            <button class="view-button is-active" type="button" data-view="cluster" aria-pressed="true">01 Cluster</button>
+            <button class="view-button" type="button" data-view="scatter" aria-pressed="false">02 Star map</button>
+            <button class="view-button" type="button" data-view="treemap" aria-pressed="false">03 Treemap</button>
+          </div>
+
+          <label class="search-control">
+            <span>Find a Skill</span>
+            <input id="skillSearch" type="search" placeholder="Try dashboard or agent" autocomplete="off">
+          </label>
+
+          <label class="select-control">
+            <span>Focus area</span>
+            <select id="categorySelect">
+              <option value="all">All focus areas</option>
+            </select>
+          </label>
+
+          <button class="reset-button" id="resetView" type="button">Reset view</button>
+        </div>
+
+        <div class="workspace">
+          <section class="chart-card" aria-labelledby="chart-title">
+            <div class="chart-toolbar">
+              <div>
+                <span class="chart-kicker" id="viewKicker">Force + source links</span>
+                <h3 id="chart-title">Repository gravity</h3>
+              </div>
+              <div class="zoom-controls" id="zoomControls" aria-label="Zoom controls">
+                <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+                <button type="button" data-zoom="reset">Reset</button>
+                <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+              </div>
+            </div>
+
+            <div class="chart-shell" id="chartShell">
+              <svg id="skillChart" role="img" aria-labelledby="chart-title chart-description"></svg>
+              <p class="sr-only" id="chart-description">Interactive visualization of Skill candidates by focus category, source repository, and GitHub star snapshot.</p>
+              <div class="tooltip" id="chartTooltip" role="status" aria-live="polite"></div>
+            </div>
+
+            <div class="chart-status" aria-live="polite">
+              <span id="visibleCount">45 Skills visible</span>
+              <span id="selectionStatus">Drag nodes · scroll to zoom · select for details</span>
+            </div>
+          </section>
+
+          <aside class="inspector" aria-labelledby="inspector-title">
+            <div class="inspector-heading">
+              <span>Selection</span>
+              <span class="live-dot" aria-hidden="true"></span>
+            </div>
+            <div id="selectionPanel" aria-live="polite">
+              <p class="selection-number">00</p>
+              <h3 id="inspector-title">Choose a Skill</h3>
+              <p>Hover for a quick read. Select any node or treemap cell to hold its source, build target, and popularity snapshot here.</p>
+            </div>
+
+            <div class="ring-panel">
+              <div>
+                <span>Visible mix</span>
+                <strong id="ringTotal">45</strong>
+              </div>
+              <svg id="categoryRing" role="img" aria-label="Donut chart showing visible Skills by focus area"></svg>
+            </div>
+          </aside>
+        </div>
+
+        <div class="legend-panel">
+          <div>
+            <span class="eyebrow">Color key</span>
+            <p>Color marks focus area. Skill-node area follows repository stars. Choose a focus area to isolate it; choose it again to return to all Skills.</p>
+          </div>
+          <div class="category-legend" id="categoryLegend" aria-label="Interactive category legend"></div>
+        </div>
+      </section>
+
+      <section class="method-section" id="field-notes" aria-labelledby="method-title">
+        <div class="method-intro">
+          <span class="eyebrow">9 of 10 concept families exercised</span>
+          <h2 id="method-title">The visualization is the test.</h2>
+          <p>Each tile names a D3 concept visible in this artifact. Geography is intentionally excluded because the dataset has no meaningful spatial dimension.</p>
+        </div>
+        <div class="concept-grid">
+          <article><span>01</span><h3>Keyed data joins</h3><p>Nodes, links, axes, cells, arcs, and legend items update from bound data.</p></article>
+          <article><span>02</span><h3>Scales + color</h3><p>Log, band, square-root, ordinal, and linear scales map evidence to position and form.</p></article>
+          <article><span>03</span><h3>SVG shapes</h3><p>Pie and arc generators turn the visible portfolio mix into a live ring.</p></article>
+          <article><span>04</span><h3>Axes</h3><p>The star map exposes repository popularity with formatted logarithmic ticks.</p></article>
+          <article><span>05</span><h3>Transitions</h3><p>Named transitions preserve object identity as filters and views change.</p></article>
+          <article><span>06</span><h3>Zoom + drag</h3><p>The force view supports pan, zoom, and direct node manipulation.</p></article>
+          <article><span>07</span><h3>Brush</h3><p>The star map turns a spatial selection into a bounded Skill shortlist.</p></article>
+          <article><span>08</span><h3>Force simulation</h3><p>Repository links, collision, charge, and category forces reveal structure.</p></article>
+          <article><span>09</span><h3>Hierarchy</h3><p>A treemap nests Skills inside focus areas and preserves portfolio context.</p></article>
+          <article class="concept-skipped"><span>10</span><h3>Geography</h3><p>Skipped by design. No fake map was added to data without a geographic question.</p></article>
+        </div>
+      </section>
+
+      <section class="review-strip" aria-label="Field-test status">
+        <div>
+          <span class="status-chip">Exploring</span>
+          <h2>Promising method.<br>Credibility gate still open.</h2>
+        </div>
+        <p>The 81,586-star Open Design catalogue made the Skill discoverable, but the canonical upstream source had 4 stars in the 26 July 2026 snapshot. The build is complete; the public recommendation remains Exploring until the canonical source earns qualifying credibility evidence.</p>
+        <a href="../../index.html#gallery">See the gallery record →</a>
+      </section>
+    </main>
+
+    <footer>
+      <span>Built from zero with D3 v7.9.0</span>
+      <span>Data snapshot · 26 Jul 2026</span>
+      <a href="../../index.html">Agent Skills Phoebe Picks ↗</a>
+    </footer>
+
+    <script>
+      window.__skillConstellationErrors = [];
+      window.addEventListener("error", (event) => {
+        window.__skillConstellationErrors.push(event.message || "Unknown script error");
+        document.documentElement.dataset.runtimeError = `${event.message || "Unknown script error"} @ ${event.lineno || "?"}:${event.colno || "?"}`;
+      });
+      window.addEventListener("unhandledrejection", (event) => {
+        window.__skillConstellationErrors.push(String(event.reason || "Unhandled promise rejection"));
+        document.documentElement.dataset.runtimeError = String(event.reason || "Unhandled promise rejection");
+      });
+    </script>
+    <script src="../../data/reviews.js?v=d3-exploring-20260726"></script>
+    <script src="d3.min.js"></script>
+    <script src="app.js?v=20260726-8"></script>
+  </body>
+</html>

@@ -11,6 +11,7 @@ node --check demos/skill-demo.js
 node --check demos/design-taste-frontend-studio/app.js
 node --check demos/find-skills-discovery-desk/app.js
 node --check demos/product-design-studio/app.js
+node --check demos/d3-skill-constellation/app.js
 node --check demos/pm-decision-room/app.js
 node --check demos/pm-decision-room/skills-data.js
 ```
