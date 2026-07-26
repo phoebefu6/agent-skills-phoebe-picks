@@ -89,12 +89,17 @@
   };
 
   const wishlistCategories = [
-    { id: "all", label: "All 20" },
+    { id: "all", label: "All 45" },
     { id: "product", label: "Product" },
     { id: "design-art", label: "Design & art" },
     { id: "data-analytics", label: "Data & analytics" },
     { id: "data-science-ml", label: "Data science & ML" },
-    { id: "llm-agents", label: "LLMs & agents" }
+    { id: "llm-agents", label: "LLMs & agents" },
+    { id: "knowledge-base", label: "Knowledge base" },
+    { id: "office", label: "Office" },
+    { id: "data-dashboard", label: "Data → dashboard" },
+    { id: "marketing", label: "Marketing" },
+    { id: "one-person-company", label: "One-person company" }
   ];
 
   let entranceMotionPlayed = false;

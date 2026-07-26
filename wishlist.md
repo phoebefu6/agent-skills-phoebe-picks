@@ -31,9 +31,9 @@ The public gallery should only show Skills that feel useful enough to recommend.
 | `using-superpowers` | `obra/superpowers`, `skills/using-superpowers` | 255,624 on 2026-07-16 | Claude Code, Codex, Cursor, Gemini CLI, opencode, Kimi; Hermes AI if adapted | Agent workflow, skill discipline | Build a new feature through the Superpowers process from zero | Pending | Pending | 2026-07-14 | Exploring | Pending |
 | `brainstorming` | `obra/superpowers`, `skills/brainstorming` | 255,624 on 2026-07-16 | Claude Code, Codex, Cursor, Gemini CLI, opencode, Kimi; Hermes AI if adapted | Requirements, design thinking, spec writing | Produce a ground-up spec and artifact plan for one new gallery feature | Pending | Pending | 2026-07-14 | Exploring | Pending |
 
-## Top-Star Discovery Queue
+## Source-Backed Discovery Queue
 
-These 20 candidates were verified as real Skill files and ordered by the current GitHub stars of their source repositories on 2026-07-25. Repository popularity is a discovery signal, not a recommendation: every candidate remains `Wishlist` until its source is read fully and a ground-up build exercises about 80% of the method.
+These 45 candidates were verified as real Skill files. The original 20 were checked on 2026-07-25; the five knowledge-base, Office, data-to-dashboard, marketing, and one-person-company collections were checked on 2026-07-26. Repository popularity and Skills.sh adoption are discovery signals, not recommendations: every candidate remains `Wishlist` until its source is read fully and a ground-up build exercises about 80% of the method.
 
 | Rank | Skill | Verified source path | Repo stars | Focus | Why it is on the wishlist | Status |
 | --- | --- | --- | ---: | --- | --- | --- |
@@ -57,6 +57,31 @@ These 20 candidates were verified as real Skill files and ordered by the current
 | 18 | `product-discovery` | `alirezarezvani/claude-skills`, `product-team/skills/product-discovery/SKILL.md` | 23,170 | Product discovery | Test opportunity mapping, assumption ranking, interviews, prototypes, and evidence-based decision gates. | Wishlist |
 | 19 | `product-analytics` | `alirezarezvani/claude-skills`, `product-team/skills/product-analytics/SKILL.md` | 23,170 | Product analytics, data | Build a metric hierarchy with cohorts, retention, adoption, and interpretation across product stages. | Wishlist |
 | 20 | `product-strategist` | `alirezarezvani/claude-skills`, `product-team/skills/product-strategist/SKILL.md` | 23,170 | Product strategy | Test OKR cascades, strategic templates, alignment scoring, competitive analysis, and team design. | Wishlist |
+| 21 | `notion-knowledge-capture` | `openai/skills`, `skills/.curated/notion-knowledge-capture/SKILL.md` | 24,179 | Knowledge base, Notion capture | Turn raw notes into structured, linked, reusable Notion pages. | Wishlist |
+| 22 | `notion-meeting-intelligence` | `openai/skills`, `skills/.curated/notion-meeting-intelligence/SKILL.md` | 24,179 | Knowledge base, meeting memory | Connect meeting decisions, owners, actions, and prior context. | Wishlist |
+| 23 | `notion-research-documentation` | `openai/skills`, `skills/.curated/notion-research-documentation/SKILL.md` | 24,179 | Knowledge base, research | Retrieve Notion sources and publish a cited, traceable synthesis. | Wishlist |
+| 24 | `obsidian-markdown` | `kepano/obsidian-skills`, `skills/obsidian-markdown/SKILL.md` | 43,309 | Knowledge base, Obsidian | Build a connected vault with properties, wikilinks, embeds, callouts, and maps of content. | Wishlist |
+| 25 | `obsidian-bases` | `kepano/obsidian-skills`, `skills/obsidian-bases/SKILL.md` | 43,309 | Knowledge base, structured views | Create database-like knowledge views with filters, formulas, layouts, and summaries. | Wishlist |
+| 26 | `docx` | `anthropics/skills`, `skills/docx/SKILL.md` | 164,196 | Office, Word documents | Produce a styled Word report with tables, pagination, and rendered QA. | Wishlist |
+| 27 | `pdf` | `anthropics/skills`, `skills/pdf/SKILL.md` | 164,196 | Office, PDF | Assemble and validate an accessible, client-ready PDF page by page. | Wishlist |
+| 28 | `pptx` | `anthropics/skills`, `skills/pptx/SKILL.md` | 164,196 | Office, presentations | Build an editable executive presentation with narrative and slide-level QA. | Wishlist |
+| 29 | `doc-coauthoring` | `anthropics/skills`, `skills/doc-coauthoring/SKILL.md` | 164,196 | Office, collaborative writing | Coauthor a decision document through context transfer, iteration, and reader testing. | Wishlist |
+| 30 | `internal-comms` | `anthropics/skills`, `skills/internal-comms/SKILL.md` | 164,196 | Office, internal communication | Create a concise internal package spanning leadership notes, status, and FAQs. | Wishlist |
+| 31 | `explore-data` | `anthropics/knowledge-work-plugins`, `data/skills/explore-data/SKILL.md` | 23,042 | Data to dashboard, exploration | Profile data around a decision and surface quality issues, patterns, and open questions. | Wishlist |
+| 32 | `validate-data` | `anthropics/knowledge-work-plugins`, `data/skills/validate-data/SKILL.md` | 23,042 | Data to dashboard, validation | Establish grain, reconcile metrics, and expose quality checks before visualization. | Wishlist |
+| 33 | `data-visualization` | `anthropics/knowledge-work-plugins`, `data/skills/data-visualization/SKILL.md` | 23,042 | Data to dashboard, encoding | Match analytical questions to visual encodings while preserving uncertainty. | Wishlist |
+| 34 | `create-viz` | `anthropics/knowledge-work-plugins`, `data/skills/create-viz/SKILL.md` | 23,042 | Data to dashboard, chart creation | Produce accessible production charts with labels, tooltips, and narrative context. | Wishlist |
+| 35 | `build-dashboard` | `anthropics/knowledge-work-plugins`, `data/skills/build-dashboard/SKILL.md` | 23,042 | Data to dashboard, product | Build an interactive decision dashboard with governed KPIs, filters, and action thresholds. | Wishlist |
+| 36 | `marketing-plan` | `coreyhaines31/marketingskills`, `skills/marketing-plan/SKILL.md` | 41,714 | Marketing, strategy | Connect positioning, audience, channels, campaigns, and measurement in one plan. | Wishlist |
+| 37 | `customer-research` | `coreyhaines31/marketingskills`, `skills/customer-research/SKILL.md` | 41,714 | Marketing, customer insight | Build a voice-of-customer evidence bank for segments, objections, messages, and offers. | Wishlist |
+| 38 | `content-strategy` | `coreyhaines31/marketingskills`, `skills/content-strategy/SKILL.md` | 41,714 | Marketing, content | Define audience themes, distribution, repurposing, cadence, and success measures. | Wishlist |
+| 39 | `copywriting` | `coreyhaines31/marketingskills`, `skills/copywriting/SKILL.md` | 41,714 | Marketing, conversion copy | Build a conversion page with a promise, evidence, objections, and measurable calls to action. | Wishlist |
+| 40 | `analytics` | `coreyhaines31/marketingskills`, `skills/analytics/SKILL.md` | 41,714 | Marketing, measurement | Define events, funnel health, attribution limits, privacy constraints, and experiments. | Wishlist |
+| 41 | `business-pulse` | `anthropics/knowledge-work-plugins`, `small-business/skills/business-pulse/SKILL.md` | 23,042 | One-person company, operations | Build a weekly founder cockpit for cash, pipeline, customers, delivery, and decisions. | Wishlist |
+| 42 | `cash-flow-snapshot` | `anthropics/knowledge-work-plugins`, `small-business/skills/cash-flow-snapshot/SKILL.md` | 23,042 | One-person company, cash flow | Make runway, obligations, scenarios, and action triggers visible. | Wishlist |
+| 43 | `lead-triage` | `anthropics/knowledge-work-plugins`, `small-business/skills/lead-triage/SKILL.md` | 23,042 | One-person company, sales | Score lead fit, urgency, next action, and follow-up timing. | Wishlist |
+| 44 | `invoice-chase` | `anthropics/knowledge-work-plugins`, `small-business/skills/invoice-chase/SKILL.md` | 23,042 | One-person company, receivables | Create respectful follow-up stages with aging, exceptions, and approval gates. | Wishlist |
+| 45 | `contract-review` | `anthropics/knowledge-work-plugins`, `small-business/skills/contract-review/SKILL.md` | 23,042 | One-person company, contracts | Flag obligations, risky terms, questions, and points for human escalation. | Wishlist |
 
 ## Promotion Checklist
 
