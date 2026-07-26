@@ -560,7 +560,7 @@ const PICKS = [
       "Use geographic projections and paths when the analytical question has a spatial dimension."
     ],
     conceptCoverage: "9/10 key concept families were exercised: data joins, scales and color, SVG shapes, axes, transitions, zoom and drag, brushing, force simulation, and hierarchy. Geography was deliberately skipped because the Skill dataset has no meaningful spatial dimension.",
-    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of 45 source-backed Skills with a force-cluster map, logarithmic star map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
+    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 65 Skills, with a force-cluster map, logarithmic star map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
     rating: 8.3,
     ratingScale: 10,
     ratingSummary: "Broad and practical coverage of D3's core mental models, layouts, and interactions; the learning path and production guidance could be sharper.",
@@ -1079,6 +1079,226 @@ const WISHLIST_CANDIDATES = [
     category: "one-person-company",
     focus: "One-person company · Contracts",
     buildTarget: "A plain-language contract review that flags obligations, risky terms, questions, and human escalation."
+  },
+  {
+    rank: 46,
+    id: "brandkit",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/brandkit/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/brandkit",
+    githubStars: 81644,
+    category: "design-art",
+    focus: "Design · Brand systems",
+    buildTarget: "A reusable brand kit with visual principles, tokens, typography, color, imagery, and application examples."
+  },
+  {
+    rank: 47,
+    id: "creative-director",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/creative-director/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/creative-director",
+    githubStars: 81644,
+    category: "design-art",
+    focus: "Design · Creative direction",
+    buildTarget: "An original campaign system that turns one strategic concept into a coherent visual world across several formats."
+  },
+  {
+    rank: 48,
+    id: "apple-hig",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/apple-hig/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/apple-hig",
+    githubStars: 81644,
+    category: "design-art",
+    focus: "Product design · Apple platforms",
+    buildTarget: "A native-feeling Apple product flow audited for hierarchy, navigation, controls, accessibility, and platform conventions."
+  },
+  {
+    rank: 49,
+    id: "color-expert",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/color-expert/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/color-expert",
+    githubStars: 81644,
+    category: "design-art",
+    focus: "Design · Color systems",
+    buildTarget: "A semantic color system tested across light and dark themes, data states, contrast requirements, and brand expression."
+  },
+  {
+    rank: 50,
+    id: "design-brief",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/design-brief/SKILL.md",
+    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/design-brief",
+    githubStars: 81644,
+    category: "design-art",
+    focus: "Design · Briefing",
+    buildTarget: "A decision-ready creative brief connecting audience, problem, promise, constraints, references, deliverables, and success criteria."
+  },
+  {
+    rank: 51,
+    id: "embedding-strategies",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-application-dev/skills/embedding-strategies/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/embedding-strategies",
+    githubStars: 38241,
+    category: "llm-agents",
+    focus: "LLMs · Embeddings",
+    buildTarget: "An embedding benchmark comparing models, chunking choices, similarity behavior, cost, latency, and retrieval quality."
+  },
+  {
+    rank: 52,
+    id: "hybrid-search-implementation",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-application-dev/skills/hybrid-search-implementation/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/hybrid-search-implementation",
+    githubStars: 38241,
+    category: "llm-agents",
+    focus: "LLMs · Hybrid retrieval",
+    buildTarget: "A retrieval system comparing keyword, vector, and fused ranking with traceable relevance judgments."
+  },
+  {
+    rank: 53,
+    id: "prompt-engineering-patterns",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-application-dev/skills/prompt-engineering-patterns/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/prompt-engineering-patterns",
+    githubStars: 38241,
+    category: "llm-agents",
+    focus: "LLMs · Prompt engineering",
+    buildTarget: "A prompt pattern lab with fixed test cases, structured outputs, failure analysis, and regression comparisons."
+  },
+  {
+    rank: 54,
+    id: "vector-index-tuning",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-application-dev/skills/vector-index-tuning/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/vector-index-tuning",
+    githubStars: 38241,
+    category: "llm-agents",
+    focus: "LLMs · Vector indexes",
+    buildTarget: "A vector-index experiment balancing recall, latency, memory, filtering, and update behavior on one bounded corpus."
+  },
+  {
+    rank: 55,
+    id: "multi-reviewer-patterns",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/agent-teams/skills/multi-reviewer-patterns/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/agent-teams/skills/multi-reviewer-patterns",
+    githubStars: 38241,
+    category: "llm-agents",
+    focus: "AI agents · Review teams",
+    buildTarget: "A multi-reviewer quality gate with distinct roles, severity rules, disagreement handling, and a measurable release decision."
+  },
+  {
+    rank: 56,
+    id: "dataset-curation",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-finetuning/skills/dataset-curation/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-finetuning/skills/dataset-curation",
+    githubStars: 38241,
+    category: "data-science-ml",
+    focus: "ML · Training data",
+    buildTarget: "A documented training dataset with provenance, deduplication, quality labels, splits, contamination checks, and error analysis."
+  },
+  {
+    rank: 57,
+    id: "finetuning-method-selection",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-finetuning/skills/finetuning-method-selection/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-finetuning/skills/finetuning-method-selection",
+    githubStars: 38241,
+    category: "data-science-ml",
+    focus: "ML · Fine-tuning strategy",
+    buildTarget: "A method-selection decision comparing prompting, retrieval, adapters, and full fine-tuning against quality, cost, data, and risk."
+  },
+  {
+    rank: 58,
+    id: "lora-qlora-recipes",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/llm-finetuning/skills/lora-qlora-recipes/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/llm-finetuning/skills/lora-qlora-recipes",
+    githubStars: 38241,
+    category: "data-science-ml",
+    focus: "ML · LoRA and QLoRA",
+    buildTarget: "A reproducible adapter-tuning experiment with baseline evaluation, memory tracking, checkpoint comparison, and failure cases."
+  },
+  {
+    rank: 59,
+    id: "ml-pipeline-workflow",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/machine-learning-ops/skills/ml-pipeline-workflow/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/machine-learning-ops/skills/ml-pipeline-workflow",
+    githubStars: 38241,
+    category: "data-science-ml",
+    focus: "ML · MLOps pipelines",
+    buildTarget: "An end-to-end ML pipeline with reproducible features, training, evaluation, registry, deployment checks, and drift monitoring."
+  },
+  {
+    rank: 60,
+    id: "recsys-pipeline-architect",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/machine-learning-ops/skills/recsys-pipeline-architect/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/machine-learning-ops/skills/recsys-pipeline-architect",
+    githubStars: 38241,
+    category: "data-science-ml",
+    focus: "ML · Recommender systems",
+    buildTarget: "A recommendation pipeline with candidate generation, ranking, offline metrics, bias checks, serving constraints, and feedback loops."
+  },
+  {
+    rank: 61,
+    id: "data-quality-frameworks",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/data-engineering/skills/data-quality-frameworks/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/data-quality-frameworks",
+    githubStars: 38241,
+    category: "data-analytics",
+    focus: "Data engineering · Quality",
+    buildTarget: "A data-quality layer with contracts, freshness, completeness, validity, reconciliation, ownership, and incident thresholds."
+  },
+  {
+    rank: 62,
+    id: "dbt-transformation-patterns",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/data-engineering/skills/dbt-transformation-patterns/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/dbt-transformation-patterns",
+    githubStars: 38241,
+    category: "data-analytics",
+    focus: "Data engineering · dbt",
+    buildTarget: "A layered dbt project with tested sources, staging and marts, documentation, lineage, incremental logic, and deployment checks."
+  },
+  {
+    rank: 63,
+    id: "airflow-dag-patterns",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/data-engineering/skills/airflow-dag-patterns/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/airflow-dag-patterns",
+    githubStars: 38241,
+    category: "data-analytics",
+    focus: "Data engineering · Orchestration",
+    buildTarget: "A production-style workflow with idempotent tasks, retries, backfills, observability, data checks, and failure recovery."
+  },
+  {
+    rank: 64,
+    id: "competitive-landscape",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/startup-business-analyst/skills/competitive-landscape/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/startup-business-analyst/skills/competitive-landscape",
+    githubStars: 38241,
+    category: "product",
+    focus: "Product · Competitive strategy",
+    buildTarget: "An evidence-backed market landscape covering alternatives, segments, positioning, capability gaps, and strategic implications."
+  },
+  {
+    rank: 65,
+    id: "startup-metrics-framework",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/startup-business-analyst/skills/startup-metrics-framework/SKILL.md",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/startup-business-analyst/skills/startup-metrics-framework",
+    githubStars: 38241,
+    category: "product",
+    focus: "Product · Startup metrics",
+    buildTarget: "A stage-aware metric system linking acquisition, activation, retention, revenue, efficiency, and explicit decision thresholds."
   }
 ];
 

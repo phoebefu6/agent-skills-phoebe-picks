@@ -27,7 +27,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
 | [Published products](#published-products) | Open the demo products built from each published Skill. |
-| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 45 source-backed candidates, including five each for knowledge bases, Office, data-to-dashboard, marketing, and one-person companies. |
+| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 65 source-backed candidates across product, design, data, ML, LLMs, agents, knowledge bases, Office, marketing, and one-person companies. |
 | [Wishlist research notes](wishlist.md) | See the source evidence and planned proof build for each candidate. |
 
 ## Published Products

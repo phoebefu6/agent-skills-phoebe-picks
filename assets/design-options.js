@@ -90,7 +90,7 @@
   };
 
   const wishlistCategories = [
-    { id: "all", label: "All 45" },
+    { id: "all", label: "All 65" },
     { id: "product", label: "Product" },
     { id: "design-art", label: "Design & art" },
     { id: "data-analytics", label: "Data & analytics" },
