@@ -3,8 +3,7 @@
   const wishlist = window.WISHLIST_CANDIDATES || [];
   const filters = window.FILTERS || { scenarios: [], statuses: [] };
   const state = {
-    scenario: "all",
-    status: "all",
+    category: "all",
     query: "",
     wishlistCategory: "all"
   };
@@ -14,8 +13,7 @@
   const nodes = {
     search: byId("searchInput"),
     searchStatus: byId("searchStatus"),
-    scenarioFilters: byId("scenarioFilters"),
-    statusFilters: byId("statusFilters"),
+    categoryFilters: byId("categoryFilters"),
     grid: byId("skillGrid"),
     count: byId("resultCount"),
     empty: byId("emptyState"),
@@ -160,19 +158,19 @@
   function visiblePicks() {
     return picks
       .filter((pick) => {
-        const scenarioMatch = state.scenario === "all" || (pick.scenarios || []).includes(state.scenario);
-        const statusMatch = state.status === "all" || pick.status === state.status;
+        const categoryMatch = state.category === "all" || (pick.scenarios || []).includes(state.category);
         const queryMatch = !state.query || pickText(pick).includes(state.query);
-        return scenarioMatch && statusMatch && queryMatch;
+        return categoryMatch && queryMatch;
       })
       .sort((a, b) => {
-        const order = { published: 0, exploring: 1, wishlist: 2, rejected: 3 };
-        return (order[a.status] ?? 9) - (order[b.status] ?? 9) || a.name.localeCompare(b.name);
+        const ratingA = typeof a.rating === "number" ? a.rating : Number.NEGATIVE_INFINITY;
+        const ratingB = typeof b.rating === "number" ? b.rating : Number.NEGATIVE_INFINITY;
+        return ratingB - ratingA || a.name.localeCompare(b.name);
       });
   }
 
   function renderFilterGroup(container, kind, items) {
-    const allLabel = kind === "scenario" ? "All Skills" : "All status";
+    const allLabel = kind === "category" ? "All categories" : "All";
     const options = [{ id: "all", label: allLabel }, ...items];
     container.innerHTML = options
       .map((item) => {
@@ -184,11 +182,8 @@
   }
 
   function renderFilters() {
-    if (nodes.scenarioFilters) {
-      renderFilterGroup(nodes.scenarioFilters, "scenario", filters.scenarios || []);
-    }
-    if (nodes.statusFilters) {
-      renderFilterGroup(nodes.statusFilters, "status", filters.statuses || []);
+    if (nodes.categoryFilters) {
+      renderFilterGroup(nodes.categoryFilters, "category", filters.scenarios || []);
     }
   }
 
@@ -356,9 +351,10 @@
     const items = visiblePicks();
     nodes.count.textContent = `${items.length} ${items.length === 1 ? "Skill" : "Skills"}`;
     if (nodes.searchStatus) {
-      nodes.searchStatus.textContent = state.query
+      const resultSummary = state.query
         ? `Showing ${items.length} of ${picks.length} for "${state.query}"`
         : `Showing ${items.length} of ${picks.length}`;
+      nodes.searchStatus.textContent = `${resultSummary} · Score high to low`;
     }
     document.querySelectorAll("[data-clear-search]").forEach((button) => {
       button.hidden = !state.query;

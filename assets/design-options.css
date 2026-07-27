@@ -687,7 +687,7 @@ input:focus-visible {
 
 .toolbar {
   display: grid;
-  grid-template-columns: minmax(190px, 1fr) auto;
+  grid-template-columns: minmax(190px, 1fr);
   gap: var(--space-3);
   align-items: center;
   margin-bottom: var(--space-3);
@@ -709,7 +709,8 @@ input:focus-visible {
   opacity: 1;
 }
 
-.status-tabs .filter-button {
+.category-tabs .filter-button {
+  min-height: 40px;
   border-radius: var(--radius-sm);
 }
 
@@ -1515,12 +1516,12 @@ input:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .status-tabs {
+  .category-tabs {
     flex-wrap: wrap;
     padding-bottom: var(--space-1);
   }
 
-  .status-tabs .filter-button {
+  .category-tabs .filter-button {
     flex: 0 0 auto;
   }
 

@@ -18,7 +18,7 @@ Agent Skills Phoebe Picks is a public gallery for finding AI agent Skills by the
 The approved v1 direction is a hybrid:
 
 - Museum Gallery visual language: quiet, clean, editorial, low-saturation, magazine-like.
-- Product Catalog structure: scenario filters, badges, status labels, and practical Skill cards.
+- Product Catalog structure: category filters, score-sorted results, badges, status labels, and practical Skill cards.
 
 The site should feel community-minded, not guru-like. Public copy must lead with follower value and gallery discovery. Internal testing workflow belongs in project instructions, not the homepage.
 

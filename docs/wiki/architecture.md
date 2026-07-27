@@ -6,7 +6,7 @@ The project is intentionally static:
 
 - `index.html` for structure.
 - `assets/design-options.css` for the active visual system.
-- `assets/design-options.js` for rendering scenario filters, search, Skill cards, and the detail drawer.
+- `assets/design-options.js` for rendering category filters, score-sorted search results, Skill cards, and the detail drawer.
 - `data/reviews.js` for the public Skill data model.
 - `demos/` for ground-up proof artifacts created during Skill field tests.
 - `wishlist.md` for the exploration queue.
@@ -32,7 +32,7 @@ The active UI is the audience-facing gallery. It should not expose internal LLM 
 
 1. `data/reviews.js` defines `window.FILTERS`, `window.PICKS`, `window.WISHLIST_CANDIDATES`, and `window.EVALUATION_STEPS`.
 2. `assets/design-options.js` reads those globals.
-3. The script renders scenario filters, search, Skill cards, and the detail drawer.
+3. The script renders category filters, search results sorted by score from highest to lowest, Skill cards, and the detail drawer.
 
 Skill demo artifacts are plain static pages under `demos/<skill-or-artifact-name>/`. Link them from `galleryLink` when the artifact is public-facing proof.
 

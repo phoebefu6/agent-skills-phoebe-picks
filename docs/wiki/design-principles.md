@@ -27,7 +27,7 @@ The site should feel calm, neat, editorial, and community-minded. It should not 
 - Keep wishlist, testing queue, and SOP notes out of the public homepage.
 - Keep the hero short: promise, short intro, follow repo CTA, and current focus panel.
 - Hero proof should stay compact: one latest build panel, tidy Skill rows, and clear demo links. Avoid screenshot collages, fake diagrams, faux screenshots, or large blank preview frames.
-- Use scenario filters because Phoebe wants Skills organized by situations, not abstract ratings.
+- Use category filters because Phoebe wants Skills organized by practical situations; use ratings to sort results from highest to lowest.
 - Use cards only for repeated Skill entries and framed panels.
 - Skill detail should use a visual map or node layout where possible, not a long plain note page.
 - Keep cards stable in size so filtering does not feel jumpy.
