@@ -308,6 +308,8 @@
     nodes.wishlistGrid.innerHTML = visible
       .map((item) => {
         const snapshot = wishlistRepositorySnapshots[item.sourceRepo] || {};
+        const repositoryStars = typeof snapshot.githubStars === "number" ? snapshot.githubStars : item.githubStars;
+        const repositoryUrl = snapshot.repoUrl || `https://github.com/${item.sourceRepo}`;
         const checkedAt = snapshot.checkedAt || "snapshot date pending";
         const sharedSkillCount = wishlistRepositoryCounts[item.sourceRepo] || 1;
         const sharedSourceLabel = sharedSkillCount === 1
@@ -326,13 +328,13 @@
               <p>${escapeHtml(item.buildTarget)}</p>
             </div>
             <footer>
-              <div class="wishlist-evaluation-state">
-                <span>Skill score</span>
-                <strong>Not rated yet</strong>
-              </div>
-              <a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.id)} source in ${escapeHtml(item.sourceRepo)}">Inspect source →</a>
+              <a class="wishlist-repository-evidence" href="${escapeHtml(repositoryUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.sourceRepo)} repository homepage with ${escapeHtml(formatNumber(repositoryStars))} GitHub stars">
+                <span>GitHub repo stars</span>
+                <strong>${escapeHtml(formatNumber(repositoryStars))}</strong>
+              </a>
+              <a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.id)} Skill source in ${escapeHtml(item.sourceRepo)}">Inspect Skill →</a>
             </footer>
-            <small title="${escapeHtml(item.sourcePath)}">${escapeHtml(item.sourceRepo)} · ${escapeHtml(sharedSourceLabel)} · source checked ${escapeHtml(checkedAt)}</small>
+            <small title="${escapeHtml(item.sourcePath)}">${escapeHtml(item.sourceRepo)} · Skill rating pending · ${escapeHtml(sharedSourceLabel)} · stars checked ${escapeHtml(checkedAt)}</small>
           </article>
         `;
       })

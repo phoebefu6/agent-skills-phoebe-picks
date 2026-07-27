@@ -41,7 +41,7 @@ Check:
 - Search examples narrow results. Do not use example terms that match almost every Skill.
 - Each public Skill shows an AI agent subtitle for all applicable platforms, such as Claude Code, Codex, Hermes AI, Cursor, Gemini CLI, opencode, Kimi, or Pi.
 - Each public Skill shows a source repo/reference and a dated GitHub star snapshot when the source is on GitHub.
-- Wishlist cards show `Not rated yet` until field testing produces an individual Skill score. Repository stars must not occupy the Skill-score position, and shared repositories should be identified as source evidence.
+- Wishlist cards label repository popularity as `GitHub repo stars`, link the count to the repository homepage, link the Skill source separately, mark individual Skill ratings as pending, and explain shared repositories.
 - Each public Skill passes the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof.
 - Each public Skill promoted from exploring has a ground-up artifact, about 80% concept coverage, a rating out of 10, 3 strengths, and 3 improvement points.
 - Exploring artifacts may appear in the gallery only when clearly labeled; do not describe them as full public picks until they pass the source credibility gate.

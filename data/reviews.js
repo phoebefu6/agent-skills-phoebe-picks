@@ -34,20 +34,20 @@ const FILTERS = {
 };
 
 const WISHLIST_REPOSITORY_SNAPSHOTS = {
-  "HolobiomicsLab/asb-skill-collections": { githubStars: 14, checkedAt: "2026-07-27" },
-  "K-Dense-AI/scientific-agent-skills": { githubStars: 31866, checkedAt: "2026-07-27" },
-  "YuLab-SMU/TCMDATA": { githubStars: 15, checkedAt: "2026-07-27" },
-  "alirezarezvani/claude-skills": { githubStars: 23251, checkedAt: "2026-07-27" },
-  "anthropics/knowledge-work-plugins": { githubStars: 23068, checkedAt: "2026-07-27" },
-  "anthropics/skills": { githubStars: 164388, checkedAt: "2026-07-27" },
-  "coreyhaines31/marketingskills": { githubStars: 41846, checkedAt: "2026-07-27" },
-  "github/awesome-copilot": { githubStars: 37070, checkedAt: "2026-07-27" },
-  "kepano/obsidian-skills": { githubStars: 43402, checkedAt: "2026-07-27" },
-  "ndpvt-web/arxiv-claude-skills": { githubStars: 6, checkedAt: "2026-07-27" },
-  "nexu-io/open-design": { githubStars: 81784, checkedAt: "2026-07-27" },
-  "openai/skills": { githubStars: 24214, checkedAt: "2026-07-27" },
-  "wshobson/agents": { githubStars: 38266, checkedAt: "2026-07-27" },
-  "yoqalux-blip/cdutcm-library-search-skill": { githubStars: 0, checkedAt: "2026-07-27" }
+  "HolobiomicsLab/asb-skill-collections": { githubStars: 14, checkedAt: "2026-07-27", repoUrl: "https://github.com/HolobiomicsLab/asb-skill-collections" },
+  "K-Dense-AI/scientific-agent-skills": { githubStars: 31866, checkedAt: "2026-07-27", repoUrl: "https://github.com/K-Dense-AI/scientific-agent-skills" },
+  "YuLab-SMU/TCMDATA": { githubStars: 15, checkedAt: "2026-07-27", repoUrl: "https://github.com/YuLab-SMU/TCMDATA" },
+  "alirezarezvani/claude-skills": { githubStars: 23252, checkedAt: "2026-07-27", repoUrl: "https://github.com/alirezarezvani/claude-skills" },
+  "anthropics/knowledge-work-plugins": { githubStars: 23069, checkedAt: "2026-07-27", repoUrl: "https://github.com/anthropics/knowledge-work-plugins" },
+  "anthropics/skills": { githubStars: 164390, checkedAt: "2026-07-27", repoUrl: "https://github.com/anthropics/skills" },
+  "coreyhaines31/marketingskills": { githubStars: 41848, checkedAt: "2026-07-27", repoUrl: "https://github.com/coreyhaines31/marketingskills" },
+  "github/awesome-copilot": { githubStars: 37071, checkedAt: "2026-07-27", repoUrl: "https://github.com/github/awesome-copilot" },
+  "kepano/obsidian-skills": { githubStars: 43403, checkedAt: "2026-07-27", repoUrl: "https://github.com/kepano/obsidian-skills" },
+  "ndpvt-web/arxiv-claude-skills": { githubStars: 6, checkedAt: "2026-07-27", repoUrl: "https://github.com/ndpvt-web/arxiv-claude-skills" },
+  "nexu-io/open-design": { githubStars: 81788, checkedAt: "2026-07-27", repoUrl: "https://github.com/nexu-io/open-design" },
+  "openai/skills": { githubStars: 24214, checkedAt: "2026-07-27", repoUrl: "https://github.com/openai/skills" },
+  "wshobson/agents": { githubStars: 38266, checkedAt: "2026-07-27", repoUrl: "https://github.com/wshobson/agents" },
+  "yoqalux-blip/cdutcm-library-search-skill": { githubStars: 0, checkedAt: "2026-07-27", repoUrl: "https://github.com/yoqalux-blip/cdutcm-library-search-skill" }
 };
 
 const PICKS = [
