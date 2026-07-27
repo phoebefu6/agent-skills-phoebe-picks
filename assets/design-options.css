@@ -1021,11 +1021,20 @@ input:focus-visible {
   font-size: 10px;
 }
 
-.wishlist-card footer span {
-  color: var(--muted);
+.wishlist-repository-evidence {
+  display: grid;
+  gap: 2px;
 }
 
-.wishlist-card footer strong {
+.wishlist-repository-evidence span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wishlist-repository-evidence strong {
   color: var(--ink);
   font-size: 12px;
 }
@@ -1041,12 +1050,10 @@ input:focus-visible {
 .wishlist-card > small {
   display: block;
   margin-top: var(--space-2);
-  overflow: hidden;
   color: var(--muted);
   font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
   font-size: 9px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.4;
 }
 
 .wishlist-note {

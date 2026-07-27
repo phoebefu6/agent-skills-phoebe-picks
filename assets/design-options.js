@@ -1,6 +1,7 @@
 (function () {
   const picks = window.PICKS || window.REVIEWS || [];
   const wishlist = window.WISHLIST_CANDIDATES || [];
+  const wishlistRepositorySnapshots = window.WISHLIST_REPOSITORY_SNAPSHOTS || {};
   const filters = window.FILTERS || { scenarios: [], statuses: [] };
   const state = {
     category: "all",
@@ -101,6 +102,11 @@
     { id: "content-writing", label: "Content writing" },
     { id: "one-person-company", label: "One-person company" }
   ];
+
+  const wishlistRepositoryCounts = wishlist.reduce((counts, item) => {
+    counts[item.sourceRepo] = (counts[item.sourceRepo] || 0) + 1;
+    return counts;
+  }, {});
 
   let entranceMotionPlayed = false;
   let revealObserver = null;
@@ -300,24 +306,37 @@
     }
 
     nodes.wishlistGrid.innerHTML = visible
-      .map((item) => `
-        <article class="wishlist-card" data-wishlist-category="${escapeHtml(item.category)}">
-          <header>
-            <span class="wishlist-rank">#${escapeHtml(item.rank)}</span>
-            <span class="status-chip wishlist">Wishlist</span>
-          </header>
-          <div>
-            <span class="wishlist-focus">${escapeHtml(item.focus)}</span>
-            <h3>${escapeHtml(item.id)}</h3>
-            <p>${escapeHtml(item.buildTarget)}</p>
-          </div>
-          <footer>
-            <span><strong>${escapeHtml(formatNumber(item.githubStars))}</strong> repo stars</span>
-            <a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.id)} source in ${escapeHtml(item.sourceRepo)}">Inspect source →</a>
-          </footer>
-          <small title="${escapeHtml(item.sourcePath)}">${escapeHtml(item.sourceRepo)}</small>
-        </article>
-      `)
+      .map((item) => {
+        const snapshot = wishlistRepositorySnapshots[item.sourceRepo] || {};
+        const repositoryStars = typeof snapshot.githubStars === "number" ? snapshot.githubStars : item.githubStars;
+        const checkedAt = snapshot.checkedAt || "snapshot date pending";
+        const sharedSkillCount = wishlistRepositoryCounts[item.sourceRepo] || 1;
+        const sharedSourceLabel = sharedSkillCount === 1
+          ? "1 wishlist Skill uses this repository"
+          : `${sharedSkillCount} wishlist Skills share this repository`;
+
+        return `
+          <article class="wishlist-card" data-wishlist-category="${escapeHtml(item.category)}">
+            <header>
+              <span class="wishlist-rank">#${escapeHtml(item.rank)}</span>
+              <span class="status-chip wishlist">Wishlist</span>
+            </header>
+            <div>
+              <span class="wishlist-focus">${escapeHtml(item.focus)}</span>
+              <h3>${escapeHtml(item.id)}</h3>
+              <p>${escapeHtml(item.buildTarget)}</p>
+            </div>
+            <footer>
+              <div class="wishlist-repository-evidence">
+                <span>Repository popularity</span>
+                <strong>${escapeHtml(formatNumber(repositoryStars))} GitHub stars</strong>
+              </div>
+              <a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.id)} source in ${escapeHtml(item.sourceRepo)}">Inspect source →</a>
+            </footer>
+            <small title="${escapeHtml(item.sourcePath)}">${escapeHtml(item.sourceRepo)} · ${escapeHtml(sharedSourceLabel)} · checked ${escapeHtml(checkedAt)}</small>
+          </article>
+        `;
+      })
       .join("");
   }
 
