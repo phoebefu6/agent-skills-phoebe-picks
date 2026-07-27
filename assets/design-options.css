@@ -1021,12 +1021,12 @@ input:focus-visible {
   font-size: 10px;
 }
 
-.wishlist-repository-evidence {
+.wishlist-evaluation-state {
   display: grid;
   gap: 2px;
 }
 
-.wishlist-repository-evidence span {
+.wishlist-evaluation-state span {
   color: var(--muted);
   font-size: 9px;
   font-weight: 800;
@@ -1034,7 +1034,7 @@ input:focus-visible {
   text-transform: uppercase;
 }
 
-.wishlist-repository-evidence strong {
+.wishlist-evaluation-state strong {
   color: var(--ink);
   font-size: 12px;
 }
