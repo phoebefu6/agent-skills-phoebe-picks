@@ -44,7 +44,7 @@ const WISHLIST_REPOSITORY_SNAPSHOTS = {
   "github/awesome-copilot": { githubStars: 37071, checkedAt: "2026-07-27", repoUrl: "https://github.com/github/awesome-copilot" },
   "kepano/obsidian-skills": { githubStars: 43403, checkedAt: "2026-07-27", repoUrl: "https://github.com/kepano/obsidian-skills" },
   "ndpvt-web/arxiv-claude-skills": { githubStars: 6, checkedAt: "2026-07-27", repoUrl: "https://github.com/ndpvt-web/arxiv-claude-skills" },
-  "nexu-io/open-design": { githubStars: 81788, checkedAt: "2026-07-27", repoUrl: "https://github.com/nexu-io/open-design" },
+  "nexu-io/open-design": { githubStars: 82010, checkedAt: "2026-07-28", repoUrl: "https://github.com/nexu-io/open-design" },
   "openai/skills": { githubStars: 24214, checkedAt: "2026-07-27", repoUrl: "https://github.com/openai/skills" },
   "wshobson/agents": { githubStars: 38266, checkedAt: "2026-07-27", repoUrl: "https://github.com/wshobson/agents" },
   "yoqalux-blip/cdutcm-library-search-skill": { githubStars: 0, checkedAt: "2026-07-27", repoUrl: "https://github.com/yoqalux-blip/cdutcm-library-search-skill" }
@@ -548,6 +548,59 @@ const PICKS = [
     galleryLink: "demos/find-skills-discovery-desk/index.html"
   },
   {
+    id: "dashboard",
+    name: "dashboard",
+    source: "Open Design Dashboard Template",
+    sourceUrl: "https://github.com/nexu-io/open-design/blob/main/design-templates/dashboard/SKILL.md",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "design-templates/dashboard/SKILL.md",
+    githubStars: 82010,
+    starsCheckedAt: "2026-07-28",
+    status: "published",
+    recommendation: "Published pick: the dashboard Skill produced a complete, responsive operations dashboard from a short brief, exercised all 10 concept families, and its 82,010-star source clears the credibility gate.",
+    dateExplored: "2026-07-28",
+    scenarios: ["data", "data-viz", "reporting", "automation"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["10/10 concepts", "Single-file HTML", "Inline SVG"],
+    summary: "A focused admin and analytics dashboard Skill for turning an operations brief into a structured, self-contained control panel.",
+    phoebeNote: "Use it when a team needs one desktop-first screen with a stable navigation model, clear KPI hierarchy, a primary analytical view, and an inspectable decision queue.",
+    coreConcepts: [
+      "Use an active design system as the only source for color, typography, spacing, layout, and component tokens.",
+      "Classify the monitored domain and write specific, plausible operational metrics instead of generic placeholders.",
+      "Build a 220 to 260 pixel left sidebar with a brand, six to eight icon links, and one clear active state.",
+      "Add a top bar with the page title, search input, and visible user or operating status.",
+      "Create three to four KPI cards with labels, large values, and deltas against a prior period.",
+      "Use a primary inline SVG chart with real-looking values, light axes, labels, and no chart library.",
+      "Add a secondary analytical region such as a table of recent events, top items, or decisions.",
+      "Use one self-contained HTML document with inline CSS, CSS Grid, Flexbox, and semantic landmarks.",
+      "Tag logical regions with data-od-id attributes and cover accessibility and interaction states.",
+      "Keep sidebar and top bar stable, let the main area scroll independently, and match density to the design system."
+    ],
+    conceptCoverage: "10/10 concept families were exercised: Professional design tokens, portfolio-domain classification, six-link fixed navigation, sticky top bar with curator status, scoped queue search, four KPI cards, an accessible inline SVG throughput chart, a searchable decision table, one self-contained semantic HTML file, data-od-id regions with explicit states, and independent desktop scrolling with responsive mobile fallbacks.",
+    groundUpBuild: "Built Skill Portfolio Command Center from scratch as a self-contained operations dashboard for the gallery: 11 published picks, 12 field tests, 84 remaining candidates, average field rating, eight weeks of review throughput, source-gate health, live artifact coverage, search and empty states, and a decision queue.",
+    rating: 8.3,
+    ratingScale: 10,
+    ratingSummary: "Excellent at rapidly imposing a credible admin-dashboard hierarchy and production constraints; it is deliberately template-shaped and needs stronger metric-governance and data-integration guidance for analytical products.",
+    good: [
+      "The prescribed sidebar, top bar, KPI, chart, and table hierarchy turns a vague dashboard request into a coherent screen quickly.",
+      "The self-contained HTML and inline SVG constraints produce a portable artifact with no framework or chart-library dependency.",
+      "The design-system, accessibility, state-coverage, and sticky-layout checks catch common prototype weaknesses before release."
+    ],
+    improve: [
+      "The Skill does not ask for metric definitions, data grain, ownership, or decision thresholds before visual design begins.",
+      "Manually authored SVG is effective for a prototype but needs more guidance for scale calculation, tooltips, localization, and changing datasets.",
+      "The fixed admin layout can become generic unless the brief adds a distinctive domain model, responsive behavior, and real operating actions."
+    ],
+    useCases: [
+      "Data and operations teams can turn a weekly portfolio review into one scan-friendly control panel.",
+      "AI builders can prototype admin, analytics, and agent-operations screens before choosing a framework or backend.",
+      "Product leaders can summarize KPI movement, source gates, exceptions, and next decisions in one meeting-ready artifact.",
+      "Students can learn dashboard hierarchy, semantic regions, SVG charts, responsive grids, and evidence-first interface critique."
+    ],
+    demo: "demos/dashboard-skill-command-center/index.html",
+    galleryLink: "demos/dashboard-skill-command-center/index.html"
+  },
+  {
     id: "d3-visualization",
     name: "d3-visualization",
     source: "snow-d3 via Open Design",
@@ -656,17 +709,6 @@ const WISHLIST_CANDIDATES = [
     category: "design-art",
     focus: "Product design · Interactive artifacts",
     buildTarget: "A multi-component product artifact with a real information architecture and interaction model."
-  },
-  {
-    rank: 6,
-    id: "dashboard",
-    sourceRepo: "nexu-io/open-design",
-    sourcePath: "design-templates/dashboard/SKILL.md",
-    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/design-templates/dashboard",
-    githubStars: 81586,
-    category: "data-analytics",
-    focus: "Dashboard design · Information hierarchy",
-    buildTarget: "A decision dashboard with layered KPI hierarchy, filters, dense data, and clear action paths."
   },
   {
     rank: 7,

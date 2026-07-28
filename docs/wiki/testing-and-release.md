@@ -49,6 +49,7 @@ Check:
 - Demo pages do not need to match each other. Confirm each one independently showcases the Skill's functions, concepts, and practical value.
 - The public page does not expose internal LLM Wiki workflow content.
 - Mobile layout stays readable at narrow widths.
+- For wide SVG charts or tables inside CSS Grid, set `min-width: 0` on grid children and confirm the document `scrollWidth` does not exceed the viewport; overflow should stay inside the chart or table scroller.
 - Long Skill names do not overflow cards.
 - The page does not rely on a build step.
 

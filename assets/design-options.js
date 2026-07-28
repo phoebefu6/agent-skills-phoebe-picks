@@ -85,11 +85,12 @@
     "design-consultation": "System Room",
     "pm-skills": "Lantern Product OS",
     "find-skills": "Discovery Desk",
+    "dashboard": "Portfolio Command Center",
     "d3-visualization": "Skill Constellation"
   };
 
   const wishlistCategories = [
-    { id: "all", label: "All 85" },
+    { id: "all", label: "All 84" },
     { id: "product", label: "Product" },
     { id: "design-art", label: "Design & art" },
     { id: "data-analytics", label: "Data & analytics" },

@@ -2,8 +2,8 @@
 
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Published Picks](https://img.shields.io/badge/published%20picks-10-6f7cff?style=for-the-badge)](#published-products)
-[![Field Tests](https://img.shields.io/badge/field%20tests-11-ffbc91?style=for-the-badge)](#field-tested-artifacts)
+[![Published Picks](https://img.shields.io/badge/published%20picks-11-6f7cff?style=for-the-badge)](#published-products)
+[![Field Tests](https://img.shields.io/badge/field%20tests-12-ffbc91?style=for-the-badge)](#field-tested-artifacts)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A public shelf of AI agent Skills that survived a real build.
@@ -27,7 +27,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
 | [Published products](#published-products) | Open the demo products built from each published Skill. |
-| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 85 source-backed candidates across product, design, data, ML, LLMs, agents, content writing, knowledge bases, Office, marketing, and one-person companies. |
+| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 84 source-backed candidates across product, design, data, ML, LLMs, agents, content writing, knowledge bases, Office, marketing, and one-person companies. |
 | [Wishlist research notes](wishlist.md) | See the source evidence and planned proof build for each candidate. |
 
 ## Published Products
@@ -44,6 +44,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `impeccable` | [Homepage redesign](index.html#top) | [pbakaus/impeccable](https://github.com/pbakaus/impeccable), 47,939 stars, explored 2026-07-19 | Published pick, 9.0/10 overall rating |
 | `pm-skills` | [Lantern Product OS](demos/pm-decision-room/) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills), 24,430 stars, explored 2026-07-25 | Published pick, 8.9/10 overall rating, 65/65 Skills used |
 | `find-skills` | [Skill Discovery Desk](demos/find-skills-discovery-desk/) | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills), 27,182 stars and #1 all-time on Skills.sh with 2.7M installs, verified 2026-07-25 | Published pick, 7.8/10 overall rating |
+| `dashboard` | [Skill Portfolio Command Center](demos/dashboard-skill-command-center/) | [nexu-io/open-design](https://github.com/nexu-io/open-design/blob/main/design-templates/dashboard/SKILL.md), 82,010 stars, explored 2026-07-28 | Published pick, 8.3/10 overall rating, 10/10 concept families used |
 
 ## Field-Tested Artifacts
 
@@ -94,6 +95,7 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `impeccable` | Published | Move from visual direction through mock approval, production build, and release-quality inspection. |
 | `pm-skills` | Published | Build a full product operating system across research, discovery, strategy, execution, analytics, growth, and GTM. |
 | `find-skills` | Published | Find and vet other Skills before installing or recommending them. |
+| `dashboard` | Published | Turn an operations brief into a structured, self-contained KPI, chart, and decision dashboard. |
 | `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
 
 ## Repo Map
@@ -112,6 +114,7 @@ agent-skills-phoebe-picks/
   demos/high-end-visual-design-showcase/ # high-end-visual-design demo
   demos/design-consultation-system-room/ # design-consultation demo
   demos/find-skills-discovery-desk/ # find-skills field test
+  demos/dashboard-skill-command-center/ # dashboard Skill field test
   demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint
   demos/d3-skill-constellation/      # d3-visualization linked-view field test

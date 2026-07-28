@@ -1,0 +1,1228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="A ground-up Skill Portfolio Command Center built with the open-design dashboard Skill.">
+    <title>Skill Portfolio Command Center</title>
+    <style>
+      :root {
+        --primary: #fece14;
+        --secondary: #000000;
+        --success: #16a34a;
+        --warning: #d97706;
+        --danger: #dc2626;
+        --surface: #ffffff;
+        --text: #111827;
+        --line: color-mix(in srgb, var(--text) 14%, var(--surface));
+        --muted: color-mix(in srgb, var(--text) 64%, var(--surface));
+        --subtle: color-mix(in srgb, var(--text) 5%, var(--surface));
+        --subtle-strong: color-mix(in srgb, var(--text) 9%, var(--surface));
+        --success-soft: color-mix(in srgb, var(--success) 10%, var(--surface));
+        --warning-soft: color-mix(in srgb, var(--warning) 10%, var(--surface));
+        --danger-soft: color-mix(in srgb, var(--danger) 9%, var(--surface));
+        --radius: 12px;
+        --shadow: 0 12px 32px color-mix(in srgb, var(--text) 9%, transparent);
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 24px;
+        --space-6: 32px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        color-scheme: light;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--surface);
+        color: var(--text);
+        font-family: "Poppins", "Avenir Next", "Segoe UI", sans-serif;
+        font-size: 14px;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--secondary);
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: var(--space-3);
+        left: var(--space-3);
+        padding: var(--space-3) var(--space-4);
+        background: var(--secondary);
+        color: var(--surface);
+        transform: translateY(-160%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .app-shell {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 240px minmax(0, 1fr);
+        overflow: hidden;
+        background: var(--subtle);
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        border-right: 1px solid var(--line);
+        padding: var(--space-5) var(--space-4);
+        background: var(--surface);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        margin-bottom: var(--space-6);
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 2px solid var(--secondary);
+        border-radius: 10px;
+        font-weight: 900;
+      }
+
+      .brand-copy {
+        display: grid;
+        line-height: 1.1;
+      }
+
+      .brand-copy strong {
+        font-size: 14px;
+      }
+
+      .brand-copy span {
+        margin-top: var(--space-1);
+        color: var(--muted);
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .nav-label,
+      .eyebrow {
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .sidebar-nav {
+        display: grid;
+        gap: var(--space-2);
+        margin-top: var(--space-3);
+      }
+
+      .nav-link {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+        gap: var(--space-3);
+        border-radius: 10px;
+        padding: 0 var(--space-3);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+      }
+
+      .nav-link:hover {
+        background: var(--subtle-strong);
+        color: var(--text);
+        transform: translateX(2px);
+      }
+
+      .nav-link.active {
+        background: var(--primary);
+        color: var(--secondary);
+      }
+
+      .nav-icon {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 auto;
+      }
+
+      .method-card {
+        margin-top: auto;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: var(--space-4);
+        background: var(--subtle);
+      }
+
+      .method-card strong {
+        display: block;
+        margin: var(--space-2) 0;
+        font-size: 18px;
+      }
+
+      .method-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.5;
+      }
+
+      .workspace {
+        height: 100vh;
+        min-width: 0;
+        overflow-y: auto;
+      }
+
+      .topbar {
+        position: sticky;
+        z-index: 20;
+        top: 0;
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-5);
+        border-bottom: 1px solid var(--line);
+        padding: var(--space-3) var(--space-6);
+        background: color-mix(in srgb, var(--surface) 94%, transparent);
+        backdrop-filter: blur(12px);
+      }
+
+      .title-block h1 {
+        margin: var(--space-1) 0 0;
+        font-size: clamp(20px, 2vw, 28px);
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+      }
+
+      .topbar-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+      }
+
+      .search {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .search svg {
+        position: absolute;
+        left: var(--space-3);
+        width: 16px;
+        height: 16px;
+        color: var(--muted);
+        pointer-events: none;
+      }
+
+      .search input {
+        width: min(280px, 30vw);
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 0 var(--space-4) 0 38px;
+        background: var(--surface);
+        color: var(--text);
+      }
+
+      .search input::placeholder {
+        color: var(--muted);
+      }
+
+      .search input:focus {
+        border-color: var(--secondary);
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+      }
+
+      .avatar {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid var(--secondary);
+        border-radius: 50%;
+        background: var(--secondary);
+        color: var(--surface);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .user-copy {
+        display: grid;
+        line-height: 1.2;
+      }
+
+      .user-copy strong {
+        font-size: 11px;
+      }
+
+      .user-copy span {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        margin-top: var(--space-1);
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .status-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--success);
+      }
+
+      .dashboard-main {
+        display: grid;
+        gap: var(--space-5);
+        max-width: 1520px;
+        margin: 0 auto;
+        padding: var(--space-5) var(--space-6) var(--space-6);
+      }
+
+      .context-row {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: var(--space-4);
+      }
+
+      .context-row h2 {
+        margin: var(--space-1) 0 0;
+        font-size: 18px;
+        letter-spacing: -0.025em;
+      }
+
+      .snapshot-label {
+        display: grid;
+        gap: var(--space-1);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: var(--space-2) var(--space-3);
+        background: var(--surface);
+        text-align: right;
+      }
+
+      .snapshot-label span {
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .snapshot-label strong {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 10px;
+      }
+
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: var(--space-4);
+      }
+
+      .card {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: 0 1px 0 color-mix(in srgb, var(--text) 4%, transparent);
+      }
+
+      .kpi-card {
+        display: grid;
+        min-height: 148px;
+        align-content: space-between;
+        padding: var(--space-4);
+      }
+
+      .kpi-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-3);
+      }
+
+      .kpi-label {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .kpi-icon {
+        display: grid;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--subtle);
+      }
+
+      .kpi-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .kpi-value {
+        margin: var(--space-4) 0 var(--space-2);
+        font-size: clamp(28px, 3vw, 38px);
+        font-weight: 700;
+        letter-spacing: -0.055em;
+        line-height: 1;
+      }
+
+      .delta {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-1);
+        width: fit-content;
+        border-radius: 999px;
+        padding: var(--space-1) var(--space-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 9px;
+        font-weight: 700;
+      }
+
+      .delta.positive {
+        background: var(--success-soft);
+        color: var(--success);
+      }
+
+      .delta.neutral {
+        background: var(--subtle);
+        color: var(--muted);
+      }
+
+      .delta.warning {
+        background: var(--warning-soft);
+        color: var(--warning);
+      }
+
+      .analytics-grid {
+        display: grid;
+        min-width: 0;
+        grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+        gap: var(--space-4);
+      }
+
+      .panel {
+        padding: var(--space-5);
+      }
+
+      .panel-header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: var(--space-4);
+        margin-bottom: var(--space-5);
+      }
+
+      .panel-header h2,
+      .panel-header h3 {
+        margin: var(--space-1) 0 0;
+        font-size: 15px;
+      }
+
+      .panel-note {
+        max-width: 44ch;
+        margin: var(--space-1) 0 0;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .legend {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        color: var(--muted);
+        font-size: 10px;
+        white-space: nowrap;
+      }
+
+      .legend-line {
+        width: 24px;
+        height: 2px;
+        background: var(--secondary);
+      }
+
+      .chart-wrap {
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+      }
+
+      .velocity-chart {
+        display: block;
+        width: 100%;
+        min-width: 620px;
+        height: auto;
+      }
+
+      .chart-grid {
+        stroke: var(--line);
+        stroke-width: 1;
+      }
+
+      .chart-axis {
+        fill: var(--muted);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 9px;
+      }
+
+      .chart-bar {
+        fill: var(--secondary);
+        rx: 4;
+      }
+
+      .chart-bar-current {
+        fill: var(--primary);
+      }
+
+      .chart-value {
+        fill: var(--text);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .pipeline-list {
+        display: grid;
+        gap: var(--space-4);
+      }
+
+      .pipeline-item {
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .pipeline-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-3);
+        font-size: 11px;
+      }
+
+      .pipeline-row strong {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+      }
+
+      .progress {
+        height: 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: var(--subtle-strong);
+      }
+
+      .progress span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--secondary);
+      }
+
+      .gate-callout {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--space-3);
+        margin-top: var(--space-5);
+        border-radius: 10px;
+        padding: var(--space-3);
+        background: var(--warning-soft);
+        color: var(--warning);
+      }
+
+      .gate-callout svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .gate-callout strong {
+        display: block;
+        margin-bottom: var(--space-1);
+        font-size: 11px;
+      }
+
+      .gate-callout span {
+        color: var(--text);
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      .decision-grid {
+        display: grid;
+        min-width: 0;
+        grid-template-columns: minmax(0, 2fr) minmax(260px, 0.8fr);
+        gap: var(--space-4);
+      }
+
+      .table-panel {
+        overflow: hidden;
+        border-top: 4px solid var(--secondary);
+        padding: 0;
+      }
+
+      .table-panel .panel-header {
+        margin: 0;
+        padding: var(--space-5) var(--space-5) var(--space-4);
+      }
+
+      .queue-tools {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+      }
+
+      .queue-tools .search input {
+        width: min(260px, 26vw);
+        height: 38px;
+      }
+
+      .table-scroller {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 680px;
+      }
+
+      caption {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      th,
+      td {
+        border-top: 1px solid var(--line);
+        padding: var(--space-3) var(--space-4);
+        text-align: left;
+        vertical-align: middle;
+      }
+
+      th {
+        background: var(--subtle);
+        color: var(--muted);
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      td {
+        font-size: 11px;
+      }
+
+      td:first-child {
+        font-weight: 700;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: var(--space-1) var(--space-2);
+        font-size: 9px;
+        font-weight: 700;
+      }
+
+      .status.published {
+        background: var(--success-soft);
+        color: var(--success);
+      }
+
+      .status.exploring {
+        background: var(--warning-soft);
+        color: var(--warning);
+      }
+
+      .status.wishlist {
+        background: var(--subtle-strong);
+        color: var(--muted);
+      }
+
+      .empty-row td {
+        padding: var(--space-6);
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .quality-list {
+        display: grid;
+        gap: var(--space-3);
+      }
+
+      .quality-item {
+        display: flex;
+        align-items: start;
+        gap: var(--space-3);
+        border-bottom: 1px solid var(--line);
+        padding-bottom: var(--space-3);
+      }
+
+      .quality-item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .quality-icon {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--success-soft);
+        color: var(--success);
+      }
+
+      .quality-icon svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .quality-copy strong {
+        display: block;
+        margin-bottom: var(--space-1);
+        font-size: 11px;
+      }
+
+      .quality-copy span {
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.4;
+      }
+
+      .dashboard-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        color: var(--muted);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 9px;
+      }
+
+      .dashboard-footer a {
+        font-weight: 700;
+      }
+
+      @media (max-width: 1120px) {
+        .kpi-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .analytics-grid,
+        .decision-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 820px) {
+        .app-shell {
+          display: block;
+          overflow: visible;
+        }
+
+        .sidebar {
+          position: static;
+          width: 100%;
+          height: auto;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .sidebar {
+          padding: var(--space-4);
+        }
+
+        .sidebar .nav-label,
+        .method-card {
+          display: none;
+        }
+
+        .sidebar-nav {
+          display: flex;
+          margin-top: var(--space-3);
+          overflow-x: auto;
+          padding-bottom: var(--space-1);
+        }
+
+        .nav-link {
+          flex: 0 0 auto;
+          min-height: 38px;
+          padding: 0 var(--space-3);
+        }
+
+        .workspace {
+          height: auto;
+          overflow: visible;
+        }
+
+        .topbar {
+          position: static;
+          align-items: flex-start;
+          flex-direction: column;
+          padding: var(--space-4);
+        }
+
+        .user {
+          display: none;
+        }
+
+        .dashboard-main {
+          padding: var(--space-4);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .nav-link {
+          padding: 0 var(--space-2);
+          font-size: 10px;
+        }
+
+        .context-row {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .snapshot-label {
+          text-align: left;
+        }
+
+        .velocity-chart {
+          min-width: 0;
+        }
+
+        .kpi-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .panel,
+        .table-panel .panel-header {
+          padding: var(--space-4);
+        }
+
+        .table-panel .panel-header,
+        .queue-tools {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .queue-tools .search,
+        .queue-tools .search input {
+          width: 100%;
+        }
+
+        .dashboard-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#dashboard-main">Skip to dashboard</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" data-od-id="left-sidebar" aria-label="Portfolio navigation">
+        <a class="brand" href="../../index.html#gallery" aria-label="Return to Agent Skills Phoebe Picks">
+          <span class="brand-mark" aria-hidden="true">PF</span>
+          <span class="brand-copy">
+            <strong>Skill Portfolio</strong>
+            <span>Command Center</span>
+          </span>
+        </a>
+
+        <span class="nav-label">Portfolio operations</span>
+        <nav class="sidebar-nav" aria-label="Dashboard sections">
+          <a class="nav-link active" href="#overview" aria-current="page">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Overview
+          </a>
+          <a class="nav-link" href="#review-velocity">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 18V9m6 9V5m6 13v-7m4 7H2"/></svg>
+            Review velocity
+          </a>
+          <a class="nav-link" href="#decision-queue">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            Decision queue
+          </a>
+          <a class="nav-link" href="#source-gate">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+            Source gate
+          </a>
+          <a class="nav-link" href="#artifact-health">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m7 15 3-3 2 2 4-5 2 3"/></svg>
+            Artifact health
+          </a>
+          <a class="nav-link" href="#quality">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m12 3 2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/></svg>
+            Quality checks
+          </a>
+        </nav>
+
+        <section class="method-card" data-od-id="method-coverage" aria-labelledby="method-title">
+          <span class="eyebrow">Portfolio policy</span>
+          <strong id="method-title">Evidence before promotion</strong>
+          <p>Field-test every Skill, verify its source, and require a proof artifact before it enters the published collection.</p>
+        </section>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar" data-od-id="top-bar">
+          <div class="title-block">
+            <span class="eyebrow">Portfolio operations · 28 Jul 2026</span>
+            <h1>Skill Portfolio Command Center</h1>
+          </div>
+
+          <div class="topbar-actions">
+            <div class="user" aria-label="Curator status">
+              <span class="avatar" aria-hidden="true">PF</span>
+              <span class="user-copy">
+                <strong>Phoebe Fu</strong>
+                <span><i class="status-dot" aria-hidden="true"></i>Review session active</span>
+              </span>
+            </div>
+          </div>
+        </header>
+
+        <main class="dashboard-main" id="dashboard-main">
+          <section class="context-row" id="overview" data-od-id="overview-heading" aria-labelledby="overview-title">
+            <div>
+              <span class="eyebrow">Collection health</span>
+              <h2 id="overview-title">Evidence before promotion</h2>
+            </div>
+            <div class="snapshot-label" aria-label="Data snapshot time">
+              <span>Static snapshot</span>
+              <strong>28 Jul 2026 · 11:27 SGT</strong>
+            </div>
+          </section>
+
+          <section class="kpi-grid" data-od-id="kpi-row" aria-label="Portfolio key metrics">
+            <article class="card kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Published picks</span>
+                <span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m5 12 4 4L19 6"/></svg></span>
+              </div>
+              <strong class="kpi-value">11</strong>
+              <span class="delta positive">↑ 1 this session</span>
+            </article>
+
+            <article class="card kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Field-tested Skills</span>
+                <span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3h8v4l3 5v7H5v-7l3-5z"/><path d="M9 14h6"/></svg></span>
+              </div>
+              <strong class="kpi-value">12</strong>
+              <span class="delta positive">↑ 1 ground-up build</span>
+            </article>
+
+            <article class="card kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Wishlist remaining</span>
+                <span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6"/></svg></span>
+              </div>
+              <strong class="kpi-value">84</strong>
+              <span class="delta neutral">↓ 1 after promotion</span>
+            </article>
+
+            <article class="card kpi-card">
+              <div class="kpi-top">
+                <span class="kpi-label">Average field rating</span>
+                <span class="kpi-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/></svg></span>
+              </div>
+              <strong class="kpi-value">8.3</strong>
+              <span class="delta positive">↑ 0.1 vs prior set</span>
+            </article>
+          </section>
+
+          <section class="decision-grid" aria-label="Portfolio decisions and quality">
+            <article class="card table-panel" id="decision-queue" data-od-id="decision-table" aria-labelledby="queue-title">
+              <header class="panel-header">
+                <div>
+                  <span class="eyebrow">Decision operations</span>
+                  <h2 id="queue-title">Next portfolio decisions</h2>
+                  <p class="panel-note">Search narrows the queue by Skill, source, or decision state.</p>
+                </div>
+                <div class="queue-tools">
+                  <label class="search">
+                    <span class="eyebrow" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search decision queue</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                    <input id="queueSearch" type="search" placeholder="Search this queue">
+                  </label>
+                  <span id="queueCount" class="legend" aria-live="polite">5 decisions</span>
+                </div>
+              </header>
+
+              <div class="table-scroller">
+                <table>
+                  <caption>Next portfolio decisions</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Skill</th>
+                      <th scope="col">Source</th>
+                      <th scope="col">Evidence</th>
+                      <th scope="col">Rating</th>
+                      <th scope="col">Decision</th>
+                    </tr>
+                  </thead>
+                  <tbody id="decisionRows">
+                    <tr data-search="dashboard nexu open-design published 10/10 8.3">
+                      <td>dashboard</td>
+                      <td>nexu-io/open-design</td>
+                      <td>10/10 concepts</td>
+                      <td>8.3 / 10</td>
+                      <td><span class="status published">Publish</span></td>
+                    </tr>
+                    <tr data-search="d3 visualization jiannanya snow d3 exploring 9/10 8.3 source gate">
+                      <td>d3-visualization</td>
+                      <td>jiannanya/snow-d3</td>
+                      <td>9/10 concepts</td>
+                      <td>8.3 / 10</td>
+                      <td><span class="status exploring">Source gate</span></td>
+                    </tr>
+                    <tr data-search="data report nexu open-design wishlist analytics">
+                      <td>data-report</td>
+                      <td>nexu-io/open-design</td>
+                      <td>Source verified</td>
+                      <td>Pending</td>
+                      <td><span class="status wishlist">Field test</span></td>
+                    </tr>
+                    <tr data-search="kpi dashboard design wshobson agents wishlist metrics">
+                      <td>kpi-dashboard-design</td>
+                      <td>wshobson/agents</td>
+                      <td>Source verified</td>
+                      <td>Pending</td>
+                      <td><span class="status wishlist">Field test</span></td>
+                    </tr>
+                    <tr data-search="build dashboard anthropics knowledge work plugins wishlist data">
+                      <td>build-dashboard</td>
+                      <td>anthropics/knowledge-work-plugins</td>
+                      <td>Source verified</td>
+                      <td>Pending</td>
+                      <td><span class="status wishlist">Field test</span></td>
+                    </tr>
+                    <tr class="empty-row" id="emptyRow" hidden>
+                      <td colspan="5">No decisions match this search.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <aside class="card panel" id="quality" data-od-id="quality-checks" aria-labelledby="quality-title">
+              <header class="panel-header">
+                <div>
+                  <span class="eyebrow">Release quality</span>
+                  <h3 id="quality-title">Release controls</h3>
+                </div>
+              </header>
+
+              <div class="quality-list">
+                <div class="quality-item">
+                  <span class="quality-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span>
+                  <span class="quality-copy"><strong>Source verified</strong><span>Dashboard Skill path and 82,010-star repository checked on GitHub at snapshot time.</span></span>
+                </div>
+                <div class="quality-item">
+                  <span class="quality-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span>
+                  <span class="quality-copy"><strong>Ground-up artifact</strong><span>Self-contained HTML, inline SVG, no chart libraries, and no build step.</span></span>
+                </div>
+                <div class="quality-item">
+                  <span class="quality-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span>
+                  <span class="quality-copy"><strong>Interaction states</strong><span>Hover, focus, active, empty-search, and reduced-motion states included.</span></span>
+                </div>
+                <div class="quality-item">
+                  <span class="quality-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span>
+                  <span class="quality-copy"><strong>Accessibility baseline</strong><span>Semantic landmarks, table caption, SVG description, labels, and keyboard focus.</span></span>
+                </div>
+              </div>
+            </aside>
+          </section>
+
+          <section class="analytics-grid" aria-label="Review analytics">
+            <article class="card panel" id="review-velocity" data-od-id="primary-chart" aria-labelledby="velocity-title">
+              <header class="panel-header">
+                <div>
+                  <span class="eyebrow">Review throughput</span>
+                  <h2 id="velocity-title">Weekly field tests completed</h2>
+                  <p class="panel-note">Completed ground-up builds per week across the current eight-week window.</p>
+                </div>
+                <span class="legend"><i class="legend-line" aria-hidden="true"></i>12 total</span>
+              </header>
+
+              <div class="chart-wrap">
+                <svg class="velocity-chart" viewBox="0 0 760 280" role="img" aria-labelledby="velocity-chart-title velocity-chart-desc">
+                  <title id="velocity-chart-title">Weekly field tests completed from 9 June through 28 July 2026</title>
+                  <desc id="velocity-chart-desc">Eight weekly values are one, two, one, three, one, one, two, and one completed field tests, totaling twelve. The highest-throughput week ended 30 June with three tests.</desc>
+                  <line class="chart-grid" x1="58" y1="56" x2="730" y2="56"/>
+                  <line class="chart-grid" x1="58" y1="116" x2="730" y2="116"/>
+                  <line class="chart-grid" x1="58" y1="176" x2="730" y2="176"/>
+                  <line class="chart-grid" x1="58" y1="236" x2="730" y2="236"/>
+                  <text class="chart-axis" x="38" y="60">3</text>
+                  <text class="chart-axis" x="38" y="120">2</text>
+                  <text class="chart-axis" x="38" y="180">1</text>
+                  <text class="chart-axis" x="38" y="240">0</text>
+                  <rect class="chart-bar" x="72" y="176" width="54" height="60"/>
+                  <rect class="chart-bar" x="158" y="116" width="54" height="120"/>
+                  <rect class="chart-bar" x="244" y="176" width="54" height="60"/>
+                  <rect class="chart-bar" x="330" y="56" width="54" height="180"/>
+                  <rect class="chart-bar" x="416" y="176" width="54" height="60"/>
+                  <rect class="chart-bar" x="502" y="176" width="54" height="60"/>
+                  <rect class="chart-bar" x="588" y="116" width="54" height="120"/>
+                  <rect class="chart-bar chart-bar-current" x="674" y="176" width="54" height="60"/>
+                  <text class="chart-value" x="96" y="166">1</text>
+                  <text class="chart-value" x="182" y="106">2</text>
+                  <text class="chart-value" x="268" y="166">1</text>
+                  <text class="chart-value" x="354" y="46">3</text>
+                  <text class="chart-value" x="440" y="166">1</text>
+                  <text class="chart-value" x="526" y="166">1</text>
+                  <text class="chart-value" x="612" y="106">2</text>
+                  <text class="chart-value" x="698" y="166">1</text>
+                  <text class="chart-axis" x="70" y="261">9 Jun</text>
+                  <text class="chart-axis" x="151" y="261">16 Jun</text>
+                  <text class="chart-axis" x="237" y="261">23 Jun</text>
+                  <text class="chart-axis" x="323" y="261">30 Jun</text>
+                  <text class="chart-axis" x="416" y="261">7 Jul</text>
+                  <text class="chart-axis" x="497" y="261">14 Jul</text>
+                  <text class="chart-axis" x="583" y="261">21 Jul</text>
+                  <text class="chart-axis" x="669" y="261">28 Jul</text>
+                </svg>
+              </div>
+            </article>
+
+            <aside class="card panel" id="source-gate" data-od-id="pipeline-health" aria-labelledby="pipeline-title">
+              <header class="panel-header">
+                <div>
+                  <span class="eyebrow">Portfolio pipeline</span>
+                  <h3 id="pipeline-title">Promotion health</h3>
+                </div>
+              </header>
+
+              <div class="pipeline-list">
+                <div class="pipeline-item">
+                  <div class="pipeline-row"><span>Source gate passed</span><strong>11 / 12</strong></div>
+                  <div class="progress" aria-label="Eleven of twelve field tests passed the source gate"><span style="width:91.7%"></span></div>
+                </div>
+                <div class="pipeline-item">
+                  <div class="pipeline-row"><span>Concept coverage ≥ 80%</span><strong>12 / 12</strong></div>
+                  <div class="progress" aria-label="All twelve field tests reached eighty percent concept coverage"><span style="width:100%"></span></div>
+                </div>
+                <div class="pipeline-item" id="artifact-health">
+                  <div class="pipeline-row"><span>Live proof artifacts</span><strong>12 / 12</strong></div>
+                  <div class="progress" aria-label="All twelve field tests have live proof artifacts"><span style="width:100%"></span></div>
+                </div>
+                <div class="pipeline-item">
+                  <div class="pipeline-row"><span>Exact 3 + 3 review notes</span><strong>12 / 12</strong></div>
+                  <div class="progress" aria-label="All twelve field tests have three strengths and three improvement points"><span style="width:100%"></span></div>
+                </div>
+              </div>
+
+              <div class="gate-callout">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 9v5m0 3h.01"/></svg>
+                <div>
+                  <strong>One source gate exception</strong>
+                  <span>D3 remains Exploring because the canonical repository is below 10k stars despite a complete field test.</span>
+                </div>
+              </div>
+            </aside>
+          </section>
+
+          <footer class="dashboard-footer" data-od-id="dashboard-footer">
+            <span>Static portfolio snapshot · verified 28 Jul 2026 at 11:27 SGT · no live analytics</span>
+            <a href="../../index.html#gallery">Return to the Skill gallery</a>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const search = document.getElementById("queueSearch");
+        const rows = [...document.querySelectorAll("#decisionRows tr[data-search]")];
+        const emptyRow = document.getElementById("emptyRow");
+        const queueCount = document.getElementById("queueCount");
+        const navLinks = [...document.querySelectorAll(".nav-link")];
+
+        function filterRows() {
+          const query = search.value.trim().toLowerCase();
+          let visible = 0;
+
+          rows.forEach((row) => {
+            const match = !query || row.dataset.search.includes(query);
+            row.hidden = !match;
+            if (match) visible += 1;
+          });
+
+          emptyRow.hidden = visible !== 0;
+          queueCount.textContent = `${visible} ${visible === 1 ? "decision" : "decisions"}`;
+        }
+
+        search.addEventListener("input", filterRows);
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.forEach((item) => {
+              item.classList.remove("active");
+              item.removeAttribute("aria-current");
+            });
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
