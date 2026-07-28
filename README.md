@@ -18,14 +18,14 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 
 - Exact Skill names, not vague tool lists.
 - Demo proof built from scratch.
-- Source repo, star snapshot, and credibility gate.
+- Verified source repository, exact Skill path, and credibility gate.
 - Rating, strengths, limits, and day-to-day use cases.
 
 ## Start Here
 
 | Link | What you get |
 | --- | --- |
-| [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, stars, rating, and proof. |
+| [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, rating, and proof. |
 | [Published products](#published-products) | Open the demo products built from each published Skill. |
 | [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 84 source-backed candidates across product, design, data, ML, LLMs, agents, content writing, knowledge bases, Office, marketing, and one-person companies. |
 | [Wishlist research notes](wishlist.md) | See the source evidence and planned proof build for each candidate. |
@@ -34,23 +34,23 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
-| `frontend-design` | [Product Design Studio](demos/product-design-studio/#frontend-design) | [anthropics/skills](https://github.com/anthropics/skills), 161,869 stars, explored 2026-07-17 | Published pick, 8.6/10 overall rating |
-| `canvas-design` | [Product Design Studio](demos/product-design-studio/#canvas-design) | [anthropics/skills](https://github.com/anthropics/skills), 161,869 stars, explored 2026-07-17 | Published pick, 7.8/10 overall rating |
-| `emil-design-eng` | [Product Design Studio](demos/product-design-studio/#emil-design-eng) | [emilkowalski/skills](https://github.com/emilkowalski/skills), 15,002 stars, explored 2026-07-17 | Published pick, 8.4/10 overall rating |
-| `design-taste-frontend` | [Design Taste Frontend Lab](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 64,018 stars, explored 2026-07-16 | Published pick, 8.5/10 overall rating |
-| `design-review` | [Critique Loop](demos/design-review-critique-loop/) | [garrytan/gstack](https://github.com/garrytan/gstack), 122,177 stars, explored 2026-07-16 | Published pick, 8.0/10 overall rating |
-| `high-end-visual-design` | [Visual Design Atelier](demos/high-end-visual-design-showcase/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), 64,018 stars, explored 2026-07-16 | Published pick, 7.9/10 overall rating |
-| `design-consultation` | [System Room](demos/design-consultation-system-room/) | [garrytan/gstack](https://github.com/garrytan/gstack), 122,177 stars, explored 2026-07-16 | Published pick, 8.1/10 overall rating |
-| `impeccable` | [Homepage redesign](index.html#top) | [pbakaus/impeccable](https://github.com/pbakaus/impeccable), 47,939 stars, explored 2026-07-19 | Published pick, 9.0/10 overall rating |
-| `pm-skills` | [Lantern Product OS](demos/pm-decision-room/) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills), 24,430 stars, explored 2026-07-25 | Published pick, 8.9/10 overall rating, 65/65 Skills used |
-| `find-skills` | [Skill Discovery Desk](demos/find-skills-discovery-desk/) | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills), 27,182 stars and #1 all-time on Skills.sh with 2.7M installs, verified 2026-07-25 | Published pick, 7.8/10 overall rating |
-| `dashboard` | [Skill Portfolio Command Center](demos/dashboard-skill-command-center/) | [nexu-io/open-design](https://github.com/nexu-io/open-design/blob/main/design-templates/dashboard/SKILL.md), 82,010 stars, explored 2026-07-28 | Published pick, 8.3/10 overall rating, 10/10 concept families used |
+| `frontend-design` | [Product Design Studio](demos/product-design-studio/#frontend-design) | [anthropics/skills](https://github.com/anthropics/skills), explored 2026-07-17 | Published pick, 8.6/10 overall rating |
+| `canvas-design` | [Product Design Studio](demos/product-design-studio/#canvas-design) | [anthropics/skills](https://github.com/anthropics/skills), explored 2026-07-17 | Published pick, 7.8/10 overall rating |
+| `emil-design-eng` | [Product Design Studio](demos/product-design-studio/#emil-design-eng) | [emilkowalski/skills](https://github.com/emilkowalski/skills), explored 2026-07-17 | Published pick, 8.4/10 overall rating |
+| `design-taste-frontend` | [Design Taste Frontend Lab](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), explored 2026-07-16 | Published pick, 8.5/10 overall rating |
+| `design-review` | [Critique Loop](demos/design-review-critique-loop/) | [garrytan/gstack](https://github.com/garrytan/gstack), explored 2026-07-16 | Published pick, 8.0/10 overall rating |
+| `high-end-visual-design` | [Visual Design Atelier](demos/high-end-visual-design-showcase/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), explored 2026-07-16 | Published pick, 7.9/10 overall rating |
+| `design-consultation` | [System Room](demos/design-consultation-system-room/) | [garrytan/gstack](https://github.com/garrytan/gstack), explored 2026-07-16 | Published pick, 8.1/10 overall rating |
+| `impeccable` | [Homepage redesign](index.html#top) | [pbakaus/impeccable](https://github.com/pbakaus/impeccable), explored 2026-07-19 | Published pick, 9.0/10 overall rating |
+| `pm-skills` | [Lantern Product OS](demos/pm-decision-room/) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills), explored 2026-07-25 | Published pick, 8.9/10 overall rating, 65/65 Skills used |
+| `find-skills` | [Skill Discovery Desk](demos/find-skills-discovery-desk/) | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills), #1 all-time on Skills.sh with 2.7M installs, verified 2026-07-25 | Published pick, 7.8/10 overall rating |
+| `dashboard` | [Skill Portfolio Command Center](demos/dashboard-skill-command-center/) | [nexu-io/open-design](https://github.com/nexu-io/open-design/blob/main/design-templates/dashboard/SKILL.md), explored 2026-07-28 | Published pick, 8.3/10 overall rating, 10/10 concept families used |
 
 ## Field-Tested Artifacts
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
-| `d3-visualization` | [Skill Constellation](demos/d3-skill-constellation/) | Canonical [jiannanya/snow-d3](https://github.com/jiannanya/snow-d3), 4 stars; catalog wrapper in [nexu-io/open-design](https://github.com/nexu-io/open-design), 81,586 stars, verified 2026-07-26 | Exploring, 8.3/10, 9/10 concept families exercised; canonical source remains below the publication gate |
+| `d3-visualization` | [Skill Constellation](demos/d3-skill-constellation/) | Canonical [jiannanya/snow-d3](https://github.com/jiannanya/snow-d3); catalog wrapper in [nexu-io/open-design](https://github.com/nexu-io/open-design), verified 2026-07-26 | Exploring, 8.3/10, 9/10 concept families exercised; canonical source remains below the publication gate |
 
 Published products and exploring field tests both show their work. An exploring artifact is evidence of the method, not a recommendation, until the canonical source clears the credibility gate.
 
@@ -103,7 +103,7 @@ Weak, risky, or not-useful Skills do not become recommendations.
 ```text
 agent-skills-phoebe-picks/
   index.html                         # Public gallery homepage
-  data/reviews.js                    # Skill reviews, sources, stars, ratings, notes
+  data/reviews.js                    # Skill reviews, sources, ratings, notes, internal credibility evidence
   assets/design-options.css          # Active visual system
   assets/design-options.js           # Search, filters, cards, detail drawer
   demos/skill-demo.css               # Shared demo page styling

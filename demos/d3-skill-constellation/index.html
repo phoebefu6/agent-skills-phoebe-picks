@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="An interactive D3 field test mapping 85 source-backed AI agent Skills by category, repository, and GitHub stars.">
+    <meta name="description" content="An interactive D3 field test mapping source-backed AI agent Skills by category, repository, and wishlist rank.">
     <title>Skill Constellation · D3 Field Test</title>
     <link rel="stylesheet" href="styles.css?v=20260726-11">
   </head>
@@ -27,7 +27,7 @@
         <div class="hero-copy">
           <span class="eyebrow">D3 field test · 26 Jul 2026</span>
           <h1>Skill<br>Constellation</h1>
-          <p class="hero-lede">A living map of the workbench: 85 candidates arranged by category, repository gravity, and source popularity.</p>
+          <p class="hero-lede">A living map of the workbench: candidates arranged by category, repository relationships, and wishlist rank.</p>
           <div class="hero-actions">
             <a class="primary-action" href="#observatory">Enter the observatory <span aria-hidden="true">↓</span></a>
             <a class="text-action" href="https://github.com/jiannanya/snow-d3" target="_blank" rel="noreferrer">Inspect canonical source ↗</a>
@@ -37,9 +37,9 @@
         <div class="hero-instrument" aria-label="Dataset summary">
           <span class="orbit orbit-one" aria-hidden="true"></span>
           <span class="orbit orbit-two" aria-hidden="true"></span>
-          <span class="instrument-core" aria-hidden="true">85</span>
+          <span class="instrument-core" aria-hidden="true">84</span>
           <dl>
-            <div><dt id="heroSkills">85</dt><dd>Skills mapped</dd></div>
+            <div><dt id="heroSkills">84</dt><dd>Skills mapped</dd></div>
             <div><dt id="heroCategories">10</dt><dd>focus areas</dd></div>
             <div><dt id="heroRepos">10</dt><dd>source repos</dd></div>
           </dl>
@@ -52,13 +52,13 @@
             <span class="eyebrow">Interactive evidence</span>
             <h2 id="observatory-title">Change the question.<br>Watch the structure move.</h2>
           </div>
-          <p>Cluster reveals source relationships. Star map compares popularity on a log scale. Treemap shows portfolio coverage. Hover, drag, zoom, brush, filter, or select a Skill.</p>
+          <p>Cluster reveals source relationships. Rank map shows the exploration queue. Treemap shows portfolio coverage. Hover, drag, zoom, brush, filter, or select a Skill.</p>
         </div>
 
         <div class="control-deck" aria-label="Visualization controls">
           <div class="view-switcher" role="group" aria-label="Visualization view">
             <button class="view-button is-active" type="button" data-view="cluster" aria-pressed="true">01 Cluster</button>
-            <button class="view-button" type="button" data-view="scatter" aria-pressed="false">02 Star map</button>
+            <button class="view-button" type="button" data-view="scatter" aria-pressed="false">02 Rank map</button>
             <button class="view-button" type="button" data-view="treemap" aria-pressed="false">03 Treemap</button>
           </div>
 
@@ -98,7 +98,7 @@
             </div>
 
             <div class="chart-status" aria-live="polite">
-              <span id="visibleCount">85 Skills visible</span>
+              <span id="visibleCount">84 Skills visible</span>
               <span id="selectionStatus">Drag nodes · scroll to zoom · select for details</span>
             </div>
           </section>
@@ -111,13 +111,13 @@
             <div id="selectionPanel" aria-live="polite">
               <p class="selection-number">00</p>
               <h3 id="inspector-title">Choose a Skill</h3>
-              <p>Hover for a quick read. Select any node or treemap cell to hold its source, build target, and popularity snapshot here.</p>
+              <p>Hover for a quick read. Select any node or treemap cell to hold its source, build target, and wishlist position here.</p>
             </div>
 
             <div class="ring-panel">
               <div>
                 <span>Visible mix</span>
-                <strong id="ringTotal">85</strong>
+                <strong id="ringTotal">84</strong>
               </div>
               <svg id="categoryRing" role="img" aria-label="Donut chart showing visible Skills by focus area"></svg>
             </div>
@@ -127,7 +127,7 @@
         <div class="legend-panel">
           <div>
             <span class="eyebrow">Color key</span>
-            <p>Color marks focus area. Skill-node area follows repository stars. Choose a focus area to isolate it; choose it again to return to all Skills.</p>
+            <p>Color marks focus area. Repository hubs grow with the number of connected Skills; individual Skill nodes use one neutral size. Choose a focus area to isolate it; choose it again to return to all Skills.</p>
           </div>
           <div class="category-legend" id="categoryLegend" aria-label="Interactive category legend"></div>
         </div>
@@ -141,12 +141,12 @@
         </div>
         <div class="concept-grid">
           <article><span>01</span><h3>Keyed data joins</h3><p>Nodes, links, axes, cells, arcs, and legend items update from bound data.</p></article>
-          <article><span>02</span><h3>Scales + color</h3><p>Log, band, square-root, ordinal, and linear scales map evidence to position and form.</p></article>
+          <article><span>02</span><h3>Scales + color</h3><p>Band, ordinal, and linear scales map category, rank, and portfolio structure to position and form.</p></article>
           <article><span>03</span><h3>SVG shapes</h3><p>Pie and arc generators turn the visible portfolio mix into a live ring.</p></article>
-          <article><span>04</span><h3>Axes</h3><p>The star map exposes repository popularity with formatted logarithmic ticks.</p></article>
+          <article><span>04</span><h3>Axes</h3><p>The rank map exposes exploration order with readable linear ticks.</p></article>
           <article><span>05</span><h3>Transitions</h3><p>Named transitions preserve object identity as filters and views change.</p></article>
           <article><span>06</span><h3>Zoom + drag</h3><p>The force view supports pan, zoom, and direct node manipulation.</p></article>
-          <article><span>07</span><h3>Brush</h3><p>The star map turns a spatial selection into a bounded Skill shortlist.</p></article>
+          <article><span>07</span><h3>Brush</h3><p>The rank map turns a spatial selection into a bounded Skill shortlist.</p></article>
           <article><span>08</span><h3>Force simulation</h3><p>Repository links, collision, charge, and category forces reveal structure.</p></article>
           <article><span>09</span><h3>Hierarchy</h3><p>A treemap nests Skills inside focus areas and preserves portfolio context.</p></article>
           <article class="concept-skipped"><span>10</span><h3>Geography</h3><p>Skipped by design. No fake map was added to data without a geographic question.</p></article>
@@ -158,7 +158,7 @@
           <span class="status-chip">Exploring</span>
           <h2>Promising method.<br>Credibility gate still open.</h2>
         </div>
-        <p>The 81,586-star Open Design catalogue made the Skill discoverable, but the canonical upstream source had 4 stars in the 26 July 2026 snapshot. The build is complete; the public recommendation remains Exploring until the canonical source earns qualifying credibility evidence.</p>
+        <p>The Open Design catalogue made the Skill discoverable, but popularity of that wrapper cannot substitute for credibility evidence from the canonical upstream source. The build is complete; the public recommendation remains Exploring until the canonical source qualifies on its own.</p>
         <a href="../../index.html#gallery">See the gallery record →</a>
       </section>
     </main>
@@ -180,8 +180,8 @@
         document.documentElement.dataset.runtimeError = String(event.reason || "Unhandled promise rejection");
       });
     </script>
-    <script src="../../data/reviews.js?v=wishlist-85-20260726"></script>
+    <script src="../../data/reviews.js?v=remove-repo-stars-20260728"></script>
     <script src="d3.min.js"></script>
-    <script src="app.js?v=20260726-10"></script>
+    <script src="app.js?v=rank-map-20260728"></script>
   </body>
 </html>

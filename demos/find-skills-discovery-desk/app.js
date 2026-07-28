@@ -43,7 +43,7 @@
     quality: {
       step: "05",
       name: "Verify quality",
-      summary: "Check source reputation, GitHub stars, install signals, and whether the Skill matches the task.",
+      summary: "Check source reputation, maintenance, install signals, and whether the Skill matches the task.",
       points: [
         "Stars and installs are evidence signals, not automatic recommendations.",
         "Official or highly trusted sources get priority.",

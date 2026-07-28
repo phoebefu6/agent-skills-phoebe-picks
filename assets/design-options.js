@@ -1,7 +1,6 @@
 (function () {
   const picks = window.PICKS || window.REVIEWS || [];
   const wishlist = window.WISHLIST_CANDIDATES || [];
-  const wishlistRepositorySnapshots = window.WISHLIST_REPOSITORY_SNAPSHOTS || {};
   const filters = window.FILTERS || { scenarios: [], statuses: [] };
   const state = {
     category: "all",
@@ -104,11 +103,6 @@
     { id: "one-person-company", label: "One-person company" }
   ];
 
-  const wishlistRepositoryCounts = wishlist.reduce((counts, item) => {
-    counts[item.sourceRepo] = (counts[item.sourceRepo] || 0) + 1;
-    return counts;
-  }, {});
-
   let entranceMotionPlayed = false;
   let revealObserver = null;
   let lastFocusedElement = null;
@@ -146,7 +140,6 @@
       pick.source,
       pick.sourceRepo,
       pick.sourcePath,
-      pick.githubStars,
       pick.groundUpBuild,
       pick.conceptCoverage,
       pick.rating,
@@ -198,29 +191,12 @@
     return demoTitles[pick.id] || pick.name;
   }
 
-  function formatNumber(value) {
-    return typeof value === "number" ? value.toLocaleString("en-US") : value;
-  }
-
-  function sourceMetaLabel(pick) {
-    const repo = pick.sourceRepo || pick.source || "Source pending";
-    const stars = typeof pick.githubStars === "number"
-      ? `${formatNumber(pick.githubStars)} GitHub stars`
-      : "GitHub stars pending";
-    return `${repo}, ${stars}`;
-  }
-
   function sourcePointList(pick) {
     const points = [
       `Source: ${pick.sourceRepo || pick.source || "Pending"}`,
       `Reference: ${pick.sourcePath || pick.sourceUrl || "Pending"}`
     ];
 
-    if (typeof pick.githubStars === "number") {
-      points.push(`GitHub stars: ${formatNumber(pick.githubStars)}${pick.starsCheckedAt ? ` snapshot ${pick.starsCheckedAt}` : ""}`);
-    } else {
-      points.push("GitHub stars: pending");
-    }
     if (pick.dateExplored) {
       points.push(`Explored: ${pick.dateExplored}`);
     }
@@ -260,9 +236,7 @@
     nodes.productRail.innerHTML = published
       .map((pick, index) => {
         const scenario = labelForScenario((pick.scenarios || [])[0] || "design");
-        const stars = typeof pick.githubStars === "number"
-          ? `${formatNumber(pick.githubStars)} stars`
-          : "Stars pending";
+        const source = pick.sourceRepo || pick.source || "Source pending";
         const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Rating pending";
 
         const artifactImages = {
@@ -280,7 +254,7 @@
             <span class="rail-copy">
               <span>${escapeHtml(scenario)}</span>
               <strong>${escapeHtml(pick.name)}</strong>
-              <small>${escapeHtml(demoTitle(pick))}<br>${escapeHtml(rating)} · ${escapeHtml(stars)}</small>
+              <small>${escapeHtml(demoTitle(pick))}<br>${escapeHtml(rating)} · ${escapeHtml(source)}</small>
             </span>
           </a>
         `;
@@ -308,14 +282,7 @@
 
     nodes.wishlistGrid.innerHTML = visible
       .map((item) => {
-        const snapshot = wishlistRepositorySnapshots[item.sourceRepo] || {};
-        const repositoryStars = typeof snapshot.githubStars === "number" ? snapshot.githubStars : item.githubStars;
-        const repositoryUrl = snapshot.repoUrl || `https://github.com/${item.sourceRepo}`;
-        const checkedAt = snapshot.checkedAt || "snapshot date pending";
-        const sharedSkillCount = wishlistRepositoryCounts[item.sourceRepo] || 1;
-        const sharedSourceLabel = sharedSkillCount === 1
-          ? "1 wishlist Skill uses this repository"
-          : `${sharedSkillCount} wishlist Skills share this repository`;
+        const repositoryUrl = `https://github.com/${item.sourceRepo}`;
 
         return `
           <article class="wishlist-card" data-wishlist-category="${escapeHtml(item.category)}">
@@ -329,13 +296,13 @@
               <p>${escapeHtml(item.buildTarget)}</p>
             </div>
             <footer>
-              <a class="wishlist-repository-evidence" href="${escapeHtml(repositoryUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.sourceRepo)} repository homepage with ${escapeHtml(formatNumber(repositoryStars))} GitHub stars">
-                <span>GitHub repo stars</span>
-                <strong>${escapeHtml(formatNumber(repositoryStars))}</strong>
+              <a class="wishlist-repository-evidence" href="${escapeHtml(repositoryUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.sourceRepo)} repository homepage">
+                <span>GitHub repository</span>
+                <strong>${escapeHtml(item.sourceRepo)}</strong>
               </a>
               <a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.id)} Skill source in ${escapeHtml(item.sourceRepo)}">Inspect Skill →</a>
             </footer>
-            <small title="${escapeHtml(item.sourcePath)}">${escapeHtml(item.sourceRepo)} · Skill rating pending · ${escapeHtml(sharedSourceLabel)} · stars checked ${escapeHtml(checkedAt)}</small>
+            <small title="${escapeHtml(item.sourcePath)}">Skill rating pending · repository popularity is not used as a Skill score</small>
           </article>
         `;
       })
@@ -480,7 +447,7 @@
           ${mindmapNode("3 can be better", listMarkup(pick.improve), "tone-improve")}
           ${mindmapNode("Day-to-day use cases", listMarkup(pick.useCases), "tone-use")}
           ${mindmapNode("Demo or proof", `${listMarkup(pick.demo)}${demo}`, "tone-proof")}
-          ${mindmapNode("Verdict, source, stars", `${listMarkup(pick.recommendation || labelForStatus(pick.status))}${sourcePointList(pick)}${source}`, "tone-verdict")}
+          ${mindmapNode("Verdict and source", `${listMarkup(pick.recommendation || labelForStatus(pick.status))}${sourcePointList(pick)}${source}`, "tone-verdict")}
         </div>
       </section>
     `;

@@ -47,7 +47,6 @@
   const skills = window.WISHLIST_CANDIDATES.map((item) => ({
     ...item,
     type: "skill",
-    stars: Number(item.githubStars) || 0,
     categoryLabel: categoryLabels[item.category] || item.category,
     searchText: `${item.id} ${item.focus} ${item.sourceRepo} ${item.buildTarget}`.toLowerCase()
   }));
@@ -55,10 +54,7 @@
   const categories = Array.from(new Set(skills.map((item) => item.category)));
   const repositories = Array.from(new Set(skills.map((item) => item.sourceRepo)));
   const color = d3.scaleOrdinal().domain(categories).range(palette);
-  const radius = d3.scaleSqrt()
-    .domain(d3.extent(skills, (item) => item.stars))
-    .range([9, 26]);
-  const formatStars = d3.format(".3~s");
+  const skillRadius = 11;
   const formatCount = d3.format(",d");
 
   const state = {
@@ -186,7 +182,7 @@
       ? `${item.count} visible Skill${item.count === 1 ? "" : "s"}`
       : isCategory
         ? `${datum.value} Skill${datum.value === 1 ? "" : "s"} in this focus area`
-        : `${item.categoryLabel}<br>${formatStars(item.stars)} GitHub stars`;
+        : `${item.categoryLabel}<br>${escapeHtml(item.sourceRepo)}`;
     nodes.tooltip.innerHTML = `<strong>${escapeHtml(heading)}</strong><br>${detail}`;
     nodes.tooltip.style.left = `${event.clientX + 14}px`;
     nodes.tooltip.style.top = `${event.clientY - 42}px`;
@@ -226,8 +222,8 @@
       <p>${escapeHtml(item.buildTarget)}</p>
       <div class="selection-meta">
         <span>${escapeHtml(item.categoryLabel)}</span>
-        <strong>${formatCount(item.stars)} GitHub stars</strong>
-        <span>${escapeHtml(item.sourceRepo)}</span>
+        <strong>${escapeHtml(item.sourceRepo)}</strong>
+        <span>Wishlist rank ${formatCount(item.rank)}</span>
       </div>
       <a class="selection-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">Inspect source ↗</a>
     `;
@@ -254,7 +250,7 @@
     nodes.selectionPanel.innerHTML = `
       <p class="selection-number">00</p>
       <h3 id="inspector-title">Choose a Skill</h3>
-      <p>Hover for a quick read. Select any node or treemap cell to hold its source, build target, and popularity snapshot here.</p>
+      <p>Hover for a quick read. Select any node or treemap cell to hold its source, build target, and wishlist position here.</p>
     `;
     updateSelectedStyles();
   }
@@ -332,7 +328,7 @@
       )
       .attr("aria-label", (item) => item.type === "repo"
         ? `${item.repo} repository hub, ${item.count} visible Skills`
-        : `${item.id}, ${item.categoryLabel}, ${formatCount(item.stars)} GitHub stars`)
+        : `${item.id}, ${item.categoryLabel}, source ${item.sourceRepo}`)
       .on("mouseover", showTooltip)
       .on("mousemove", moveTooltip)
       .on("mouseout", hideTooltip)
@@ -356,7 +352,7 @@
       .attr("fill-opacity", (item) => item.type === "repo" ? 1 : 0.88)
       .transition("node-size")
       .duration(transitionDuration)
-      .attr("r", (item) => item.type === "repo" ? 18 + Math.min(item.count, 8) : radius(item.stars));
+      .attr("r", (item) => item.type === "repo" ? 18 + Math.min(item.count, 8) : skillRadius);
 
     graphNodes.select("text")
       .attr("fill", (item) => item.type === "repo" ? "#f4db63" : "#10141b")
@@ -374,7 +370,7 @@
         .distance((link) => link.source.type === "repo" ? 72 : 66)
         .strength(0.25))
       .force("charge", d3.forceManyBody().strength((item) => item.type === "repo" ? -150 : -42))
-      .force("collide", d3.forceCollide().radius((item) => item.type === "repo" ? 28 : radius(item.stars) + 4).iterations(2))
+      .force("collide", d3.forceCollide().radius((item) => item.type === "repo" ? 28 : skillRadius + 4).iterations(2))
       .force("x", d3.forceX((item) => {
         if (item.type === "repo") return width / 2;
         return categoryCenter(item.category)[0];
@@ -420,11 +416,8 @@
 
   function renderScatter(data) {
     if (simulation) simulation.stop();
-    const x = d3.scaleLog()
-      .domain([
-        Math.max(1, d3.min(skills, (item) => item.stars > 0 ? item.stars : Infinity) * 0.9),
-        d3.max(skills, (item) => item.stars) * 1.08
-      ])
+    const x = d3.scaleLinear()
+      .domain(d3.extent(skills, (item) => item.rank))
       .range([0, plotWidth])
       .nice();
     const visibleCategories = state.category === "all" ? categories : [state.category];
@@ -433,7 +426,7 @@
       .range([0, plotHeight])
       .padding(0.32);
     const scatterOffsets = new Map();
-    d3.groups(data, (item) => `${item.category}|${item.stars}`).forEach(([, group]) => {
+    d3.groups(data, (item) => `${item.category}|${item.rank}`).forEach(([, group]) => {
       group.slice().sort((a, b) => d3.ascending(a.id, b.id)).forEach((item, index) => {
         const columns = Math.min(5, group.length);
         const rows = Math.ceil(group.length / columns);
@@ -450,7 +443,7 @@
     const scatterPoint = (item) => {
       const [dx, dy] = scatterOffsets.get(item.id) || [0, 0];
       return [
-        margin.left + x(Math.max(1, item.stars)) + dx,
+        margin.left + x(item.rank) + dx,
         margin.top + y(item.category) + y.bandwidth() / 2 + dy
       ];
     };
@@ -472,7 +465,7 @@
       .join("g")
       .attr("class", "x-axis")
       .attr("transform", `translate(${margin.left},${margin.top + plotHeight})`)
-      .call(d3.axisBottom(x).ticks(7, "~s"));
+      .call(d3.axisBottom(x).ticks(8).tickFormat(d3.format("d")));
 
     xAxis.selectAll("text").attr("fill", "rgba(255,255,255,0.62)").style("font-family", "var(--mono)");
     xAxis.selectAll("line, .domain").attr("stroke", "rgba(255,255,255,0.25)");
@@ -501,7 +494,7 @@
       .attr("fill", "rgba(255,255,255,0.54)")
       .style("font-family", "var(--mono)")
       .style("font-size", "10px")
-      .text("GitHub stars · logarithmic scale");
+      .text("Wishlist rank · lower numbers were queued earlier");
 
     const dots = scatterNodeLayer.selectAll(".scatter-node")
       .data(data, (item) => item.id)
@@ -519,7 +512,7 @@
         (update) => update,
         (exit) => exit.remove()
       )
-      .attr("aria-label", (item) => `${item.id}, ${formatCount(item.stars)} GitHub stars`)
+      .attr("aria-label", (item) => `${item.id}, wishlist rank ${formatCount(item.rank)}, source ${item.sourceRepo}`)
       .on("mouseover", showTooltip)
       .on("mousemove", moveTooltip)
       .on("mouseout", hideTooltip)
@@ -550,7 +543,7 @@
       .attr("stroke-width", 1.5)
       .transition("scatter-radius")
       .duration(transitionDuration)
-      .attr("r", (item) => Math.min(9, Math.max(6.5, radius(item.stars) * 0.5)));
+      .attr("r", 7.5);
 
     dots.select("text")
       .attr("fill", "#10141b")
@@ -625,7 +618,7 @@
       .attr("tabindex", 0)
       .attr("role", "button")
       .attr("aria-label", (item) => item.depth === 2
-        ? `${item.data.id}, ${formatCount(item.data.stars)} GitHub stars`
+        ? `${item.data.id}, source ${item.data.sourceRepo}`
         : `${item.data.label}, ${item.value} Skills`)
       .on("mouseover", (event, item) => showTooltip(event, item))
       .on("mousemove", moveTooltip)
@@ -692,7 +685,7 @@
       .text((item) => {
         const cellWidth = item.x1 - item.x0;
         const cellHeight = item.y1 - item.y0;
-        return item.depth === 2 && cellWidth > 70 && cellHeight > 46 ? `${formatStars(item.data.stars)} stars` : "";
+        return item.depth === 2 && cellWidth > 70 && cellHeight > 46 ? truncate(item.data.sourceRepo, Math.floor(cellWidth / 7.2)) : "";
       });
 
     updateSelectedStyles();
@@ -796,7 +789,7 @@
       },
       scatter: {
         kicker: "Axes + brush",
-        title: "Popularity star map",
+        title: "Wishlist rank map",
         status: "Drag across the plot to shortlist a region"
       },
       treemap: {
