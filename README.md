@@ -2,8 +2,8 @@
 
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Published Picks](https://img.shields.io/badge/published%20picks-11-6f7cff?style=for-the-badge)](#published-products)
-[![Field Tests](https://img.shields.io/badge/field%20tests-12-ffbc91?style=for-the-badge)](#field-tested-artifacts)
+[![Published Picks](https://img.shields.io/badge/published%20picks-13-6f7cff?style=for-the-badge)](#published-products)
+[![Field Tests](https://img.shields.io/badge/field%20tests-14-ffbc91?style=for-the-badge)](#field-tested-artifacts)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A public shelf of AI agent Skills that survived a real build.
@@ -27,7 +27,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, rating, and proof. |
 | [Published products](#published-products) | Open the demo products built from each published Skill. |
-| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 84 source-backed candidates across product, design, data, ML, LLMs, agents, content writing, knowledge bases, Office, marketing, and one-person companies. |
+| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 82 source-backed candidates across product, design, data, ML, LLMs, agents, content writing, knowledge bases, Office, marketing, and one-person companies. |
 | [Wishlist research notes](wishlist.md) | See the source evidence and planned proof build for each candidate. |
 
 ## Published Products
@@ -45,6 +45,8 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `pm-skills` | [Lantern Product OS](demos/pm-decision-room/) | [phuryn/pm-skills](https://github.com/phuryn/pm-skills), explored 2026-07-25 | Published pick, 8.9/10 overall rating, 65/65 Skills used |
 | `find-skills` | [Skill Discovery Desk](demos/find-skills-discovery-desk/) | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills), #1 all-time on Skills.sh with 2.7M installs, verified 2026-07-25 | Published pick, 7.8/10 overall rating |
 | `dashboard` | [Skill Portfolio Command Center](demos/dashboard-skill-command-center/) | [nexu-io/open-design](https://github.com/nexu-io/open-design/blob/main/design-templates/dashboard/SKILL.md), explored 2026-07-28 | Published pick, 8.3/10 overall rating, 10/10 concept families used |
+| `algorithmic-art` | [Evidence Tides](demos/evidence-tides/) | [anthropics/skills](https://github.com/anthropics/skills/tree/main/skills/algorithmic-art), explored 2026-08-02 | Published pick, 8.7/10 overall rating, 9/10 concept families used |
+| `data-report` | [Skill Portfolio Evidence Report](demos/skill-portfolio-evidence-report/) | [nexu-io/open-design](https://github.com/nexu-io/open-design/blob/main/skills/data-report/SKILL.md), explored 2026-08-02 | Published pick, 8.1/10 overall rating, 9/9 concept families used |
 
 ## Field-Tested Artifacts
 
@@ -96,6 +98,8 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `pm-skills` | Published | Build a full product operating system across research, discovery, strategy, execution, analytics, growth, and GTM. |
 | `find-skills` | Published | Find and vet other Skills before installing or recommending them. |
 | `dashboard` | Published | Turn an operations brief into a structured, self-contained KPI, chart, and decision dashboard. |
+| `algorithmic-art` | Published | Move from a computational philosophy to reproducible, parameterized generative art. |
+| `data-report` | Published | Turn bounded real data into a KPI, chart, table, insight, and methodology report. |
 | `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
 
 ## Repo Map
@@ -115,6 +119,8 @@ agent-skills-phoebe-picks/
   demos/design-consultation-system-room/ # design-consultation demo
   demos/find-skills-discovery-desk/ # find-skills field test
   demos/dashboard-skill-command-center/ # dashboard Skill field test
+  demos/evidence-tides/              # algorithmic-art seeded p5.js field test
+  demos/skill-portfolio-evidence-report/ # data-report real-data field test
   demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint
   demos/d3-skill-constellation/      # d3-visualization linked-view field test

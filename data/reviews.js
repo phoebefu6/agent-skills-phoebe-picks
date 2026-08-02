@@ -39,12 +39,12 @@ const WISHLIST_REPOSITORY_SNAPSHOTS = {
   "YuLab-SMU/TCMDATA": { githubStars: 15, checkedAt: "2026-07-27", repoUrl: "https://github.com/YuLab-SMU/TCMDATA" },
   "alirezarezvani/claude-skills": { githubStars: 23252, checkedAt: "2026-07-27", repoUrl: "https://github.com/alirezarezvani/claude-skills" },
   "anthropics/knowledge-work-plugins": { githubStars: 23069, checkedAt: "2026-07-27", repoUrl: "https://github.com/anthropics/knowledge-work-plugins" },
-  "anthropics/skills": { githubStars: 164390, checkedAt: "2026-07-27", repoUrl: "https://github.com/anthropics/skills" },
+  "anthropics/skills": { githubStars: 165758, checkedAt: "2026-08-02", repoUrl: "https://github.com/anthropics/skills" },
   "coreyhaines31/marketingskills": { githubStars: 41848, checkedAt: "2026-07-27", repoUrl: "https://github.com/coreyhaines31/marketingskills" },
   "github/awesome-copilot": { githubStars: 37071, checkedAt: "2026-07-27", repoUrl: "https://github.com/github/awesome-copilot" },
   "kepano/obsidian-skills": { githubStars: 43403, checkedAt: "2026-07-27", repoUrl: "https://github.com/kepano/obsidian-skills" },
   "ndpvt-web/arxiv-claude-skills": { githubStars: 6, checkedAt: "2026-07-27", repoUrl: "https://github.com/ndpvt-web/arxiv-claude-skills" },
-  "nexu-io/open-design": { githubStars: 82010, checkedAt: "2026-07-28", repoUrl: "https://github.com/nexu-io/open-design" },
+  "nexu-io/open-design": { githubStars: 83147, checkedAt: "2026-08-02", repoUrl: "https://github.com/nexu-io/open-design" },
   "openai/skills": { githubStars: 24214, checkedAt: "2026-07-27", repoUrl: "https://github.com/openai/skills" },
   "wshobson/agents": { githubStars: 38266, checkedAt: "2026-07-27", repoUrl: "https://github.com/wshobson/agents" },
   "yoqalux-blip/cdutcm-library-search-skill": { githubStars: 0, checkedAt: "2026-07-27", repoUrl: "https://github.com/yoqalux-blip/cdutcm-library-search-skill" }
@@ -601,6 +601,109 @@ const PICKS = [
     galleryLink: "demos/dashboard-skill-command-center/index.html"
   },
   {
+    id: "algorithmic-art",
+    name: "algorithmic-art",
+    source: "Anthropic Algorithmic Art",
+    sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+    sourceRepo: "anthropics/skills",
+    sourcePath: "skills/algorithmic-art/SKILL.md",
+    githubStars: 165758,
+    starsCheckedAt: "2026-08-02",
+    status: "published",
+    recommendation: "Published pick: the official method turned a subtle portfolio concept into a reproducible, parameterized generative artwork with a coherent philosophy and real exploratory controls.",
+    dateExplored: "2026-08-02",
+    scenarios: ["design", "data-viz", "frontend"],
+    platforms: ["claude-code", "codex", "cursor", "gemini-cli"],
+    badges: ["9/10 concepts", "Seeded p5.js", "Interactive art"],
+    summary: "A generative-art Skill that moves from a named computational philosophy to a reproducible, parameterized p5.js artwork.",
+    phoebeNote: "Use it when code should create a living visual system rather than decorate a static composition, especially when reproducible variations and creative controls matter.",
+    coreConcepts: [
+      "Write a four-to-six paragraph algorithmic philosophy before implementation.",
+      "Deduce a subtle conceptual seed that becomes the artwork's hidden behavioral DNA.",
+      "Use the official viewer template as the structural and brand foundation.",
+      "Seed both random and noise functions so the same seed reproduces the same system.",
+      "Organize meaningful quantities, scales, forces, thresholds, and colors in one parameter object.",
+      "Let the philosophy determine the computational process, particle behavior, and field dynamics.",
+      "Tune composition, color harmony, hierarchy, performance, and controlled chaos with deliberate craft.",
+      "Provide previous, next, random, and direct seed navigation.",
+      "Connect all numeric and color parameters to real-time controls with a reliable reset.",
+      "Provide regenerate and PNG export actions in a portable viewer artifact."
+    ],
+    conceptCoverage: "9/10 concept families were exercised in Evidence Tides. The philosophy, hidden evidence-flow seed, viewer structure, deterministic system, parameter model, particle field, craftsmanship, seed navigation, live controls, reset, regeneration, and export are present. The p5 runtime is vendored locally instead of inlined into the HTML so the public demo remains auditable and network-independent.",
+    groundUpBuild: "Built Evidence Tides from scratch: a seeded p5.js field where particles move through layered noise and five evidence wells, with density, scale, curl, attraction, trail-memory, palette, seed-navigation, regenerate, reset, and PNG-export controls plus a five-paragraph computational manifesto.",
+    rating: 8.7,
+    ratingScale: 10,
+    ratingSummary: "A strong end-to-end creative method that produces coherent generative systems, though its rigid viewer contract and repeated craftsmanship language can crowd out project-specific product decisions.",
+    good: [
+      "The philosophy-first step gives the algorithm a conceptual spine before visual code begins.",
+      "Seeded randomness and meaningful parameters make exploration reproducible instead of arbitrary.",
+      "The required viewer controls turn a single image into an inspectable creative system."
+    ],
+    improve: [
+      "The mandatory template is useful but too rigid for products that need a different interaction or accessibility model.",
+      "The Skill overemphasizes claims of master craftsmanship instead of giving concrete visual-testing criteria.",
+      "Its self-contained CDN pattern needs a safer local-vendoring option for durable public deployment."
+    ],
+    useCases: [
+      "Creative technologists can develop reproducible poster series, motion studies, and campaign backgrounds.",
+      "Data storytellers can translate invisible systems, flows, and forces into an exploratory visual metaphor.",
+      "Students can learn seeded randomness, noise, particle systems, parameter design, and generative composition in one artifact."
+    ],
+    demo: "demos/evidence-tides/index.html",
+    galleryLink: "demos/evidence-tides/index.html"
+  },
+  {
+    id: "data-report",
+    name: "data-report",
+    source: "Open Design Data Visualization Report",
+    sourceUrl: "https://github.com/nexu-io/open-design/blob/main/skills/data-report/SKILL.md",
+    sourceRepo: "nexu-io/open-design",
+    sourcePath: "skills/data-report/SKILL.md",
+    githubStars: 83147,
+    starsCheckedAt: "2026-08-02",
+    status: "published",
+    recommendation: "Published pick: the compact recipe produced a credible long-form report from the gallery's real review data, with explicit provenance, decision KPIs, charts, source rows, insights, and limitations.",
+    dateExplored: "2026-08-02",
+    scenarios: ["reporting", "data", "data-viz"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["9/9 concepts", "Real catalog data", "Chart.js"],
+    summary: "A compact reporting Skill for turning CSV, Excel, or JSON input into a polished KPI, chart, table, and insight page.",
+    phoebeNote: "Use it when a bounded dataset needs to become a meeting-ready visual report quickly, especially when provenance, summary metrics, charts, inspectable rows, and written findings must live together.",
+    coreConcepts: [
+      "Open with a report title, time range, and explicit data-source note.",
+      "Create three to five KPI cards with values, period changes, and miniature trends.",
+      "Use at least two charts that are driven by parsed user data.",
+      "Give every responsive chart a fixed-height parent container to prevent resize loops.",
+      "Parse the user's actual CSV, Excel, or JSON data instead of inventing values.",
+      "Show a modern source-data table with zebra stripes, hover feedback, and a sticky header.",
+      "Write three to five concise, product-weekly-style insights from the data.",
+      "Include a collapsible methodology and limitations section.",
+      "Use one restrained professional accent plus a controlled chart palette."
+    ],
+    conceptCoverage: "9/9 concept families were exercised in the Skill Portfolio Evidence Report: provenance header, four KPI cards and sparklines, two Chart.js views, explicit 42/280px chart containers, live parsing of window.PICKS, a sticky zebra table, four computed insight cards, collapsible methodology, and a restrained navy-teal palette.",
+    groundUpBuild: "Built Skill Portfolio Evidence Report from scratch as a responsive long-form report that reads the gallery's actual review records, computes portfolio KPIs and insights, renders rating and scenario charts, and exposes every source row and metric limitation.",
+    rating: 8.1,
+    ratingScale: 10,
+    ratingSummary: "An efficient and surprisingly complete reporting checklist, but it needs stronger guidance on metric governance, validation, uncertainty, accessibility, and safe dependency handling.",
+    good: [
+      "The recipe covers the full report stack from provenance and KPIs through charts, rows, insights, and methodology.",
+      "The fixed-height chart warning prevents a subtle Chart.js failure that can freeze an otherwise polished page.",
+      "The actual-data requirement sharply reduces attractive but unsupported reporting."
+    ],
+    improve: [
+      "It does not define metric grain, ownership, reconciliation, or validation checks before visualization.",
+      "It treats written insights as a formatting step without requiring thresholds, uncertainty, or decision implications.",
+      "Its CDN-first library guidance needs accessibility, offline, licensing, and supply-chain safeguards."
+    ],
+    useCases: [
+      "Data teams can turn a bounded weekly dataset into a meeting-ready performance report.",
+      "Product leaders can combine KPIs, charts, evidence rows, and limitations on one decision surface.",
+      "Students can learn how report hierarchy, chart containers, source tables, and narrative insights fit together."
+    ],
+    demo: "demos/skill-portfolio-evidence-report/index.html",
+    galleryLink: "demos/skill-portfolio-evidence-report/index.html"
+  },
+  {
     id: "d3-visualization",
     name: "d3-visualization",
     source: "snow-d3 via Open Design",
@@ -630,7 +733,7 @@ const PICKS = [
       "Use geographic projections and paths when the analytical question has a spatial dimension."
     ],
     conceptCoverage: "9/10 key concept families were exercised: data joins, scales and color, SVG shapes, axes, transitions, zoom and drag, brushing, force simulation, and hierarchy. Geography was deliberately skipped because the Skill dataset has no meaningful spatial dimension.",
-    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 84 Skills, with a force-cluster map, linear wishlist-rank map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
+    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 82 Skills, with a force-cluster map, linear wishlist-rank map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
     rating: 8.3,
     ratingScale: 10,
     ratingSummary: "Broad and practical coverage of D3's core mental models, layouts, and interactions; the learning path and production guidance could be sharper.",
@@ -655,17 +758,6 @@ const PICKS = [
 ];
 
 const WISHLIST_CANDIDATES = [
-  {
-    rank: 1,
-    id: "algorithmic-art",
-    sourceRepo: "anthropics/skills",
-    sourcePath: "skills/algorithmic-art/SKILL.md",
-    sourceUrl: "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
-    githubStars: 164075,
-    category: "design-art",
-    focus: "Design · Generative art",
-    buildTarget: "An original, seeded p5.js collection with live parameter exploration."
-  },
   {
     rank: 2,
     id: "xlsx",
@@ -709,17 +801,6 @@ const WISHLIST_CANDIDATES = [
     category: "design-art",
     focus: "Product design · Interactive artifacts",
     buildTarget: "A multi-component product artifact with a real information architecture and interaction model."
-  },
-  {
-    rank: 7,
-    id: "data-report",
-    sourceRepo: "nexu-io/open-design",
-    sourcePath: "skills/data-report/SKILL.md",
-    sourceUrl: "https://github.com/nexu-io/open-design/tree/main/skills/data-report",
-    githubStars: 81448,
-    category: "data-analytics",
-    focus: "Data analytics · Reporting",
-    buildTarget: "A bounded dataset turned into a KPI narrative, chart set, and inspectable table."
   },
   {
     rank: 8,

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Evidence Tides - Seeded Generative Art</title>
+    <script src="vendor/p5.min.js"></script>
+    <style>
+      :root {
+        --anthropic-dark: #141413;
+        --anthropic-light: #faf9f5;
+        --anthropic-mid-gray: #8f8d85;
+        --anthropic-light-gray: #e8e6dc;
+        --anthropic-orange: #d97757;
+        --anthropic-blue: #6a9bcc;
+        --anthropic-green: #788c5d;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, var(--anthropic-light), #f3f0e8);
+        color: var(--anthropic-dark);
+        font-family: "Poppins", "Avenir Next", Avenir, sans-serif;
+      }
+
+      button, input { font: inherit; }
+      button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid rgba(217,119,87,.35); outline-offset: 2px; }
+
+      .container { display: flex; min-height: 100vh; gap: 20px; padding: 20px; }
+
+      .sidebar {
+        width: 320px;
+        flex: 0 0 320px;
+        overflow: auto;
+        border: 1px solid rgba(20,20,19,.08);
+        border-radius: 12px;
+        padding: 24px;
+        background: rgba(255,255,255,.95);
+        box-shadow: 0 10px 30px rgba(20,20,19,.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .back-link { display: inline-block; margin-bottom: 20px; color: var(--anthropic-mid-gray); font-size: 12px; font-weight: 600; text-decoration: none; }
+      .back-link:hover { color: var(--anthropic-orange); }
+      .sidebar h1 { margin-bottom: 8px; font-family: "Lora", Georgia, serif; font-size: 26px; font-weight: 500; }
+      .subtitle { margin-bottom: 10px; color: var(--anthropic-mid-gray); font-size: 13px; line-height: 1.5; }
+      .philosophy-link { display: inline-block; margin-bottom: 28px; color: var(--anthropic-orange); font-size: 12px; font-weight: 600; }
+
+      .control-section { margin-bottom: 30px; }
+      .control-section h2 { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; font-size: 15px; }
+      .control-section h2::before { content: "•"; color: var(--anthropic-orange); }
+
+      .seed-input { width: 100%; margin-bottom: 10px; border: 1px solid var(--anthropic-light-gray); border-radius: 8px; padding: 11px; background: var(--anthropic-light); text-align: center; font-family: "SFMono-Regular", Consolas, monospace; }
+      .seed-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+
+      .control-group { margin-bottom: 18px; }
+      .control-group label { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; font-size: 12px; font-weight: 600; }
+      .value-display { color: var(--anthropic-mid-gray); font-family: "SFMono-Regular", Consolas, monospace; font-weight: 400; }
+      input[type="range"] { width: 100%; accent-color: var(--anthropic-orange); }
+
+      .color-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .color-group { display: grid; gap: 5px; color: var(--anthropic-mid-gray); font-size: 11px; }
+      .color-picker { display: flex; align-items: center; gap: 8px; }
+      input[type="color"] { width: 34px; height: 30px; border: 0; border-radius: 5px; background: none; cursor: pointer; }
+      .color-value { font-family: "SFMono-Regular", Consolas, monospace; font-size: 10px; }
+
+      .button { width: 100%; border: 0; border-radius: 6px; padding: 10px 12px; background: var(--anthropic-orange); color: white; cursor: pointer; font-size: 12px; font-weight: 600; transition: transform .18s ease, filter .18s ease; }
+      .button:hover { filter: brightness(.94); transform: translateY(-1px); }
+      .button.secondary { background: var(--anthropic-blue); }
+      .button.tertiary { background: var(--anthropic-green); }
+      .button-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+
+      .canvas-area { min-width: 0; flex: 1; display: flex; align-items: center; justify-content: center; }
+      #canvas-container { width: 100%; max-width: 1000px; overflow: hidden; border-radius: 12px; background: #10202a; box-shadow: 0 20px 50px rgba(20,20,19,.16); }
+      #canvas-container canvas { display: block; width: 100% !important; height: auto !important; }
+      .loading { min-height: 400px; display: grid; place-items: center; color: rgba(255,255,255,.6); }
+
+      @media (max-width: 760px) {
+        .container { flex-direction: column; padding: 12px; }
+        .sidebar { width: 100%; flex-basis: auto; }
+        .canvas-area { padding: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar" aria-label="Artwork controls">
+        <a class="back-link" href="../../index.html#gallery">← Skill gallery</a>
+        <h1>Evidence Tides</h1>
+        <p class="subtitle">Questions drift through uncertainty and gather around small islands of proof.</p>
+        <a class="philosophy-link" href="philosophy.md">Read the algorithmic philosophy ↗</a>
+
+        <section class="control-section" aria-labelledby="seed-title">
+          <h2 id="seed-title">Seed</h2>
+          <input type="number" id="seed-input" class="seed-input" value="260802" min="1" aria-label="Artwork seed">
+          <div class="seed-controls">
+            <button class="button secondary" type="button" id="previousSeed">← Prev</button>
+            <button class="button secondary" type="button" id="nextSeed">Next →</button>
+          </div>
+          <button class="button tertiary" type="button" id="randomSeed">↻ Random</button>
+        </section>
+
+        <section class="control-section" aria-labelledby="parameters-title">
+          <h2 id="parameters-title">Parameters</h2>
+          <div class="control-group"><label for="particleCount">Particle density <span class="value-display" id="particleCount-value">1800</span></label><input id="particleCount" type="range" min="500" max="3200" step="100" value="1800"></div>
+          <div class="control-group"><label for="fieldScale">Field scale <span class="value-display" id="fieldScale-value">0.0038</span></label><input id="fieldScale" type="range" min="0.0015" max="0.009" step="0.0001" value="0.0038"></div>
+          <div class="control-group"><label for="curlStrength">Rotational current <span class="value-display" id="curlStrength-value">1.15</span></label><input id="curlStrength" type="range" min="0.35" max="2.4" step="0.05" value="1.15"></div>
+          <div class="control-group"><label for="evidencePull">Evidence pull <span class="value-display" id="evidencePull-value">0.42</span></label><input id="evidencePull" type="range" min="0" max="1.2" step="0.02" value="0.42"></div>
+          <div class="control-group"><label for="memory">Trail memory <span class="value-display" id="memory-value">14</span></label><input id="memory" type="range" min="4" max="30" step="1" value="14"></div>
+        </section>
+
+        <section class="control-section" aria-labelledby="colors-title">
+          <h2 id="colors-title">Colors</h2>
+          <div class="color-grid">
+            <label class="color-group" for="deepColor">Deep current <span class="color-picker"><input id="deepColor" type="color" value="#163f4d"><span class="color-value" id="deepColor-value">#163f4d</span></span></label>
+            <label class="color-group" for="brightColor">Proof flare <span class="color-picker"><input id="brightColor" type="color" value="#f0a26c"><span class="color-value" id="brightColor-value">#f0a26c</span></span></label>
+          </div>
+        </section>
+
+        <section class="control-section" aria-labelledby="actions-title">
+          <h2 id="actions-title">Actions</h2>
+          <div class="button-row">
+            <button class="button" type="button" id="regenerate">Regenerate</button>
+            <button class="button" type="button" id="reset">Reset</button>
+          </div>
+          <button class="button tertiary" type="button" id="download">Download PNG</button>
+        </section>
+      </aside>
+
+      <main class="canvas-area">
+        <div id="canvas-container"><div class="loading">Initializing generative art...</div></div>
+      </main>
+    </div>
+
+    <script>
+      const defaults = Object.freeze({
+        seed: 260802,
+        particleCount: 1800,
+        fieldScale: 0.0038,
+        curlStrength: 1.15,
+        evidencePull: 0.42,
+        memory: 14,
+        deepColor: "#163f4d",
+        brightColor: "#f0a26c"
+      });
+
+      let params = { ...defaults };
+      let particles = [];
+      let wells = [];
+      let frameStep = 0;
+      let deepRgb;
+      let brightRgb;
+
+      function setup() {
+        document.getElementById("canvas-container").replaceChildren();
+        const canvas = createCanvas(1000, 1000);
+        canvas.parent("canvas-container");
+        pixelDensity(1);
+        initializeSystem();
+      }
+
+      function initializeSystem() {
+        randomSeed(params.seed);
+        noiseSeed(params.seed);
+        frameStep = 0;
+        deepRgb = hexToRgb(params.deepColor);
+        brightRgb = hexToRgb(params.brightColor);
+        wells = Array.from({ length: 5 }, (_, index) => ({
+          x: width * random(0.18, 0.82),
+          y: height * random(0.18, 0.82),
+          polarity: index % 2 === 0 ? 1 : -0.55,
+          orbit: random(TWO_PI)
+        }));
+        particles = Array.from({ length: params.particleCount }, () => new TideParticle());
+        background(12, 29, 38);
+        drawWells();
+        loop();
+      }
+
+      function draw() {
+        noStroke();
+        fill(12, 29, 38, params.memory);
+        rect(0, 0, width, height);
+        blendMode(ADD);
+        for (const particle of particles) {
+          particle.follow();
+          particle.update();
+          particle.display();
+        }
+        blendMode(BLEND);
+        if (frameStep % 90 === 0) drawWells();
+        frameStep += 1;
+        if (frameStep > 1200) noLoop();
+      }
+
+      function drawWells() {
+        push();
+        noFill();
+        for (let ring = 0; ring < 3; ring += 1) {
+          stroke(240, 162, 108, 18 - ring * 4);
+          strokeWeight(1);
+          for (const well of wells) circle(well.x, well.y, 16 + ring * 15);
+        }
+        pop();
+      }
+
+      class TideParticle {
+        constructor() { this.reset(true); }
+
+        reset(initial = false) {
+          const edge = floor(random(4));
+          this.position = edge === 0 ? createVector(random(width), 2) : edge === 1 ? createVector(width - 2, random(height)) : edge === 2 ? createVector(random(width), height - 2) : createVector(2, random(height));
+          if (initial && random() < 0.38) this.position.set(random(width), random(height));
+          this.previous = this.position.copy();
+          this.velocity = p5.Vector.random2D().mult(random(0.2, 0.7));
+          this.age = floor(random(180));
+          this.life = floor(random(260, 720));
+          this.weight = random(0.35, 1.1);
+          this.phase = random(TWO_PI);
+        }
+
+        follow() {
+          const x = this.position.x;
+          const y = this.position.y;
+          const n = noise(x * params.fieldScale, y * params.fieldScale, params.seed * 0.0001);
+          const angle = n * TWO_PI * 2.2 + sin(this.phase + frameStep * 0.0025) * 0.18;
+          const field = p5.Vector.fromAngle(angle).mult(params.curlStrength * 0.085);
+          this.velocity.add(field);
+          for (const well of wells) {
+            const delta = createVector(well.x - x, well.y - y);
+            const distanceSq = max(900, delta.magSq());
+            const pull = params.evidencePull * well.polarity * 115 / distanceSq;
+            delta.normalize().mult(pull);
+            this.velocity.add(delta);
+          }
+          this.velocity.limit(2.35);
+        }
+
+        update() {
+          this.previous.set(this.position);
+          this.position.add(this.velocity);
+          this.age += 1;
+          if (this.age > this.life || this.position.x < 0 || this.position.x > width || this.position.y < 0 || this.position.y > height) this.reset();
+        }
+
+        display() {
+          const speed = constrain(this.velocity.mag() / 2.35, 0, 1);
+          const r = lerp(deepRgb.r, brightRgb.r, speed);
+          const g = lerp(deepRgb.g, brightRgb.g, speed);
+          const b = lerp(deepRgb.b, brightRgb.b, speed);
+          stroke(r, g, b, 24 + speed * 95);
+          strokeWeight(this.weight + speed * 0.55);
+          line(this.previous.x, this.previous.y, this.position.x, this.position.y);
+        }
+      }
+
+      function hexToRgb(hex) {
+        const match = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return match ? { r: parseInt(match[1], 16), g: parseInt(match[2], 16), b: parseInt(match[3], 16) } : { r: 255, g: 255, b: 255 };
+      }
+
+      const numericControls = ["particleCount", "fieldScale", "curlStrength", "evidencePull", "memory"];
+      numericControls.forEach((id) => {
+        document.getElementById(id).addEventListener("input", (event) => {
+          params[id] = id === "particleCount" || id === "memory" ? Number.parseInt(event.target.value, 10) : Number.parseFloat(event.target.value);
+          document.getElementById(`${id}-value`).textContent = event.target.value;
+          initializeSystem();
+        });
+      });
+
+      ["deepColor", "brightColor"].forEach((id) => {
+        document.getElementById(id).addEventListener("input", (event) => {
+          params[id] = event.target.value;
+          document.getElementById(`${id}-value`).textContent = event.target.value;
+          initializeSystem();
+        });
+      });
+
+      function setSeed(value) {
+        params.seed = max(1, Number.parseInt(value, 10) || params.seed);
+        document.getElementById("seed-input").value = params.seed;
+        initializeSystem();
+      }
+
+      document.getElementById("seed-input").addEventListener("change", (event) => setSeed(event.target.value));
+      document.getElementById("previousSeed").addEventListener("click", () => setSeed(params.seed - 1));
+      document.getElementById("nextSeed").addEventListener("click", () => setSeed(params.seed + 1));
+      document.getElementById("randomSeed").addEventListener("click", () => setSeed(Math.floor(Math.random() * 999999) + 1));
+      document.getElementById("regenerate").addEventListener("click", initializeSystem);
+      document.getElementById("download").addEventListener("click", () => saveCanvas(`evidence-tides-${params.seed}`, "png"));
+      document.getElementById("reset").addEventListener("click", () => {
+        params = { ...defaults };
+        document.getElementById("seed-input").value = params.seed;
+        numericControls.forEach((id) => {
+          document.getElementById(id).value = params[id];
+          document.getElementById(`${id}-value`).textContent = params[id];
+        });
+        ["deepColor", "brightColor"].forEach((id) => {
+          document.getElementById(id).value = params[id];
+          document.getElementById(`${id}-value`).textContent = params[id];
+        });
+        initializeSystem();
+      });
+    </script>
+  </body>
+</html>

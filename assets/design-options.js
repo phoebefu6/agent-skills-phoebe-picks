@@ -85,11 +85,13 @@
     "pm-skills": "Lantern Product OS",
     "find-skills": "Discovery Desk",
     "dashboard": "Portfolio Command Center",
+    "algorithmic-art": "Evidence Tides",
+    "data-report": "Evidence Report",
     "d3-visualization": "Skill Constellation"
   };
 
   const wishlistCategories = [
-    { id: "all", label: "All 84" },
+    { id: "all", label: "All 82" },
     { id: "product", label: "Product" },
     { id: "design-art", label: "Design & art" },
     { id: "data-analytics", label: "Data & analytics" },

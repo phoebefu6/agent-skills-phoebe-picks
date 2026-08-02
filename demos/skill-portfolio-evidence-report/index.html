@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Skill Portfolio Evidence Report</title>
+    <script src="../../data/reviews.js?v=two-skills-20260802"></script>
+    <script src="vendor/chart.umd.min.js"></script>
+    <style>
+      :root {
+        --ink: #17212b;
+        --muted: #66727d;
+        --line: #dce2e5;
+        --surface: #ffffff;
+        --canvas: #f3f6f6;
+        --navy: #173f4f;
+        --blue: #4f7f91;
+        --teal: #63aa9b;
+        --amber: #e1a14a;
+        --rose: #c76f6a;
+        --green-soft: #e4f3eb;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--canvas); color: var(--ink); font-family: Inter, "Avenir Next", Arial, sans-serif; }
+      a { color: inherit; }
+      button, input { font: inherit; }
+      :focus-visible { outline: 3px solid rgba(79,127,145,.35); outline-offset: 3px; }
+
+      .report-shell { max-width: 1440px; margin: 0 auto; padding: 28px; }
+      .report-header { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 24px; border-bottom: 2px solid var(--navy); padding-bottom: 20px; }
+      .eyebrow { color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+      h1 { max-width: 780px; margin: 8px 0 10px; font-family: Georgia, serif; font-size: clamp(34px, 5vw, 62px); font-weight: 500; letter-spacing: -.045em; line-height: .96; }
+      .lede { max-width: 720px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+      .report-meta { display: grid; min-width: 250px; gap: 9px; border-left: 1px solid var(--line); padding-left: 22px; color: var(--muted); font-size: 11px; }
+      .report-meta strong { color: var(--ink); }
+      .back-link { font-weight: 800; text-decoration: none; }
+
+      .kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; margin-bottom: 18px; }
+      .card { min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: 0 1px 1px rgba(23,33,43,.03); }
+      .kpi-card { padding: 18px; }
+      .kpi-label { color: var(--muted); font-size: 11px; font-weight: 700; }
+      .kpi-value { display: block; margin: 9px 0 4px; font-size: 36px; letter-spacing: -.04em; }
+      .delta { display: inline-flex; border-radius: 999px; padding: 4px 8px; background: var(--green-soft); color: #287458; font-size: 10px; font-weight: 800; }
+      .sparkline-wrap { position: relative; height: 42px; margin-top: 12px; }
+
+      .chart-grid { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(320px,.8fr); gap: 14px; margin-bottom: 18px; }
+      .chart-card { padding: 20px; }
+      .panel-header { display: flex; justify-content: space-between; gap: 18px; align-items: start; margin-bottom: 16px; }
+      .panel-header h2 { margin: 4px 0 3px; font-size: 18px; }
+      .panel-header p { max-width: 54ch; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+      .chart-container { position: relative; height: 280px; }
+
+      .insights { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; margin-bottom: 18px; }
+      .insight { border-top: 3px solid var(--teal); padding: 16px; }
+      .insight span { font-size: 20px; }
+      .insight strong { display: block; margin: 9px 0 5px; font-size: 13px; }
+      .insight p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+
+      .table-card { overflow: hidden; margin-bottom: 18px; }
+      .table-card .panel-header { margin: 0; padding: 20px; }
+      .table-scroll { max-height: 520px; overflow: auto; border-top: 1px solid var(--line); }
+      table { width: 100%; border-collapse: collapse; font-size: 11px; }
+      caption { position: absolute; width: 1px; height: 1px; overflow: hidden; }
+      th { position: sticky; top: 0; z-index: 1; padding: 11px 14px; background: var(--navy); color: white; text-align: left; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+      td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+      tbody tr:nth-child(even) { background: #f7f9f9; }
+      tbody tr:hover { background: #eef5f3; }
+      .rating { font-weight: 900; }
+      .status { display: inline-block; border-radius: 999px; padding: 4px 7px; font-size: 9px; font-weight: 800; text-transform: capitalize; }
+      .status.published { background: var(--green-soft); color: #287458; }
+      .status.exploring { background: #fff1dc; color: #95621e; }
+
+      details { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+      summary { cursor: pointer; padding: 17px 20px; font-weight: 800; }
+      .method-copy { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; border-top: 1px solid var(--line); padding: 18px 20px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+      .method-copy strong { display: block; margin-bottom: 5px; color: var(--ink); }
+      footer { display: flex; justify-content: space-between; gap: 18px; padding: 22px 2px 4px; color: var(--muted); font-size: 10px; }
+
+      @media (max-width: 980px) {
+        .kpi-grid, .insights { grid-template-columns: repeat(2,minmax(0,1fr)); }
+        .chart-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 640px) {
+        .report-shell { padding: 16px; }
+        .report-header { grid-template-columns: 1fr; }
+        .report-meta { border-left: 0; border-top: 1px solid var(--line); padding: 14px 0 0; }
+        .kpi-grid, .insights, .method-copy { grid-template-columns: 1fr; }
+        .chart-card { padding: 15px; }
+        .chart-container { height: 250px; }
+        footer { flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="report-shell">
+      <header class="report-header">
+        <div>
+          <span class="eyebrow">Portfolio evidence report · 02 Aug 2026</span>
+          <h1>Which Skills have earned another use?</h1>
+          <p class="lede">A decision-ready report generated from the gallery’s actual review catalog. It summarizes field-test coverage, ratings, source diversity, and the balance of the current portfolio.</p>
+        </div>
+        <div class="report-meta">
+          <span><strong>Period</strong><br>16 Jul - 02 Aug 2026</span>
+          <span><strong>Source</strong><br>data/reviews.js</span>
+          <span><strong>Grain</strong><br>One row per field-tested Skill</span>
+          <a class="back-link" href="../../index.html#gallery">← Return to gallery</a>
+        </div>
+      </header>
+
+      <section class="kpi-grid" aria-label="Key portfolio metrics">
+        <article class="card kpi-card"><span class="kpi-label">Field-tested Skills</span><strong class="kpi-value" id="testedValue">-</strong><span class="delta" id="testedDelta">-</span><div class="sparkline-wrap"><canvas id="testedSpark" aria-label="Cumulative field tests by date"></canvas></div></article>
+        <article class="card kpi-card"><span class="kpi-label">Published picks</span><strong class="kpi-value" id="publishedValue">-</strong><span class="delta" id="publishedDelta">-</span><div class="sparkline-wrap"><canvas id="publishedSpark" aria-label="Cumulative published picks by date"></canvas></div></article>
+        <article class="card kpi-card"><span class="kpi-label">Average field rating</span><strong class="kpi-value" id="ratingValue">-</strong><span class="delta" id="ratingDelta">-</span><div class="sparkline-wrap"><canvas id="ratingSpark" aria-label="Average rating by exploration date"></canvas></div></article>
+        <article class="card kpi-card"><span class="kpi-label">Verified source repositories</span><strong class="kpi-value" id="sourceValue">-</strong><span class="delta">Repository-level evidence</span><div class="sparkline-wrap"><canvas id="sourceSpark" aria-label="Cumulative source repositories by date"></canvas></div></article>
+      </section>
+
+      <section class="chart-grid" aria-label="Portfolio charts">
+        <article class="card chart-card">
+          <header class="panel-header"><div><span class="eyebrow">Quality distribution</span><h2>Ratings by Skill</h2><p>Overall field rating after a ground-up build. The dashed line marks the current portfolio mean.</p></div></header>
+          <div class="chart-container"><canvas id="ratingChart" aria-label="Horizontal bar chart of Skill ratings"></canvas></div>
+        </article>
+        <article class="card chart-card">
+          <header class="panel-header"><div><span class="eyebrow">Portfolio balance</span><h2>Primary focus mix</h2><p>Each Skill is counted once using its first declared scenario.</p></div></header>
+          <div class="chart-container"><canvas id="scenarioChart" aria-label="Doughnut chart of primary Skill focus areas"></canvas></div>
+        </article>
+      </section>
+
+      <section class="insights" id="insights" aria-label="Automated portfolio insights"></section>
+
+      <section class="card table-card" aria-labelledby="table-title">
+        <header class="panel-header"><div><span class="eyebrow">Source data</span><h2 id="table-title">Field-test register</h2><p>The full bounded dataset used by the charts, sorted by score from high to low.</p></div><span class="eyebrow" id="rowCount">- rows</span></header>
+        <div class="table-scroll">
+          <table>
+            <caption>Field-tested Skill records used in this report</caption>
+            <thead><tr><th>Skill</th><th>Status</th><th>Rating</th><th>Primary focus</th><th>Source repository</th><th>Explored</th></tr></thead>
+            <tbody id="reportRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <details>
+        <summary>Methodology and limitations</summary>
+        <div class="method-copy">
+          <div><strong>Input parsing</strong>The report reads <code>window.PICKS</code> from the gallery’s real JavaScript dataset. No rows or rating values are invented inside this page.</div>
+          <div><strong>Metric definitions</strong>Field-tested counts all review records. Published counts status = published. Average rating is the arithmetic mean of numeric overall ratings. Primary focus uses the first scenario.</div>
+          <div><strong>Limitations</strong>This is a small curated portfolio, not a market benchmark. Ratings are curator judgments after different artifact types. Repository popularity remains internal source-gate evidence and is not treated as a Skill score.</div>
+        </div>
+      </details>
+
+      <footer><span>Static report UI · charts rendered from live local catalog data</span><span>Chart containers use fixed heights to prevent resize loops</span></footer>
+    </main>
+
+    <script>
+      (() => {
+        const picks = (window.PICKS || []).filter((item) => typeof item.rating === "number");
+        const scenarioLabels = new Map((window.FILTERS?.scenarios || []).map((item) => [item.id, item.label]));
+        const reportDate = "2026-08-02";
+        const sorted = [...picks].sort((a, b) => b.rating - a.rating || a.name.localeCompare(b.name));
+        const published = picks.filter((item) => item.status === "published");
+        const average = picks.reduce((sum, item) => sum + item.rating, 0) / Math.max(1, picks.length);
+        const sources = new Set(picks.map((item) => item.sourceRepo));
+        const today = picks.filter((item) => item.dateExplored === reportDate);
+        const todayPublished = today.filter((item) => item.status === "published");
+
+        document.getElementById("testedValue").textContent = picks.length;
+        document.getElementById("testedDelta").textContent = `↑ ${today.length} explored today`;
+        document.getElementById("publishedValue").textContent = published.length;
+        document.getElementById("publishedDelta").textContent = `↑ ${todayPublished.length} promoted today`;
+        document.getElementById("ratingValue").textContent = average.toFixed(1);
+        document.getElementById("ratingDelta").textContent = `Range ${Math.min(...picks.map((item) => item.rating)).toFixed(1)}-${Math.max(...picks.map((item) => item.rating)).toFixed(1)}`;
+        document.getElementById("sourceValue").textContent = sources.size;
+        document.getElementById("rowCount").textContent = `${picks.length} rows`;
+
+        const dates = [...new Set(picks.map((item) => item.dateExplored))].sort();
+        const cumulative = (predicate) => dates.map((date) => picks.filter((item) => item.dateExplored <= date && predicate(item)).length);
+        const cumulativeSources = dates.map((date) => new Set(picks.filter((item) => item.dateExplored <= date).map((item) => item.sourceRepo)).size);
+        const dailyAverage = dates.map((date) => {
+          const values = picks.filter((item) => item.dateExplored <= date).map((item) => item.rating);
+          return values.reduce((sum, value) => sum + value, 0) / values.length;
+        });
+
+        Chart.defaults.font.family = 'Inter, "Avenir Next", Arial, sans-serif';
+        Chart.defaults.color = "#66727d";
+
+        function sparkline(id, data, color) {
+          return new Chart(document.getElementById(id), {
+            type: "line",
+            data: { labels: dates, datasets: [{ data, borderColor: color, backgroundColor: `${color}22`, fill: true, borderWidth: 2, pointRadius: 0, tension: .28 }] },
+            options: { responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { display: false }, tooltip: { enabled: false } }, scales: { x: { display: false }, y: { display: false } } }
+          });
+        }
+
+        sparkline("testedSpark", cumulative(() => true), "#4f7f91");
+        sparkline("publishedSpark", cumulative((item) => item.status === "published"), "#63aa9b");
+        sparkline("ratingSpark", dailyAverage, "#e1a14a");
+        sparkline("sourceSpark", cumulativeSources, "#c76f6a");
+
+        new Chart(document.getElementById("ratingChart"), {
+          type: "bar",
+          data: {
+            labels: sorted.map((item) => item.name),
+            datasets: [{ label: "Overall rating", data: sorted.map((item) => item.rating), backgroundColor: sorted.map((item) => item.status === "published" ? "#4f7f91" : "#e1a14a"), borderRadius: 4 }]
+          },
+          options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, animation: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (context) => `${context.raw}/10 overall rating` } } }, scales: { x: { min: 7, max: 10, grid: { color: "#e6ebed" }, title: { display: true, text: "Overall rating out of 10" } }, y: { grid: { display: false }, ticks: { autoSkip: false, font: { size: 10, weight: 700 } } } } }
+        });
+
+        const scenarioCounts = [...picks.reduce((map, item) => {
+          const key = item.scenarios?.[0] || "other";
+          map.set(key, (map.get(key) || 0) + 1);
+          return map;
+        }, new Map())].sort((a, b) => b[1] - a[1]);
+
+        new Chart(document.getElementById("scenarioChart"), {
+          type: "doughnut",
+          data: { labels: scenarioCounts.map(([id]) => scenarioLabels.get(id) || id), datasets: [{ data: scenarioCounts.map(([, count]) => count), backgroundColor: ["#173f4f", "#4f7f91", "#63aa9b", "#e1a14a", "#c76f6a", "#8b79a7", "#8fa56f"], borderColor: "#ffffff", borderWidth: 3 }] },
+          options: { responsive: true, maintainAspectRatio: false, animation: false, cutout: "62%", plugins: { legend: { position: "bottom", labels: { boxWidth: 10, usePointStyle: true, pointStyle: "circle", font: { size: 10 } } } } }
+        });
+
+        const highest = sorted[0];
+        const dominantScenario = scenarioCounts[0];
+        const sourceConcentration = [...picks.reduce((map, item) => map.set(item.sourceRepo, (map.get(item.sourceRepo) || 0) + 1), new Map())].sort((a, b) => b[1] - a[1])[0];
+        const insights = [
+          ["↗", "Two methods expanded the portfolio", `${today.map((item) => item.name).join(" and ")} added creative and analytical proof on the same day.`],
+          ["★", "Quality remains tightly grouped", `${highest.name} leads at ${highest.rating}/10 while the portfolio mean holds at ${average.toFixed(1)}/10.`],
+          ["◎", `${scenarioLabels.get(dominantScenario[0]) || dominantScenario[0]} is still dominant`, `${dominantScenario[1]} of ${picks.length} field tests use it as their primary focus.`],
+          ["⌁", "Source concentration is visible", `${sourceConcentration[0]} supports ${sourceConcentration[1]} reviewed Skills, so source diversity should remain an explicit curation goal.`]
+        ];
+        document.getElementById("insights").innerHTML = insights.map(([icon, title, copy]) => `<article class="card insight"><span aria-hidden="true">${icon}</span><strong>${title}</strong><p>${copy}</p></article>`).join("");
+
+        document.getElementById("reportRows").innerHTML = sorted.map((item) => `<tr><td><strong>${item.name}</strong></td><td><span class="status ${item.status}">${item.status}</span></td><td class="rating">${item.rating.toFixed(1)}</td><td>${scenarioLabels.get(item.scenarios?.[0]) || item.scenarios?.[0] || "-"}</td><td>${item.sourceRepo}</td><td>${item.dateExplored}</td></tr>`).join("");
+      })();
+    </script>
+  </body>
+</html>
