@@ -46,7 +46,7 @@ const WISHLIST_REPOSITORY_SNAPSHOTS = {
   "ndpvt-web/arxiv-claude-skills": { githubStars: 6, checkedAt: "2026-07-27", repoUrl: "https://github.com/ndpvt-web/arxiv-claude-skills" },
   "nexu-io/open-design": { githubStars: 83147, checkedAt: "2026-08-02", repoUrl: "https://github.com/nexu-io/open-design" },
   "openai/skills": { githubStars: 24214, checkedAt: "2026-07-27", repoUrl: "https://github.com/openai/skills" },
-  "wshobson/agents": { githubStars: 38266, checkedAt: "2026-07-27", repoUrl: "https://github.com/wshobson/agents" },
+  "wshobson/agents": { githubStars: 38467, checkedAt: "2026-08-04", repoUrl: "https://github.com/wshobson/agents" },
   "yoqalux-blip/cdutcm-library-search-skill": { githubStars: 0, checkedAt: "2026-07-27", repoUrl: "https://github.com/yoqalux-blip/cdutcm-library-search-skill" }
 };
 
@@ -704,6 +704,110 @@ const PICKS = [
     galleryLink: "demos/skill-portfolio-evidence-report/index.html"
   },
   {
+    id: "dbt-transformation-patterns",
+    name: "dbt-transformation-patterns",
+    source: "wshobson Data Engineering Skills",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/dbt-transformation-patterns",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/data-engineering/skills/dbt-transformation-patterns/SKILL.md",
+    githubStars: 38467,
+    starsCheckedAt: "2026-08-04",
+    status: "published",
+    recommendation: "Published pick: the method produced a layered, documented dbt project with source freshness, incremental merge logic, model tests, reusable macros, and visible build-failure behavior.",
+    dateExplored: "2026-08-04",
+    scenarios: ["data", "automation", "reporting"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "github-copilot", "windsurf"],
+    badges: ["9/10 concepts", "dbt project", "Quality gates"],
+    summary: "A production-minded dbt Skill for organizing raw data into tested staging, intermediate, and mart layers.",
+    phoebeNote: "Use it when analytics SQL is becoming a pile of repeated logic and the team needs explicit layers, ownership, tests, lineage, and safe incremental processing.",
+    coreConcepts: [
+      "Organize transformations into source, staging, intermediate, and mart layers.",
+      "Apply consistent stg_, int_, dim_, and fct_ naming conventions.",
+      "Define source metadata, keys, relationships, and freshness expectations in YAML.",
+      "Keep staging models one-to-one with sources and perform reusable cleaning once.",
+      "Move joins, reconciliation, and reusable business logic into intermediate models.",
+      "Publish consumption-ready dimensions and facts with explicit grain and measures.",
+      "Test uniqueness, nullability, relationships, accepted values, expressions, and recency.",
+      "Document models and columns so lineage and meaning stay inspectable.",
+      "Use macros to remove repeated SQL and separate environment-specific behavior.",
+      "Choose incremental merge, delete-insert, or partition overwrite based on update behavior."
+    ],
+    conceptCoverage: "9/10 concept families were exercised in Reliable Data Pipeline Lab: layered models, naming, source freshness, staging cleanup, intermediate reconciliation, an incremental fact mart, schema evolution, tests, documentation, and a reusable macro. A live warehouse-backed dbt execution was deliberately replaced by an inspectable browser simulation and downloadable project files.",
+    groundUpBuild: "Built a synthetic commerce dbt project from scratch with source YAML, staging and intermediate SQL, an incremental fct_orders mart, model tests, a project configuration, a reusable macro, lineage visualization, and an interactive build console for healthy, duplicate, late-arriving, and schema-drift conditions.",
+    rating: 8.6,
+    ratingScale: 10,
+    ratingSummary: "A strong practical reference for shaping maintainable analytics projects, especially its layered examples and incremental strategies, though governance and deployment guidance remain thinner than the modeling guidance.",
+    good: [
+      "The source-to-mart layering makes transformation ownership and reuse immediately understandable.",
+      "Its examples connect model code, tests, documentation, freshness, and lineage instead of treating them as separate concerns.",
+      "The incremental strategy comparison gives engineers concrete choices for late updates and partition-scale processing."
+    ],
+    improve: [
+      "It needs clearer guidance for defining model grain and reconciling business metrics before marts are published.",
+      "The examples do not cover CI state comparison, slim builds, environment promotion, or rollback in enough depth.",
+      "Platform-specific SQL differences and warehouse cost implications need more explicit tradeoff guidance."
+    ],
+    useCases: [
+      "Analytics engineers can turn raw SaaS or commerce tables into a consistent, tested warehouse model.",
+      "Data leads can use the folder, naming, test, and documentation patterns as a project review checklist.",
+      "Students can trace how raw records become a fact table and see how incremental logic handles late changes."
+    ],
+    demo: "demos/reliable-data-pipeline-lab/index.html#dbt-lab",
+    galleryLink: "demos/reliable-data-pipeline-lab/index.html#dbt-lab"
+  },
+  {
+    id: "airflow-dag-patterns",
+    name: "airflow-dag-patterns",
+    source: "wshobson Data Engineering Skills",
+    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/airflow-dag-patterns",
+    sourceRepo: "wshobson/agents",
+    sourcePath: "plugins/data-engineering/skills/airflow-dag-patterns/SKILL.md",
+    githubStars: 38467,
+    starsCheckedAt: "2026-08-04",
+    status: "published",
+    recommendation: "Published pick: the method produced an idempotent TaskFlow DAG with bounded intervals, rescheduled sensing, parallel checks, branching, retries, quarantine, cleanup, backfills, and structural tests.",
+    dateExplored: "2026-08-04",
+    scenarios: ["automation", "data"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "github-copilot", "windsurf"],
+    badges: ["9/10 concepts", "TaskFlow DAG", "Recovery simulator"],
+    summary: "A production-oriented Airflow Skill for designing observable, retry-safe workflows and failure recovery.",
+    phoebeNote: "Use it when a scheduled pipeline needs explicit dependencies, bounded data intervals, safe retries, sensors, quality branching, alerts, backfills, and testable recovery behavior.",
+    coreConcepts: [
+      "Design tasks to be idempotent, atomic, incremental, and observable.",
+      "Use TaskFlow decorators for readable task definitions and automatic XCom wiring.",
+      "Express linear, fan-out, fan-in, and complex dependencies explicitly.",
+      "Generate similar DAGs from configuration when repetition is structural.",
+      "Branch on quality or business conditions and rejoin with intentional trigger rules.",
+      "Use sensors in reschedule mode so waiting does not consume a worker slot.",
+      "Set retries, exponential backoff, maximum delays, and execution timeouts.",
+      "Attach task and DAG failure callbacks, alerts, and cleanup that runs after failures.",
+      "Test DAG loading, structure, dependencies, cycles, and task logic.",
+      "Organize DAGs, shared operators, sensors, callbacks, plugins, and tests for deployment."
+    ],
+    conceptCoverage: "9/10 concept families were exercised in Reliable Data Pipeline Lab: idempotent bounded intervals, TaskFlow tasks, fan-out and fan-in, a rescheduled source sensor, quality branching, retries with backoff, atomic publication, quarantine, cleanup, alerts, backfill preparation, and DAG integrity tests. Dynamic multi-DAG generation was skipped because this field test has one intentionally bounded data product.",
+    groundUpBuild: "Built an orders_hourly Airflow DAG and recovery simulator from scratch with a source sensor, incremental extraction, parallel dbt and reconciliation tasks, a quality branch, atomic mart publishing, quarantine, cleanup, retry recovery, idempotent backfill preparation, alerts, and structural DAG tests.",
+    rating: 8.4,
+    ratingScale: 10,
+    ratingSummary: "A useful production checklist with strong code examples for TaskFlow, sensors, branching, callbacks, and tests, though the examples need firmer guidance on datasets, deferrable operators, secrets, and modern deployment practice.",
+    good: [
+      "The four design principles make retry safety and operability first-class requirements instead of afterthoughts.",
+      "The patterns cover real orchestration branches including sensors, parallel work, failure callbacks, cleanup, and tests.",
+      "The examples make dependency behavior and trigger rules concrete enough to adapt quickly."
+    ],
+    improve: [
+      "It should distinguish small XCom metadata from large payloads and discourage passing full dataframes between tasks.",
+      "The sensor guidance should cover deferrable operators and dataset-aware scheduling for modern Airflow deployments.",
+      "Production sections need deeper treatment of secrets, pools, queues, concurrency, deployment promotion, and rollback."
+    ],
+    useCases: [
+      "Data engineers can design hourly or daily batch pipelines that retry and backfill without duplicating records.",
+      "Platform teams can use the patterns to review dependencies, timeouts, worker usage, alerts, and cleanup behavior.",
+      "Students can trigger success, transient failure, and quality-failure paths to understand orchestration state."
+    ],
+    demo: "demos/reliable-data-pipeline-lab/index.html#airflow-lab",
+    galleryLink: "demos/reliable-data-pipeline-lab/index.html#airflow-lab"
+  },
+  {
     id: "d3-visualization",
     name: "d3-visualization",
     source: "snow-d3 via Open Design",
@@ -733,7 +837,7 @@ const PICKS = [
       "Use geographic projections and paths when the analytical question has a spatial dimension."
     ],
     conceptCoverage: "9/10 key concept families were exercised: data joins, scales and color, SVG shapes, axes, transitions, zoom and drag, brushing, force simulation, and hierarchy. Geography was deliberately skipped because the Skill dataset has no meaningful spatial dimension.",
-    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 82 Skills, with a force-cluster map, linear wishlist-rank map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
+    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 80 Skills, with a force-cluster map, linear wishlist-rank map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
     rating: 8.3,
     ratingScale: 10,
     ratingSummary: "Broad and practical coverage of D3's core mental models, layouts, and interactions; the learning path and production guidance could be sharper.",
@@ -1395,28 +1499,6 @@ const WISHLIST_CANDIDATES = [
     category: "data-analytics",
     focus: "Data engineering · Quality",
     buildTarget: "A data-quality layer with contracts, freshness, completeness, validity, reconciliation, ownership, and incident thresholds."
-  },
-  {
-    rank: 62,
-    id: "dbt-transformation-patterns",
-    sourceRepo: "wshobson/agents",
-    sourcePath: "plugins/data-engineering/skills/dbt-transformation-patterns/SKILL.md",
-    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/dbt-transformation-patterns",
-    githubStars: 38241,
-    category: "data-analytics",
-    focus: "Data engineering · dbt",
-    buildTarget: "A layered dbt project with tested sources, staging and marts, documentation, lineage, incremental logic, and deployment checks."
-  },
-  {
-    rank: 63,
-    id: "airflow-dag-patterns",
-    sourceRepo: "wshobson/agents",
-    sourcePath: "plugins/data-engineering/skills/airflow-dag-patterns/SKILL.md",
-    sourceUrl: "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/airflow-dag-patterns",
-    githubStars: 38241,
-    category: "data-analytics",
-    focus: "Data engineering · Orchestration",
-    buildTarget: "A production-style workflow with idempotent tasks, retries, backfills, observability, data checks, and failure recovery."
   },
   {
     rank: 64,

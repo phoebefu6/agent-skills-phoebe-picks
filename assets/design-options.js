@@ -87,11 +87,13 @@
     "dashboard": "Portfolio Command Center",
     "algorithmic-art": "Evidence Tides",
     "data-report": "Evidence Report",
+    "dbt-transformation-patterns": "Pipeline Lab · dbt",
+    "airflow-dag-patterns": "Pipeline Lab · Airflow",
     "d3-visualization": "Skill Constellation"
   };
 
   const wishlistCategories = [
-    { id: "all", label: "All 82" },
+    { id: "all", label: "All 80" },
     { id: "product", label: "Product" },
     { id: "design-art", label: "Design & art" },
     { id: "data-analytics", label: "Data & analytics" },

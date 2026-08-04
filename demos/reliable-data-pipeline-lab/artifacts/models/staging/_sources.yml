@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: commerce
+    description: Synthetic commerce events delivered by managed CDC.
+    database: raw
+    schema: commerce
+    loader: managed_cdc
+    loaded_at_field: _loaded_at
+    freshness:
+      warn_after: { count: 45, period: minute }
+      error_after: { count: 60, period: minute }
+    tables:
+      - name: orders
+        columns:
+          - name: id
+            tests: [unique, not_null]
+          - name: customer_id
+            tests: [not_null]
+          - name: amount_cents
+            tests: [not_null]

@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: Canonical order transaction mart for finance and operations.
+    tests:
+      - dbt_utils.recency:
+          datepart: hour
+          field: updated_at
+          interval: 1
+    columns:
+      - name: order_id
+        description: Stable natural key from the commerce platform.
+        tests: [unique, not_null]
+      - name: customer_id
+        tests: [not_null]
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: [pending, paid, refunded, cancelled]
+      - name: total_amount
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"

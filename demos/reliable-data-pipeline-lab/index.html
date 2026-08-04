@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="An interactive field test of dbt transformation and Airflow orchestration patterns.">
+    <title>Reliable Data Pipeline Lab</title>
+    <link rel="stylesheet" href="styles.css?v=20260804">
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../../index.html#gallery">← Skill gallery</a>
+      <span>Field test 15 + 16 · 04 Aug 2026</span>
+      <strong>RELIABLE DATA PIPELINE LAB</strong>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Data engineering, made inspectable</p>
+          <h1>Can this orders pipeline survive a bad morning?</h1>
+          <p class="lede">A synthetic commerce pipeline built from source contracts through dbt models and an Airflow recovery path. Change the operating conditions, inject failures, and inspect what the system does next.</p>
+        </div>
+        <dl class="hero-metrics" aria-label="Pipeline operating targets">
+          <div><dt>Freshness SLA</dt><dd>07:00</dd></div>
+          <div><dt>Daily volume</dt><dd>2.4M</dd></div>
+          <div><dt>Quality gate</dt><dd>≥ 98%</dd></div>
+          <div><dt>Recovery target</dt><dd>&lt; 20m</dd></div>
+        </dl>
+      </section>
+
+      <nav class="section-nav" aria-label="Skill field tests">
+        <a href="#dbt-lab"><span>01</span> dbt transformation patterns</a>
+        <a href="#airflow-lab"><span>02</span> Airflow DAG patterns</a>
+      </nav>
+
+      <section class="skill-lab" id="dbt-lab">
+        <header class="lab-heading">
+          <div>
+            <p class="eyebrow">Skill 01 · Analytics engineering</p>
+            <h2>dbt transformation patterns</h2>
+          </div>
+          <div class="coverage"><strong>9/10</strong><span>concept families exercised</span></div>
+        </header>
+
+        <div class="pipeline-map" aria-label="dbt model lineage">
+          <article class="layer source"><span>01 · SOURCES</span><strong>Stripe + Shopify</strong><small>Freshness · contracts</small></article>
+          <i aria-hidden="true">→</i>
+          <article class="layer staging"><span>02 · STAGING</span><strong>stg_orders</strong><small>Rename · type · clean</small></article>
+          <i aria-hidden="true">→</i>
+          <article class="layer intermediate"><span>03 · INTERMEDIATE</span><strong>int_order_value</strong><small>Join · reconcile</small></article>
+          <i aria-hidden="true">→</i>
+          <article class="layer marts"><span>04 · MARTS</span><strong>fct_orders</strong><small>Incremental · tested</small></article>
+          <i aria-hidden="true">→</i>
+          <article class="layer activation"><span>05 · ACTIVATE</span><strong>Finance + Ops</strong><small>Documented metrics</small></article>
+        </div>
+
+        <div class="dbt-grid">
+          <article class="panel build-console">
+            <div class="panel-head">
+              <div><p class="eyebrow">Build simulator</p><h3>Inject a data condition</h3></div>
+              <span class="status-chip" id="dbtStatus">Ready</span>
+            </div>
+            <fieldset class="condition-picker">
+              <legend class="sr-only">Choose a pipeline condition</legend>
+              <label><input type="radio" name="condition" value="healthy" checked><span>Healthy load</span></label>
+              <label><input type="radio" name="condition" value="duplicate"><span>Duplicate IDs</span></label>
+              <label><input type="radio" name="condition" value="late"><span>Late records</span></label>
+              <label><input type="radio" name="condition" value="schema"><span>Schema drift</span></label>
+            </fieldset>
+            <button class="primary" id="runDbt" type="button">Run dbt build</button>
+            <ol class="run-log" id="dbtLog" aria-live="polite">
+              <li><span>Waiting</span><strong>Source freshness</strong><em>not run</em></li>
+              <li><span>Waiting</span><strong>Staging models</strong><em>not run</em></li>
+              <li><span>Waiting</span><strong>Incremental mart</strong><em>not run</em></li>
+              <li><span>Waiting</span><strong>Data tests</strong><em>not run</em></li>
+            </ol>
+          </article>
+
+          <article class="panel code-inspector">
+            <div class="panel-head"><div><p class="eyebrow">Inspectable proof</p><h3>Project patterns</h3></div><a id="codeDownload" href="artifacts/models/marts/fct_orders.sql">Open file ↗</a></div>
+            <div class="tabs" role="tablist" aria-label="dbt artifact files">
+              <button role="tab" aria-selected="true" data-code="source">Source</button>
+              <button role="tab" aria-selected="false" data-code="staging">Staging</button>
+              <button role="tab" aria-selected="false" data-code="mart">Mart</button>
+              <button role="tab" aria-selected="false" data-code="tests">Tests</button>
+              <button role="tab" aria-selected="false" data-code="macro">Macro</button>
+            </div>
+            <pre><code id="codeBlock"></code></pre>
+          </article>
+        </div>
+
+        <div class="feature-strip" aria-label="dbt concepts demonstrated">
+          <span>Layered models</span><span>Source freshness</span><span>Naming rules</span><span>Incremental merge</span><span>Schema evolution</span><span>Tests</span><span>Documentation</span><span>DRY macros</span><span>Lineage</span>
+        </div>
+      </section>
+
+      <section class="skill-lab airflow" id="airflow-lab">
+        <header class="lab-heading">
+          <div>
+            <p class="eyebrow">Skill 02 · Production orchestration</p>
+            <h2>Airflow DAG patterns</h2>
+          </div>
+          <div class="coverage"><strong>9/10</strong><span>concept families exercised</span></div>
+        </header>
+
+        <div class="orchestration-grid">
+          <article class="panel dag-board">
+            <div class="panel-head">
+              <div><p class="eyebrow">DAG run · orders_daily</p><h3 id="runTitle">Scheduled run: 2026-08-04</h3></div>
+              <span class="status-chip" id="dagStatus">Ready</span>
+            </div>
+            <div class="dag-map" id="dagMap" aria-label="Airflow task dependency graph">
+              <button class="task" data-task="sense"><span>Sensor</span><strong>wait_for_sources</strong><small>reschedule mode</small></button>
+              <i>→</i>
+              <button class="task" data-task="extract"><span>TaskFlow</span><strong>extract_increment</strong><small>watermark: 06:00</small></button>
+              <i>→</i>
+              <div class="branch">
+                <button class="task" data-task="dbt"><span>Transform</span><strong>dbt_build</strong><small>models + tests</small></button>
+                <button class="task" data-task="audit"><span>Parallel</span><strong>reconcile_counts</strong><small>source vs target</small></button>
+              </div>
+              <i>→</i>
+              <button class="task" data-task="quality"><span>Branch</span><strong>quality_gate</strong><small>pass / quarantine</small></button>
+              <i>→</i>
+              <button class="task" data-task="publish"><span>Atomic load</span><strong>publish_mart</strong><small>merge partition</small></button>
+            </div>
+            <div class="run-actions">
+              <label>Run condition
+                <select id="runCondition">
+                  <option value="success">Normal</option>
+                  <option value="retry">Transient warehouse error</option>
+                  <option value="quality">Quality gate failure</option>
+                </select>
+              </label>
+              <button class="primary" id="runDag" type="button">Trigger DAG</button>
+              <button id="clearDag" type="button">Reset</button>
+            </div>
+          </article>
+
+          <aside class="panel incident-panel">
+            <div class="panel-head"><div><p class="eyebrow">Operations</p><h3>Run evidence</h3></div><span id="elapsed">00:00</span></div>
+            <dl class="ops-metrics">
+              <div><dt>Attempt</dt><dd id="attempt">0 / 3</dd></div>
+              <div><dt>Rows</dt><dd id="rowCount">0</dd></div>
+              <div><dt>Quality</dt><dd id="qualityScore">Pending</dd></div>
+              <div><dt>Outcome</dt><dd id="outcome">Not started</dd></div>
+            </dl>
+            <div class="alert-box" id="alertBox">
+              <strong>No incident</strong>
+              <p>Failures will show the alert, retry, cleanup, and recovery decision here.</p>
+            </div>
+            <label class="backfill-control">Backfill date
+              <input id="backfillDate" type="date" value="2026-08-01" max="2026-08-04">
+            </label>
+            <button id="backfill" type="button">Prepare idempotent backfill</button>
+          </aside>
+        </div>
+
+        <div class="architecture-record">
+          <article><p class="eyebrow">Decision</p><h3>Hourly batch, not streaming</h3><p>Finance accepts a 60-minute freshness target. Batch reduces platform cost and operational complexity while meeting the decision need.</p></article>
+          <article><p class="eyebrow">Consequences</p><h3>Safe replay over lowest latency</h3><p>Partitioned merges, explicit watermarks, atomic publishing, and one active run make retries and backfills predictable.</p></article>
+          <article><p class="eyebrow">Recovery</p><h3>Retry, quarantine, then alert</h3><p>Transient failures retry exponentially. Data failures stop publication, preserve evidence, run cleanup, and page the owner.</p></article>
+        </div>
+
+        <details class="contract">
+          <summary><span>Data contract</span><strong>orders_hourly v2.1</strong><em>Open YAML</em></summary>
+          <pre><code>contract:
+  owner: commerce-domain
+  freshness: 60m
+  completeness: 99.5%
+  unique_key: order_id
+  amount_rule: total_amount &gt;= 0
+  breaking_change: 30-day notice
+  consumers: [finance, operations, forecasting]</code></pre>
+        </details>
+
+        <div class="feature-strip" aria-label="Airflow concepts demonstrated">
+          <span>TaskFlow</span><span>Dependencies</span><span>Reschedule sensor</span><span>Fan-out / fan-in</span><span>Branching</span><span>Retries</span><span>Timeouts</span><span>Callbacks</span><span>Backfills</span><span>DAG tests</span>
+        </div>
+      </section>
+
+      <section class="evidence-footer">
+        <div><p class="eyebrow">Ground-up proof</p><h2>Not just a diagram.</h2></div>
+        <p>The lab ships an original dbt project skeleton, layered SQL models, source and model tests, an Airflow TaskFlow DAG, and DAG integrity tests. The browser simulation makes the operating behavior visible without requiring a warehouse or Airflow installation.</p>
+        <div class="artifact-links">
+          <a href="artifacts/dbt_project.yml">dbt project ↗</a>
+          <a href="artifacts/dags/orders_daily.py">Airflow DAG ↗</a>
+          <a href="artifacts/tests/test_orders_daily.py">DAG tests ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>Synthetic commerce data · educational field test</span><a href="../../index.html#gallery">Explore all Skills →</a></footer>
+    <script src="app.js?v=20260804"></script>
+  </body>
+</html>
