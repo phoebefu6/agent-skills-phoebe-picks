@@ -8,12 +8,12 @@
 Free and open. Every build links to its source.
 
 <!-- /phoebe header -->
+
 # Agent Skills Phoebe Picks
 
-[![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
-[![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Published Picks](https://img.shields.io/badge/published%20picks-15-6f7cff?style=for-the-badge)](#published-products)
-[![Field Tests](https://img.shields.io/badge/field%20tests-16-ffbc91?style=for-the-badge)](#field-tested-artifacts)
+[![Published picks](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fphoebefu6.github.io%2Fagent-skills-phoebe-picks%2Fstats.json&query=%24.picks_published&label=published%20picks&style=for-the-badge&color=6f7cff)](#published-products)
+[![Field tests](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fphoebefu6.github.io%2Fagent-skills-phoebe-picks%2Fstats.json&query=%24.field_tests&label=field%20tests&style=for-the-badge&color=ffbc91)](#field-tested-artifacts)
+[![Wishlist](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fphoebefu6.github.io%2Fagent-skills-phoebe-picks%2Fstats.json&query=%24.wishlist_candidates&label=on%20the%20wishlist&style=for-the-badge&color=8a8f98)](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A public shelf of AI agent Skills that survived a real build.
@@ -37,7 +37,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, rating, and proof. |
 | [Published products](#published-products) | Open the demo products built from each published Skill. |
-| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 80 source-backed candidates across product, design, data, ML, LLMs, agents, content writing, knowledge bases, Office, marketing, and one-person companies. |
+| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse every source-backed candidate across product, design, data, ML, LLMs, agents, content writing, knowledge bases, Office, marketing, and one-person companies. |
 | [Wishlist research notes](wishlist.md) | See the source evidence and planned proof build for each candidate. |
 
 ## Published Products
