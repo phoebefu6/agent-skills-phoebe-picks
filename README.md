@@ -59,6 +59,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `data-report` | [Skill Portfolio Evidence Report](demos/skill-portfolio-evidence-report/) | [nexu-io/open-design](https://github.com/nexu-io/open-design/blob/main/skills/data-report/SKILL.md), explored 2026-08-02 | Published pick, 8.1/10 overall rating, 9/9 concept families used |
 | `dbt-transformation-patterns` | [Reliable Data Pipeline Lab: dbt](demos/reliable-data-pipeline-lab/#dbt-lab) | [wshobson/agents](https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/dbt-transformation-patterns), explored 2026-08-04 | Published pick, 8.6/10 overall rating, 9/10 concept families used |
 | `airflow-dag-patterns` | [Reliable Data Pipeline Lab: Airflow](demos/reliable-data-pipeline-lab/#airflow-lab) | [wshobson/agents](https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/airflow-dag-patterns), explored 2026-08-04 | Published pick, 8.4/10 overall rating, 9/10 concept families used |
+| `baoyu-infographic` | [Skill-to-Artifact Publishing Map](demos/baoyu-infographic-publishing-map/) | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic), explored 2026-08-11 | Published pick, 8.6/10 overall rating, 8/8 concept families used |
 
 ## Field-Tested Artifacts
 
@@ -114,6 +115,7 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `data-report` | Published | Turn bounded real data into a KPI, chart, table, insight, and methodology report. |
 | `dbt-transformation-patterns` | Published | Build layered, tested, documented, and incrementally safe warehouse transformations. |
 | `airflow-dag-patterns` | Published | Orchestrate observable, retry-safe pipelines with quality branches, recovery, and backfills. |
+| `baoyu-infographic` | Published | Turn dense source material into a deliberate visual explainer with a reproducible prompt trail. |
 | `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
 
 ## Repo Map
@@ -136,6 +138,7 @@ agent-skills-phoebe-picks/
   demos/evidence-tides/              # algorithmic-art seeded p5.js field test
   demos/skill-portfolio-evidence-report/ # data-report real-data field test
   demos/reliable-data-pipeline-lab/ # dbt and Airflow production pipeline field tests
+  demos/baoyu-infographic-publishing-map/ # Baoyu visual workflow and prompt receipt
   demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint
   demos/d3-skill-constellation/      # d3-visualization linked-view field test

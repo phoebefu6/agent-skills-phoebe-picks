@@ -89,6 +89,7 @@
     "data-report": "Evidence Report",
     "dbt-transformation-patterns": "Pipeline Lab · dbt",
     "airflow-dag-patterns": "Pipeline Lab · Airflow",
+    "baoyu-infographic": "Skill-to-Artifact Map",
     "d3-visualization": "Skill Constellation"
   };
 
@@ -245,7 +246,8 @@
 
         const artifactImages = {
           "design-taste-frontend": "assets/artifact-design-taste-lab.png",
-          "canvas-design": "demos/product-design-studio/vision-canvas.svg"
+          "canvas-design": "demos/product-design-studio/vision-canvas.svg",
+          "baoyu-infographic": "demos/baoyu-infographic-publishing-map/infographic.png"
         };
         const artifact = artifactImages[pick.id];
         const artifactMarkup = artifact

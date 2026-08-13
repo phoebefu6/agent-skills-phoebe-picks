@@ -808,6 +808,56 @@ const PICKS = [
     galleryLink: "demos/reliable-data-pipeline-lab/index.html#airflow-lab"
   },
   {
+    id: "baoyu-infographic",
+    name: "baoyu-infographic",
+    source: "Baoyu Skills",
+    sourceUrl: "https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic",
+    sourceRepo: "JimLiu/baoyu-skills",
+    sourcePath: "skills/baoyu-infographic",
+    githubStars: 24951,
+    starsCheckedAt: "2026-08-13",
+    status: "published",
+    recommendation: "Published pick: the workflow turned a dense Skill into a source-backed visual explainer while preserving the analysis, structure, full generation prompt, final raster, and QA evidence.",
+    dateExplored: "2026-08-11",
+    scenarios: ["design", "data-viz", "reporting", "agent-workflow"],
+    platforms: ["codex", "claude-code", "cursor"],
+    badges: ["8/8 concepts", "Infographic", "Prompt receipt"],
+    summary: "A rigorous visual-explanation Skill that separates source analysis, information structure, layout, style, prompting, generation, and final inspection.",
+    phoebeNote: "Use it when a process, report, framework, or learning topic needs to become a memorable one-page visual with enough saved evidence to reproduce or revise it later.",
+    coreConcepts: [
+      "Load project-level preferences before choosing a visual direction.",
+      "Save and analyze the source for audience, learning objectives, facts, and exact data.",
+      "Translate the analysis into concise, hierarchical structured content.",
+      "Choose layout and visual style as two independent decisions.",
+      "Confirm layout, aspect ratio, language, and image backend before generation.",
+      "Write and persist the complete image prompt before calling a generator.",
+      "Route generation through the configured native image backend.",
+      "Inspect the raster for text accuracy, composition, and usable output evidence."
+    ],
+    conceptCoverage: "8/8 concept families were exercised in Skill-to-Artifact Publishing Map: project defaults, source capture and analysis, structured content, independent layout and style selection, confirmed landscape parameters, a saved full prompt, native image generation, and final raster inspection.",
+    groundUpBuild: "Built Skill-to-Artifact Publishing Map from scratch as a hand-drawn landscape explainer of the complete publishing workflow, then wrapped it in an interactive evidence page exposing the source, decisions, prompt receipt, output, and field-test review.",
+    rating: 8.6,
+    ratingScale: 10,
+    ratingSummary: "A thoughtful and reproducible visual-production workflow that makes information architecture explicit; native raster text and the weight of its setup remain the main constraints.",
+    good: [
+      "It separates information architecture from visual style, producing more deliberate compositions than a single vague art prompt.",
+      "It preserves source, analysis, structured content, and the full prompt, so the visual has a useful revision trail.",
+      "Its confirmation and inspection gates catch wrong aspect ratios, weak hierarchy, and unusable raster output before publishing."
+    ],
+    improve: [
+      "Image-model typography can still misspell or soften small labels, so text-heavy outputs may require regeneration or manual cleanup.",
+      "The preference and confirmation sequence is heavier than needed for quick, low-stakes visual notes.",
+      "It needs stronger guidance for producing responsive crops and accessible text alternatives for web and social reuse."
+    ],
+    useCases: [
+      "Builders can turn agent workflows, product methods, and technical documentation into one-page visual explainers.",
+      "Data and reporting teams can convert a bounded finding set into a structured, presentation-ready visual summary.",
+      "Educators and content creators can make reusable diagrams with a saved prompt and inspectable production trail."
+    ],
+    demo: "demos/baoyu-infographic-publishing-map/index.html",
+    galleryLink: "demos/baoyu-infographic-publishing-map/index.html"
+  },
+  {
     id: "d3-visualization",
     name: "d3-visualization",
     source: "snow-d3 via Open Design",
