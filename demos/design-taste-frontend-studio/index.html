@@ -10,15 +10,18 @@
   <body>
     <header class="topbar">
       <a href="../../index.html">Agent Skills Phoebe Picks</a>
-      <span>design-taste-frontend showcase</span>
+      <div class="topbar-actions">
+        <span>design-taste-frontend v2 field test</span>
+        <button id="themeToggle" type="button" aria-pressed="false">Dark preview</button>
+      </div>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="page-title">
         <div class="hero-copy">
-          <p class="design-read">Design read: editorial Skill gallery.</p>
+          <p class="design-read">Reading this as: an editorial field test for AI builders, with a cool evidence-first studio language.</p>
           <h1 id="page-title">Taste Lab</h1>
-          <p>Agent-made pages become intentional.</p>
+          <p>Turn vague taste into design decisions you can inspect.</p>
           <div class="hero-actions">
             <a class="primary-action" href="#feature-map">Open feature map</a>
             <a class="secondary-action" href="#preflight">Run pre-flight</a>
@@ -27,10 +30,10 @@
 
         <div class="hero-stage" aria-label="Taste lab visual specimen">
           <figure class="hero-photo hero-photo-large">
-            <img src="https://picsum.photos/seed/editorial-interface-proof/900/1080" alt="Quiet editorial workspace with printed interface studies">
+            <img src="assets/taste-studio-hero.jpg" alt="Designer arranging interface studies in a cool grey studio" fetchpriority="high">
           </figure>
           <figure class="hero-photo hero-photo-small">
-            <img src="https://picsum.photos/seed/design-system-material/640/760" alt="Minimal studio table with paper swatches and interface notes">
+            <img src="assets/taste-preflight-study.jpg" alt="Printed light and dark interface studies with contrast swatches">
           </figure>
           <div class="hero-panel" aria-label="Skill dials">
             <span>Variance 8</span>
@@ -38,6 +41,15 @@
             <span>Density 4</span>
           </div>
         </div>
+      </section>
+
+      <section class="install-band" aria-label="Installation evidence">
+        <div>
+          <strong>Installed source</strong>
+          <span>Leonxlnx/taste-skill, design-taste-frontend v2 experimental</span>
+        </div>
+        <code>npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"</code>
+        <a href="https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill">Inspect source</a>
       </section>
 
       <section class="feature-lab" id="feature-map" aria-labelledby="feature-title">
@@ -57,6 +69,9 @@
             <button type="button" data-feature="visuals">Real visuals</button>
             <button type="button" data-feature="motion">Motivated motion</button>
             <button type="button" data-feature="states">States and access</button>
+            <button type="button" data-feature="architecture">Architecture</button>
+            <button type="button" data-feature="redesign">Redesign audit</button>
+            <button type="button" data-feature="performance">Performance</button>
             <button type="button" data-feature="preflight">Final pre-flight</button>
           </nav>
 
@@ -79,9 +94,9 @@
           </section>
 
           <aside class="coverage-meter">
-            <span>Visible features</span>
-            <strong>10</strong>
-            <p>All key concepts are listed here. The live build uses them as interaction rules, not a static checklist.</p>
+            <span>Visible concept families</span>
+            <strong>13</strong>
+            <p>13 of 15 v2 concept families are exercised. Advanced GSAP and framework packages are out of scope for this static page.</p>
           </aside>
         </div>
       </section>
@@ -111,7 +126,7 @@
                 <p id="miniBody">Source, rating, and demo proof stay visible before anyone tries a Skill.</p>
               </div>
               <figure class="mini-image">
-                <img id="miniImage" src="https://picsum.photos/seed/gallery-artifact-proof/840/760" alt="Editorial table with interface studies and notes">
+                <img id="miniImage" src="assets/taste-studio-hero.jpg" alt="Editorial studio table with interface studies and notes" loading="lazy">
               </figure>
             </div>
           </article>
@@ -121,6 +136,28 @@
             <ul id="critiqueList"></ul>
           </aside>
         </div>
+      </section>
+
+      <section class="state-lab" aria-labelledby="state-title">
+        <div class="state-copy">
+          <h2 id="state-title">A page is more than its success state.</h2>
+          <p>Switch the specimen through loading, empty, error, and ready states. Each state keeps context and a next action.</p>
+          <div class="state-switch" role="group" aria-label="Interface state">
+            <button type="button" data-state="loading">Loading</button>
+            <button type="button" data-state="empty">Empty</button>
+            <button type="button" data-state="error">Error</button>
+            <button class="is-active" type="button" data-state="ready">Ready</button>
+          </div>
+        </div>
+        <figure class="state-image">
+          <img src="assets/taste-preflight-study.jpg" alt="Responsive interface studies prepared for a design pre-flight review" loading="lazy">
+        </figure>
+        <article class="state-specimen ready" id="stateSpecimen" aria-live="polite">
+          <span id="stateLabel">Ready</span>
+          <h3 id="stateTitleText">Review is ready.</h3>
+          <p id="stateBody">Thirteen concept families have inspectable evidence in this field test.</p>
+          <button id="stateAction" type="button">Inspect checks</button>
+        </article>
       </section>
 
       <section class="preflight" id="preflight" aria-labelledby="preflight-title">
@@ -149,6 +186,14 @@
           <article data-check="Motion discipline">
             <strong>Motion discipline</strong>
             <p>Motion is used for state transitions and disabled when requested.</p>
+          </article>
+          <article data-check="Theme lock">
+            <strong>Theme lock</strong>
+            <p>One token system covers the complete light and dark page.</p>
+          </article>
+          <article data-check="State cycle">
+            <strong>State cycle</strong>
+            <p>Loading, empty, error, and ready views stay useful.</p>
           </article>
           <article data-check="Mobile and dark mode">
             <strong>Mobile and dark mode</strong>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="KOL Evidence Studio is a field test of customer-research and product-marketing Skills for an evidence-first Agent Skills gallery.">
+    <title>KOL Evidence Studio</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="back-link" href="../../index.html">← Agent Skills Phoebe Picks</a>
+      <span class="edition">Field note 018 · 13 Aug 2026</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Two-Skill Field Test</div>
+        <h1>KOL<br><em>Evidence</em><span>Studio</span></h1>
+        <p class="dek">A research-to-positioning room for turning scattered audience signals into an accountable point of view.</p>
+        <div class="hero-proof">
+          <div><strong>8</strong><span>public sources</span></div>
+          <div><strong>5</strong><span>ranked themes</span></div>
+          <div><strong>2</strong><span>Skills tested</span></div>
+          <div><strong>1</strong><span>positioning system</span></div>
+        </div>
+      </section>
+
+      <nav class="mode-switch" aria-label="Studio modes">
+        <button class="mode-button is-active" type="button" data-mode="research" aria-pressed="true">01 · Signal Desk</button>
+        <button class="mode-button" type="button" data-mode="positioning" aria-pressed="false">02 · Positioning Room</button>
+        <button class="mode-button" type="button" data-mode="ledger" aria-pressed="false">03 · Coverage Ledger</button>
+      </nav>
+
+      <section class="studio-panel is-active" id="research" data-panel="research">
+        <header class="section-heading" id="customer-research">
+          <div><span>Skill 01</span><h2>customer-research</h2></div>
+          <p>Mode 2 research: recent public discussion, extracted with source, context, sentiment, theme, confidence, and explicit sample-bias limits.</p>
+        </header>
+
+        <div class="research-layout">
+          <aside class="filter-rail">
+            <span class="rail-label">Filter evidence</span>
+            <div id="themeFilters" class="theme-filters"></div>
+            <div class="bias-note">
+              <strong>Bias check</strong>
+              <p>Reddit skews technical and skeptical. GitHub issues overrepresent defects and workflow friction. Directional, not representative.</p>
+            </div>
+          </aside>
+          <div class="signal-field">
+            <div class="signal-summary" id="signalSummary"></div>
+            <div class="quote-bank" id="quoteBank"></div>
+          </div>
+        </div>
+
+        <section class="gap-map">
+          <div class="gap-intro"><span>What the evidence cannot answer</span><h3>Five gaps before calling this customer truth.</h3></div>
+          <ol>
+            <li><b>Segment interviews</b><span>5+ direct conversations per priority reader group</span></li>
+            <li><b>Field salience</b><span>Which card evidence actually changes demo clicks?</span></li>
+            <li><b>Time to shortlist</b><span>Does scenario search beat a leaderboard?</span></li>
+            <li><b>Language clarity</b><span>Can non-technical readers explain “Skill” and “coverage”?</span></li>
+            <li><b>Return behavior</b><span>Do artifacts create repeat use, not only curiosity?</span></li>
+          </ol>
+        </section>
+      </section>
+
+      <section class="studio-panel" id="positioning" data-panel="positioning" hidden>
+        <header class="section-heading" id="product-marketing">
+          <div><span>Skill 02</span><h2>product-marketing</h2></div>
+          <p>An auto-drafted V1 built from the repository and research synthesis, covering audience, pains, alternatives, differentiation, switching forces, language, voice, proof, and goals.</p>
+        </header>
+
+        <article class="position-statement">
+          <span>Positioning thesis</span>
+          <p>For practical people exploring AI agent workflows, Agent Skills Phoebe Picks is the evidence-first Skill gallery that shows what a Skill changes through a real build - unlike lists and leaderboards that stop at description or popularity.</p>
+        </article>
+
+        <div class="position-grid">
+          <article class="position-card audience-card">
+            <span>Who it is for</span>
+            <h3>Curious practitioners who need fewer, stronger options.</h3>
+            <ul><li>Practical builders</li><li>Data and AI practitioners</li><li>Team and executive leads</li><li>Students and new adopters</li></ul>
+          </article>
+          <article class="position-card pain-card">
+            <span>The tension</span>
+            <h3>Discovery is abundant. Evidence is scarce.</h3>
+            <p>People can find thousands of Skills but struggle to judge authenticity, outcome impact, drift, portability, and safety.</p>
+          </article>
+          <article class="position-card difference-card">
+            <span>Why this shelf</span>
+            <h3>The artifact is the review.</h3>
+            <ul><li>Exact source and path</li><li>Ground-up proof</li><li>Concept coverage</li><li>Three strengths and three limits</li></ul>
+          </article>
+          <article class="position-card anti-card">
+            <span>Who it is not for</span>
+            <h3>No universal ranking. No automatic trust.</h3>
+            <p>Not for anyone seeking guaranteed safety, professional advice, automatic installation, or claims that one test proves every environment.</p>
+          </article>
+        </div>
+
+        <section class="forces-section">
+          <div class="forces-heading"><span>JTBD four forces</span><h3>What moves a reader toward - or away from - a tested gallery.</h3></div>
+          <div class="forces-grid">
+            <article><b>Push</b><p>Long lists with no practical evidence.</p></article>
+            <article><b>Pull</b><p>Source, artifact, rating, and limits together.</p></article>
+            <article><b>Habit</b><p>Search GitHub and judge by stars or description.</p></article>
+            <article><b>Anxiety</b><p>Better Skills may be missed or evidence may age.</p></article>
+          </div>
+        </section>
+
+        <section class="message-system">
+          <div class="message-lead"><span>Message system</span><h3>One promise, three proof pillars.</h3></div>
+          <div class="promise">Find agent Skills worth your attention <em>before</em> you spend it.</div>
+          <div class="pillars">
+            <article><span>01</span><b>Show the work</b><p>Every published pick links to a ground-up artifact.</p></article>
+            <article><span>02</span><b>Separate the signals</b><p>Popularity, credibility, field rating, and status are not conflated.</p></article>
+            <article><span>03</span><b>Name the limits</b><p>Scenario boundaries and improvement points stay visible.</p></article>
+          </div>
+        </section>
+      </section>
+
+      <section class="studio-panel" id="ledger" data-panel="ledger" hidden>
+        <header class="section-heading">
+          <div><span>Proof</span><h2>Coverage ledger</h2></div>
+          <p>The two reviews remain separate even though they share one artifact. Coverage records what was exercised and what stayed out of scope.</p>
+        </header>
+        <div class="ledger-grid">
+          <article class="ledger-card">
+            <div class="ledger-top"><span>customer-research</span><strong>9/10</strong></div>
+            <h3>8 of 9 concept families</h3>
+            <ul>
+              <li class="done">Checked existing product context</li>
+              <li class="done">Selected digital-watering-hole mode</li>
+              <li class="done">Captured source, quote, context, sentiment, and theme</li>
+              <li class="done">Extracted JTBD, pains, triggers, outcomes, language, alternatives</li>
+              <li class="done">Clustered themes by frequency and intensity</li>
+              <li class="done">Applied confidence and recency labels</li>
+              <li class="done">Documented sample bias and minimum-sample limits</li>
+              <li class="done">Produced synthesis, quote bank, implications, and gap map</li>
+              <li class="skip">Direct interviews skipped - no first-party participants were provided</li>
+            </ul>
+          </article>
+          <article class="ledger-card">
+            <div class="ledger-top"><span>product-marketing</span><strong>8.7/10</strong></div>
+            <h3>11 of 12 context sections</h3>
+            <ul>
+              <li class="done">Auto-drafted from repo evidence</li>
+              <li class="done">Product overview and category</li>
+              <li class="done">Audience, jobs, use cases, and personas</li>
+              <li class="done">Problems, pain, and alternatives</li>
+              <li class="done">Differentiation and objections</li>
+              <li class="done">Switching forces</li>
+              <li class="done">Customer language and glossary</li>
+              <li class="done">Voice, proof themes, and goals</li>
+              <li class="skip">Pricing skipped - the gallery is a free knowledge product</li>
+              <li class="skip">Human confirmation remains pending for the auto-draft</li>
+            </ul>
+          </article>
+        </div>
+        <div class="source-note">
+          <span>Shared source</span>
+          <p>Both Skills come from <a href="https://github.com/coreyhaines31/marketingskills" target="_blank" rel="noreferrer">coreyhaines31/marketingskills</a>, a 43K+ star repository checked on 13 Aug 2026.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Directional evidence, not market truth.</span>
+      <a href="research-synthesis.md">Read the synthesis</a>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

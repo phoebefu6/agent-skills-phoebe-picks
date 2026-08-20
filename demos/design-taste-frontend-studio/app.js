@@ -91,8 +91,38 @@
       proof: "Buttons expose active, hover, focus, and reduced-motion behavior."
     },
     {
-      id: "preflight",
+      id: "architecture",
       number: "10",
+      name: "Match architecture to scope",
+      summary: "Choose the smallest honest foundation and verify dependencies before importing them.",
+      points: ["Static gallery stays static", "Native CSS avoids a needless framework", "Interaction code remains isolated and inspectable"],
+      label: "Architecture fit",
+      title: "The stack serves the artifact.",
+      proof: "This demo adds no package or build step because the repository is intentionally static."
+    },
+    {
+      id: "redesign",
+      number: "11",
+      name: "Audit before redesigning",
+      summary: "Preserve working information architecture and content before changing the visual language.",
+      points: ["Mode: targeted evolution", "Gallery path and links stay stable", "Typography, assets, states, and proof are refreshed"],
+      label: "Redesign mode",
+      title: "Targeted evolution, not a reset.",
+      proof: "The original demo structure remains recognizable while the v2 rules expand its evidence."
+    },
+    {
+      id: "performance",
+      number: "12",
+      name: "Protect the experience",
+      summary: "Performance, contrast, viewport stability, and reduced motion are shipping criteria.",
+      points: ["Local compressed images avoid remote layout shifts", "Motion changes transform and opacity only", "Dark and mobile tokens keep contrast"],
+      label: "Guardrails",
+      title: "Craft includes speed and access.",
+      proof: "Hero media is local and prioritized. Supporting media lazy-loads with reserved dimensions."
+    },
+    {
+      id: "preflight",
+      number: "13",
       name: "Run final pre-flight",
       summary: "Before shipping, audit copy, layout, motion, visuals, access, and AI tells.",
       points: ["Copy is short and functional", "No em-dash characters", "The check list is executable"],
@@ -109,8 +139,8 @@
       title: "Find Skills by real work.",
       body: "Source, rating, and demo proof stay visible before anyone tries a Skill.",
       action: "Browse",
-      image: "https://picsum.photos/seed/gallery-artifact-proof/840/760",
-      alt: "Editorial table with interface studies and notes",
+      image: "assets/taste-studio-hero.jpg",
+      alt: "Editorial studio table with interface studies and notes",
       critiqueTitle: "What improved",
       critique: ["Follower value appears before method notes.", "The source and proof model is visible.", "The layout has hierarchy without shouting."],
       className: "taste"
@@ -121,8 +151,8 @@
       title: "Transform your workflow today.",
       body: "A seamless next-generation platform that elevates productivity with powerful features for everyone.",
       action: "Get started",
-      image: "https://picsum.photos/seed/generic-purple-product/840/760",
-      alt: "Soft abstract desk image used for a generic AI page state",
+      image: "assets/taste-preflight-study.jpg",
+      alt: "Interface studies used to demonstrate a generic AI page state",
       critiqueTitle: "What fails",
       critique: ["The audience is vague.", "The hero promise could fit any AI tool.", "The visual language leans on generic glow energy."],
       className: "generic"
@@ -133,13 +163,42 @@
       title: "Make the method visible.",
       body: "Each control maps to one Skill concept, so the page teaches by being used.",
       action: "Inspect",
-      image: "https://picsum.photos/seed/studio-interface-method/840/760",
+      image: "assets/taste-preflight-study.jpg",
       alt: "Studio workspace with interface system sketches",
       critiqueTitle: "What the Skill shows",
       critique: ["The demo lists all key features.", "The interaction proves state and feedback.", "The page style is independent from the gallery shell."],
       className: "studio"
     }
   };
+
+  const states = {
+    loading: {
+      label: "Loading",
+      title: "Preparing the review.",
+      body: "The skeleton matches the final content shape, so the page stays stable.",
+      action: "Keep working"
+    },
+    empty: {
+      label: "Empty",
+      title: "No page selected.",
+      body: "Choose a landing page or portfolio to begin a focused taste audit.",
+      action: "Choose page"
+    },
+    error: {
+      label: "Error",
+      title: "The source did not load.",
+      body: "Your notes are safe. Retry the source check or continue with the local copy.",
+      action: "Retry"
+    },
+    ready: {
+      label: "Ready",
+      title: "Review is ready.",
+      body: "Thirteen concept families have inspectable evidence in this field test.",
+      action: "Inspect checks"
+    }
+  };
+
+  let currentState = "ready";
 
   const nodes = {
     featureButtons: document.querySelectorAll("[data-feature]"),
@@ -163,7 +222,14 @@
     critiqueList: document.getElementById("critiqueList"),
     runPreflight: document.getElementById("runPreflight"),
     preflightGrid: document.getElementById("preflightGrid"),
-    preflightResult: document.getElementById("preflightResult")
+    preflightResult: document.getElementById("preflightResult"),
+    stateButtons: document.querySelectorAll("[data-state]"),
+    stateSpecimen: document.getElementById("stateSpecimen"),
+    stateLabel: document.getElementById("stateLabel"),
+    stateTitle: document.getElementById("stateTitleText"),
+    stateBody: document.getElementById("stateBody"),
+    stateAction: document.getElementById("stateAction"),
+    themeToggle: document.getElementById("themeToggle")
   };
 
   function renderFeature(id) {
@@ -212,6 +278,52 @@
     });
   }
 
+  function renderState(id) {
+    const state = states[id] || states.ready;
+    currentState = states[id] ? id : "ready";
+    nodes.stateSpecimen.className = `state-specimen ${id}`;
+    nodes.stateLabel.textContent = state.label;
+    nodes.stateTitle.textContent = state.title;
+    nodes.stateBody.textContent = state.body;
+    nodes.stateAction.textContent = state.action;
+    nodes.stateSpecimen.setAttribute("aria-busy", String(id === "loading"));
+    nodes.stateButtons.forEach((button) => {
+      const active = button.dataset.state === id;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  function toggleTheme() {
+    const dark = document.documentElement.dataset.theme !== "dark";
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+    nodes.themeToggle.textContent = dark ? "Light preview" : "Dark preview";
+    nodes.themeToggle.setAttribute("aria-pressed", String(dark));
+  }
+
+  function setInitialTheme() {
+    const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
+    nodes.themeToggle.textContent = dark ? "Light preview" : "Dark preview";
+    nodes.themeToggle.setAttribute("aria-pressed", String(dark));
+  }
+
+  function handleStateAction() {
+    if (currentState === "ready") {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.getElementById("preflight").scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+      return;
+    }
+
+    if (currentState === "loading") {
+      renderState("ready");
+      return;
+    }
+
+    renderState("loading");
+    window.setTimeout(() => renderState("ready"), 520);
+  }
+
   nodes.featureButtons.forEach((button) => {
     button.addEventListener("click", () => renderFeature(button.dataset.feature));
   });
@@ -220,8 +332,16 @@
     button.addEventListener("click", () => renderMode(button.dataset.mode));
   });
 
-  nodes.runPreflight.addEventListener("click", runPreflight);
+  nodes.stateButtons.forEach((button) => {
+    button.addEventListener("click", () => renderState(button.dataset.state));
+  });
 
+  nodes.runPreflight.addEventListener("click", runPreflight);
+  nodes.stateAction.addEventListener("click", handleStateAction);
+  nodes.themeToggle.addEventListener("click", toggleTheme);
+
+  setInitialTheme();
   renderFeature("read");
   renderMode("taste");
+  renderState("ready");
 })();

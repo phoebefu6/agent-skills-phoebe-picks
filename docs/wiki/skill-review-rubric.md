@@ -34,9 +34,11 @@ Skill exploration is a field test, not a light impression. For each Skill Phoebe
 
 Do not publish a Skill review based only on reading, installing, planning, or using it for a small amendment. The Skill must help produce something new from zero.
 
-Explored artifacts can be visible in the gallery when they help followers understand the testing journey, but keep them labeled `exploring` if the source credibility gate is still pending or failed. Do not call them published picks.
+Exploring artifacts stay outside the public homepage gallery until they pass the source credibility gate and have a working demo link. Keep them documented as `exploring` in the review data or separate research files; do not call them published picks.
 
 When a package-wide trial includes legal, privacy, compliance, hiring, or other high-risk supporting Skills, full coverage does not justify presenting their output as professional advice. Use fictional or synthetic inputs where personal data is unnecessary, mark informational artifacts clearly, and preserve professional-review gates in the public proof.
+
+For customer-research or positioning Skills, distinguish directional public-source evidence from representative customer truth. Record source type, recency, confidence, sample bias, and research gaps; do not invent personas without the Skill's minimum evidence. Mark repository-derived marketing context as an auto-draft until the product owner confirms it.
 
 ## Demo Artifact Direction
 

@@ -2,8 +2,8 @@
 
 [![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
 [![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Published Picks](https://img.shields.io/badge/published%20picks-15-6f7cff?style=for-the-badge)](#published-products)
-[![Field Tests](https://img.shields.io/badge/field%20tests-16-ffbc91?style=for-the-badge)](#field-tested-artifacts)
+[![Published Picks](https://img.shields.io/badge/published%20picks-23-6f7cff?style=for-the-badge)](#published-products)
+[![Field Tests](https://img.shields.io/badge/field%20tests-24-ffbc91?style=for-the-badge)](#field-tested-artifacts)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A public shelf of AI agent Skills that survived a real build.
@@ -27,8 +27,8 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | --- | --- |
 | [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, rating, and proof. |
 | [Published products](#published-products) | Open the demo products built from each published Skill. |
-| [Public wishlist](https://phoebefu6.github.io/agent-skills-phoebe-picks/#wishlist) | Browse 80 source-backed candidates across product, design, data, ML, LLMs, agents, content writing, knowledge bases, Office, marketing, and one-person companies. |
-| [Wishlist research notes](wishlist.md) | See the source evidence and planned proof build for each candidate. |
+| [Unexplored inventory](unexplored-wishlist.md) | Review the separate, non-gallery inventory of remaining Skills by field-test category. |
+| [Wishlist research notes](wishlist.md) | Review the separate source evidence and planned proof build for each candidate. |
 
 ## Published Products
 
@@ -37,7 +37,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `frontend-design` | [Product Design Studio](demos/product-design-studio/#frontend-design) | [anthropics/skills](https://github.com/anthropics/skills), explored 2026-07-17 | Published pick, 8.6/10 overall rating |
 | `canvas-design` | [Product Design Studio](demos/product-design-studio/#canvas-design) | [anthropics/skills](https://github.com/anthropics/skills), explored 2026-07-17 | Published pick, 7.8/10 overall rating |
 | `emil-design-eng` | [Product Design Studio](demos/product-design-studio/#emil-design-eng) | [emilkowalski/skills](https://github.com/emilkowalski/skills), explored 2026-07-17 | Published pick, 8.4/10 overall rating |
-| `design-taste-frontend` | [Design Taste Frontend Lab](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), explored 2026-07-16 | Published pick, 8.5/10 overall rating |
+| `design-taste-frontend` | [Design Taste Frontend Lab](demos/design-taste-frontend-studio/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), v2 explored 2026-08-20 | Published pick, 8.8/10 overall rating, 13/15 concept families used |
 | `design-review` | [Critique Loop](demos/design-review-critique-loop/) | [garrytan/gstack](https://github.com/garrytan/gstack), explored 2026-07-16 | Published pick, 8.0/10 overall rating |
 | `high-end-visual-design` | [Visual Design Atelier](demos/high-end-visual-design-showcase/) | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), explored 2026-07-16 | Published pick, 7.9/10 overall rating |
 | `design-consultation` | [System Room](demos/design-consultation-system-room/) | [garrytan/gstack](https://github.com/garrytan/gstack), explored 2026-07-16 | Published pick, 8.1/10 overall rating |
@@ -49,6 +49,14 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `data-report` | [Skill Portfolio Evidence Report](demos/skill-portfolio-evidence-report/) | [nexu-io/open-design](https://github.com/nexu-io/open-design/blob/main/skills/data-report/SKILL.md), explored 2026-08-02 | Published pick, 8.1/10 overall rating, 9/9 concept families used |
 | `dbt-transformation-patterns` | [Reliable Data Pipeline Lab: dbt](demos/reliable-data-pipeline-lab/#dbt-lab) | [wshobson/agents](https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/dbt-transformation-patterns), explored 2026-08-04 | Published pick, 8.6/10 overall rating, 9/10 concept families used |
 | `airflow-dag-patterns` | [Reliable Data Pipeline Lab: Airflow](demos/reliable-data-pipeline-lab/#airflow-lab) | [wshobson/agents](https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/airflow-dag-patterns), explored 2026-08-04 | Published pick, 8.4/10 overall rating, 9/10 concept families used |
+| `customer-research` | [KOL Evidence Studio: Signal Desk](demos/kol-evidence-studio/#customer-research) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/customer-research), explored 2026-08-13 | Published pick, 9.0/10 overall rating, 8/9 concept families used |
+| `product-marketing` | [KOL Evidence Studio: Positioning Room](demos/kol-evidence-studio/#product-marketing) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/product-marketing), explored 2026-08-13 | Published pick, 8.7/10 overall rating, 11/12 context sections used |
+| `content-strategy` | [KOL Content Engine: Strategy Map](demos/kol-content-engine/#content-strategy) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy), explored 2026-08-13 | Published pick, 8.8/10 overall rating, 9/10 concept families used |
+| `social` | [KOL Content Engine: Distribution Desk](demos/kol-content-engine/#social) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/social), explored 2026-08-13 | Published pick, 8.6/10 overall rating, 10/11 concept families used |
+| `copywriting` | [Proof to Action Lab: Conversion Page](demos/proof-to-action-lab/#copywriting) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/copywriting), explored 2026-08-13 | Published pick, 8.8/10 overall rating, 9/10 concept families used |
+| `analytics` | [Proof to Action Lab: Measurement Lab](demos/proof-to-action-lab/#analytics) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/analytics), explored 2026-08-13 | Published pick, 8.7/10 overall rating, 10/11 concept families used |
+| `lead-magnets` | [Agent Skill Evaluation Starter Kit](demos/skill-evaluation-starter-kit/#lead-magnets) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/lead-magnets), explored 2026-08-14 | Published pick, 8.8/10 overall rating, 10/11 concept families used |
+| `emails` | [Agent Skill Evaluation Starter Kit: Email Journey](demos/skill-evaluation-starter-kit/#emails) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/emails), explored 2026-08-14 | Published pick, 8.7/10 overall rating, 10/11 concept families used |
 
 ## Field-Tested Artifacts
 
@@ -71,6 +79,7 @@ Published products and exploring field tests both show their work. An exploring 
 | Automation | Skills that remove boring repeated work. |
 | Research and Prompting | Better discovery, framing, briefing, and reusable instructions. |
 | Agent Workflow | Skills that make Codex, Claude Code, Hermes AI, Cursor, and similar agents easier to steer. |
+| Content and KOL | Audience research, positioning, customer language, proof, content systems, and creator workflows. |
 
 ## How A Skill Becomes A Pick
 
@@ -104,6 +113,14 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `data-report` | Published | Turn bounded real data into a KPI, chart, table, insight, and methodology report. |
 | `dbt-transformation-patterns` | Published | Build layered, tested, documented, and incrementally safe warehouse transformations. |
 | `airflow-dag-patterns` | Published | Orchestrate observable, retry-safe pipelines with quality branches, recovery, and backfills. |
+| `customer-research` | Published | Turn interviews or public discussion into sourced themes, language, confidence, implications, and research gaps. |
+| `product-marketing` | Published | Preserve audience, positioning, differentiation, voice, proof, and goals in one reusable context. |
+| `content-strategy` | Published | Turn evidence and positioning into coherent pillars, clusters, buyer-stage topics, and a scored editorial backlog. |
+| `social` | Published | Repurpose one strong idea into native formats, a sustainable cadence, relationship work, and an honest learning loop. |
+| `copywriting` | Published | Turn positioning and audience evidence into a clear, complete page argument with one concrete action. |
+| `analytics` | Published | Work backward from decisions into a consent-aware event contract, validation plan, funnel, and attribution boundary. |
+| `lead-magnets` | Published | Package one narrow evaluation problem into an immediately useful, low-friction resource with delivery and measurement plans. |
+| `emails` | Published | Turn a resource request into a coherent, behavior-aware learning journey with one job per message. |
 | `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
 
 ## Repo Map
@@ -126,10 +143,15 @@ agent-skills-phoebe-picks/
   demos/evidence-tides/              # algorithmic-art seeded p5.js field test
   demos/skill-portfolio-evidence-report/ # data-report real-data field test
   demos/reliable-data-pipeline-lab/ # dbt and Airflow production pipeline field tests
+  demos/kol-evidence-studio/       # customer-research and product-marketing field test
+  demos/kol-content-engine/        # content-strategy and social field test
+  demos/proof-to-action-lab/       # copywriting and analytics field test
+  demos/skill-evaluation-starter-kit/ # lead-magnets and emails field test
   demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint
   demos/d3-skill-constellation/      # d3-visualization linked-view field test
   wishlist.md                        # Exploration queue
+  unexplored-wishlist.md             # All remaining candidates grouped by category
   docs/wiki/                         # Internal agent memory for future work
 ```
 

@@ -1,11 +1,10 @@
 (function () {
   const picks = window.PICKS || window.REVIEWS || [];
-  const wishlist = window.WISHLIST_CANDIDATES || [];
+  const publishedPicks = picks.filter((pick) => pick.status === "published" && pick.galleryLink);
   const filters = window.FILTERS || { scenarios: [], statuses: [] };
   const state = {
     category: "all",
-    query: "",
-    wishlistCategory: "all"
+    query: ""
   };
 
   const byId = (id) => document.getElementById(id);
@@ -22,10 +21,7 @@
     drawerClose: byId("drawerClose"),
     drawerBackdrop: byId("drawerBackdrop"),
     productRail: byId("productRail"),
-    skillStack: byId("skillStack"),
-    wishlistFilters: byId("wishlistFilters"),
-    wishlistGrid: byId("wishlistGrid"),
-    wishlistCount: byId("wishlistCount")
+    skillStack: byId("skillStack")
   };
 
   const stackRoles = {
@@ -82,6 +78,7 @@
     "design-review": "Critique Loop",
     "high-end-visual-design": "Visual Atelier",
     "design-consultation": "System Room",
+    "impeccable": "Impeccable Design Flight Deck",
     "pm-skills": "Lantern Product OS",
     "find-skills": "Discovery Desk",
     "dashboard": "Portfolio Command Center",
@@ -89,23 +86,16 @@
     "data-report": "Evidence Report",
     "dbt-transformation-patterns": "Pipeline Lab · dbt",
     "airflow-dag-patterns": "Pipeline Lab · Airflow",
-    "d3-visualization": "Skill Constellation"
+    "d3-visualization": "Skill Constellation",
+    "customer-research": "KOL Evidence Studio - Signal Desk",
+    "product-marketing": "KOL Evidence Studio - Positioning Room",
+    "content-strategy": "KOL Content Engine - Strategy Map",
+    "social": "KOL Content Engine - Distribution Desk",
+    "copywriting": "Proof to Action Lab - Conversion Page",
+    "analytics": "Proof to Action Lab - Measurement Lab",
+    "lead-magnets": "Skill Evaluation Starter Kit",
+    "emails": "Skill Evaluation Starter Kit - Email Journey"
   };
-
-  const wishlistCategories = [
-    { id: "all", label: "All 80" },
-    { id: "product", label: "Product" },
-    { id: "design-art", label: "Design & art" },
-    { id: "data-analytics", label: "Data & analytics" },
-    { id: "data-science-ml", label: "Data science & ML" },
-    { id: "llm-agents", label: "LLMs & agents" },
-    { id: "knowledge-base", label: "Knowledge base" },
-    { id: "office", label: "Office" },
-    { id: "data-dashboard", label: "Data → dashboard" },
-    { id: "marketing", label: "Marketing" },
-    { id: "content-writing", label: "Content writing" },
-    { id: "one-person-company", label: "One-person company" }
-  ];
 
   let entranceMotionPlayed = false;
   let revealObserver = null;
@@ -160,7 +150,7 @@
   }
 
   function visiblePicks() {
-    return picks
+    return publishedPicks
       .filter((pick) => {
         const categoryMatch = state.category === "all" || (pick.scenarios || []).includes(state.category);
         const queryMatch = !state.query || pickText(pick).includes(state.query);
@@ -234,10 +224,16 @@
   function renderProductRail() {
     if (!nodes.productRail) return;
 
-    const published = picks
-      .filter((pick) => pick.status === "published" && pick.galleryLink);
+    const recentProducts = publishedPicks
+      .slice()
+      .sort((a, b) => (b.dateExplored || "").localeCompare(a.dateExplored || "") || (b.rating || 0) - (a.rating || 0))
+      .filter((pick, index, items) => {
+        const demoPage = pick.galleryLink.split("#")[0];
+        return items.findIndex((item) => item.galleryLink.split("#")[0] === demoPage) === index;
+      })
+      .slice(0, 6);
 
-    nodes.productRail.innerHTML = published
+    nodes.productRail.innerHTML = recentProducts
       .map((pick, index) => {
         const scenario = labelForScenario((pick.scenarios || [])[0] || "design");
         const source = pick.sourceRepo || pick.source || "Source pending";
@@ -261,53 +257,6 @@
               <small>${escapeHtml(demoTitle(pick))}<br>${escapeHtml(rating)} · ${escapeHtml(source)}</small>
             </span>
           </a>
-        `;
-      })
-      .join("");
-  }
-
-  function renderWishlist() {
-    if (!nodes.wishlistGrid || !nodes.wishlistFilters) return;
-
-    const visible = wishlist.filter((item) => (
-      state.wishlistCategory === "all" || item.category === state.wishlistCategory
-    ));
-
-    nodes.wishlistFilters.innerHTML = wishlistCategories
-      .map((item) => {
-        const active = state.wishlistCategory === item.id;
-        return `<button class="filter-button${active ? " is-active" : ""}" type="button" data-wishlist-filter="${escapeHtml(item.id)}" aria-pressed="${active}">${escapeHtml(item.label)}</button>`;
-      })
-      .join("");
-
-    if (nodes.wishlistCount) {
-      nodes.wishlistCount.textContent = `${visible.length} ${visible.length === 1 ? "candidate" : "candidates"} · 0 tested`;
-    }
-
-    nodes.wishlistGrid.innerHTML = visible
-      .map((item) => {
-        const repositoryUrl = `https://github.com/${item.sourceRepo}`;
-
-        return `
-          <article class="wishlist-card" data-wishlist-category="${escapeHtml(item.category)}">
-            <header>
-              <span class="wishlist-rank">#${escapeHtml(item.rank)}</span>
-              <span class="status-chip wishlist">Wishlist</span>
-            </header>
-            <div>
-              <span class="wishlist-focus">${escapeHtml(item.focus)}</span>
-              <h3>${escapeHtml(item.id)}</h3>
-              <p>${escapeHtml(item.buildTarget)}</p>
-            </div>
-            <footer>
-              <a class="wishlist-repository-evidence" href="${escapeHtml(repositoryUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.sourceRepo)} repository homepage">
-                <span>GitHub repository</span>
-                <strong>${escapeHtml(item.sourceRepo)}</strong>
-              </a>
-              <a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(item.id)} Skill source in ${escapeHtml(item.sourceRepo)}">Inspect Skill →</a>
-            </footer>
-            <small title="${escapeHtml(item.sourcePath)}">Skill rating pending · repository popularity is not used as a Skill score</small>
-          </article>
         `;
       })
       .join("");
@@ -344,8 +293,8 @@
     nodes.count.textContent = `${items.length} ${items.length === 1 ? "Skill" : "Skills"}`;
     if (nodes.searchStatus) {
       const resultSummary = state.query
-        ? `Showing ${items.length} of ${picks.length} for "${state.query}"`
-        : `Showing ${items.length} of ${picks.length}`;
+        ? `Showing ${items.length} of ${publishedPicks.length} for "${state.query}"`
+        : `Showing ${items.length} of ${publishedPicks.length}`;
       nodes.searchStatus.textContent = `${resultSummary} · Score high to low`;
     }
     document.querySelectorAll("[data-clear-search]").forEach((button) => {
@@ -356,37 +305,33 @@
     nodes.grid.innerHTML = items
       .map((pick) => {
         const primaryScenario = labelForScenario((pick.scenarios || [])[0] || "design");
-        const platforms = (pick.platforms || []).slice(0, 2).map(labelForPlatform).join(", ") || "AI agents";
+        const platforms = (pick.platforms || []).map(labelForPlatform).join(", ") || "AI agents";
         const source = pick.sourceRepo || pick.source || "Source pending";
         const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Pending";
-        const demoLink = pick.galleryLink
-          ? `<a class="proof-chip proof-link" href="${escapeHtml(pick.galleryLink)}" aria-label="Open ${escapeHtml(pick.name)} live demo">Live demo</a>`
-          : `<span class="proof-chip is-disabled" aria-disabled="true">Demo soon</span>`;
-        const mobileDemoLink = pick.galleryLink
-          ? `<a class="mobile-demo-link" href="${escapeHtml(pick.galleryLink)}">Open live demo →</a>`
-          : "";
         const sourceLink = pick.sourceUrl
-          ? `<a class="proof-chip proof-link" href="${escapeHtml(pick.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(pick.name)} source">Source</a>`
-          : `<span class="proof-chip is-disabled" aria-disabled="true">Source</span>`;
+          ? `<a class="skill-card-source" href="${escapeHtml(pick.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(pick.name)} source at ${escapeHtml(pick.sourcePath || source)}"><span>${escapeHtml(source)}</span><small>${escapeHtml(pick.sourcePath || "Exact Skill source")} ↗</small></a>`
+          : `<span class="skill-card-source"><span>${escapeHtml(source)}</span><small>Source path pending</small></span>`;
 
         return `
-          <article class="skill-row" data-pick-id="${escapeHtml(pick.id)}">
-            <div class="skill-identity">
-              <strong>${escapeHtml(pick.name)}</strong>
-              <span>${escapeHtml(pick.summary)}</span>
-              <span class="mobile-evidence">${escapeHtml(primaryScenario)} · ${escapeHtml(platforms)} · ${escapeHtml(rating)} · ${escapeHtml(source)}</span>
-              ${mobileDemoLink}
+          <article class="skill-card" data-pick-id="${escapeHtml(pick.id)}" data-motion-card>
+            <header class="skill-card-header">
+              <span class="skill-card-focus">${escapeHtml(primaryScenario)}</span>
+              <span class="demo-ready-chip">Demo built</span>
+            </header>
+            <div class="skill-card-body">
+              <h3>${escapeHtml(pick.name)}</h3>
+              <p class="skill-card-platforms">For ${escapeHtml(platforms)}</p>
+              <p class="skill-card-summary">${escapeHtml(pick.summary)}</p>
             </div>
-            <div class="skill-cell"><strong>Helps with</strong>${escapeHtml(primaryScenario)}</div>
-            <div class="skill-cell"><strong>Built for</strong>${escapeHtml(platforms)}</div>
-            <div class="proof-strip" aria-label="Evidence summary">
-              ${demoLink}
-              <span class="proof-chip">${escapeHtml(rating)}</span>
-              ${sourceLink}
-            </div>
-            <span class="status-chip ${escapeHtml(pick.status)}">${escapeHtml(labelForStatus(pick.status))}</span>
-            <button class="open-skill" type="button" data-open-detail="${escapeHtml(pick.id)}" aria-label="Open ${escapeHtml(pick.name)} details">→</button>
-            <span class="sr-only">Source: ${escapeHtml(source)}</span>
+            <dl class="skill-card-proof">
+              <div><dt>Rating</dt><dd>${escapeHtml(rating)}</dd></div>
+              <div><dt>Built</dt><dd>${escapeHtml(demoTitle(pick))}</dd></div>
+            </dl>
+            ${sourceLink}
+            <footer class="skill-card-actions">
+              <a class="skill-demo-link" href="${escapeHtml(pick.galleryLink)}" aria-label="Open ${escapeHtml(pick.name)} live demo">View demo <span aria-hidden="true">→</span></a>
+              <button class="skill-detail-link" type="button" data-open-detail="${escapeHtml(pick.id)}" aria-label="Open ${escapeHtml(pick.name)} review details">Review notes</button>
+            </footer>
           </article>
         `;
       })
@@ -397,7 +342,6 @@
 
   function render() {
     renderProductRail();
-    renderWishlist();
     renderSkillStack();
     renderFilters();
     renderCards();
@@ -532,7 +476,7 @@
   function observeRevealTargets() {
     if (reducedMotion()) return;
 
-    const targets = document.querySelectorAll(".featured-build, .gallery-column, .wishlist-header, .wishlist-card, .product-proof-copy, .rail-card");
+    const targets = document.querySelectorAll(".gallery-column, .skill-card, .product-proof-copy, .rail-card");
     if (!("IntersectionObserver" in window)) return;
 
     if (!revealObserver) {
@@ -595,13 +539,6 @@
         nodes.search.value = state.query;
         renderCards();
         nodes.search.focus();
-        return;
-      }
-
-      const wishlistFilter = event.target.closest("[data-wishlist-filter]");
-      if (wishlistFilter) {
-        state.wishlistCategory = wishlistFilter.dataset.wishlistFilter;
-        renderWishlist();
         return;
       }
 

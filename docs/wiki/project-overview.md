@@ -41,7 +41,7 @@ The project should help answer:
 
 ## Current Product Surface
 
-The public site is a static GitHub Pages gallery. Its public skeleton is hero, scenario finder, Skill gallery, curated candidate wishlist, and Skill detail drawer. The public wishlist may show source-backed candidates and planned proof builds because Phoebe explicitly requested it. Raw testing queues, evaluation notes, and SOP details stay internal.
+The public site is a static GitHub Pages gallery. Its public skeleton is hero, scenario finder, demo-backed published Skill cards, published products, and the Skill detail drawer. Wishlist candidates and planned proof builds stay in the separate wishlist files rather than appearing on the public homepage. Raw testing queues, evaluation notes, and SOP details stay internal.
 
 The internal LLM Wiki layer remains private working memory for agents:
 

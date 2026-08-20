@@ -35,18 +35,19 @@ const FILTERS = {
 
 const WISHLIST_REPOSITORY_SNAPSHOTS = {
   "HolobiomicsLab/asb-skill-collections": { githubStars: 14, checkedAt: "2026-07-27", repoUrl: "https://github.com/HolobiomicsLab/asb-skill-collections" },
-  "K-Dense-AI/scientific-agent-skills": { githubStars: 31866, checkedAt: "2026-07-27", repoUrl: "https://github.com/K-Dense-AI/scientific-agent-skills" },
+  "K-Dense-AI/scientific-agent-skills": { githubStars: 33024, checkedAt: "2026-08-09", repoUrl: "https://github.com/K-Dense-AI/scientific-agent-skills" },
   "YuLab-SMU/TCMDATA": { githubStars: 15, checkedAt: "2026-07-27", repoUrl: "https://github.com/YuLab-SMU/TCMDATA" },
   "alirezarezvani/claude-skills": { githubStars: 23252, checkedAt: "2026-07-27", repoUrl: "https://github.com/alirezarezvani/claude-skills" },
   "anthropics/knowledge-work-plugins": { githubStars: 23069, checkedAt: "2026-07-27", repoUrl: "https://github.com/anthropics/knowledge-work-plugins" },
   "anthropics/skills": { githubStars: 165758, checkedAt: "2026-08-02", repoUrl: "https://github.com/anthropics/skills" },
-  "coreyhaines31/marketingskills": { githubStars: 41848, checkedAt: "2026-07-27", repoUrl: "https://github.com/coreyhaines31/marketingskills" },
+  "coreyhaines31/marketingskills": { githubStars: 43591, checkedAt: "2026-08-13", repoUrl: "https://github.com/coreyhaines31/marketingskills" },
   "github/awesome-copilot": { githubStars: 37071, checkedAt: "2026-07-27", repoUrl: "https://github.com/github/awesome-copilot" },
   "kepano/obsidian-skills": { githubStars: 43403, checkedAt: "2026-07-27", repoUrl: "https://github.com/kepano/obsidian-skills" },
   "ndpvt-web/arxiv-claude-skills": { githubStars: 6, checkedAt: "2026-07-27", repoUrl: "https://github.com/ndpvt-web/arxiv-claude-skills" },
   "nexu-io/open-design": { githubStars: 83147, checkedAt: "2026-08-02", repoUrl: "https://github.com/nexu-io/open-design" },
   "openai/skills": { githubStars: 24214, checkedAt: "2026-07-27", repoUrl: "https://github.com/openai/skills" },
   "wshobson/agents": { githubStars: 38467, checkedAt: "2026-08-04", repoUrl: "https://github.com/wshobson/agents" },
+  "antvis/chart-visualization-skills": { githubStars: 455, checkedAt: "2026-08-09", repoUrl: "https://github.com/antvis/chart-visualization-skills" },
   "yoqalux-blip/cdutcm-library-search-skill": { githubStars: 0, checkedAt: "2026-07-27", repoUrl: "https://github.com/yoqalux-blip/cdutcm-library-search-skill" }
 };
 
@@ -203,19 +204,19 @@ const PICKS = [
     id: "design-taste-frontend",
     name: "design-taste-frontend",
     source: "Leonxlnx taste-skill",
-    sourceUrl: "https://github.com/Leonxlnx/taste-skill",
+    sourceUrl: "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/SKILL.md",
     sourceRepo: "Leonxlnx/taste-skill",
-    sourcePath: "Open Design wrapper: skills/taste-skill",
-    githubStars: 64018,
-    starsCheckedAt: "2026-07-16",
+    sourcePath: "skills/taste-skill/SKILL.md",
+    githubStars: 78263,
+    starsCheckedAt: "2026-08-20",
     status: "published",
-    recommendation: "Published pick: useful for turning generic AI-built pages into more deliberate, credible public pages.",
-    dateExplored: "2026-07-16",
+    recommendation: "Published pick: v2 is a rigorous anti-slop frontend framework for turning generic AI-built marketing pages into deliberate, testable, accessible work.",
+    dateExplored: "2026-08-20",
     scenarios: ["design", "ui-ux", "frontend"],
-    platforms: ["claude-code", "codex", "hermes"],
-    badges: ["Visual taste", "Anti-slop", "Editorial UI"],
-    summary: "A taste and frontend Skill that forces a design read before code and catches common AI UI tells.",
-    phoebeNote: "Use it when an AI-built page works, but still feels generic, noisy, or not credible enough to publish.",
+    platforms: ["claude-code", "codex", "hermes", "cursor", "gemini-cli"],
+    badges: ["v2 field test", "13/15 concepts", "Anti-slop"],
+    summary: "A brief-aware frontend framework that connects design direction, implementation guardrails, redesign safety, and a strict pre-flight audit.",
+    phoebeNote: "Use it when an AI-built landing page or portfolio works, but still feels generic, inconsistent, or not credible enough to publish.",
     coreConcepts: [
       "Infer the page kind, audience, vibe, references, assets, and quiet constraints before coding.",
       "Declare a one-line design read before building.",
@@ -226,27 +227,30 @@ const PICKS = [
       "Design real interface states and interactive feedback rather than a static poster.",
       "Use real visual assets or real component previews instead of fake screenshots.",
       "Make mobile collapse, viewport stability, and reduced-motion behavior explicit.",
+      "Match architecture and dependencies to the brief instead of importing a fashionable stack by default.",
+      "Audit brand tokens, content, information architecture, SEO, and analytics before redesigning an existing page.",
+      "Treat performance, dark mode, state cycles, contrast, and cleanup as part of visual craft.",
       "Run a pre-flight audit for copy, layout repetition, motion, accessibility, and AI tells."
     ],
-    conceptCoverage: "10 key concepts are visible in the Design Taste Frontend Lab; the official package path is shown as a decision branch, with native CSS chosen because this gallery is an aesthetic page.",
-    groundUpBuild: "Built the Design Taste Frontend Lab demo from scratch.",
-    rating: 8.5,
+    conceptCoverage: "13 of 15 v2 concept families are exercised in the Design Taste Frontend Lab: brief inference, the three dials, honest system choice, architecture fit, anti-default design, type and color locks, varied layout, generated visuals, motivated motion, full UI states, accessibility, performance, redesign mode, and executable pre-flight. Advanced GSAP scroll choreography and framework-specific package installation were skipped because this proof is a static page and neither would serve its content.",
+    groundUpBuild: "Expanded the original ground-up Design Taste Frontend Lab into a v2 field test with generated local assets, thirteen interactive concept branches, a targeted-evolution redesign audit, full state cycling, manual light and dark inspection, and an eight-part pre-flight instrument.",
+    rating: 8.8,
     ratingScale: 10,
-    ratingSummary: "Excellent anti-slop checklist for public pages, but the full Skill is broad and takes judgment to apply without overfitting.",
+    ratingSummary: "An unusually concrete frontend taste framework with strong pre-flight discipline and redesign safety, though v2 remains experimental and its long binary rule set needs careful contextual judgment.",
     good: [
-      "Forces a design read before code, which prevents agents from defaulting to generic SaaS layouts.",
-      "Turns subjective taste into concrete pre-flight checks for typography, color, layout, copy, motion, and mobile behavior.",
-      "Gives strong language for rejecting common AI UI tells without needing to argue from personal preference."
+      "Brief inference, audience signals, and three explicit dials stop the agent from jumping into a generic aesthetic before it understands the page.",
+      "The pre-flight matrix turns fuzzy taste into inspectable checks across copy, layout, assets, states, contrast, motion, mobile, and performance.",
+      "Its redesign protocol protects information architecture, SEO, analytics, brand assets, and accessibility wins before visual modernization begins."
     ],
     improve: [
-      "The instruction set is very large, so it can be heavy for small fixes.",
-      "Some bans need human judgment because portfolio, editorial, and landing-page work can legitimately break rules.",
-      "It needs a compact scorecard template for faster repeat reviews."
+      "At more than 1,200 lines, v2 is too heavy for a small component fix and needs a compact routing layer for narrow tasks.",
+      "Several binary bans can flatten legitimate art direction unless the agent consistently applies the brief-specific override logic.",
+      "The experimental release needs automated lint checks or a compact machine-readable scorecard so its large pre-flight can be repeated reliably."
     ],
     useCases: [
-      "Builders can run it before publishing an AI-generated landing page or portfolio.",
-      "C-level readers can use the checklist to judge whether an AI prototype looks credible enough to share.",
-      "Students can learn how design direction, constraints, and pre-flight checks shape real frontend output."
+      "Builders can design or review an AI-generated landing page, portfolio, or editorial site before publication.",
+      "Product and design leads can pressure-test whether a redesign preserves brand, SEO, analytics, and accessibility while improving craft.",
+      "Students can learn how audience, dials, system choice, motion purpose, state design, and pre-flight checks connect in a real frontend."
     ],
     demo: "demos/design-taste-frontend-studio/index.html",
     galleryLink: "demos/design-taste-frontend-studio/index.html"
@@ -808,6 +812,425 @@ const PICKS = [
     galleryLink: "demos/reliable-data-pipeline-lab/index.html#airflow-lab"
   },
   {
+    id: "customer-research",
+    name: "customer-research",
+    source: "Corey Haines Marketing Skills",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/customer-research",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/customer-research/SKILL.md",
+    githubStars: 43591,
+    starsCheckedAt: "2026-08-13",
+    status: "published",
+    recommendation: "Published pick: the method produced a source-linked signal desk, ranked research synthesis, voice-of-customer quote bank, confidence labels, sample-bias guardrails, and a concrete research-gap map.",
+    dateExplored: "2026-08-13",
+    scenarios: ["research", "agent-workflow", "product-management"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["8/9 concepts", "8 public sources", "VOC evidence"],
+    summary: "An evidence-first customer-research Skill for extracting jobs, pains, triggers, outcomes, language, alternatives, confidence, and implications from interviews or public discussion.",
+    phoebeNote: "Use it before positioning or content work when assumptions need to be separated from observed language, especially when public sources have strong sample bias.",
+    coreConcepts: [
+      "Check existing product-marketing context before repeating foundational questions.",
+      "Choose between analyzing existing assets and gathering research from digital watering holes.",
+      "Match sources to the target segment and research goal.",
+      "Capture source, date, verbatim quote, context, sentiment, theme, and profile signals.",
+      "Extract functional, emotional, and social jobs plus pains, triggers, outcomes, language, and alternatives.",
+      "Cluster themes and score both frequency and intensity.",
+      "Segment findings instead of averaging incompatible audiences.",
+      "Label confidence, recency, sample bias, and minimum viable sample limits.",
+      "Produce a synthesis, quote bank, persona or JTBD map, competitive summary, and research-gap analysis as appropriate."
+    ],
+    conceptCoverage: "8/9 concept families were exercised in KOL Evidence Studio: context check, Mode 2 source selection, eight dated public sources, verbatim and contextual extraction, jobs and adoption tensions, frequency-intensity theme synthesis, confidence labels, sample-bias limits, a quote bank, implications, and a five-part research-gap map. Direct interviews and evidence-based personas were deliberately skipped because no first-party participants or five-point segment sample were available.",
+    groundUpBuild: "Built the Signal Desk inside KOL Evidence Studio from scratch, using eight recent Reddit and GitHub discussions to create five filterable themes, a source-linked VOC bank, confidence and bias labels, ranked implications, and a public research synthesis with explicit gaps.",
+    rating: 9.0,
+    ratingScale: 10,
+    ratingSummary: "A rigorous, unusually practical research workflow that actively resists invented personas and unsupported certainty, though it needs better lightweight tooling for coding sources and managing larger evidence sets.",
+    good: [
+      "The extraction framework keeps verbatim language, context, trigger, and desired outcome connected instead of reducing research to generic themes.",
+      "Confidence, recency, source-bias, and minimum-sample guardrails prevent a polished synthesis from masquerading as representative truth.",
+      "The mode and deliverable choices make the method useful for both existing research assets and responsible public-source discovery."
+    ],
+    improve: [
+      "It needs a standard evidence-table schema or local script for deduplication, coding, source counts, and reproducible theme scoring.",
+      "Frequency and intensity remain qualitative unless the practitioner defines a transparent scoring rubric before synthesis.",
+      "The digital-watering-hole guidance should add clearer privacy, terms-of-service, quotation, and sensitive-community safeguards."
+    ],
+    useCases: [
+      "Creators can ground KOL content pillars in real audience language instead of invented pain points.",
+      "Product and data leaders can synthesize interviews, tickets, surveys, and reviews while preserving confidence and segment differences.",
+      "AI builders can turn public ecosystem discussion into hypotheses and a research plan without calling it validated customer truth."
+    ],
+    demo: "demos/kol-evidence-studio/index.html#customer-research",
+    galleryLink: "demos/kol-evidence-studio/index.html#customer-research"
+  },
+  {
+    id: "product-marketing",
+    name: "product-marketing",
+    source: "Corey Haines Marketing Skills",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/product-marketing",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/product-marketing/SKILL.md",
+    githubStars: 43591,
+    starsCheckedAt: "2026-08-13",
+    status: "published",
+    recommendation: "Published pick: the auto-draft method turned scattered repository evidence and directional research into one reusable product-marketing context, an explicit positioning thesis, audience map, switching forces, proof pillars, objections, voice, and goals.",
+    dateExplored: "2026-08-13",
+    scenarios: ["product-management", "research", "agent-workflow"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["11/12 sections", "Positioning system", "Canonical context"],
+    summary: "A foundational marketing-context Skill that captures product, audience, problems, alternatives, differentiation, customer language, voice, proof, and goals once for reuse across later work.",
+    phoebeNote: "Use it at the start of a product or KOL project when repeated prompts keep losing the audience, problem, positioning, voice, and proof context.",
+    coreConcepts: [
+      "Check canonical and legacy context paths before creating a new document.",
+      "Auto-draft from repository evidence or gather the context conversationally section by section.",
+      "Capture product overview, category, type, business model, and pricing when applicable.",
+      "Define target audience, decision-makers, jobs to be done, use cases, and stakeholder personas.",
+      "Document problems, failed alternatives, costs, emotional tension, and the competitive landscape.",
+      "Connect differentiators to a distinct approach, reader benefit, and choice rationale.",
+      "Record objections, anti-personas, and JTBD switching forces.",
+      "Preserve verbatim customer language, preferred words, avoided words, and a glossary.",
+      "Make brand voice, personality, proof points, value themes, goals, actions, and current metrics explicit.",
+      "Store the result in the canonical reusable context and mark assumptions or missing evidence for review."
+    ],
+    conceptCoverage: "11/12 context sections were exercised in KOL Evidence Studio and .agents/product-marketing.md: product overview, audience, four personas, problems, alternatives, differentiation, objections and anti-persona, switching forces, customer language and glossary, voice, proof themes, goals, and conversion action. Pricing was skipped because the gallery is a free knowledge product; the auto-draft is explicitly marked for Phoebe's human confirmation.",
+    groundUpBuild: "Built a canonical product-marketing context and the Positioning Room inside KOL Evidence Studio from scratch, translating repository evidence and public research into a positioning thesis, audience map, tension, differentiation, anti-persona, switching forces, one promise, and three proof pillars.",
+    rating: 8.7,
+    ratingScale: 10,
+    ratingSummary: "A high-leverage context system that sharply reduces repeated prompting and makes positioning assumptions visible, but its long template can create false completeness unless every claim is labeled by evidence strength and reviewed by the owner.",
+    good: [
+      "The canonical context file gives every later marketing task one stable source for audience, positioning, language, voice, and proof.",
+      "Its competitive, objection, anti-persona, and switching-force sections produce a much sharper position than a basic audience-and-benefits brief.",
+      "The recommended auto-draft path makes existing repository evidence useful quickly while preserving a clear review step."
+    ],
+    improve: [
+      "The template should require evidence labels so repo-derived facts, customer quotes, strategic choices, and unvalidated assumptions cannot blend together.",
+      "It needs stronger guidance for personal brands and free knowledge products where product, creator, audience, and conversion goals overlap.",
+      "A full twelve-section context can become stale; the Skill should define owners, review cadence, change history, and expiration triggers."
+    ],
+    useCases: [
+      "Creators can establish a KOL position, audience promise, proof pillars, voice, and anti-position before building a content calendar.",
+      "Product teams can stop repeating ICP, problem, differentiation, objections, and customer-language context across agent sessions.",
+      "Leaders can review what is fact, evidence, strategy, and assumption before approving public messaging."
+    ],
+    demo: "demos/kol-evidence-studio/index.html#product-marketing",
+    galleryLink: "demos/kol-evidence-studio/index.html#product-marketing"
+  },
+  {
+    id: "content-strategy",
+    name: "content-strategy",
+    source: "Corey Haines Marketing Skills",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/content-strategy/SKILL.md",
+    githubStars: 43591,
+    starsCheckedAt: "2026-08-13",
+    status: "published",
+    recommendation: "Published pick: the method produced a complete evidence-to-editorial system with content pillars, a hub-and-spoke cluster, buyer-stage coverage, a weighted priority backlog, and explicit product connections.",
+    dateExplored: "2026-08-13",
+    scenarios: ["content-writing", "marketing", "research"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["9/10 concepts", "8-topic backlog", "Hub + 5 spokes"],
+    summary: "A practical content-planning Skill for choosing evidence-backed pillars and topics that are searchable, shareable, connected to buyer intent, and realistic to produce.",
+    phoebeNote: "Use it when you have audience evidence and positioning but still need a defensible answer to what to publish next and why.",
+    coreConcepts: [
+      "Read existing product-marketing context before repeating foundational discovery.",
+      "Make every piece searchable, shareable, or both, with search as the demand-capture foundation.",
+      "Choose appropriate formats including use-case content, hubs and spokes, templates, thought leadership, data, cases, and meta content.",
+      "Build three to five product-, audience-, search-, and competitor-led content pillars.",
+      "Map keyword and topic intent across awareness, consideration, decision, and implementation.",
+      "Generate ideas from keyword data, calls, surveys, forums, competitors, sales, and support evidence.",
+      "Prioritize customer impact at 40%, content-market fit at 30%, search potential at 20%, and resources at 10%.",
+      "For each priority topic, specify title, search/share role, format, keyword, buyer stage, research rationale, and product connection.",
+      "Show how the pillar, hub, spokes, and priority pieces interconnect.",
+      "Use actual market, keyword, and performance data when available and label planning assumptions when it is not."
+    ],
+    conceptCoverage: "9/10 concept families were exercised in KOL Content Engine: canonical context, searchable/shareable balance, four pillars, a hub with five spokes, awareness-to-implementation stages, research-backed ideation, weighted prioritization, eight fully specified topics, and product connections. Live keyword-volume exports and a competitor gap dataset were unavailable, so search scores are explicitly labeled editorial planning assumptions.",
+    groundUpBuild: "Built the Strategy Map in KOL Content Engine from scratch: four content pillars, a hub-and-five-spoke cluster, eight buyer-stage topics, and an interactive threshold over a transparent 40/30/20/10 priority model.",
+    rating: 8.8,
+    ratingScale: 10,
+    ratingSummary: "A clear bridge from audience evidence to an executable editorial portfolio, with strong prioritization and intent mapping; it would be stronger with a lightweight validation workflow and clearer rules for refreshing the strategy.",
+    good: [
+      "The searchable-versus-shareable distinction prevents a calendar from becoming either keyword-only publishing or ungrounded thought leadership.",
+      "Pillars, clusters, buyer stages, and product connections create a coherent portfolio instead of an isolated list of ideas.",
+      "The weighted scoring model makes editorial tradeoffs visible and forces customer impact and content-market fit to outweigh easy production."
+    ],
+    improve: [
+      "The method needs a lightweight validation path for teams without paid keyword tools, call archives, or mature analytics.",
+      "Resource scoring is underspecified: a high score can mean either easy to create or strong resources unless the scale is defined first.",
+      "It should define quarterly refresh triggers, content decay checks, ownership, and a rule for retiring pillars that no longer earn attention."
+    ],
+    useCases: [
+      "Creators can turn customer language and a KOL position into a focused editorial thesis rather than posting opportunistically.",
+      "Marketing teams can balance demand capture, demand creation, buyer stages, and production constraints in one backlog.",
+      "Product and data leaders can map expert knowledge into hubs, practical templates, comparisons, and evidence-backed points of view."
+    ],
+    demo: "demos/kol-content-engine/index.html#content-strategy",
+    galleryLink: "demos/kol-content-engine/index.html#content-strategy"
+  },
+  {
+    id: "social",
+    name: "social",
+    source: "Corey Haines Marketing Skills",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/social",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/social/SKILL.md",
+    githubStars: 43591,
+    starsCheckedAt: "2026-08-13",
+    status: "published",
+    recommendation: "Published pick: the method turned one proof-led pillar asset into five platform-native atoms, a sustainable weekly cadence, a relationship routine, a short-video production script, and a metrics-first learning loop.",
+    dateExplored: "2026-08-13",
+    scenarios: ["content-writing", "marketing", "social-media"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["10/11 concepts", "5 native atoms", "No fake metrics"],
+    summary: "A broad social-content Skill covering platform choice, pillars, hooks, repurposing, calendars, engagement, analytics, creator-pattern research, and short-form video.",
+    phoebeNote: "Use it after the content thesis is clear, when one strong idea needs native LinkedIn, X, carousel, conversation, and short-video treatments plus a learning loop.",
+    coreConcepts: [
+      "Establish the goal, action, audience, platform, voice, available source content, and production capacity.",
+      "Choose platforms and cadence based on audience fit and native format strengths.",
+      "Balance three to five repeatable content pillars around expertise, audience questions, proof, and business goals.",
+      "Use curiosity, story, value, contrarian, and proof hooks to earn the next line or second.",
+      "Extract five to ten standalone atoms from one pillar asset and adapt format, length, tone, caption, and context per platform.",
+      "Batch a weekly calendar while leaving room for live commentary and queue review.",
+      "Build relationships through replies, substantive comments, credited sharing, and thoughtful direct messages.",
+      "Review awareness, engagement, conversion, and video-retention metrics, then test hooks, formats, timing, and calls to action.",
+      "Reverse-engineer repeatable creator patterns from a meaningful dataset, then layer an authentic voice and conversion bridge.",
+      "For short video, combine visual, verbal, and text hooks in three seconds with a timed structure, subtitles, production notes, and CTA.",
+      "Use live social listening to identify relevant conversations, intent signals, and posts worth joining."
+    ],
+    conceptCoverage: "10/11 concept families were exercised in KOL Content Engine: goal, audience, voice, resources, LinkedIn-first platform selection, four pillars, four hook families, five standalone atoms, platform adaptation, weekly batching, a 30-minute engagement routine, awareness-engagement-conversion measurement, hook and format tests, reverse-engineering boundaries, and a fully timed 30-second video script. Live listening and the recommended 500-post creator dataset require platform data and remain out of scope.",
+    groundUpBuild: "Built the Distribution Desk and Learning Loop in KOL Content Engine from scratch, adapting one evidence-led flagship into a LinkedIn story, ten-slide carousel, X thread, short video, and live conversation prompt, then scheduling the week and defining honest experiment rules.",
+    rating: 8.6,
+    ratingScale: 10,
+    ratingSummary: "An unusually complete operating guide that links creative formats to engagement practice and measurement, though it sometimes presents volatile platform heuristics too confidently and needs stronger governance for reuse and social listening.",
+    good: [
+      "The atom workflow preserves one coherent idea while requiring every platform version to stand alone and feel native.",
+      "Hooks, video timing, subtitles, batching, engagement, and analytics connect creative production to actual operating behavior.",
+      "Its metric hierarchy values comments, saves, shares, completion, and conversion signals over superficial posting volume."
+    ],
+    improve: [
+      "Platform frequencies, timing, length, and algorithm claims age quickly and should be labeled as testable hypotheses with review dates.",
+      "The reverse-engineering workflow needs ethical collection, terms-of-service, privacy, and anti-plagiarism safeguards before recommending scraping at scale.",
+      "It should add a reuse ledger so evergreen repetition, audience fatigue, cross-platform duplication, and attribution can be reviewed together."
+    ],
+    useCases: [
+      "KOLs can turn one researched point of view into a week of coherent, native content without writing every post from zero.",
+      "B2B teams can pair scheduled proof-led posts with a disciplined relationship and comment routine.",
+      "Educators and builders can script concise carousels, threads, and short videos with explicit learning goals and honest metrics."
+    ],
+    demo: "demos/kol-content-engine/index.html#social",
+    galleryLink: "demos/kol-content-engine/index.html#social"
+  },
+  {
+    id: "copywriting",
+    name: "copywriting",
+    source: "Corey Haines Marketing Skills",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/copywriting",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/copywriting/SKILL.md",
+    githubStars: 43591,
+    starsCheckedAt: "2026-08-13",
+    status: "published",
+    recommendation: "Published pick: the method produced a complete, single-action landing page whose argument moves from audience pain through proof, benefits, process, comparison, objections, and an honest final CTA.",
+    dateExplored: "2026-08-13",
+    scenarios: ["marketing", "content-writing", "frontend"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["9/10 concepts", "Single-action page", "3 headline options"],
+    summary: "A conversion-copy Skill for translating product context and customer language into a clear page argument, useful benefits, strong calls to action, and objection handling.",
+    phoebeNote: "Use it when a product is understood but the page still needs one clear promise, a persuasive sequence, concrete proof, and an action that says what the reader gets.",
+    coreConcepts: [
+      "Read existing product-marketing context before repeating audience and positioning discovery.",
+      "Define the page purpose, one primary action, audience pain, objections, offer, differentiation, proof, traffic source, and visitor awareness.",
+      "Prefer clarity, benefits, specificity, customer language, active voice, and honest claims over cleverness or hype.",
+      "Give each section one idea and build a logical argument down the page.",
+      "Write an above-the-fold headline, concise subheadline, action-plus-outcome CTA, and supporting microcopy.",
+      "Use proof, problem, benefits, how-it-works, objection handling, comparison, FAQ, and a final CTA as the page requires.",
+      "Connect features to customer outcomes and support benefits with real examples or evidence when available.",
+      "Establish a consistent voice while letting headlines be bolder and body copy stay plain.",
+      "Provide annotations plus two or three headline and CTA alternatives with rationale.",
+      "Add useful page-title and meta-description copy, then run a dedicated editing pass when appropriate."
+    ],
+    conceptCoverage: "9/10 concept families were exercised in Proof to Action Lab: canonical context, page purpose and one primary action, audience pain and objections, evidence-led benefit language, a one-idea-per-section argument, hero and concrete CTA, proof, pain, benefits, four-step process, comparison, FAQ, final CTA, consistent voice, three headline options, CTA alternatives, annotations, title, and meta description. A separate line-by-line copy-editing Skill pass was intentionally left for its own future field test.",
+    groundUpBuild: "Built the conversion page in Proof to Action Lab from scratch, turning the gallery's positioning and customer language into a complete landing-page argument with one primary action and transparent copy annotations.",
+    rating: 8.8,
+    ratingScale: 10,
+    ratingSummary: "A strong practical framework for creating clear, complete conversion pages without fabricated proof; its best-practice guidance is useful but would benefit from a sharper evidence hierarchy and accessibility-aware copy checks.",
+    good: [
+      "The context checklist prevents headline writing from starting before the page purpose, audience, offer, objections, proof, and traffic awareness are understood.",
+      "Its clarity, specificity, customer-language, and honesty rules sharply reduce generic AI marketing copy and unsupported claims.",
+      "The section framework, CTA formula, alternatives, and annotations make the output complete enough to build and review rather than merely brainstorm."
+    ],
+    improve: [
+      "The Skill should distinguish verified proof, directional evidence, product facts, and strategic claims so a polished page cannot blur their confidence levels.",
+      "It needs explicit accessibility guidance for link purpose, button labels, reading level, error copy, and avoiding meaning that depends on visual context.",
+      "The framework should include a short message-test protocol for comparing comprehension and relevance before optimizing for clicks."
+    ],
+    useCases: [
+      "Creators can turn a KOL position into a focused resource or portfolio landing page without resorting to hype.",
+      "Product teams can produce a build-ready homepage or feature-page narrative with benefits, proof, objections, and CTA alternatives.",
+      "Data and AI leaders can explain complex methods in plain language while keeping evidence boundaries and reader actions explicit."
+    ],
+    demo: "demos/proof-to-action-lab/index.html#copywriting",
+    galleryLink: "demos/proof-to-action-lab/index.html#copywriting"
+  },
+  {
+    id: "analytics",
+    name: "analytics",
+    source: "Corey Haines Marketing Skills",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/analytics",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/analytics/SKILL.md",
+    githubStars: 43591,
+    starsCheckedAt: "2026-08-13",
+    status: "published",
+    recommendation: "Published pick: the method produced a decision-led tracking contract, six documented events, consent-aware local instrumentation, UTM context, a live event inspector, QA checks, and explicit attribution boundaries.",
+    dateExplored: "2026-08-13",
+    scenarios: ["marketing", "data", "analytics", "frontend"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["10/11 concepts", "6-event contract", "Consent-aware demo"],
+    summary: "A practical analytics Skill for working backward from business decisions into consistent events, contextual properties, conversions, validation, campaign conventions, privacy, and implementation choices.",
+    phoebeNote: "Use it before adding an analytics tool when the team needs to agree on the questions, decisions, conversion, event contract, privacy boundary, and QA process first.",
+    coreConcepts: [
+      "Start with the business decisions, conversions, current tracking state, technical stack, implementation owner, and privacy requirements.",
+      "Track for decisions rather than volume, and work backward from questions to the smallest useful dataset.",
+      "Define a tracking plan with event name, category or description, properties, trigger, notes, and decision use.",
+      "Use consistent lowercase object-action event names and keep context in properties rather than multiplying event names.",
+      "Cover appropriate page views, user actions, system events, and custom conversions without collecting vanity events.",
+      "Standardize page and campaign properties, avoid duplicating automatic fields, and never place PII in analytics properties.",
+      "Use documented lowercase UTM source, medium, campaign, content, and term conventions.",
+      "Implement through gtag or a versioned GTM data layer with explicit tags, triggers, variables, and consent behavior when those tools are chosen.",
+      "Validate correct triggers and values, duplicates, browsers, mobile, conversions, consent, and PII before publishing.",
+      "Define consent, retention, deletion, internal-traffic, and collection-minimization requirements.",
+      "Treat funnels and attribution as diagnostic models with known gaps rather than causal truth."
+    ],
+    conceptCoverage: "10/11 concept families were exercised in Proof to Action Lab and its tracking plan: decision questions, current static stack, primary conversion, six object-action events, documented properties and triggers, campaign context, a local dataLayer, explicit consent, no PII, a live inspector, duplicate and property checks, a diagnostic funnel, and attribution limits. Live GA4/GTM publication, production conversion setup, and cross-browser validation require owned accounts and deployment consent, so they remain out of scope.",
+    groundUpBuild: "Built a consent-aware measurement lab from scratch around the new landing page: six locally instrumented events, campaign parsing, event inspection, automated QA, a four-stage funnel, attribution caveats, and a portable tracking-plan document.",
+    rating: 8.7,
+    ratingScale: 10,
+    ratingSummary: "A disciplined introduction to actionable tracking with strong naming, QA, UTM, and privacy foundations; it needs a more tool-neutral data-contract model and deeper guidance for governance, identity, and causal interpretation.",
+    good: [
+      "Starting from decisions and questions prevents teams from collecting a large event taxonomy that nobody knows how to use.",
+      "The naming, property, UTM, data-layer, debugging, and duplicate-event guidance is concrete enough to turn into an implementation contract.",
+      "Privacy, consent, retention, deletion, and PII checks are treated as design requirements rather than a final compliance note."
+    ],
+    improve: [
+      "The tracking-plan template should add event owner, schema version, required versus optional properties, data type, allowed values, and deprecation status.",
+      "The implementation guidance leans heavily toward GA4 and GTM; a tool-neutral canonical event contract should come before vendor mappings.",
+      "It should more clearly separate descriptive funnels, last-touch campaign reporting, experiments, incrementality, and causal inference."
+    ],
+    useCases: [
+      "Creators can measure whether social and editorial traffic leads to meaningful artifact or resource inspection without collecting personal data by default.",
+      "Marketing and product teams can agree on conversions, event names, properties, UTMs, and QA before implementation starts.",
+      "Data leaders can review attribution limits, consent, schema quality, and decision ownership before trusting a dashboard."
+    ],
+    demo: "demos/proof-to-action-lab/index.html#analytics",
+    galleryLink: "demos/proof-to-action-lab/index.html#analytics"
+  },
+  {
+    id: "lead-magnets",
+    name: "lead-magnets",
+    source: "Corey Haines Marketing Skills",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/lead-magnets",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/lead-magnets/SKILL.md",
+    githubStars: 44208,
+    starsCheckedAt: "2026-08-14",
+    status: "published",
+    recommendation: "Published pick: the method produced a complete, immediately useful 16-point Agent Skill evaluation checklist plus an honest optional-capture, delivery, distribution, and measurement strategy.",
+    dateExplored: "2026-08-14",
+    scenarios: ["content-writing", "marketing", "agent-workflow"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["10/11 concepts", "16-point checklist", "Ungated preview"],
+    summary: "A lead-magnet strategy Skill for choosing one valuable resource, matching it to buyer stage, minimizing capture friction, planning delivery and distribution, and measuring lead quality.",
+    phoebeNote: "Use it when you have expertise or reusable internal methods but need to package one narrow, genuinely useful resource that earns the next interaction without withholding the answer.",
+    coreConcepts: [
+      "Read existing product-marketing context before repeating business, audience, problem, and product discovery.",
+      "Assess current capture, existing assets, reusable expertise, goal, buyer stage, timeline, and resources.",
+      "Solve one specific problem with high perceived value and low time investment.",
+      "Match checklist, cheat sheet, template, guide, course, quiz, webinar, or access format to buyer stage and effort.",
+      "Create a natural path to the product while making the resource independently useful.",
+      "Keep consumption easy, mobile-friendly, immediately actionable, and focused on one clear format.",
+      "Choose full, partial, optional, or contextual gating and ask for the minimum necessary information.",
+      "Design the landing preview, delivery method, thank-you next step, and risk-reducing capture message.",
+      "Plan owned, social, paid, partner, and contextual distribution appropriate to the audience and budget.",
+      "Measure offer conversion, acquisition efficiency, lead quality, email engagement, progression, and time to conversion.",
+      "Test one variable at a time across message, format, gate, fields, CTA, or delivery and establish first-party benchmarks."
+    ],
+    conceptCoverage: "10/11 concept families were exercised in Agent Skill Evaluation Starter Kit: canonical context, existing gallery assets, one consideration-stage problem, a 16-point under-ten-minute checklist, one mobile and print-friendly format, natural artifact path, ungated plus optional capture, minimal email-only production spec, landing preview, instant access plus optional delivery, thank-you next step, owned-social-partner distribution, lead-quality measurement, and one-variable tests. Paid amplification was excluded because there is no budget or first-party conversion baseline.",
+    groundUpBuild: "Built Agent Skill Evaluation Starter Kit from scratch: a printable and interactive 16-point checklist across source, method, proof, and adoption, plus an optional capture specification, delivery plan, distribution map, decision thresholds, and measurement contract.",
+    rating: 8.8,
+    ratingScale: 10,
+    ratingSummary: "A useful end-to-end strategy for turning expertise into a focused acquisition asset without confusing capture volume with lead quality; some benchmark and gating guidance needs stronger evidence and privacy nuance.",
+    good: [
+      "The one-problem, one-format, low-time-investment rules prevent lead magnets from becoming padded ebooks that offer little immediate value.",
+      "Buyer-stage matching, gating choices, minimal fields, delivery, thank-you, and distribution make the output an operating plan rather than a content idea.",
+      "The method connects conversion, engagement, downstream progression, and lead quality so download volume cannot stand in for business value."
+    ],
+    improve: [
+      "Benchmark ranges need dated sources, industry context, and clearer warnings against treating generic figures as targets.",
+      "The gating section should more strongly address consent language, data minimization, deletion, accessibility, and the case for keeping public-interest resources fully ungated.",
+      "It should add a maintenance plan for resource freshness, broken delivery links, ownership, version history, and retirement triggers."
+    ],
+    useCases: [
+      "Creators can package a field-tested framework into a checklist, template, or guide that is useful before any subscription ask.",
+      "B2B teams can match resources to awareness, consideration, or decision stages and compare lead quality by source and offer.",
+      "Data and AI leaders can turn evaluation methods, governance checks, or implementation playbooks into concise educational resources."
+    ],
+    demo: "demos/skill-evaluation-starter-kit/index.html#lead-magnets",
+    galleryLink: "demos/skill-evaluation-starter-kit/index.html#lead-magnets"
+  },
+  {
+    id: "emails",
+    name: "emails",
+    source: "Corey Haines Marketing Skills",
+    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/emails",
+    sourceRepo: "coreyhaines31/marketingskills",
+    sourcePath: "skills/emails/SKILL.md",
+    githubStars: 44208,
+    starsCheckedAt: "2026-08-14",
+    status: "published",
+    recommendation: "Published pick: the method produced a five-email, ten-day learning path with one job and one primary action per message, behavior-aware automation, segments, exits, and an explicit testing plan.",
+    dateExplored: "2026-08-14",
+    scenarios: ["content-writing", "marketing", "automation"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["10/11 concepts", "5-email journey", "One job each"],
+    summary: "An email-sequence design Skill covering lifecycle intent, triggers, audience state, goals, cadence, subjects, message structure, segmentation, automation, testing, and metrics.",
+    phoebeNote: "Use it when a signup or behavior should start a coherent learning or activation journey, not a pile of unrelated broadcasts.",
+    coreConcepts: [
+      "Read existing product-marketing context before repeating audience and relationship discovery.",
+      "Define the sequence type, entry trigger, audience knowledge, current relationship, primary conversion, relationship goal, segmentation goal, and success definition.",
+      "Give every email one job, one main CTA, and a clear next step.",
+      "Lead with value, earn the ask, and prefer fewer relevant emails over volume.",
+      "Choose sequence length and delays based on lifecycle stage, sales cycle, complexity, weekdays, time zones, and behavior.",
+      "Write clear and specific subjects plus complementary preview text rather than repeating the subject.",
+      "Structure each email as hook, context, value, CTA, and a human sign-off.",
+      "Use short paragraphs, whitespace, bullets, active voice, conversational tone, mobile-first length, and action-plus-outcome CTAs.",
+      "Segment and personalize by behavior, stage, profile, goal, and triggered actions with safe fallbacks.",
+      "Define entry, delays, conditional branches, suppression, pause, exit, unsubscribe, and coordination with other messaging.",
+      "Measure delivery, engagement, conversion, unsubscribe, and sequence outcomes while testing one variable at a time with sufficient data."
+    ],
+    conceptCoverage: "10/11 concept families were exercised in Agent Skill Evaluation Starter Kit: product context, nurture type, optional-delivery trigger, audience knowledge, five-email and ten-day cadence, one job and one CTA per email, value-before-ask sequence, clear subjects and preview text, full mobile-first copy, role segments, behavior-aware pause logic, entry and exit conditions, unsubscribe handling, and a metrics and one-variable testing plan. Live sending, deliverability, inbox rendering, and statistical testing require a consented list and email platform.",
+    groundUpBuild: "Built a five-email learning journey from scratch inside Agent Skill Evaluation Starter Kit, covering delivery, a source-check quick win, the field-test problem, a four-signal evaluation framework, and a relevant artifact next step, with automation and segment rules.",
+    rating: 8.7,
+    ratingScale: 10,
+    ratingSummary: "A strong sequence-planning framework that connects lifecycle purpose to message-level copy and automation; it needs more rigorous deliverability, consent, accessibility, and experimentation guidance for production use.",
+    good: [
+      "The one-email-one-job rule creates disciplined sequences where every message has a clear purpose and next step.",
+      "Sequence archetypes, timing, subject and preview guidance, full-copy structure, and output templates make the method immediately buildable.",
+      "Behavior, stage, profile segmentation, triggers, exits, and testing connect copy quality to lifecycle operations instead of treating email as broadcasting."
+    ],
+    improve: [
+      "The Skill needs deeper deliverability guidance for authentication, sender reputation, bounces, complaints, suppression, warming, and inbox placement.",
+      "Consent, lawful basis, preference centers, unsubscribe processing, accessibility, and dark-mode rendering should be first-class production requirements.",
+      "Benchmark ranges and statistical-significance advice need dated sources plus practical minimum-sample and decision rules for smaller lists."
+    ],
+    useCases: [
+      "Creators can deliver a useful resource and teach the method over several messages without rushing into a sales pitch.",
+      "Product teams can design onboarding, nurture, milestone, re-engagement, or support sequences around behavior and one activation goal.",
+      "Data teams can define lifecycle events, segment logic, exit conditions, and measurement requirements before choosing an email platform."
+    ],
+    demo: "demos/skill-evaluation-starter-kit/index.html#emails",
+    galleryLink: "demos/skill-evaluation-starter-kit/index.html#emails"
+  },
+  {
     id: "d3-visualization",
     name: "d3-visualization",
     source: "snow-d3 via Open Design",
@@ -837,7 +1260,7 @@ const PICKS = [
       "Use geographic projections and paths when the analytical question has a spatial dimension."
     ],
     conceptCoverage: "9/10 key concept families were exercised: data joins, scales and color, SVG shapes, axes, transitions, zoom and drag, brushing, force simulation, and hierarchy. Geography was deliberately skipped because the Skill dataset has no meaningful spatial dimension.",
-    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 80 Skills, with a force-cluster map, linear wishlist-rank map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
+    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 92 candidates, with a force-cluster map, linear wishlist-rank map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
     rating: 8.3,
     ratingScale: 10,
     ratingSummary: "Broad and practical coverage of D3's core mental models, layouts, and interactions; the learning path and production guidance could be sharper.",
@@ -1226,50 +1649,6 @@ const WISHLIST_CANDIDATES = [
     buildTarget: "A focused marketing plan connecting positioning, audience, channels, campaigns, and measurement."
   },
   {
-    rank: 37,
-    id: "customer-research",
-    sourceRepo: "coreyhaines31/marketingskills",
-    sourcePath: "skills/customer-research/SKILL.md",
-    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/customer-research",
-    githubStars: 41714,
-    category: "marketing",
-    focus: "Marketing · Customer insight",
-    buildTarget: "A voice-of-customer evidence bank that informs segments, objections, messages, and offers."
-  },
-  {
-    rank: 38,
-    id: "content-strategy",
-    sourceRepo: "coreyhaines31/marketingskills",
-    sourcePath: "skills/content-strategy/SKILL.md",
-    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/content-strategy",
-    githubStars: 41714,
-    category: "marketing",
-    focus: "Marketing · Content",
-    buildTarget: "A content system with audience themes, distribution logic, repurposing, cadence, and success measures."
-  },
-  {
-    rank: 39,
-    id: "copywriting",
-    sourceRepo: "coreyhaines31/marketingskills",
-    sourcePath: "skills/copywriting/SKILL.md",
-    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/copywriting",
-    githubStars: 41714,
-    category: "marketing",
-    focus: "Marketing · Conversion copy",
-    buildTarget: "A conversion page with a sharp promise, evidence, objection handling, and measurable calls to action."
-  },
-  {
-    rank: 40,
-    id: "analytics",
-    sourceRepo: "coreyhaines31/marketingskills",
-    sourcePath: "skills/analytics/SKILL.md",
-    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/analytics",
-    githubStars: 41714,
-    category: "marketing",
-    focus: "Marketing · Measurement",
-    buildTarget: "A privacy-aware measurement plan with event definitions, funnel health, attribution limits, and experiments."
-  },
-  {
     rank: 41,
     id: "business-pulse",
     sourceRepo: "anthropics/knowledge-work-plugins",
@@ -1545,28 +1924,6 @@ const WISHLIST_CANDIDATES = [
     buildTarget: "A researched outreach sequence with relevant openings, concise value, credible proof, respectful follow-ups, and measurable replies."
   },
   {
-    rank: 68,
-    id: "emails",
-    sourceRepo: "coreyhaines31/marketingskills",
-    sourcePath: "skills/emails/SKILL.md",
-    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/emails",
-    githubStars: 41754,
-    category: "content-writing",
-    focus: "Content writing · Email sequences",
-    buildTarget: "A lifecycle email series with one job per message, coherent sequencing, useful personalization, clear calls to action, and success measures."
-  },
-  {
-    rank: 69,
-    id: "lead-magnets",
-    sourceRepo: "coreyhaines31/marketingskills",
-    sourcePath: "skills/lead-magnets/SKILL.md",
-    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/lead-magnets",
-    githubStars: 41754,
-    category: "content-writing",
-    focus: "Content writing · Lead magnets",
-    buildTarget: "A genuinely useful guide or toolkit connecting one audience problem, actionable content, trust signals, delivery, and follow-up."
-  },
-  {
     rank: 70,
     id: "public-relations",
     sourceRepo: "coreyhaines31/marketingskills",
@@ -1576,17 +1933,6 @@ const WISHLIST_CANDIDATES = [
     category: "content-writing",
     focus: "Content writing · Public relations",
     buildTarget: "A media-ready narrative package with a defensible angle, supporting facts, spokesperson notes, outreach copy, and follow-up plan."
-  },
-  {
-    rank: 71,
-    id: "social",
-    sourceRepo: "coreyhaines31/marketingskills",
-    sourcePath: "skills/social/SKILL.md",
-    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/social",
-    githubStars: 41754,
-    category: "content-writing",
-    focus: "Content writing · Social content",
-    buildTarget: "A platform-aware social series with a clear point of view, useful hooks, proof, native formatting, repurposing, and response metrics."
   },
   {
     rank: 72,
@@ -1620,17 +1966,6 @@ const WISHLIST_CANDIDATES = [
     category: "content-writing",
     focus: "Content writing · Offer design",
     buildTarget: "A written offer connecting outcome, audience, scope, evidence, risk reversal, pricing logic, objections, and a clear next step."
-  },
-  {
-    rank: 75,
-    id: "product-marketing",
-    sourceRepo: "coreyhaines31/marketingskills",
-    sourcePath: "skills/product-marketing/SKILL.md",
-    sourceUrl: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/product-marketing",
-    githubStars: 41754,
-    category: "content-writing",
-    focus: "Content writing · Product messaging",
-    buildTarget: "A messaging system linking audience problems, positioning, differentiated value, proof, launch narratives, sales enablement, and adoption content."
   },
   {
     rank: 76,
@@ -1741,6 +2076,226 @@ const WISHLIST_CANDIDATES = [
     category: "knowledge-base",
     focus: "Chinese medicine KB · Ontology mapping",
     buildTarget: "A research-only terminology map reconciling TCM names, transliterations, organisms, preparations, structures, and references, with expert validation and license review."
+  },
+  {
+    rank: 86,
+    id: "scikit-learn",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/scikit-learn/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/scikit-learn",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "ML · Classical modeling",
+    buildTarget: "A leakage-safe tabular ML benchmark with preprocessing pipelines, cross-validation, tuning, calibration, diagnostics, and an interpretable model card."
+  },
+  {
+    rank: 87,
+    id: "shap",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/shap/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/shap",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "ML · Explainability · Audit",
+    buildTarget: "A prediction-audit lab comparing global, cohort, and local SHAP explanations with additivity checks, background-data choices, and explicit non-causal limits."
+  },
+  {
+    rank: 88,
+    id: "polars",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/polars/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/polars",
+    githubStars: 33024,
+    category: "data-analytics",
+    focus: "Data engineering · High-performance frames",
+    buildTarget: "A pandas-to-Polars migration benchmark covering expression-based transforms, lazy plans, streaming, joins, schema controls, and memory/runtime evidence."
+  },
+  {
+    rank: 89,
+    id: "timesfm-forecasting",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/timesfm-forecasting/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/timesfm-forecasting",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "ML · Foundation-model forecasting",
+    buildTarget: "A zero-shot forecast challenge comparing TimesFM with seasonal-naive baselines across horizons, intervals, system preflight, and failure cases."
+  },
+  {
+    rank: 90,
+    id: "pytorch-lightning",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/pytorch-lightning/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/pytorch-lightning",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "ML · Scalable deep learning",
+    buildTarget: "A reproducible Lightning training system with modules, data loaders, callbacks, logging, checkpoints, distributed-strategy choices, and recovery QA."
+  },
+  {
+    rank: 91,
+    id: "torch-geometric",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/torch-geometric/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/torch-geometric",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "ML · Graph neural networks",
+    buildTarget: "A graph-learning lab comparing GCN, GAT, and GraphSAGE on node or link prediction with sampling, leakage checks, explainability, and scale constraints."
+  },
+  {
+    rank: 92,
+    id: "aeon",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/aeon/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/aeon",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "ML · Time-series learning",
+    buildTarget: "A temporal ML workbench spanning forecasting, classification, anomaly detection, segmentation, similarity search, and time-aware evaluation."
+  },
+  {
+    rank: 93,
+    id: "pymc",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/pymc/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/pymc",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "Data science · Bayesian modeling",
+    buildTarget: "A hierarchical Bayesian decision model with prior predictive checks, NUTS diagnostics, posterior predictive checks, LOO comparison, and uncertainty-led decisions."
+  },
+  {
+    rank: 94,
+    id: "statistical-analysis",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/statistical-analysis/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/statistical-analysis",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "Statistics · Research analysis",
+    buildTarget: "A guided analysis studio connecting estimand, test selection, assumptions, effect sizes, uncertainty, multiple comparisons, and reproducible reporting."
+  },
+  {
+    rank: 95,
+    id: "statistical-power",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/statistical-power/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/statistical-power",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "Statistics · Study planning",
+    buildTarget: "A sample-size planner with SESOI, closed-form and simulation power, dropout and clustering adjustments, sensitivity curves, and transparent assumptions."
+  },
+  {
+    rank: 96,
+    id: "seaborn",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/seaborn/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/seaborn",
+    githubStars: 33024,
+    category: "data-analytics",
+    focus: "Data viz · Statistical exploration",
+    buildTarget: "An exploratory visual atlas using distributions, relationships, categorical comparisons, facets, confidence intervals, and colorblind-safe themes."
+  },
+  {
+    rank: 97,
+    id: "matplotlib",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/matplotlib/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/matplotlib",
+    githubStars: 33024,
+    category: "data-analytics",
+    focus: "Data viz · Publication graphics",
+    buildTarget: "A precisely styled multi-panel figure with custom artists, annotations, accessible encodings, export QA, and reproducible figure metadata."
+  },
+  {
+    rank: 98,
+    id: "geopandas",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/geopandas/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/geopandas",
+    githubStars: 33024,
+    category: "data-analytics",
+    focus: "Data science · Vector geospatial",
+    buildTarget: "A local vector-data audit with CRS validation, geometry repair, spatial joins, area/distance caveats, provenance, and truthful thematic maps."
+  },
+  {
+    rank: 99,
+    id: "geomaster",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/geomaster/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/geomaster",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "Data science · Geospatial ML",
+    buildTarget: "An Earth-observation evidence workflow combining STAC discovery, raster and vector processing, spatial features, model evaluation, and map-based uncertainty."
+  },
+  {
+    rank: 100,
+    id: "networkx",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/networkx/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/networkx",
+    githubStars: 33024,
+    category: "data-analytics",
+    focus: "Data science · Network analysis",
+    buildTarget: "A graph-analysis workbench covering graph construction, components, paths, centrality, communities, robustness, file exchange, and explainable layouts."
+  },
+  {
+    rank: 101,
+    id: "umap-learn",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/umap-learn/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/umap-learn",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "ML · Dimensionality reduction",
+    buildTarget: "An embedding reliability lab comparing UMAP settings, seeds, neighborhood preservation, supervised variants, density views, and downstream clustering stability."
+  },
+  {
+    rank: 102,
+    id: "dask",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/dask/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/dask",
+    githubStars: 33024,
+    category: "data-analytics",
+    focus: "Data engineering · Distributed analytics",
+    buildTarget: "A larger-than-memory pipeline comparing partitioning, lazy execution, task graphs, cluster diagnostics, persistence choices, and pandas parity."
+  },
+  {
+    rank: 103,
+    id: "vaex",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/vaex/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/vaex",
+    githubStars: 33024,
+    category: "data-analytics",
+    focus: "Data engineering · Out-of-core analytics",
+    buildTarget: "A billion-row-style out-of-core prototype using memory mapping, virtual columns, lazy filters, fast aggregations, density visualization, and ML transforms."
+  },
+  {
+    rank: 104,
+    id: "stable-baselines3",
+    sourceRepo: "K-Dense-AI/scientific-agent-skills",
+    sourcePath: "skills/stable-baselines3/SKILL.md",
+    sourceUrl: "https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/stable-baselines3",
+    githubStars: 33024,
+    category: "data-science-ml",
+    focus: "ML · Reinforcement learning",
+    buildTarget: "A bounded RL experiment with environment checks, algorithm selection, seeded training, callbacks, evaluation episodes, checkpoint review, and learning curves."
+  },
+  {
+    rank: 105,
+    id: "chart-visualization",
+    sourceRepo: "antvis/chart-visualization-skills",
+    sourcePath: "skills/chart-visualization/SKILL.md",
+    sourceUrl: "https://github.com/antvis/chart-visualization-skills/tree/master/skills/chart-visualization",
+    githubStars: 455,
+    category: "data-analytics",
+    focus: "Data viz · Chart selection · Emerging",
+    buildTarget: "A chart-selection and rendering test across time, comparison, distribution, hierarchy, and flow data, with API privacy, failure, labeling, and export checks."
   }
 ];
 

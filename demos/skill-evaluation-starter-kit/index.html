@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A printable 16-point checklist and five-email learning path for evaluating agent Skills before adoption.">
+    <title>Agent Skill Evaluation Starter Kit</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="masthead">
+      <a href="../../index.html">← Agent Skills Phoebe Picks</a>
+      <span>Field note 024 · 14 Aug 2026</span>
+    </header>
+
+    <main>
+      <section class="hero" id="lead-magnets">
+        <div>
+          <p class="eyebrow">Free, ungated preview · optional email learning path</p>
+          <h1>Agent Skill<br><em>Evaluation</em><br>Starter Kit</h1>
+          <p class="dek">A 16-point checklist for deciding whether a reusable agent workflow deserves your trust, context window, and next build.</p>
+          <div class="actions">
+            <button class="primary" id="openKit" type="button">Open the complete checklist</button>
+            <button class="secondary" id="printKit" type="button">Print or save as PDF</button>
+          </div>
+          <small>No signup required. The full checklist is visible. Email delivery is an optional production concept, not active data collection.</small>
+        </div>
+        <aside class="kit-preview">
+          <span>Inside · under 10 minutes</span>
+          <strong>16</strong>
+          <h2>checks across source, method, proof, and adoption</h2>
+          <ul><li>✓ exact provenance</li><li>✓ concept coverage</li><li>✓ scenario evidence</li><li>✓ maintenance fit</li></ul>
+        </aside>
+      </section>
+
+      <nav class="room-tabs" aria-label="Starter Kit rooms">
+        <button class="is-active" data-room="checklist" aria-pressed="true">01 · Checklist</button>
+        <button data-room="journey" aria-pressed="false">02 · Email journey</button>
+        <button data-room="strategy" aria-pressed="false">03 · Offer strategy</button>
+        <button data-room="ledger" aria-pressed="false">04 · Coverage ledger</button>
+      </nav>
+
+      <section class="room is-active" data-panel="checklist">
+        <header class="section-head">
+          <div><p class="eyebrow">The complete resource</p><h2>Four gates before adoption.</h2></div>
+          <div class="progress-card"><span>Session progress</span><strong id="progressValue">0 / 16</strong><button id="resetChecks" type="button">Reset checks</button></div>
+        </header>
+        <div class="checklist-grid" id="checklistGrid"></div>
+        <section class="decision-band">
+          <article><b>12-16 checks</b><span>Ready for a bounded field test</span></article>
+          <article><b>8-11 checks</b><span>Resolve the evidence gaps first</span></article>
+          <article><b>0-7 checks</b><span>Keep it off the trusted path</span></article>
+        </section>
+        <p class="boundary">This checklist is a triage tool, not a security audit or guarantee. High-risk permissions, dependencies, and production environments still need specialist review.</p>
+      </section>
+
+      <section class="room" data-panel="journey" id="emails" hidden>
+        <header class="section-head">
+          <div><p class="eyebrow">Five emails · ten days</p><h2>One useful job per message.</h2></div>
+          <p class="section-note">Trigger: optional checklist delivery request. Goal: help a reader complete one bounded Skill evaluation, then return to an artifact relevant to their situation.</p>
+        </header>
+        <div class="sequence-map" id="sequenceMap"></div>
+        <div class="email-workbench">
+          <aside id="emailList"></aside>
+          <article class="email-preview" id="emailPreview"></article>
+        </div>
+        <section class="automation-card">
+          <div><span>Entry</span><b>Optional delivery request</b></div>
+          <div><span>Segment</span><b>Builder · Leader · Learner</b></div>
+          <div><span>Exit</span><b>Unsubscribe, bounce, or sequence complete</b></div>
+          <div><span>Pause</span><b>Stop promotion after artifact visit</b></div>
+        </section>
+      </section>
+
+      <section class="room" data-panel="strategy" hidden>
+        <header class="section-head">
+          <div><p class="eyebrow">Lead magnet strategy</p><h2>Useful before it asks for anything.</h2></div>
+          <p class="section-note">The checklist solves one consideration-stage job: evaluate a Skill before committing to installation or a production workflow.</p>
+        </header>
+        <div class="strategy-grid">
+          <article><span>Format</span><h3>Printable checklist</h3><p>One clear format, 16 sequenced actions, mobile-friendly and printable in under ten minutes.</p></article>
+          <article><span>Gate</span><h3>Ungated + optional</h3><p>The complete resource stays public. Email is offered only for delivery and a five-part learning path.</p></article>
+          <article><span>Natural next step</span><h3>Inspect a field test</h3><p>The checklist exposes the value of exact sources, coverage, proof artifacts, and honest limitations.</p></article>
+          <article><span>Effort</span><h3>One focused day</h3><p>Checklist, print styling, landing preview, delivery journey, distribution plan, and measurement contract.</p></article>
+        </div>
+        <section class="capture-plan">
+          <div><p class="eyebrow">Production capture specification</p><h2>Ask for the minimum.</h2></div>
+          <div class="form-spec"><label>Email address only<input type="text" value="reader@example.com" disabled></label><button type="button" disabled>Send my checklist</button><small>Demonstration only - no address is collected, stored, or sent.</small></div>
+        </section>
+        <section class="distribution-plan">
+          <article><b>Owned</b><p>Gallery CTA, relevant demo pages, GitHub README, and a contextual article upgrade.</p></article>
+          <article><b>Social</b><p>Four checklist cards, one contrarian post, and one proof-led short video.</p></article>
+          <article><b>Partners</b><p>Agent-workflow newsletters and communities with source credit and an ungated link.</p></article>
+          <article><b>Measure</b><p>Checklist opens, print intent, optional delivery starts, email clicks, artifact visits, and unsubscribes.</p></article>
+        </section>
+        <p class="benchmark-note">No conversion targets are invented. Establish the first-party baseline by source and gate treatment before setting a target or running one-variable tests.</p>
+      </section>
+
+      <section class="room" data-panel="ledger" hidden>
+        <header class="section-head">
+          <div><p class="eyebrow">Independent review decisions</p><h2>Coverage ledger</h2></div>
+          <p class="section-note">The artifact is shared; the evidence and gaps remain separate.</p>
+        </header>
+        <div class="ledger-grid">
+          <article>
+            <div><span>lead-magnets</span><strong>8.8/10</strong></div><h3>10 of 11 concept families</h3>
+            <ul><li class="done">Used product context, current assets, audience problem, consideration stage, and list-quality goal</li><li class="done">Solved one narrow problem with a 16-point checklist consumable in under ten minutes</li><li class="done">Kept one mobile and print-friendly format with an immediate takeaway</li><li class="done">Connected the resource naturally to proof artifacts without withholding the answer</li><li class="done">Specified ungated preview, minimal optional capture, landing preview, delivery, thank-you next step, distribution, measurement, and tests</li><li class="skip">Paid amplification was excluded because no budget or first-party conversion baseline exists</li></ul>
+          </article>
+          <article>
+            <div><span>emails</span><strong>8.7/10</strong></div><h3>10 of 11 concept families</h3>
+            <ul><li class="done">Defined nurture type, trigger, audience state, goal, length, timing, segments, exits, and success signals</li><li class="done">Built five emails with one job and one primary CTA each</li><li class="done">Led with delivery, quick value, problem depth, framework, and a relevant next step</li><li class="done">Wrote clear subjects, complementary previews, hooks, short paragraphs, active voice, and human sign-offs</li><li class="done">Added behavior-aware pause logic, role segments, and a one-variable testing plan</li><li class="skip">Live sending, deliverability, and statistical testing require a consented list and email platform</li></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>Give away the method. Earn the next conversation.</span><a href="../../unexplored-wishlist.md">See what remains unexplored →</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
