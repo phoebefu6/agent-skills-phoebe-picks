@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="A field test of the Baoyu Infographic Skill, with the generated visual and its production receipt.">
+    <title>Skill-to-Artifact Publishing Map</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="back-link" href="../../index.html">← Phoebe's Skill Picks</a>
+      <a class="source-link" href="https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic">View source Skill ↗</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Field test 017 · Published pick</p>
+          <h1>A skill that leaves a <em>receipt.</em></h1>
+          <p class="lede">Baoyu Infographic turns source material into a visual through explicit analysis, structure, layout, style, prompting, generation, and inspection. This page keeps every useful decision attached to the final artifact.</p>
+          <div class="score-row" aria-label="Field-test result">
+            <div><strong>8.6</strong><span>overall / 10</span></div>
+            <div><strong>8/8</strong><span>concept families</span></div>
+            <div><strong>1</strong><span>reproducible artifact</span></div>
+          </div>
+        </div>
+        <aside class="build-stamp" aria-label="Build summary">
+          <span class="stamp-dot"></span>
+          <p>Built from zero</p>
+          <strong>Skill-to-Artifact<br>Publishing Map</strong>
+          <small>Landscape · hand-drawn · English</small>
+        </aside>
+      </section>
+
+      <section class="artifact-section" aria-labelledby="artifact-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The output</p>
+            <h2 id="artifact-title">One page. Four visible stages.</h2>
+          </div>
+          <a class="button" href="infographic.png">Open full resolution ↗</a>
+        </div>
+        <a class="artifact-frame" href="infographic.png" aria-label="Open the full-resolution Skill-to-Artifact Publishing Map">
+          <img src="infographic.png" alt="Hand-drawn landscape infographic showing a four-stage publishing loop from a sourced agent Skill to a tangible artifact, practical impact, and iterative improvement.">
+        </a>
+      </section>
+
+      <section class="receipt-section" aria-labelledby="receipt-title">
+        <div class="section-heading receipt-heading">
+          <div>
+            <p class="eyebrow">The production receipt</p>
+            <h2 id="receipt-title">Inspect the decisions behind the pixels.</h2>
+          </div>
+          <p class="section-note">Select a stage to see what was produced and why it matters.</p>
+        </div>
+
+        <div class="receipt-grid">
+          <div class="stage-tabs" role="tablist" aria-label="Production stages">
+            <button role="tab" aria-selected="true" aria-controls="stage-panel" data-stage="source"><span>01</span>Source</button>
+            <button role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="analysis"><span>02</span>Analyze</button>
+            <button role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="structure"><span>03</span>Structure</button>
+            <button role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="compose"><span>04</span>Compose</button>
+            <button role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="prompt"><span>05</span>Prompt</button>
+            <button role="tab" aria-selected="false" aria-controls="stage-panel" data-stage="verify"><span>06</span>Verify</button>
+          </div>
+          <article id="stage-panel" class="stage-panel" role="tabpanel" tabindex="0" aria-live="polite">
+            <p class="panel-kicker" id="panel-kicker">01 · Preserve the input</p>
+            <h3 id="panel-title">Start with a source you can inspect.</h3>
+            <p id="panel-copy">The Skill and its publishing objective were saved before any visual decisions. That keeps facts, labels, and intent anchored to a recoverable input.</p>
+            <div class="panel-meta">
+              <span id="panel-output">Output · source.md</span>
+              <span id="panel-gate">Gate · source captured</span>
+            </div>
+          </article>
+        </div>
+        <nav class="evidence-links" aria-label="Field-test evidence files">
+          <a href="source.md"><span>01</span>Source brief</a>
+          <a href="analysis.md"><span>02</span>Content analysis</a>
+          <a href="structured-content.md"><span>03</span>Structured content</a>
+          <a href="prompt.md"><span>05</span>Generation prompt</a>
+        </nav>
+      </section>
+
+      <section class="verdict" aria-labelledby="verdict-title">
+        <div class="verdict-intro">
+          <p class="eyebrow">Phoebe's verdict</p>
+          <h2 id="verdict-title">Strong visual thinking.<br>One raster caveat.</h2>
+          <p>The workflow earns its keep by separating information architecture from art direction and saving the complete prompt. Small image-model typography still needs a human eye.</p>
+        </div>
+        <div class="verdict-list good-list">
+          <p class="list-label">What works</p>
+          <ol>
+            <li>Structure and style are separate decisions.</li>
+            <li>The saved prompt makes revision practical.</li>
+            <li>Inspection is part of the workflow, not an afterthought.</li>
+          </ol>
+        </div>
+        <div class="verdict-list improve-list">
+          <p class="list-label">What to improve</p>
+          <ol>
+            <li>Small generated labels can soften or drift.</li>
+            <li>The setup is heavy for low-stakes visual notes.</li>
+            <li>Responsive crops need clearer guidance.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built with the <a href="https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic">Baoyu Infographic Skill</a>.</p>
+      <a href="../../index.html">Back to all Skill picks ↑</a>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,9 +1,19 @@
+<!-- phoebe header -->
+
+[![Open the live gallery](https://img.shields.io/badge/%E2%96%B6%20open%20the%20live%20gallery-1f6feb?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
+[![Star this repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo&color=444444)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
+
+### ▶︎ [Open the live gallery →](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
+
+Free and open. Every build links to its source.
+
+<!-- /phoebe header -->
+
 # Agent Skills Phoebe Picks
 
-[![Live Gallery](https://img.shields.io/badge/live-gallery-111111?style=for-the-badge)](https://phoebefu6.github.io/agent-skills-phoebe-picks/)
-[![Star This Repo](https://img.shields.io/github/stars/phoebefu6/agent-skills-phoebe-picks?style=for-the-badge&label=star%20this%20repo)](https://github.com/phoebefu6/agent-skills-phoebe-picks/stargazers)
-[![Published Picks](https://img.shields.io/badge/published%20picks-23-6f7cff?style=for-the-badge)](#published-products)
-[![Field Tests](https://img.shields.io/badge/field%20tests-24-ffbc91?style=for-the-badge)](#field-tested-artifacts)
+[![Published picks](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fphoebefu6.github.io%2Fagent-skills-phoebe-picks%2Fstats.json&query=%24.picks_published&label=published%20picks&style=for-the-badge&color=6f7cff)](#published-products)
+[![Field tests](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fphoebefu6.github.io%2Fagent-skills-phoebe-picks%2Fstats.json&query=%24.field_tests&label=field%20tests&style=for-the-badge&color=ffbc91)](#field-tested-artifacts)
+[![Wishlist](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fphoebefu6.github.io%2Fagent-skills-phoebe-picks%2Fstats.json&query=%24.wishlist_candidates&label=on%20the%20wishlist&style=for-the-badge&color=8a8f98)](unexplored-wishlist.md)
 [![Stack](https://img.shields.io/badge/stack-static%20HTML%20CSS%20JS-f2efe8?style=for-the-badge)](#repo-map)
 
 A public shelf of AI agent Skills that survived a real build.
@@ -57,6 +67,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `analytics` | [Proof to Action Lab: Measurement Lab](demos/proof-to-action-lab/#analytics) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/analytics), explored 2026-08-13 | Published pick, 8.7/10 overall rating, 10/11 concept families used |
 | `lead-magnets` | [Agent Skill Evaluation Starter Kit](demos/skill-evaluation-starter-kit/#lead-magnets) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/lead-magnets), explored 2026-08-14 | Published pick, 8.8/10 overall rating, 10/11 concept families used |
 | `emails` | [Agent Skill Evaluation Starter Kit: Email Journey](demos/skill-evaluation-starter-kit/#emails) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/emails), explored 2026-08-14 | Published pick, 8.7/10 overall rating, 10/11 concept families used |
+| `baoyu-infographic` | [Skill-to-Artifact Publishing Map](demos/baoyu-infographic-publishing-map/) | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic), explored 2026-08-11 | Published pick, 8.6/10 overall rating, 8/8 concept families used |
 
 ## Field-Tested Artifacts
 
@@ -121,6 +132,7 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `analytics` | Published | Work backward from decisions into a consent-aware event contract, validation plan, funnel, and attribution boundary. |
 | `lead-magnets` | Published | Package one narrow evaluation problem into an immediately useful, low-friction resource with delivery and measurement plans. |
 | `emails` | Published | Turn a resource request into a coherent, behavior-aware learning journey with one job per message. |
+| `baoyu-infographic` | Published | Turn dense source material into a deliberate visual explainer with a reproducible prompt trail. |
 | `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
 
 ## Repo Map
@@ -147,6 +159,7 @@ agent-skills-phoebe-picks/
   demos/kol-content-engine/        # content-strategy and social field test
   demos/proof-to-action-lab/       # copywriting and analytics field test
   demos/skill-evaluation-starter-kit/ # lead-magnets and emails field test
+  demos/baoyu-infographic-publishing-map/ # Baoyu visual workflow and prompt receipt
   demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint
   demos/d3-skill-constellation/      # d3-visualization linked-view field test
