@@ -1281,6 +1281,63 @@ const PICKS = [
     galleryLink: "demos/baoyu-infographic-publishing-map/index.html"
   },
   {
+    id: "lieflat-charts",
+    name: "lieflat-charts",
+    source: "Lieflat Charts",
+    sourceUrl: "https://github.com/larashero3-dotcom/lieflat-charts/blob/main/SKILL.md",
+    sourceRepo: "larashero3-dotcom/lieflat-charts",
+    sourcePath: "SKILL.md",
+    githubStars: 1926,
+    starsCheckedAt: "2026-08-27",
+    status: "exploring",
+    recommendation: "Exploring: the ground-up chart page is complete and useful, but the source remains below the 10k-star publication gate. Its PolyForm Noncommercial license also requires a deliberate commercial-use decision.",
+    dateExplored: "2026-08-27",
+    scenarios: ["data-viz", "reporting", "design", "agent-workflow"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["12/14 concepts", "3 SVG charts", "Credibility pending"],
+    summary: "A template-driven data-visualization Skill that selects charts by data contract and reading speed, then produces editorial single-file HTML from a strict Lupi, Basics, Glance, Maps, or Interactive source template.",
+    phoebeNote: "Use it when a small or medium dataset needs an editorial chart with honest units, conclusion-led copy, and a visible selection rationale. Check the noncommercial license before using adapted templates in client or revenue-generating work.",
+    coreConcepts: [
+      "Distinguish default chart mode from explicitly requested full-report mode before selecting any template.",
+      "Treat the data shape as the primary chart-selection key instead of asking for a chart name.",
+      "Audit at least three semantically plausible candidates before locking a template.",
+      "Inspect Lupi Editorial and Lupi Basics before Glance unless the request explicitly requires fast dashboard reading.",
+      "Prefer mainline templates before backup templates and record why a backup is necessary.",
+      "Start from the selected gallery card and renderer, preserving its core geometry, encoding, proportions, and motion.",
+      "Give each chart one independent conclusion and let the number of findings determine the number of charts.",
+      "Allocate templates across a multi-chart page to avoid repeated silhouettes and unsupported decorative variety.",
+      "Lock the entire delivery to Mono, one built-in color preset, or one explicit custom palette.",
+      "Keep visual units honest: countable marks represent real units, bars do not break axes, and area radii use square roots.",
+      "Use the four-part card structure: conclusion title, explanatory subtitle, chart, and uppercase source line.",
+      "Use scroll reveal, click replay, deterministic variation, timer cleanup, and reduced-motion fallback.",
+      "Add interaction only when a real record exists and the static view cannot expose it adequately.",
+      "Use the report catalog and map templates only when the user explicitly requests those output modes."
+    ],
+    conceptCoverage: "12/14 concept families were exercised in Twenty-four picks, read slowly: chart-mode routing, data-shape contracts, three-way candidate audits, Lupi/Basics-first selection, mainline templates, preserved F1/L14/F3 geometry, one finding per chart, global template allocation, a single Mono system, honest countable units, four-part chart cards, and restrained record tooltips plus scroll/click replay and reduced-motion support. Report templates and Maps were deliberately skipped because this was a non-spatial chart request.",
+    groundUpBuild: "Built Twenty-four picks, read slowly from scratch as an offline-friendly SVG chart page that reads the gallery's real review records, computes rating bands and cumulative growth, documents a transparent primary-theme grouping, renders three distinct Lieflat templates, and exposes the candidate-selection receipt and field-test verdict.",
+    rating: 8.7,
+    ratingScale: 10,
+    ratingSummary: "A disciplined and unusually specific chart-production system with excellent unit honesty and editorial craft; its noncommercial license, retrieval friction, and audit overhead limit broader production use.",
+    good: [
+      "It makes data shape and reader attention decide the chart before visual taste enters.",
+      "Its countable rungs, dots, and hairlines make small datasets detailed without inventing records.",
+      "Template receipts, source lines, deterministic motion, and delivery checks make the output inspectable and reproducible."
+    ],
+    improve: [
+      "The PolyForm Noncommercial license needs an explicit commercial-use decision before client or revenue-generating work.",
+      "Catalog IDs and implementation comments sometimes use different naming, which slows precise template retrieval.",
+      "The mandatory multi-candidate audit adds meaningful overhead to quick, low-stakes charts."
+    ],
+    useCases: [
+      "Researchers and writers can turn a small survey or paper finding into a countable editorial visual.",
+      "Data and reporting teams can produce restrained portfolio, annual-review, and operating charts with explicit sources.",
+      "AI builders can give agents a repeatable chart-selection and QA process instead of a vague make-it-pretty prompt.",
+      "Students can inspect how data contracts map to SVG geometry, labels, units, and motion."
+    ],
+    demo: "demos/lieflat-charts-signal-sheet/index.html",
+    galleryLink: "demos/lieflat-charts-signal-sheet/index.html"
+  },
+  {
     id: "d3-visualization",
     name: "d3-visualization",
     source: "snow-d3 via Open Design",
