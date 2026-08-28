@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A ground-up Lieflat Charts field test using the Agent Skills Phoebe Picks review dataset.">
+  <title>Twenty-four picks, read slowly - Lieflat Charts field test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <a class="back-link" href="../../index.html">Agent Skills Phoebe Picks</a>
+    <div class="masthead-grid">
+      <div>
+        <p class="eyebrow">Lieflat Charts field test · 27 Aug 2026</p>
+        <h1>Twenty-four picks,<br>read slowly.</h1>
+      </div>
+      <div class="intro">
+        <p>Three evidence charts built from the gallery's published review records. Every hairline, rung, and dot maps to a real count or an explicitly rounded share.</p>
+        <div class="meta-row">
+          <span><strong id="published-count">24</strong> published picks</span>
+          <span><strong id="mean-rating">8.5</strong> mean rating</span>
+          <span><strong>Mono</strong> color system</span>
+        </div>
+        <button class="replay-button" id="replay-all" type="button">Replay all charts</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="chart-grid" aria-label="Portfolio evidence charts">
+      <article class="card" data-template="F1">
+        <div class="card-index">01 / QUALITY</div>
+        <h2>More than half of the picks clear 8.5</h2>
+        <p class="sub">Published Skill ratings grouped into four bands · one rung = one Skill · n = 24</p>
+        <svg id="rating-bands" viewBox="0 0 400 320" role="img" aria-label="Rung bars showing published Skill counts in four rating bands"></svg>
+        <div class="src">F1 RUNG BARS · MONO-BASIC · DATA/REVIEWS.JS · SNAPSHOT 27 AUG 2026</div>
+      </article>
+
+      <article class="card" data-template="L14">
+        <div class="card-index">02 / FOCUS</div>
+        <h2>Design remains the gallery's largest front door</h2>
+        <p class="sub">Primary theme assigned once per published Skill · one dot = one rounded percentage point · counts remain in labels</p>
+        <svg id="portfolio-mix" viewBox="0 0 400 320" role="img" aria-label="One hundred dots grouped by the primary themes of published Skills"></svg>
+        <div class="src">L14 HUNDRED FIELD · MONO-EDITORIAL · PRIMARY-THEME GROUPING · SHARES ROUNDED TO 100</div>
+      </article>
+
+      <article class="card card-wide" data-template="F3">
+        <div class="card-index">03 / PACE</div>
+        <h2>The gallery grew from 3 to 24 picks in 36 days</h2>
+        <p class="sub">Cumulative published picks by exploration date · one hairline = one calendar day · 16 Jul–20 Aug 2026</p>
+        <svg id="growth-line" viewBox="0 0 840 320" role="img" aria-label="Cumulative published Skill count over thirty-six calendar days"></svg>
+        <div class="src">F3 HAIRLINE AREA · MONO-BASIC · DATEEXPLORED · ZERO-FILL BETWEEN REVIEW BATCHES</div>
+      </article>
+    </section>
+
+    <section class="method" aria-labelledby="selection-title">
+      <div class="section-heading">
+        <p class="eyebrow">Selection receipt</p>
+        <h2 id="selection-title">The data contract chose the shape.</h2>
+        <p>Lieflat Charts requires at least three Lupi Editorial or Basics candidates before a template is locked. Glance was not opened because the primary families could carry every finding honestly.</p>
+      </div>
+      <div class="receipt-grid">
+        <article class="receipt">
+          <span class="chosen">Selected · F1</span>
+          <h3>Rating bands</h3>
+          <p><strong>F1 Rung Bars</strong> preserves ordered bands and countable Skill units.</p>
+          <p class="rejected">L2 adds a dark card without analytical value. F5 spends horizontal room on four short labels.</p>
+        </article>
+        <article class="receipt">
+          <span class="chosen">Selected · L14</span>
+          <h3>Portfolio mix</h3>
+          <p><strong>L14 Hundred Field</strong> turns a complete 100% composition into inspectable units.</p>
+          <p class="rejected">F4 hides comparison around a circle. F7 is compact, but loses the record-like field.</p>
+        </article>
+        <article class="receipt">
+          <span class="chosen">Selected · F3</span>
+          <h3>Growth pace</h3>
+          <p><strong>F3 Hairline Area</strong> is designed for a 30–60 day sequence and keeps quiet days visible.</p>
+          <p class="rejected">F2 stops at 30 days. L3 expects roughly 90 daily readings and would overstate the density.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="field-notes" aria-labelledby="notes-title">
+      <div class="section-heading">
+        <p class="eyebrow">Field notes · 8.7 / 10</p>
+        <h2 id="notes-title">Strong taste, strict contracts, real friction.</h2>
+      </div>
+      <div class="notes-grid">
+        <article>
+          <h3>Three things it does well</h3>
+          <ol>
+            <li>It makes data shape and reading speed decide the chart before visual taste enters.</li>
+            <li>Its countable rungs, dots, and hairlines keep small datasets detailed without inventing records.</li>
+            <li>Template receipts, source lines, replayable motion, and reduced-motion handling make the output inspectable.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Three things to improve</h3>
+          <ol>
+            <li>The PolyForm Noncommercial license needs an explicit commercial-use decision before client work.</li>
+            <li>Catalog IDs and implementation comments sometimes drift, which slows precise template retrieval.</li>
+            <li>The mandatory candidate audit is valuable but heavy for quick, low-stakes charts.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Useful day to day</h3>
+          <ul>
+            <li>Turn a small survey into a countable editorial visual.</li>
+            <li>Make a restrained portfolio, annual-review, or research chart page.</li>
+            <li>Give an agent a disciplined chart-selection process instead of a vague “make it pretty” prompt.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Field test by Phoebe Fu · built from the real public review dataset · no chart library.</p>
+    <p>Adapted from <a href="https://github.com/larashero3-dotcom/lieflat-charts">Lieflat Charts</a> at commit <code>4eef5ce</code>. Upstream template code is offered under the <a href="https://polyformproject.org/licenses/noncommercial/1.0.0">PolyForm Noncommercial License 1.0.0</a>.</p>
+  </footer>
+
+  <script src="../../data/reviews.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

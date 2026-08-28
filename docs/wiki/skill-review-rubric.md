@@ -76,6 +76,8 @@ Promote a Skill to `published` only when it has:
 - At least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof.
 - Acceptable safety and maintenance profile.
 
+When a proof artifact adapts source template code, record the upstream license and preserve its required notice in the artifact. A strong field test does not erase commercial-use restrictions; keep the Skill exploring when the license needs a separate business-use decision.
+
 ## Current First Sprint
 
 The first sprint focuses on design, UI, UX, and frontend Skills because they help build the gallery itself:
