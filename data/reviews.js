@@ -1281,6 +1281,108 @@ const PICKS = [
     galleryLink: "demos/baoyu-infographic-publishing-map/index.html"
   },
   {
+    id: "awesome-design-md",
+    name: "awesome-design-md",
+    source: "VoltAgent Awesome Design MD",
+    sourceUrl: "https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/figma",
+    sourceRepo: "VoltAgent/awesome-design-md",
+    sourcePath: "design-md/figma/DESIGN.md",
+    githubStars: 116515,
+    starsCheckedAt: "2026-09-18",
+    status: "published",
+    recommendation: "Published pick: the workflow turned a broad visual preference into an agent-readable design system, a project-specific adaptation layer, and a responsive live specimen without erasing the product's existing identity.",
+    dateExplored: "2026-09-18",
+    scenarios: ["design", "ui-ux", "frontend", "agent-workflow"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["8/9 concepts", "DESIGN.md", "Live specimen"],
+    summary: "A design-direction workflow for selecting a coherent reference, installing an agent-readable DESIGN.md, and adapting it to a real product's identity and constraints.",
+    phoebeNote: "Use it before frontend implementation when an agent needs concrete color, typography, spacing, component, elevation, responsive, and guardrail decisions instead of a vague aesthetic prompt.",
+    coreConcepts: [
+      "Inspect the target product and name the visual need before selecting a template.",
+      "Shortlist a small set of relevant design references instead of loading the whole library.",
+      "Choose one template whose visual logic matches the product's direction.",
+      "Install the selected DESIGN.md as durable, agent-readable project guidance.",
+      "Read the installed system before implementing the frontend.",
+      "Translate color, typography, spacing, components, layout, and elevation into visible UI decisions.",
+      "Add a project-specific adaptation layer so reference inspiration does not erase local identity.",
+      "Protect semantics, accessibility, responsive behavior, and existing information architecture.",
+      "Refresh the vendored upstream snapshot when the task requires the latest template set."
+    ],
+    conceptCoverage: "8/9 concept families were exercised in Skill System Studio: target inspection, three-template shortlist, Figma template selection, DESIGN.md installation, full read-before-build, visible token and component translation, a project-specific adaptation layer, and responsive and accessibility guardrails. Upstream refresh was skipped because the bundled snapshot already contained the selected current template.",
+    groundUpBuild: "Built Skill System Studio from scratch as a responsive two-Skill evidence page, then authored a compact project DESIGN.md and a live specimen showing the chosen palette, type hierarchy, card rules, actions, elevation, responsive collapse, and publication guardrails.",
+    rating: 8.8,
+    ratingScale: 10,
+    ratingSummary: "A high-leverage way to give coding agents durable visual memory; the strongest results still require contextual adaptation rather than literal brand imitation.",
+    good: [
+      "It turns subjective visual preferences into concrete implementation rules an agent can repeatedly follow.",
+      "Its template-selection step is faster than inventing a design system while still producing a coherent palette, hierarchy, and component language.",
+      "The project-adaptation layer makes it practical to borrow visual logic without flattening an established product identity."
+    ],
+    improve: [
+      "Large brand templates need a compact routing summary so small UI tasks do not load more context than necessary.",
+      "Proprietary typefaces and brand-specific assets need clearer default substitution rules for independent products.",
+      "The workflow would benefit from an automated consistency check between DESIGN.md tokens and the implemented CSS."
+    ],
+    useCases: [
+      "Builders can give Codex or Claude Code a durable visual source of truth before creating a landing page or product screen.",
+      "Design leads can document the parts of a reference aesthetic that should and should not enter an existing product.",
+      "Students can inspect how color, type, spacing, components, and responsive rules translate from prose into a working interface."
+    ],
+    demo: "demos/skill-system-studio/index.html#design-system",
+    galleryLink: "demos/skill-system-studio/index.html#design-system"
+  },
+  {
+    id: "mindmap",
+    name: "mindmap",
+    source: "Markdown Viewer Skills",
+    sourceUrl: "https://github.com/markdown-viewer/skills/blob/main/mindmap/SKILL.md",
+    sourceRepo: "markdown-viewer/skills",
+    sourcePath: "mindmap/SKILL.md",
+    githubStars: 3326,
+    starsCheckedAt: "2026-09-18",
+    status: "exploring",
+    recommendation: "Exploring: the workflow produced a useful editable hierarchy and a responsive browser artifact, but its source remains below the gallery's 10k credibility gate.",
+    dateExplored: "2026-09-18",
+    scenarios: ["design", "reporting", "agent-workflow"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli", "opencode"],
+    badges: ["8/9 concepts", "PlantUML", "Credibility pending"],
+    summary: "A focused diagram Skill for expressing hierarchical ideas as editable PlantUML mind maps with controlled branch direction, depth, color, and styling.",
+    phoebeNote: "Use it when a process, decision, study topic, or project plan needs a compact hierarchy that stays editable as text.",
+    coreConcepts: [
+      "Wrap every diagram in a PlantUML or PUML code fence.",
+      "Start and end with the exact @startmindmap and @endmindmap delimiters.",
+      "Use consistent repeated markers to express hierarchy depth.",
+      "Split branches with left-side or direction controls when the structure benefits.",
+      "Use block syntax for multi-line nodes when labels require it.",
+      "Apply inline semantic colors to distinguish major branches.",
+      "Define a reusable style block for consistent node and arrow treatment.",
+      "Prefer muted, readable palettes over pure saturated colors.",
+      "Use rich text, icons, or boxless nodes only when they clarify the hierarchy."
+    ],
+    conceptCoverage: "8/9 concept families were exercised in Skill System Studio: the correct fence and delimiters, consistent star-marker depth, bilateral branch control, semantic inline colors, a reusable style block, a muted palette, and an editable source-to-browser translation. Multi-line block nodes and rich-text icons were skipped because concise single-line labels scanned faster.",
+    groundUpBuild: "Built Skill-to-Artifact System Map from scratch as a six-branch PlantUML hierarchy, then translated the same structure into a responsive browser composition with a preserved source file.",
+    rating: 8.3,
+    ratingScale: 10,
+    ratingSummary: "Fast and dependable for bounded hierarchical thinking, though universal rendering and dense-map readability remain practical constraints.",
+    good: [
+      "It turns a long workflow into a hierarchy people can understand quickly.",
+      "The plain-text source makes structural revisions much easier than manually repositioning diagram nodes.",
+      "Branch direction, depth, color, and style controls provide enough range for planning, study, and decision maps."
+    ],
+    improve: [
+      "PlantUML-aware rendering is not universal, so browser publication often needs an SVG, PNG, or HTML translation.",
+      "Large numbers of leaves become visually dense before the syntax itself becomes difficult.",
+      "The source repository remains below this gallery's publication threshold and did not expose a license through the GitHub API snapshot."
+    ],
+    useCases: [
+      "Product and project teams can map work breakdowns, launch plans, risks, and decision branches.",
+      "Students and researchers can turn reading notes into editable topic hierarchies.",
+      "AI builders can document agent workflows and system boundaries without introducing a diagram editor."
+    ],
+    demo: "demos/skill-system-studio/index.html#mindmap",
+    galleryLink: "demos/skill-system-studio/index.html#mindmap"
+  },
+  {
     id: "lieflat-charts",
     name: "lieflat-charts",
     source: "Lieflat Charts",

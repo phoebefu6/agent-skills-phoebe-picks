@@ -68,6 +68,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `lead-magnets` | [Agent Skill Evaluation Starter Kit](demos/skill-evaluation-starter-kit/#lead-magnets) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/lead-magnets), explored 2026-08-14 | Published pick, 8.8/10 overall rating, 10/11 concept families used |
 | `emails` | [Agent Skill Evaluation Starter Kit: Email Journey](demos/skill-evaluation-starter-kit/#emails) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/emails), explored 2026-08-14 | Published pick, 8.7/10 overall rating, 10/11 concept families used |
 | `baoyu-infographic` | [Skill-to-Artifact Publishing Map](demos/baoyu-infographic-publishing-map/) | [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-infographic), explored 2026-08-11 | Published pick, 8.6/10 overall rating, 8/8 concept families used |
+| `awesome-design-md` | [Skill System Studio: Design System](demos/skill-system-studio/#design-system) | [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/figma), explored 2026-09-18 | Published pick, 8.8/10 overall rating, 8/9 concept families used |
 
 ## Field-Tested Artifacts
 
@@ -75,6 +76,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | --- | --- | --- | --- |
 | `lieflat-charts` | [Twenty-four picks, read slowly](demos/lieflat-charts-signal-sheet/) | [larashero3-dotcom/lieflat-charts](https://github.com/larashero3-dotcom/lieflat-charts), commit `4eef5ce`, verified 2026-08-27 | Exploring, 8.7/10, 12/14 concept families exercised; 1,926-star source remains below the publication gate and uses a noncommercial license |
 | `d3-visualization` | [Skill Constellation](demos/d3-skill-constellation/) | Canonical [jiannanya/snow-d3](https://github.com/jiannanya/snow-d3); catalog wrapper in [nexu-io/open-design](https://github.com/nexu-io/open-design), verified 2026-07-26 | Exploring, 8.3/10, 9/10 concept families exercised; canonical source remains below the publication gate |
+| `mindmap` | [Skill System Studio: Mindmap](demos/skill-system-studio/#mindmap) | [markdown-viewer/skills](https://github.com/markdown-viewer/skills/blob/main/mindmap/SKILL.md), verified 2026-09-18 | Exploring, 8.3/10, 8/9 concept families exercised; 3,326-star source remains below the publication gate |
 
 Published products and exploring field tests both show their work. An exploring artifact is evidence of the method, not a recommendation, until the canonical source clears the credibility gate.
 
@@ -134,8 +136,10 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `lead-magnets` | Published | Package one narrow evaluation problem into an immediately useful, low-friction resource with delivery and measurement plans. |
 | `emails` | Published | Turn a resource request into a coherent, behavior-aware learning journey with one job per message. |
 | `baoyu-infographic` | Published | Turn dense source material into a deliberate visual explainer with a reproducible prompt trail. |
+| `awesome-design-md` | Published | Turn a visual reference into durable, agent-readable implementation guidance without erasing local identity. |
 | `lieflat-charts` | Exploring | Select and render editorial charts from explicit data contracts, honest units, and source templates; credibility and commercial licensing remain pending. |
 | `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
+| `mindmap` | Exploring | Turn structured thinking into an editable, styled PlantUML hierarchy; source credibility remains pending. |
 
 ## Repo Map
 
@@ -162,6 +166,7 @@ agent-skills-phoebe-picks/
   demos/proof-to-action-lab/       # copywriting and analytics field test
   demos/skill-evaluation-starter-kit/ # lead-magnets and emails field test
   demos/baoyu-infographic-publishing-map/ # Baoyu visual workflow and prompt receipt
+  demos/skill-system-studio/        # Mindmap and Awesome Design MD joint field test
   demos/lieflat-charts-signal-sheet/ # Lieflat Charts three-template editorial SVG field test
   demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint
