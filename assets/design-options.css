@@ -1001,6 +1001,194 @@ a.skill-card-source:hover {
   line-height: 1.5;
 }
 
+.field-test-section {
+  padding: var(--space-9) 0;
+  border-top: 1px solid var(--ink);
+  background:
+    radial-gradient(circle at 12% 18%, color-mix(in oklch, var(--orange) 23%, transparent) 0 2px, transparent 2.5px) 0 0 / 15px 15px,
+    var(--paper);
+}
+
+.field-test-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: var(--space-8);
+  align-items: end;
+  margin-bottom: var(--space-7);
+}
+
+.field-test-label {
+  display: inline-flex;
+  margin-bottom: var(--space-3);
+  border: 1px solid var(--ink);
+  padding: 5px 9px;
+  background: var(--orange);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transform: rotate(-1deg);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.field-test-heading h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 900;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.field-test-heading p {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.field-test-rail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.field-test-card {
+  display: grid;
+  min-width: 0;
+  border: 1px solid var(--ink);
+  background: color-mix(in oklch, var(--white) 72%, var(--paper));
+  box-shadow: 5px 5px 0 var(--ink);
+  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+
+.field-test-card:hover {
+  transform: translate(-2px, -3px) rotate(-0.35deg);
+  box-shadow: 8px 9px 0 var(--ink);
+}
+
+.field-test-preview {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ink);
+  background: var(--white);
+}
+
+.field-test-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 300ms var(--ease-out);
+}
+
+.field-test-card:hover .field-test-preview img {
+  transform: scale(1.025);
+}
+
+.field-test-copy {
+  display: flex;
+  min-height: 320px;
+  flex-direction: column;
+  padding: var(--space-5);
+}
+
+.field-test-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.field-test-meta span {
+  padding: 4px 7px;
+  background: var(--orange);
+  font-size: 9px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.field-test-meta small {
+  color: var(--muted);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.field-test-copy h3 {
+  margin: var(--space-5) 0 var(--space-2);
+  font-family: var(--display);
+  font-size: clamp(27px, 3vw, 39px);
+  line-height: 0.95;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.field-test-copy > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.field-test-copy dl {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  margin: auto 0 var(--space-4);
+  border-block: 1px solid var(--line);
+}
+
+.field-test-copy dl div {
+  padding: var(--space-3) 0;
+}
+
+.field-test-copy dl div + div {
+  border-left: 1px solid var(--line);
+  padding-left: var(--space-3);
+}
+
+.field-test-copy dt {
+  color: var(--muted);
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.field-test-copy dd {
+  margin: 4px 0 0;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.field-test-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.field-test-actions a,
+.field-test-actions button {
+  min-height: 42px;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.field-test-actions a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--pink-dark);
+}
+
+.field-test-actions button {
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  padding: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
 .drawer-backdrop {
   position: fixed;
   inset: 0;
@@ -1179,8 +1367,13 @@ a.skill-card-source:hover {
 
   .hero-layout,
   .discovery-layout,
-  .product-proof-layout {
+  .product-proof-layout,
+  .field-test-heading {
     grid-template-columns: 1fr;
+  }
+
+  .field-test-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-copy h1 {
@@ -1291,11 +1484,13 @@ a.skill-card-source:hover {
   }
 
   .discovery-section,
-  .product-proof-section {
+  .product-proof-section,
+  .field-test-section {
     padding: var(--space-8) 0;
   }
 
   .product-rail,
+  .field-test-rail,
   .mindmap-branches {
     grid-template-columns: 1fr;
   }

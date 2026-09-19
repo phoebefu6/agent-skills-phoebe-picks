@@ -33,6 +33,7 @@ The active UI is the audience-facing gallery. It should not expose internal LLM 
 1. `data/reviews.js` defines `window.FILTERS`, `window.PICKS`, supporting wishlist research data used by its standalone visualization demo, and `window.EVALUATION_STEPS`.
 2. `assets/design-options.js` reads those globals.
 3. The homepage script filters public entries to `published` records with a `galleryLink`, then renders category filters, score-sorted Skill cards, direct demo actions, and the detail drawer.
+4. A separate `Field tests - not picks` rail renders `exploring` records that have a working demo. It must stay visually and verbally distinct from the published gallery, and each card must say that credibility is pending.
 
 Skill demo artifacts are plain static pages under `demos/<skill-or-artifact-name>/`. Link them from `galleryLink` when the artifact is public-facing proof.
 
@@ -75,7 +76,7 @@ Each public Skill entry should include:
 
 For GitHub-hosted Skills, `githubStars` is a dated snapshot, not a live counter. Refresh it from GitHub before publishing a new pick or after a meaningful update pass.
 
-Published picks must pass the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof. The public homepage shows only published picks with a working demo link. Wishlist, exploring, rejected, or demo-less entries remain outside the homepage gallery in `wishlist.md`, `unexplored-wishlist.md`, or internal learning evidence.
+Published picks must pass the source credibility gate: at least 10k GitHub stars, or verified Skill of the Day, Repo of the Day, top repo, or equivalent ranking proof. The primary public gallery shows only published picks with a working demo link. Exploring entries may appear only in the clearly labeled `Field tests - not picks` rail when they have a complete ground-up artifact and review. Wishlist, rejected, or demo-less entries remain outside the homepage in `wishlist.md`, `unexplored-wishlist.md`, or internal learning evidence.
 
 GitHub stars measure repository popularity, not an individual Skill file. Multiple Skills inside one monorepo therefore have the same repository count. Keep repository-star snapshots only as internal credibility-gate evidence. Do not render numeric stars on individual public Skill or wishlist cards, because that presentation can be mistaken for per-Skill popularity. Public cards should link separately to the repository homepage and the exact Skill source, and keep the individual Skill rating pending until a hands-on field test.
 

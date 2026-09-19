@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="A field test of hand-drawn-styles: one exact recipe turned into a five-step visual story, with the prompt and evaluation preserved.">
+    <title>Hand Drawn Styles Field Test - Phoebe Picks</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css?v=20260919">
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../../index.html#field-tests" class="back-link">← Phoebe Picks</a>
+      <span class="status-mark"><i></i> Exploring field test</span>
+      <a href="https://github.com/threerocks/hand-drawn-styles/blob/main/SKILL.md" target="_blank" rel="noreferrer">Open source ↗</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Recipe 04 · Bean character infographic</p>
+          <h1>One recipe.<br><span>Five proof steps.</span></h1>
+          <p class="lede">The Skill offers 19 visual recipes, then protects the chosen one from prompt drift. I used its exact bean-character recipe to explain how a Skill earns trust.</p>
+          <dl class="score-strip" aria-label="Field test summary">
+            <div><dt>Rating</dt><dd>8.6<span>/10</span></dd></div>
+            <div><dt>Coverage</dt><dd>8<span>/10 concepts</span></dd></div>
+            <div><dt>Library</dt><dd>19<span>style recipes</span></dd></div>
+          </dl>
+        </div>
+        <figure class="artifact-frame">
+          <a href="skill-trust-bean-infographic.png" target="_blank" aria-label="Open the full-size generated infographic">
+            <img src="skill-trust-bean-infographic.png" alt="A five-panel black marker infographic. A round black bean character finds a Skill card, reads its recipe, builds an artifact, checks its evidence, and chooses between publish and explore. Orange highlights mark the key object in each panel.">
+          </a>
+          <figcaption><strong>The artifact</strong><span>Generated from the unmodified Style 4 recipe plus five filled panel descriptions.</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="receipt-section" aria-labelledby="receipt-title">
+        <div class="section-heading">
+          <p class="kicker">The recipe receipt</p>
+          <h2 id="receipt-title">What the Skill actually changed</h2>
+          <p>Not just “make it hand drawn.” The workflow turns style selection into a small, inspectable production system.</p>
+        </div>
+        <ol class="receipt-grid">
+          <li><span>01</span><strong>Select</strong><p>Choose one named recipe from the gallery instead of mixing visual adjectives.</p></li>
+          <li><span>02</span><strong>Render exact</strong><p>Extract the verified block with the supplied renderer, preserving every constraint.</p></li>
+          <li><span>03</span><strong>Fill</strong><p>Replace only the recipe placeholders: five panels, five actions, one visual story.</p></li>
+          <li><span>04</span><strong>Generate + inspect</strong><p>Hand the complete prompt to an image model, then check character, hierarchy, color, and text.</p></li>
+        </ol>
+        <details class="prompt-receipt">
+          <summary>Read the exact prompt <span>+</span></summary>
+          <pre id="promptText">A hand-drawn black marker doodle explainer illustration on off-white paper,
+vertical infographic with 5 stacked panels separated by thin hand-drawn lines.
+
+Character: a simple solid-black round blob person with two white dot eyes,
+a small curved smile, and thin black stick arms and legs. The body is solid
+flat black with smooth edges (no sketchy texture). The SAME character appears
+in every panel doing a different action.
+
+Style: clean black marker/pen outlines, slightly wobbly but fully closed
+hand-drawn lines. All objects are OUTLINE-ONLY black line-art with white
+interiors, no shading, no fill. Everything is monochrome black &amp; white EXCEPT
+one orange accent color used ONLY for the single key item in each panel.
+Hand-drawn curved arrows in red or blue point at key spots, each with a short
+handwritten Chinese label. Each panel has a bold hand-written marker-style
+Chinese title at the top. Minimalist composition, lots of white space.
+
+Panels:
+1. FIND - the bean character holds a magnifying glass beside a small orange SKILL.md card. 2. READ - the same bean character studies the source recipe; a curved arrow points to the key rules. 3. BUILD - the character assembles a completely new artifact from simple pieces; the finished artifact is the orange accent. 4. CHECK - the character ticks three proof marks: coverage, rating, and artifact; the checklist is the orange accent. 5. DECIDE - the character stands at a fork between PUBLISH and EXPLORE; the gallery card is the orange accent.</pre>
+          <a href="prompt.md" target="_blank">Open prompt receipt ↗</a>
+        </details>
+      </section>
+
+      <section class="shelf-section" aria-labelledby="shelf-title">
+        <div class="section-heading shelf-heading">
+          <div>
+            <p class="kicker">The style shelf</p>
+            <h2 id="shelf-title">19 recipes, grouped by intent</h2>
+          </div>
+          <div class="shelf-filters" id="styleFilters" aria-label="Filter style recipes"></div>
+        </div>
+        <div class="style-grid" id="styleGrid"></div>
+      </section>
+
+      <section class="verdict-section" aria-labelledby="verdict-title">
+        <div class="verdict-intro">
+          <p class="kicker">Phoebe's field notes</p>
+          <h2 id="verdict-title">Strong method.<br>Not a pick yet.</h2>
+          <p>The build is useful and repeatable. The source is still below this gallery's 10k-star credibility gate, so this remains an Exploring field test rather than a published recommendation.</p>
+          <a class="source-button" href="https://github.com/threerocks/hand-drawn-styles" target="_blank" rel="noreferrer">Inspect the source ↗</a>
+        </div>
+        <div class="verdict-columns">
+          <article class="note-card good">
+            <h3>Three things it does well</h3>
+            <ol>
+              <li>The 19 recipes are concrete and gallery-backed, so their differences are easy to choose.</li>
+              <li>The renderer preserves the verified recipe and validates placeholders, reducing prompt drift.</li>
+              <li>Style 4 produced a coherent five-panel story with a stable character and strong hierarchy.</li>
+            </ol>
+          </article>
+          <article class="note-card improve">
+            <h3>Three things to improve</h3>
+            <ol>
+              <li>The large menu needs a faster task-to-style recommendation path.</li>
+              <li>Image-model text can drift from requested English content to recipe-mandated Chinese labels.</li>
+              <li>Style 4 says orange-only, then permits red or blue arrows, creating a palette contradiction.</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="uses-section" aria-labelledby="uses-title">
+        <div>
+          <p class="kicker">Best daily uses</p>
+          <h2 id="uses-title">Where I would reach for it</h2>
+        </div>
+        <ul>
+          <li><span>01</span>Learning explainers</li>
+          <li><span>02</span>Social carousels</li>
+          <li><span>03</span>Concept art studies</li>
+          <li><span>04</span>Shared prompt systems</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Hand Drawn Styles · Field Test</strong>
+      <span>Built from scratch with Style 4 on 19 September 2026.</span>
+    </footer>
+    <script src="app.js?v=20260919"></script>
+  </body>
+</html>

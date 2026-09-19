@@ -74,6 +74,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
+| `hand-drawn-styles` | [One recipe. Five proof steps.](demos/hand-drawn-styles-field-test/) | [threerocks/hand-drawn-styles](https://github.com/threerocks/hand-drawn-styles), verified 2026-09-19 | Exploring, 8.6/10, 8/10 concept families exercised; canonical source remains below the publication gate |
 | `lieflat-charts` | [Twenty-four picks, read slowly](demos/lieflat-charts-signal-sheet/) | [larashero3-dotcom/lieflat-charts](https://github.com/larashero3-dotcom/lieflat-charts), commit `4eef5ce`, verified 2026-08-27 | Exploring, 8.7/10, 12/14 concept families exercised; 1,926-star source remains below the publication gate and uses a noncommercial license |
 | `d3-visualization` | [Skill Constellation](demos/d3-skill-constellation/) | Canonical [jiannanya/snow-d3](https://github.com/jiannanya/snow-d3); catalog wrapper in [nexu-io/open-design](https://github.com/nexu-io/open-design), verified 2026-07-26 | Exploring, 8.3/10, 9/10 concept families exercised; canonical source remains below the publication gate |
 | `mindmap` | [Skill System Studio: Mindmap](demos/skill-system-studio/#mindmap) | [markdown-viewer/skills](https://github.com/markdown-viewer/skills/blob/main/mindmap/SKILL.md), verified 2026-09-18 | Exploring, 8.3/10, 8/9 concept families exercised; 3,326-star source remains below the publication gate |
@@ -137,6 +138,7 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `emails` | Published | Turn a resource request into a coherent, behavior-aware learning journey with one job per message. |
 | `baoyu-infographic` | Published | Turn dense source material into a deliberate visual explainer with a reproducible prompt trail. |
 | `awesome-design-md` | Published | Turn a visual reference into durable, agent-readable implementation guidance without erasing local identity. |
+| `hand-drawn-styles` | Exploring | Select one of 19 exact visual recipes, render it without prompt drift, and hand it to an image generator with inspectable evidence. |
 | `lieflat-charts` | Exploring | Select and render editorial charts from explicit data contracts, honest units, and source templates; credibility and commercial licensing remain pending. |
 | `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
 | `mindmap` | Exploring | Turn structured thinking into an editable, styled PlantUML hierarchy; source credibility remains pending. |
@@ -167,6 +169,7 @@ agent-skills-phoebe-picks/
   demos/skill-evaluation-starter-kit/ # lead-magnets and emails field test
   demos/baoyu-infographic-publishing-map/ # Baoyu visual workflow and prompt receipt
   demos/skill-system-studio/        # Mindmap and Awesome Design MD joint field test
+  demos/hand-drawn-styles-field-test/ # Hand Drawn Styles recipe gallery and generated proof
   demos/lieflat-charts-signal-sheet/ # Lieflat Charts three-template editorial SVG field test
   demos/pm-decision-room/          # pm-skills lifecycle field test
   demos/product-design-studio/       # frontend-design, canvas-design, emil-design-eng product design sprint

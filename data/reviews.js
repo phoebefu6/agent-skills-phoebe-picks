@@ -1383,6 +1383,59 @@ const PICKS = [
     galleryLink: "demos/skill-system-studio/index.html#mindmap"
   },
   {
+    id: "hand-drawn-styles",
+    name: "hand-drawn-styles",
+    source: "Hand Drawn Styles",
+    sourceUrl: "https://github.com/threerocks/hand-drawn-styles/blob/main/SKILL.md",
+    sourceRepo: "threerocks/hand-drawn-styles",
+    sourcePath: "SKILL.md; PROTOCOL.md; STYLES.md",
+    githubStars: 1232,
+    starsCheckedAt: "2026-09-19",
+    status: "exploring",
+    recommendation: "Exploring: the ground-up visual and review page are complete, but the canonical source remains below the 10k-star publication gate.",
+    dateExplored: "2026-09-19",
+    scenarios: ["design", "prompting", "agent-workflow"],
+    platforms: ["codex", "claude-code", "cursor", "gemini-cli"],
+    badges: ["8/10 concepts", "19 style recipes", "Credibility pending"],
+    summary: "A recipe-driven image prompting Skill with 19 hand-drawn styles, an exact renderer, placeholder validation, and a visual example gallery.",
+    phoebeNote: "Use it when a visual needs a specific hand-drawn language that a team or agent can reproduce without slowly paraphrasing the style into generic prompt soup.",
+    coreConcepts: [
+      "Choose one named recipe from the menu and example gallery instead of loosely mixing style adjectives.",
+      "Route aliases and close style descriptions to the canonical recipe number.",
+      "Extract the verified recipe block exactly with the supplied renderer rather than paraphrasing it.",
+      "Preserve recipe wording, ordering, negative constraints, and internal consistency rules.",
+      "Fill every required placeholder with concrete subject and content details before generation.",
+      "Keep aspect ratio soft when the user has not explicitly requested one.",
+      "Hand the rendered prompt to a downstream image generator as a complete generation contract.",
+      "Inspect the output against the chosen recipe, composition, character consistency, color limits, and text requirements.",
+      "For style 3.1, maintain its dedicated reference-anchor and JSON contract.",
+      "Use the multi-image and three-stage correction workflow when a request needs more than one visual or a repair pass."
+    ],
+    conceptCoverage: "8/10 concept families were exercised in One Recipe, Five Proof Steps: menu and gallery selection, alias-aware routing, exact recipe retrieval, wording preservation, complete placeholder filling, soft aspect handling, downstream image generation, and output inspection. Style 3.1's dedicated reference-anchor contract and the multi-image correction workflow were not relevant to this single-image Style 4 test.",
+    groundUpBuild: "Built a five-panel bean-character explainer from scratch with the exact Style 4 recipe, saved the rendered prompt, generated and inspected the image, then created an interactive field-test page with the full 19-recipe shelf and evaluation receipt.",
+    rating: 8.6,
+    ratingScale: 10,
+    ratingSummary: "A clear, reusable prompt library with unusually good recipe preservation; selection speed, text reliability, and one palette contradiction are the main limits.",
+    good: [
+      "The 19 recipes are concrete and gallery-backed, so their differences are easy to choose.",
+      "The renderer preserves the verified recipe and validates placeholders, reducing prompt drift.",
+      "Style 4 produced a coherent five-panel story with a stable character and strong hierarchy."
+    ],
+    improve: [
+      "The large menu needs a faster task-to-style recommendation path.",
+      "Image-model text can drift from requested English content to recipe-mandated Chinese labels.",
+      "Style 4 says orange-only, then permits red or blue arrows, creating a palette contradiction."
+    ],
+    useCases: [
+      "Educators can turn a process or framework into a memorable hand-drawn explainer.",
+      "Creators can produce social carousels and infographic panels with a repeatable visual language.",
+      "Designers can run fast concept-art studies across 19 distinct hand-drawn directions.",
+      "Teams can share exact visual recipes across agents without relying on taste-by-adjective."
+    ],
+    demo: "demos/hand-drawn-styles-field-test/index.html",
+    galleryLink: "demos/hand-drawn-styles-field-test/index.html"
+  },
+  {
     id: "lieflat-charts",
     name: "lieflat-charts",
     source: "Lieflat Charts",

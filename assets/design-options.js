@@ -1,6 +1,7 @@
 (function () {
   const picks = window.PICKS || window.REVIEWS || [];
   const publishedPicks = picks.filter((pick) => pick.status === "published" && pick.galleryLink);
+  const exploringPicks = picks.filter((pick) => pick.status === "exploring" && pick.galleryLink);
   const filters = window.FILTERS || { scenarios: [], statuses: [] };
   const state = {
     category: "all",
@@ -21,6 +22,7 @@
     drawerClose: byId("drawerClose"),
     drawerBackdrop: byId("drawerBackdrop"),
     productRail: byId("productRail"),
+    fieldTestRail: byId("fieldTestRail"),
     skillStack: byId("skillStack")
   };
 
@@ -87,6 +89,7 @@
     "dbt-transformation-patterns": "Pipeline Lab · dbt",
     "airflow-dag-patterns": "Pipeline Lab · Airflow",
     "baoyu-infographic": "Skill-to-Artifact Map",
+    "hand-drawn-styles": "One Recipe, Five Proof Steps",
     "d3-visualization": "Skill Constellation",
     "customer-research": "KOL Evidence Studio - Signal Desk",
     "product-marketing": "KOL Evidence Studio - Positioning Room",
@@ -264,6 +267,40 @@
       .join("");
   }
 
+  function renderFieldTests() {
+    if (!nodes.fieldTestRail) return;
+
+    const artifactImages = {
+      "hand-drawn-styles": "demos/hand-drawn-styles-field-test/skill-trust-bean-infographic.png"
+    };
+
+    nodes.fieldTestRail.innerHTML = exploringPicks
+      .slice()
+      .sort((a, b) => (b.dateExplored || "").localeCompare(a.dateExplored || ""))
+      .map((pick, index) => {
+        const artifact = artifactImages[pick.id];
+        const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Rating pending";
+        const coverage = (pick.badges || []).find((badge) => badge.includes("concept")) || "Field test complete";
+
+        return `
+          <article class="field-test-card${artifact ? " has-preview" : ""}" data-motion-card style="--i:${index}">
+            ${artifact ? `<a class="field-test-preview" href="${escapeHtml(pick.galleryLink)}" aria-label="Open ${escapeHtml(pick.name)} field test"><img src="${escapeHtml(artifact)}" alt=""></a>` : ""}
+            <div class="field-test-copy">
+              <div class="field-test-meta"><span>Exploring</span><small>Credibility pending</small></div>
+              <h3>${escapeHtml(pick.name)}</h3>
+              <p>${escapeHtml(pick.summary)}</p>
+              <dl><div><dt>Rating</dt><dd>${escapeHtml(rating)}</dd></div><div><dt>Coverage</dt><dd>${escapeHtml(coverage)}</dd></div></dl>
+              <div class="field-test-actions">
+                <a href="${escapeHtml(pick.galleryLink)}">View field test <span aria-hidden="true">→</span></a>
+                <button type="button" data-open-detail="${escapeHtml(pick.id)}">Review notes</button>
+              </div>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+  }
+
   function renderSkillStack() {
     if (!nodes.skillStack) return;
 
@@ -344,6 +381,7 @@
 
   function render() {
     renderProductRail();
+    renderFieldTests();
     renderSkillStack();
     renderFilters();
     renderCards();
@@ -478,7 +516,7 @@
   function observeRevealTargets() {
     if (reducedMotion()) return;
 
-    const targets = document.querySelectorAll(".gallery-column, .skill-card, .product-proof-copy, .rail-card");
+    const targets = document.querySelectorAll(".gallery-column, .skill-card, .product-proof-copy, .rail-card, .field-test-heading, .field-test-card");
     if (!("IntersectionObserver" in window)) return;
 
     if (!revealObserver) {
