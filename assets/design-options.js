@@ -5,7 +5,8 @@
   const filters = window.FILTERS || { scenarios: [], statuses: [] };
   const state = {
     category: "all",
-    query: ""
+    query: "",
+    showAll: false
   };
 
   const byId = (id) => document.getElementById(id);
@@ -333,11 +334,13 @@
 
   function renderCards() {
     const items = visiblePicks();
+    const shownItems = state.showAll || state.query || state.category !== "all" ? items : items.slice(0, 6);
+    byId("showAllPicks").hidden = shownItems.length === items.length;
     nodes.count.textContent = `${items.length} ${items.length === 1 ? "Skill" : "Skills"}`;
     if (nodes.searchStatus) {
       const resultSummary = state.query
         ? `Showing ${items.length} of ${publishedPicks.length} for "${state.query}"`
-        : `Showing ${items.length} of ${publishedPicks.length}`;
+        : `Showing ${shownItems.length} of ${publishedPicks.length}`;
       nodes.searchStatus.textContent = `${resultSummary} · Score high to low`;
     }
     document.querySelectorAll("[data-clear-search]").forEach((button) => {
@@ -345,7 +348,7 @@
     });
     nodes.empty.hidden = items.length !== 0;
 
-    nodes.grid.innerHTML = items
+    nodes.grid.innerHTML = shownItems
       .map((pick) => {
         const primaryScenario = labelForScenario((pick.scenarios || [])[0] || "design");
         const platforms = (pick.platforms || []).map(labelForPlatform).join(", ") || "AI agents";
@@ -566,6 +569,11 @@
   }
 
   function bindEvents() {
+    byId("showAllPicks").addEventListener("click", () => {
+      state.showAll = true;
+      renderCards();
+      nodes.grid.querySelectorAll(".skill-demo-link")[6]?.focus();
+    });
     nodes.search.addEventListener("input", (event) => {
       state.query = event.target.value.trim().toLowerCase();
       renderCards();

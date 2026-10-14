@@ -100,13 +100,18 @@ footer a { font-weight: 800; }
   h1 { font-size: clamp(3.4rem, 18vw, 5.8rem); }
   .section-heading, .practice { grid-template-columns: 1fr; }
   .section-heading { gap: 22px; margin-bottom: 50px; }
-  .mindmap { min-height: 0; grid-template-columns: 1fr 42px 104px 42px 1fr; grid-template-rows: 200px auto; }
+  .mindmap { min-height: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 160px auto auto; gap: 24px; }
+  .center-node { grid-column: 1 / -1; width: 104px; justify-self: center; }
+  .node-left { grid-column: 1; grid-row: 2; }
+  .node-right { grid-column: 2; grid-row: 2; }
+  .connector { display: none; }
+  .node, .branch-details { min-width: 0; max-width: 100%; }
   .center-node strong { font-size: 1.45rem; }
   .center-node span { font-size: 0.58rem; }
   .node { min-height: 108px; padding: 16px; border-radius: 20px; }
   .node strong { font-size: 1.2rem; }
   .node small { font-size: 0.72rem; }
-  .detail-left, .detail-right { grid-column: 1 / -1; }
+  .detail-left, .detail-right { grid-column: 1 / -1; grid-row: 3; }
   .steps { grid-template-columns: 1fr; }
   .steps li { min-height: 0; }
   .steps li + li { border-top: 2px solid var(--ink); border-left: 0; }

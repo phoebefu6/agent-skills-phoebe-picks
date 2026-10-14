@@ -389,6 +389,20 @@ body {
   gap: 16px;
 }
 
+.gallery-more {
+  display: block;
+  margin: 28px auto 0;
+  padding: 14px 24px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--white);
+  font: inherit;
+  cursor: pointer;
+}
+
+.gallery-more[hidden] { display: none; }
+
 .skill-card {
   min-height: 390px;
   border-color: var(--line);
