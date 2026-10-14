@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Two-Skill Lab shows how Mindmap and Sites turn a loose idea into a published web experience.">
+    <title>Two-Skill Lab · Agent Skills Phoebe Picks</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2317233c'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23ffd166'/%3E%3Ccircle cx='13' cy='18' r='5' fill='%23b8f2e6'/%3E%3Ccircle cx='51' cy='18' r='5' fill='%23ff8c69'/%3E%3Ccircle cx='32' cy='52' r='5' fill='%23a6b8ff'/%3E%3Cpath d='M19 21l8 7m18-7l-8 7m-5 12v7' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../../#field-tests" aria-label="Back to Agent Skills Phoebe Picks">
+        <span class="brand-mark" aria-hidden="true">✣</span>
+        <span>Two-Skill Lab</span>
+      </a>
+      <a class="back-link" href="../../#field-tests">Back to the gallery</a>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">FIELD TEST · 14 OCTOBER 2026</p>
+        <h1 id="page-title">From a loose idea<br>to a live page.</h1>
+        <p class="lede">Two Skills, one small loop: <strong>Mindmap</strong> makes the thinking visible. <strong>Sites</strong> makes it usable and shareable.</p>
+        <a class="primary" href="#map">Explore the map</a>
+      </section>
+
+      <section class="map-section" id="map" aria-labelledby="map-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SKILL 01 · MINDMAP</p>
+            <h2 id="map-title">See the whole thought.</h2>
+          </div>
+          <p>Choose either branch to reveal what each Skill contributes to the finished artifact.</p>
+        </div>
+
+        <div class="mindmap" data-map>
+          <button class="node node-left" type="button" aria-expanded="true" aria-controls="mindmap-details" data-branch="mindmap">
+            <span class="node-kicker">01</span>
+            <strong>Mindmap</strong>
+            <small>Structure</small>
+          </button>
+          <div class="connector connector-left" aria-hidden="true"></div>
+          <div class="center-node" aria-label="Core workflow"><span>Explore</span><strong>Build</strong><span>Publish</span></div>
+          <div class="connector connector-right" aria-hidden="true"></div>
+          <button class="node node-right" type="button" aria-expanded="false" aria-controls="sites-details" data-branch="sites">
+            <span class="node-kicker">02</span>
+            <strong>Sites</strong>
+            <small>Expression</small>
+          </button>
+
+          <article class="branch-details detail-left" id="mindmap-details" data-details="mindmap">
+            <h3>Turn ambiguity into branches</h3>
+            <ul><li>Find the central idea</li><li>Group related thoughts</li><li>Expose the next action</li></ul>
+          </article>
+          <article class="branch-details detail-right" id="sites-details" data-details="sites" hidden>
+            <h3>Turn branches into an experience</h3>
+            <ul><li>Shape the story and interface</li><li>Make it work on every screen</li><li>Publish a link people can visit</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="method" aria-labelledby="method-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SKILL 02 · SITES</p>
+            <h2 id="method-title">Make the thinking tangible.</h2>
+          </div>
+          <p>This page is the second Skill in action—not a mockup, but the finished, public artifact.</p>
+        </div>
+        <ol class="steps">
+          <li><span class="step-num">01</span><h3>Explore</h3><p>Start with one topic and let the map reveal its natural branches.</p></li>
+          <li><span class="step-num">02</span><h3>Shape</h3><p>Choose the strongest path and translate it into a clear web narrative.</p></li>
+          <li><span class="step-num">03</span><h3>Publish</h3><p>Release a responsive page that can be revisited, shared, and improved.</p></li>
+        </ol>
+      </section>
+
+      <section class="practice" aria-labelledby="practice-title">
+        <div>
+          <p class="eyebrow">YOUR 15-MINUTE PRACTICE</p>
+          <h2 id="practice-title">Try the loop on something real.</h2>
+        </div>
+        <div class="prompt-card">
+          <p id="practice-prompt">Create a bilateral mind map for my next project: goals and possibilities on one side, risks and unanswered questions on the other. Then turn the strongest path into a one-page website.</p>
+          <button class="copy-button" type="button" data-copy aria-describedby="copy-status">Copy prompt</button>
+          <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>Built by combining <strong>Mindmap</strong> + <strong>Sites</strong>.</p><a href="../../#field-tests">Explore more field tests</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

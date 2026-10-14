@@ -1383,6 +1383,55 @@ const PICKS = [
     galleryLink: "demos/skill-system-studio/index.html#mindmap"
   },
   {
+    id: "sites",
+    name: "Sites",
+    source: "OpenAI curated Sites plugin",
+    sourceUrl: "",
+    sourceRepo: "OpenAI curated plugin",
+    sourcePath: "skills/sites/SKILL.md",
+    githubStars: null,
+    starsCheckedAt: "2026-10-14",
+    status: "exploring",
+    recommendation: "Exploring: the workflow produced and deployed a complete responsive website from a short brief, but the curated plugin does not yet have a public canonical repository that can clear this gallery's credibility gate.",
+    dateExplored: "2026-10-14",
+    scenarios: ["frontend", "design", "agent-workflow"],
+    platforms: ["codex"],
+    badges: ["7/7 relevant concepts", "Static site", "Credibility pending"],
+    summary: "An end-to-end website Skill that selects an appropriate project path, builds the requested experience, validates the result, packages the exact source state, and publishes a verified deployment.",
+    phoebeNote: "Use it when an idea needs to become a real, shareable website—not just a mockup or a folder of frontend files.",
+    coreConcepts: [
+      "Choose between a simple buildless site and a framework project based on the requested behavior.",
+      "Register a new hosted Site once and persist its project identity before publication.",
+      "Design around the visitor's primary task with a clear visual direction and responsive hierarchy.",
+      "Implement the complete requested experience with accessible semantic HTML and purposeful interactions.",
+      "Preview the first recognizable version and verify the representative route serves successfully.",
+      "Package and push the exact validated source state with the hosting manifest.",
+      "Deploy the saved version and confirm a terminal successful status before reporting the URL."
+    ],
+    conceptCoverage: "7/7 relevant concept families were exercised in Two-Skill Lab: buildless-path selection, single Site registration, task-led visual direction, a complete responsive implementation, local route verification, exact source packaging, and terminal deployment confirmation. Server storage, authentication, and external connectors were intentionally skipped because the artifact did not need them.",
+    groundUpBuild: "Built Two-Skill Lab from scratch as an interactive single-page explanation of the Mindmap-to-Sites workflow, verified it locally, packaged its exact source state, and deployed a private production version before adapting the artifact for this public gallery.",
+    rating: 8.7,
+    ratingScale: 10,
+    ratingSummary: "A strong delivery workflow for turning a compact brief into a live, inspectable site; public source provenance and a lighter update path for small existing-site edits remain the largest gaps.",
+    good: [
+      "It treats publication as part of the build, so the result ends with a verified URL instead of an unfinished local preview.",
+      "Its buildless path keeps small static experiences fast and avoids unnecessary framework or dependency overhead.",
+      "The workflow protects source identity, responsive behavior, accessibility, and deployment status through explicit gates."
+    ],
+    improve: [
+      "The curated plugin needs a stable public source page so readers can inspect version history and credibility evidence.",
+      "The full registration, packaging, and deployment sequence is heavier than necessary for tiny edits to an existing static page.",
+      "Visual browser QA depends on the host environment, so the workflow should expose a clearer fallback when preview tooling is unavailable."
+    ],
+    useCases: [
+      "Creators can turn a framework, portfolio, or learning experiment into a polished public page without managing hosting details manually.",
+      "Operators can publish lightweight internal hubs, trackers, and explanatory tools directly from a structured brief.",
+      "AI builders can move from an agent-generated prototype to a versioned, verifiably deployed artifact in one workflow."
+    ],
+    demo: "demos/two-skill-lab/index.html",
+    galleryLink: "demos/two-skill-lab/index.html"
+  },
+  {
     id: "hand-drawn-styles",
     name: "hand-drawn-styles",
     source: "Hand Drawn Styles",

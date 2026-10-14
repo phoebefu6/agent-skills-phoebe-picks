@@ -23,7 +23,9 @@
     drawerBackdrop: byId("drawerBackdrop"),
     productRail: byId("productRail"),
     fieldTestRail: byId("fieldTestRail"),
-    skillStack: byId("skillStack")
+    skillStack: byId("skillStack"),
+    publishedCount: byId("publishedCount"),
+    fieldTestCount: byId("fieldTestCount")
   };
 
   const stackRoles = {
@@ -89,6 +91,8 @@
     "dbt-transformation-patterns": "Pipeline Lab · dbt",
     "airflow-dag-patterns": "Pipeline Lab · Airflow",
     "baoyu-infographic": "Skill-to-Artifact Map",
+    "sites": "Two-Skill Lab",
+    "mindmap": "Skill System Map",
     "hand-drawn-styles": "One Recipe, Five Proof Steps",
     "d3-visualization": "Skill Constellation",
     "customer-research": "KOL Evidence Studio - Signal Desk",
@@ -380,6 +384,8 @@
   }
 
   function render() {
+    if (nodes.publishedCount) nodes.publishedCount.textContent = publishedPicks.length;
+    if (nodes.fieldTestCount) nodes.fieldTestCount.textContent = exploringPicks.length;
     renderProductRail();
     renderFieldTests();
     renderSkillStack();
@@ -474,7 +480,7 @@
 
     const targets = [
       ...document.querySelectorAll(".hero-copy > *"),
-      ...document.querySelectorAll(".route-node, .proof-stamp, .survival-checklist")
+      ...document.querySelectorAll(".latest-lab > *")
     ];
 
     targets.forEach((target, index) => {

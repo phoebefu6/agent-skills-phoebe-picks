@@ -3,34 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Agent Skills Phoebe Picks is a public gallery of AI agent Skills tested through real builds, with demos, ratings, verified sources, and practical proof.">
+    <meta name="description" content="Agent Skills Phoebe Picks is a curated gallery of AI agent Skills tested through real builds, with demos, ratings, verified sources, and practical proof.">
     <meta property="og:title" content="Agent Skills Phoebe Picks">
-    <meta property="og:description" content="Browse AI agent Skills that survived a real build, with demos, ratings, sources, and proof.">
+    <meta property="og:description" content="Browse useful AI agent Skills that have been tested through original, inspectable builds.">
     <meta property="og:type" content="website">
     <title>Agent Skills Phoebe Picks</title>
-    <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="assets/design-options.css?v=field-tests-20260919">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318262b'/%3E%3Cpath d='M18 18h28v8H26v8h17v8H26v12h-8z' fill='%23d9e8d4'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="assets/design-options.css?v=gallery-20261014">
+    <link rel="stylesheet" href="assets/redesign.css?v=gallery-20261014">
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header gallery-header">
       <div class="shell nav">
         <a class="brand" href="#top" aria-label="Agent Skills Phoebe Picks home">
           <span>Agent Skills</span>
           <strong><span>Phoebe</span> Picks</strong>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
-          <a class="is-current" href="#top">Explore</a>
-          <a href="#products">Products</a>
+          <a class="is-current" href="#gallery">Browse</a>
+          <a href="#recent-work">Recent work</a>
           <a href="#field-tests">Field tests</a>
           <a href="#method">Method</a>
-          <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
-        <a class="nav-cta" href="#gallery">Browse the gallery <span aria-hidden="true">→</span></a>
+        <a class="nav-cta" href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Follow on GitHub</a>
         <details class="mobile-nav">
           <summary>Menu</summary>
           <nav aria-label="Mobile navigation">
-            <a href="#gallery">Gallery</a>
-            <a href="#products">Products</a>
+            <a href="#gallery">Browse</a>
+            <a href="#recent-work">Recent work</a>
             <a href="#field-tests">Field tests</a>
             <a href="#method">Method</a>
             <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">GitHub</a>
@@ -40,70 +40,62 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero gallery-hero" aria-labelledby="hero-title">
         <div class="shell hero-layout">
           <div class="hero-copy">
-            <h1 id="hero-title">Agent Skills <span>that survived</span> a real build.</h1>
-            <p class="hero-subtitle">A public shelf of useful AI agent Skills, tested through original artifacts.</p>
+            <p class="hero-kicker">A curated field guide for building with AI agents</p>
+            <h1 id="hero-title">Useful agent Skills, <span>proven by the work.</span></h1>
+            <p class="hero-subtitle">Explore practical Skills by the job they help you do. Every public pick includes a real artifact, an honest rating, and its exact source.</p>
             <div class="button-row">
-              <a class="btn primary" href="#gallery">Browse the gallery <span aria-hidden="true">→</span></a>
-              <a class="btn secondary" href="#products">See published products</a>
+              <a class="btn primary" href="#gallery">Browse the gallery</a>
+              <a class="btn secondary" href="#field-tests">See the field notes</a>
             </div>
+            <dl class="hero-metrics" aria-label="Collection summary">
+              <div><dt id="publishedCount">0</dt><dd>published picks</dd></div>
+              <div><dt id="fieldTestCount">0</dt><dd>active field tests</dd></div>
+              <div><dt>100%</dt><dd>linked to proof</dd></div>
+            </dl>
           </div>
 
-          <div class="proof-map" id="method" aria-labelledby="proof-map-title">
-            <h2 class="sr-only" id="proof-map-title">How a Skill earns its place</h2>
-            <svg class="proof-route-line" viewBox="0 0 640 320" role="img" aria-label="A route from a real need to a tested Skill, completed build, and proof artifact">
-              <path class="route-shadow" d="M55 26 C128 -8 165 36 210 92 S330 118 390 188 S500 258 560 270"></path>
-              <path class="route-main" d="M55 26 C128 -8 165 36 210 92 S330 118 390 188 S500 258 560 270"></path>
-            </svg>
-            <ol class="proof-route">
-              <li class="route-node route-need">
-                <span class="route-dot">N</span>
-                <strong>Need</strong>
-                <p>Find a real job worth improving.</p>
-              </li>
-              <li class="route-node route-skill">
-                <span class="route-dot">S</span>
-                <strong>Skill</strong>
-                <p>Learn the source and its method.</p>
-              </li>
-              <li class="route-node route-build">
-                <span class="route-dot">B</span>
-                <strong>Build</strong>
-                <p>Use it in an original artifact.</p>
-              </li>
-              <li class="route-node route-proof">
-                <span class="route-dot">✓</span>
-                <strong>Proof</strong>
-                <p>Rate the result and show the work.</p>
-              </li>
-            </ol>
-            <div class="proof-stamp" aria-hidden="true"><span>Survived</span> a real build</div>
-            <div class="survival-checklist">
-              <strong>What counts as survived?</strong>
-              <ul>
-                <li>Solved a real problem</li>
-                <li>Used in a ground-up build</li>
-                <li>Artifacts to prove it</li>
-                <li>Worth using again</li>
-              </ul>
+          <aside class="latest-lab" aria-labelledby="latest-lab-title">
+            <div class="latest-lab-heading">
+              <span>Latest lab · 14 Oct 2026</span>
+              <h2 id="latest-lab-title">One idea, two Skills, one live result.</h2>
+              <p>Mindmap organized the thinking. Sites turned the structure into a responsive, published experience.</p>
             </div>
-          </div>
+            <div class="lab-pair">
+              <a class="lab-skill lab-mindmap" href="demos/skill-system-studio/#mindmap">
+                <span>01 · Structure</span>
+                <strong>mindmap</strong>
+                <small>Editable hierarchy and branch logic</small>
+              </a>
+              <a class="lab-skill lab-sites" href="demos/two-skill-lab/">
+                <span>02 · Publish</span>
+                <strong>Sites</strong>
+                <small>Responsive webpage and live deployment</small>
+              </a>
+            </div>
+            <a class="lab-result" href="demos/two-skill-lab/">Open the Two-Skill Lab <span aria-hidden="true">↗</span></a>
+          </aside>
         </div>
       </section>
 
-      <section class="discovery-section" id="scenarios" aria-labelledby="scenario-title">
+      <section class="discovery-section" id="gallery" aria-labelledby="gallery-title">
         <div class="shell discovery-layout">
-          <div class="gallery-column" id="gallery" aria-labelledby="scenario-title">
-            <div class="tape-heading pink-tape">
-              <h2 id="scenario-title">Browse the Skill gallery</h2>
+          <div class="gallery-column">
+            <div class="section-intro">
+              <span class="section-number">01</span>
+              <div>
+                <p class="section-kicker">Published picks</p>
+                <h2 id="gallery-title">Find a Skill for the job in front of you.</h2>
+              </div>
+              <p>Search by task or browse by scenario. Results are ordered by Phoebe's hands-on rating, not popularity alone.</p>
             </div>
-            <p class="gallery-intro">Every published Skill below has been explored hands-on and links to a working demo built from its method.</p>
+
             <div class="toolbar" aria-label="Skill finder">
               <label class="search-wrap">
                 <span class="search-label">Search published Skills</span>
-                <input id="searchInput" type="search" placeholder="Search Skills, categories, or proof">
+                <input id="searchInput" type="search" placeholder="Try dashboard, research, design review…">
               </label>
               <div class="filter-group category-tabs" id="categoryFilters" aria-label="Category filters"></div>
               <button class="clear-search" type="button" data-clear-search hidden>Clear search</button>
@@ -112,18 +104,19 @@
               <span id="searchStatus" aria-live="polite">Showing all Skills</span>
               <strong id="resultCount">0 Skills</strong>
             </div>
-            <div class="skill-grid" id="skillGrid" aria-labelledby="scenario-title"></div>
+            <div class="skill-grid" id="skillGrid" aria-labelledby="gallery-title"></div>
             <div class="empty-state" id="emptyState" hidden>No Skills match this view. Try a broader search or choose All categories.</div>
           </div>
         </div>
       </section>
 
-      <section class="product-proof-section" id="products" aria-labelledby="product-proof-title">
+      <section class="product-proof-section" id="recent-work" aria-labelledby="product-proof-title">
         <div class="shell product-proof-layout">
           <div class="product-proof-copy">
-            <span class="tape-label yellow-tape">Published products</span>
+            <span class="section-number inverse">02</span>
+            <p class="section-kicker">Recent published work</p>
             <h2 id="product-proof-title">The artifacts are the review.</h2>
-            <p>A rotating selection of recent artifacts - visible receipts for what the Skills changed and what shipped.</p>
+            <p>No stock screenshots and no vague recommendations—each entry opens a real build that shows what the Skill changed.</p>
           </div>
           <div class="product-rail" id="productRail" aria-label="Recent published demo products"></div>
         </div>
@@ -133,12 +126,28 @@
         <div class="shell">
           <div class="field-test-heading">
             <div>
-              <span class="field-test-label">Field tests · not picks</span>
-              <h2 id="field-test-title">Useful evidence<br>before endorsement.</h2>
+              <span class="section-number">03</span>
+              <p class="section-kicker">Field notes · not picks yet</p>
+              <h2 id="field-test-title">Promising, not yet promoted.</h2>
             </div>
-            <p>These Skills survived a real build, but their source has not cleared the credibility gate. Explore the artifact and review without mistaking it for a published recommendation.</p>
+            <p>These Skills produced useful evidence, but their sources have not cleared the gallery's credibility gate. Explore the work without mistaking a test for an endorsement.</p>
           </div>
           <div class="field-test-rail" id="fieldTestRail" aria-label="Exploring Skill field tests"></div>
+        </div>
+      </section>
+
+      <section class="method-section" id="method" aria-labelledby="method-title">
+        <div class="shell method-layout">
+          <div class="method-heading">
+            <span class="section-number">04</span>
+            <p class="section-kicker">How the collection works</p>
+            <h2 id="method-title">Evidence before endorsement.</h2>
+          </div>
+          <ol class="method-steps">
+            <li><span>01</span><strong>Find</strong><p>Start with a real problem and inspect the exact Skill source.</p></li>
+            <li><span>02</span><strong>Build</strong><p>Use the method in an original artifact, not a cosmetic amendment.</p></li>
+            <li><span>03</span><strong>Decide</strong><p>Publish the proof, record the limits, and promote only credible picks.</p></li>
+          </ol>
         </div>
       </section>
     </main>
@@ -151,12 +160,12 @@
 
     <footer class="footer">
       <div class="shell footer-inner">
-        <div><strong>Agent Skills Phoebe Picks</strong><span>Built in public. Proven through artifacts.</span></div>
-        <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Follow the collection on GitHub <span aria-hidden="true">→</span></a>
+        <div><strong>Agent Skills Phoebe Picks</strong><span>A living collection of Skills with receipts.</span></div>
+        <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Explore the source on GitHub</a>
       </div>
     </footer>
 
-    <script src="data/reviews.js?v=field-tests-20260919"></script>
-    <script src="assets/design-options.js?v=field-tests-20260919"></script>
+    <script src="data/reviews.js?v=gallery-20261014"></script>
+    <script src="assets/design-options.js?v=gallery-20261014"></script>
   </body>
 </html>

@@ -78,6 +78,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 | `lieflat-charts` | [Twenty-four picks, read slowly](demos/lieflat-charts-signal-sheet/) | [larashero3-dotcom/lieflat-charts](https://github.com/larashero3-dotcom/lieflat-charts), commit `4eef5ce`, verified 2026-08-27 | Exploring, 8.7/10, 12/14 concept families exercised; 1,926-star source remains below the publication gate and uses a noncommercial license |
 | `d3-visualization` | [Skill Constellation](demos/d3-skill-constellation/) | Canonical [jiannanya/snow-d3](https://github.com/jiannanya/snow-d3); catalog wrapper in [nexu-io/open-design](https://github.com/nexu-io/open-design), verified 2026-07-26 | Exploring, 8.3/10, 9/10 concept families exercised; canonical source remains below the publication gate |
 | `mindmap` | [Skill System Studio: Mindmap](demos/skill-system-studio/#mindmap) | [markdown-viewer/skills](https://github.com/markdown-viewer/skills/blob/main/mindmap/SKILL.md), verified 2026-09-18 | Exploring, 8.3/10, 8/9 concept families exercised; 3,326-star source remains below the publication gate |
+| `Sites` | [Two-Skill Lab](demos/two-skill-lab/) | OpenAI curated Sites plugin, explored 2026-10-14 | Exploring, 8.7/10, 7/7 relevant concept families exercised; public canonical source remains unavailable |
 
 Published products and exploring field tests both show their work. An exploring artifact is evidence of the method, not a recommendation, until the canonical source clears the credibility gate.
 
@@ -142,6 +143,7 @@ Weak, risky, or not-useful Skills do not become recommendations.
 | `lieflat-charts` | Exploring | Select and render editorial charts from explicit data contracts, honest units, and source templates; credibility and commercial licensing remain pending. |
 | `d3-visualization` | Exploring | Build custom, linked visual explanations when standard charts cannot show relationships or hierarchy clearly. |
 | `mindmap` | Exploring | Turn structured thinking into an editable, styled PlantUML hierarchy; source credibility remains pending. |
+| `Sites` | Exploring | Carry a website from brief through responsive implementation, packaging, and verified deployment; public source credibility remains pending. |
 
 ## Repo Map
 
