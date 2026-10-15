@@ -175,13 +175,18 @@
   function renderFilterGroup(container, kind, items) {
     const allLabel = kind === "category" ? "All categories" : "All";
     const options = [{ id: "all", label: allLabel }, ...items];
-    container.innerHTML = options
+    const featured = kind === "category" ? options.filter((item) => ["all", "design", "product-design", "data", "research"].includes(item.id)) : options;
+    const extra = kind === "category" ? options.filter((item) => !featured.includes(item)) : [];
+    const buttonMarkup = (values) => values
       .map((item) => {
         const active = state[kind] === item.id ? " is-active" : "";
         const pressed = state[kind] === item.id ? "true" : "false";
         return `<button class="filter-button${active}" type="button" data-kind="${kind}" data-value="${escapeHtml(item.id)}" aria-pressed="${pressed}">${escapeHtml(item.label)}</button>`;
       })
       .join("");
+    container.innerHTML = buttonMarkup(featured) + (extra.length
+      ? `<details class="more-filters"${extra.some((item) => item.id === state[kind]) ? " open" : ""}><summary>More filters</summary><div class="more-filter-options">${buttonMarkup(extra)}</div></details>`
+      : "");
   }
 
   function renderFilters() {
@@ -232,64 +237,49 @@
 
   function renderProductRail() {
     if (!nodes.productRail) return;
-
-    const recentProducts = publishedPicks
-      .slice()
-      .sort((a, b) => (b.dateExplored || "").localeCompare(a.dateExplored || "") || (b.rating || 0) - (a.rating || 0))
-      .filter((pick, index, items) => {
-        const demoPage = pick.galleryLink.split("#")[0];
-        return items.findIndex((item) => item.galleryLink.split("#")[0] === demoPage) === index;
-      })
-      .slice(0, 6);
-
-    nodes.productRail.innerHTML = recentProducts
-      .map((pick, index) => {
-        const scenario = labelForScenario((pick.scenarios || [])[0] || "design");
-        const source = pick.sourceRepo || pick.source || "Source pending";
-        const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Rating pending";
-
-        const artifactImages = {
-          "design-taste-frontend": "assets/artifact-design-taste-lab.png",
-          "canvas-design": "demos/product-design-studio/vision-canvas.svg",
-          "baoyu-infographic": "demos/baoyu-infographic-publishing-map/infographic.png"
-        };
-        const artifact = artifactImages[pick.id];
-        const artifactMarkup = artifact
-          ? `<span class="artifact-tile" aria-hidden="true"><img src="${escapeHtml(artifact)}" alt=""></span>`
-          : "";
-
-        return `
-          <a class="rail-card${artifact ? " has-artifact" : ""}" href="${escapeHtml(pick.galleryLink)}" data-motion-card style="--i:${index}">
-            ${artifactMarkup}
-            <span class="rail-copy">
-              <span>${escapeHtml(scenario)}</span>
-              <strong>${escapeHtml(pick.name)}</strong>
-              <small>${escapeHtml(demoTitle(pick))}<br>${escapeHtml(rating)} · ${escapeHtml(source)}</small>
-            </span>
-          </a>
-        `;
-      })
-      .join("");
+    const projects = [
+      { id: "design-taste-frontend", image: "assets/artifact-design-taste-lab.png", outcome: "A visual study that turns vague taste into design decisions an agent can use." },
+      { id: "find-skills", image: "assets/artifact-discovery-desk.png", outcome: "A discovery desk that checks the source before a Skill earns attention." }
+    ];
+    nodes.productRail.innerHTML = projects.map(({ id, image, outcome }, index) => {
+      const pick = publishedPicks.find((item) => item.id === id);
+      if (!pick) return "";
+      return `<article class="selected-project">
+        <a class="selected-preview" href="${escapeHtml(pick.galleryLink)}" aria-label="Open ${escapeHtml(demoTitle(pick))}"><img src="${escapeHtml(image)}" alt="Preview of ${escapeHtml(demoTitle(pick))}" loading="lazy"></a>
+        <div class="selected-project-copy">
+          <span class="project-index">0${index + 1} / ${escapeHtml(labelForScenario((pick.scenarios || [])[0] || "design"))}</span>
+          <h3>${escapeHtml(demoTitle(pick))}</h3>
+          <p>${escapeHtml(outcome)}</p>
+          <div class="project-bottom"><span>Built with <strong>${escapeHtml(pick.name)}</strong> · ${escapeHtml(pick.rating)}/10</span><a href="${escapeHtml(pick.galleryLink)}">Explore project <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>`;
+    }).join("");
   }
 
   function renderFieldTests() {
     if (!nodes.fieldTestRail) return;
 
-    const artifactImages = {
-      "hand-drawn-styles": "demos/hand-drawn-styles-field-test/skill-trust-bean-infographic.png"
-    };
+    const artifactImages = { "hand-drawn-styles": "demos/hand-drawn-styles-field-test/skill-trust-bean-infographic.png" };
+    const previewPages = { sites: "demos/two-skill-lab/index.html?preview=map", mindmap: "demos/skill-system-studio/index.html" };
+    const featuredOrder = ["sites", "mindmap", "hand-drawn-styles"];
 
     nodes.fieldTestRail.innerHTML = exploringPicks
       .slice()
-      .sort((a, b) => (b.dateExplored || "").localeCompare(a.dateExplored || ""))
+      .sort((a, b) => {
+        const aIndex = featuredOrder.indexOf(a.id);
+        const bIndex = featuredOrder.indexOf(b.id);
+        if (aIndex !== -1 || bIndex !== -1) return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+        return (b.dateExplored || "").localeCompare(a.dateExplored || "");
+      })
       .map((pick, index) => {
         const artifact = artifactImages[pick.id];
+        const previewPage = previewPages[pick.id];
         const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Rating pending";
         const coverage = (pick.badges || []).find((badge) => badge.includes("concept")) || "Field test complete";
 
         return `
-          <article class="field-test-card${artifact ? " has-preview" : ""}" data-motion-card style="--i:${index}">
-            ${artifact ? `<a class="field-test-preview" href="${escapeHtml(pick.galleryLink)}" aria-label="Open ${escapeHtml(pick.name)} field test"><img src="${escapeHtml(artifact)}" alt=""></a>` : ""}
+          <article class="field-test-card${index < 3 ? " has-preview" : " is-compact"}" data-motion-card style="--i:${index}">
+            ${index < 3 ? `<div class="field-test-preview" aria-hidden="true">${artifact ? `<img src="${escapeHtml(artifact)}" alt="" loading="lazy">` : `<iframe src="${escapeHtml(previewPage)}" title="Preview of ${escapeHtml(pick.name)} field test" tabindex="-1" loading="lazy"></iframe>`}</div>` : ""}
             <div class="field-test-copy">
               <div class="field-test-meta"><span>Exploring</span><small>Credibility pending</small></div>
               <h3>${escapeHtml(pick.name)}</h3>
@@ -334,14 +324,15 @@
 
   function renderCards() {
     const items = visiblePicks();
-    const shownItems = state.showAll || state.query || state.category !== "all" ? items : items.slice(0, 6);
+    const shownItems = state.showAll || state.query || state.category !== "all" ? items : items.slice(0, 8);
     byId("showAllPicks").hidden = shownItems.length === items.length;
-    nodes.count.textContent = `${items.length} ${items.length === 1 ? "Skill" : "Skills"}`;
+    byId("showAllPicks").innerHTML = `Browse all ${publishedPicks.length} Skills <span aria-hidden="true">↗</span>`;
+    nodes.count.textContent = `${shownItems.length} ${shownItems.length === 1 ? "Skill" : "Skills"} shown`;
     if (nodes.searchStatus) {
       const resultSummary = state.query
-        ? `Showing ${items.length} of ${publishedPicks.length} for "${state.query}"`
-        : `Showing ${shownItems.length} of ${publishedPicks.length}`;
-      nodes.searchStatus.textContent = `${resultSummary} · Score high to low`;
+        ? `${items.length} matching ${items.length === 1 ? "Skill" : "Skills"} for "${state.query}"`
+        : state.category === "all" && !state.showAll ? `Top-rated 8 of ${publishedPicks.length} published Skills` : `${items.length} matching published Skills`;
+      nodes.searchStatus.textContent = resultSummary;
     }
     document.querySelectorAll("[data-clear-search]").forEach((button) => {
       button.hidden = !state.query;
@@ -349,41 +340,24 @@
     nodes.empty.hidden = items.length !== 0;
 
     nodes.grid.innerHTML = shownItems
-      .map((pick) => {
+      .map((pick, index) => {
         const primaryScenario = labelForScenario((pick.scenarios || [])[0] || "design");
-        const platforms = (pick.platforms || []).map(labelForPlatform).join(", ") || "AI agents";
-        const source = pick.sourceRepo || pick.source || "Source pending";
         const rating = typeof pick.rating === "number" ? `${pick.rating}/${pick.ratingScale || 10}` : "Pending";
         const sourceLink = pick.sourceUrl
-          ? `<a class="skill-card-source" href="${escapeHtml(pick.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(pick.name)} source at ${escapeHtml(pick.sourcePath || source)}"><span>${escapeHtml(source)}</span><small>${escapeHtml(pick.sourcePath || "Exact Skill source")} ↗</small></a>`
-          : `<span class="skill-card-source"><span>${escapeHtml(source)}</span><small>Source path pending</small></span>`;
+          ? `<a class="index-source" href="${escapeHtml(pick.sourceUrl)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(pick.name)} source">Source ↗</a>`
+          : `<span class="index-source">Source pending</span>`;
 
         return `
-          <article class="skill-card" data-pick-id="${escapeHtml(pick.id)}" data-motion-card>
-            <header class="skill-card-header">
-              <span class="skill-card-focus">${escapeHtml(primaryScenario)}</span>
-              <span class="demo-ready-chip">Demo built</span>
-            </header>
-            <div class="skill-card-body">
-              <h3>${escapeHtml(pick.name)}</h3>
-              <p class="skill-card-platforms">For ${escapeHtml(platforms)}</p>
-              <p class="skill-card-summary">${escapeHtml(pick.summary)}</p>
-            </div>
-            <dl class="skill-card-proof">
-              <div><dt>Rating</dt><dd>${escapeHtml(rating)}</dd></div>
-              <div><dt>Built</dt><dd>${escapeHtml(demoTitle(pick))}</dd></div>
-            </dl>
-            ${sourceLink}
-            <footer class="skill-card-actions">
-              <a class="skill-demo-link" href="${escapeHtml(pick.galleryLink)}" aria-label="Open ${escapeHtml(pick.name)} live demo">View demo <span aria-hidden="true">→</span></a>
-              <button class="skill-detail-link" type="button" data-open-detail="${escapeHtml(pick.id)}" aria-label="Open ${escapeHtml(pick.name)} review details">Review notes</button>
-            </footer>
+          <article class="skill-index-row" data-pick-id="${escapeHtml(pick.id)}">
+            <div class="index-number">${String(index + 1).padStart(2, "0")}</div>
+            <div class="index-main"><span>${escapeHtml(primaryScenario)} · ${escapeHtml(demoTitle(pick))}</span><h3>${escapeHtml(pick.name)}</h3><p>${escapeHtml(pick.summary)}</p></div>
+            <div class="index-rating"><strong>${escapeHtml(rating)}</strong><small>Phoebe's rating</small></div>
+            <div class="index-actions"><a href="${escapeHtml(pick.galleryLink)}" aria-label="Open ${escapeHtml(pick.name)} live demo">View build ↗</a><button type="button" data-open-detail="${escapeHtml(pick.id)}" aria-label="Open ${escapeHtml(pick.name)} review details">Review</button>${sourceLink}</div>
           </article>
         `;
       })
       .join("");
 
-    hydrateMotion();
   }
 
   function render() {
@@ -394,7 +368,6 @@
     renderSkillStack();
     renderFilters();
     renderCards();
-    playEntranceMotion();
   }
 
   function listMarkup(items) {
@@ -572,7 +545,7 @@
     byId("showAllPicks").addEventListener("click", () => {
       state.showAll = true;
       renderCards();
-      nodes.grid.querySelectorAll(".skill-demo-link")[6]?.focus();
+      nodes.grid.querySelectorAll(".index-actions a")[8]?.focus();
     });
     nodes.search.addEventListener("input", (event) => {
       state.query = event.target.value.trim().toLowerCase();

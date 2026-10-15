@@ -123,3 +123,6 @@ footer a { font-weight: 800; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+.preview-mode .topbar, .preview-mode .intro, .preview-mode .method, .preview-mode .practice, .preview-mode footer { display: none; }
+.preview-mode .map-section { min-height: 720px; padding-top: 50px; }

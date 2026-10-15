@@ -35,7 +35,7 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 
 | Link | What you get |
 | --- | --- |
-| [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | Browse Skills by scenario, platform, source, rating, and proof. |
+| [Live gallery](https://phoebefu6.github.io/agent-skills-phoebe-picks/) | See selected builds, then browse the searchable Skill index with sources, ratings, and proof. |
 | [Published products](#published-products) | Open the demo products built from each published Skill. |
 | [Unexplored inventory](unexplored-wishlist.md) | Review the separate, non-gallery inventory of remaining Skills by field-test category. |
 | [Wishlist research notes](wishlist.md) | Review the separate source evidence and planned proof build for each candidate. |
@@ -151,8 +151,10 @@ Weak, risky, or not-useful Skills do not become recommendations.
 agent-skills-phoebe-picks/
   index.html                         # Public gallery homepage
   data/reviews.js                    # Skill reviews, sources, ratings, notes, internal credibility evidence
-  assets/design-options.css          # Active visual system
-  assets/design-options.js           # Search, filters, cards, detail drawer
+  assets/design-options.css          # Base visual system
+  assets/redesign.css                # Gallery refinements
+  assets/editorial.css               # Portfolio and compact-index design
+  assets/design-options.js           # Search, filters, previews, index, detail drawer
   demos/skill-demo.css               # Shared demo page styling
   demos/skill-demo.js                # Shared demo page interactions
   demos/frontend-design-interface/   # frontend-design demo

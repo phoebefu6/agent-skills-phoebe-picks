@@ -11,6 +11,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318262b'/%3E%3Cpath d='M18 18h28v8H26v8h17v8H26v12h-8z' fill='%23d9e8d4'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/design-options.css?v=gallery-20261014">
     <link rel="stylesheet" href="assets/redesign.css?v=gallery-20261014-final">
+    <link rel="stylesheet" href="assets/editorial.css?v=portfolio-20261015-b">
   </head>
   <body>
     <header class="site-header gallery-header">
@@ -20,17 +21,18 @@
           <strong><span>Phoebe</span> Picks</strong>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
-          <a class="is-current" href="#gallery">Browse</a>
-          <a href="#recent-work">Recent work</a>
+          <a href="#top">Home</a>
+          <a href="#selected-work">Selected work</a>
+          <a href="#gallery">Skill index</a>
           <a href="#field-tests">Field tests</a>
-          <a href="#method">Method</a>
         </nav>
         <a class="nav-cta" href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">Follow on GitHub</a>
         <details class="mobile-nav">
           <summary>Menu</summary>
           <nav aria-label="Mobile navigation">
-            <a href="#gallery">Browse</a>
-            <a href="#recent-work">Recent work</a>
+            <a href="#top">Home</a>
+            <a href="#selected-work">Selected work</a>
+            <a href="#gallery">Skill index</a>
             <a href="#field-tests">Field tests</a>
             <a href="#method">Method</a>
             <a href="https://github.com/phoebefu6/agent-skills-phoebe-picks" target="_blank" rel="noreferrer">GitHub</a>
@@ -43,40 +45,37 @@
       <section class="hero gallery-hero" aria-labelledby="hero-title">
         <div class="shell hero-layout">
           <div class="hero-copy">
-            <p class="hero-kicker">A curated field guide for building with AI agents</p>
-            <h1 id="hero-title">Useful agent Skills, <span>proven by the work.</span></h1>
-            <p class="hero-subtitle">Explore practical Skills by the job they help you do. Every public pick includes a real artifact, an honest rating, and its exact source.</p>
+            <p class="hero-kicker">Phoebe's field guide · Skills in practice</p>
+            <h1 id="hero-title">See what a Skill <span>can make.</span></h1>
+            <p class="hero-subtitle">I try agent Skills in real builds, keep the useful ones, and show the work. Start with the latest experiment, then explore the collection.</p>
             <div class="button-row">
-              <a class="btn primary" href="#gallery">Browse the gallery</a>
-              <a class="btn secondary" href="#field-tests">See the field notes</a>
+              <a class="btn primary" href="demos/two-skill-lab/">Explore the latest build <span aria-hidden="true">↗</span></a>
+              <a class="btn secondary" href="#selected-work">See selected work</a>
             </div>
-            <dl class="hero-metrics" aria-label="Collection summary">
-              <div><dt id="publishedCount">0</dt><dd>published picks</dd></div>
-              <div><dt id="fieldTestCount">0</dt><dd>active field tests</dd></div>
-              <div><dt>100%</dt><dd>linked to proof</dd></div>
-            </dl>
+            <p class="hero-footnote"><span id="publishedCount">0</span> published picks <span aria-hidden="true">·</span> <span id="fieldTestCount">0</span> field tests</p>
           </div>
 
           <aside class="latest-lab" aria-labelledby="latest-lab-title">
-            <div class="latest-lab-heading">
-              <span>Latest lab · 14 Oct 2026</span>
-              <h2 id="latest-lab-title">One idea, two Skills, one live result.</h2>
-              <p>Mindmap organized the thinking. Sites turned the structure into a responsive, published experience.</p>
+            <div class="lab-preview" aria-hidden="true">
+              <iframe src="demos/two-skill-lab/index.html?preview=map" title="Preview of the Two-Skill Lab" tabindex="-1" loading="eager"></iframe>
             </div>
-            <div class="lab-pair">
-              <a class="lab-skill lab-mindmap" href="demos/skill-system-studio/#mindmap">
-                <span>01 · Structure</span>
-                <strong>mindmap</strong>
-                <small>Editable hierarchy and branch logic</small>
-              </a>
-              <a class="lab-skill lab-sites" href="demos/two-skill-lab/">
-                <span>02 · Publish</span>
-                <strong>Sites</strong>
-                <small>Responsive webpage and live deployment</small>
-              </a>
+            <div class="latest-lab-heading">
+              <span>Latest field test · Mindmap + Sites</span>
+              <h2 id="latest-lab-title">From a loose idea to a live page.</h2>
+              <p>Mindmap found the structure. Sites turned it into this interactive, published lab.</p>
             </div>
             <a class="lab-result" href="demos/two-skill-lab/">Open the Two-Skill Lab <span aria-hidden="true">↗</span></a>
           </aside>
+        </div>
+      </section>
+
+      <section class="product-proof-section" id="selected-work" aria-labelledby="product-proof-title">
+        <div class="shell">
+          <div class="selected-heading">
+            <div><p class="section-kicker">01 / Selected work</p><h2 id="product-proof-title">Built, tested, worth sharing.</h2></div>
+            <p>Two published Skills, shown through the experiences they helped make. Open a project to try it yourself.</p>
+          </div>
+          <div class="product-rail" id="productRail" aria-label="Selected published projects"></div>
         </div>
       </section>
 
@@ -84,12 +83,12 @@
         <div class="shell discovery-layout">
           <div class="gallery-column">
             <div class="section-intro">
-              <span class="section-number">01</span>
+              <span class="section-number">02</span>
               <div>
-                <p class="section-kicker">Published picks</p>
-                <h2 id="gallery-title">Find a Skill for the job in front of you.</h2>
+                <p class="section-kicker">The complete index</p>
+                <h2 id="gallery-title">Find the right Skill.</h2>
               </div>
-              <p>Search by task or browse by scenario. Results are ordered by Phoebe's hands-on rating, not popularity alone.</p>
+              <p>Published picks, each with a source, a rating, and a working demo. Search by task or narrow the list.</p>
             </div>
 
             <div class="toolbar" aria-label="Skill finder">
@@ -105,21 +104,9 @@
               <strong id="resultCount">0 Skills</strong>
             </div>
             <div class="skill-grid" id="skillGrid" aria-labelledby="gallery-title"></div>
-            <button class="gallery-more" id="showAllPicks" type="button" aria-controls="skillGrid" hidden>Show all published picks</button>
+            <button class="gallery-more" id="showAllPicks" type="button" aria-controls="skillGrid" hidden>Browse all published Skills <span aria-hidden="true">↗</span></button>
             <div class="empty-state" id="emptyState" hidden>No Skills match this view. Try a broader search or choose All categories.</div>
           </div>
-        </div>
-      </section>
-
-      <section class="product-proof-section" id="recent-work" aria-labelledby="product-proof-title">
-        <div class="shell product-proof-layout">
-          <div class="product-proof-copy">
-            <span class="section-number inverse">02</span>
-            <p class="section-kicker">Recent published work</p>
-            <h2 id="product-proof-title">Recent demos.</h2>
-            <p>No stock screenshots and no vague recommendations—each entry opens a real build that shows what the Skill changed.</p>
-          </div>
-          <div class="product-rail" id="productRail" aria-label="Recent published demo products"></div>
         </div>
       </section>
 
@@ -129,9 +116,9 @@
             <div>
               <span class="section-number">03</span>
               <p class="section-kicker">Field notes · not picks yet</p>
-              <h2 id="field-test-title">Promising, not yet promoted.</h2>
+              <h2 id="field-test-title">Fresh from the field.</h2>
             </div>
-            <p>These Skills produced useful evidence, but their sources have not cleared the gallery's credibility gate. Explore the work without mistaking a test for an endorsement.</p>
+            <p>Experiments with useful results, still waiting on source credibility. See the build and the honest notes before treating one as a recommendation.</p>
           </div>
           <div class="field-test-rail" id="fieldTestRail" aria-label="Exploring Skill field tests"></div>
         </div>
@@ -167,6 +154,6 @@
     </footer>
 
     <script src="data/reviews.js?v=gallery-20261014"></script>
-    <script src="assets/design-options.js?v=gallery-20261014-final"></script>
+    <script src="assets/design-options.js?v=portfolio-20261015"></script>
   </body>
 </html>
