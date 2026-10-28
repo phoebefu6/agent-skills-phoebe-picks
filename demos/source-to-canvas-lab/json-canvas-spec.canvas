@@ -1,0 +1,187 @@
+{
+  "nodes": [
+    {
+      "id": "a101000000000001",
+      "type": "group",
+      "x": -40,
+      "y": -40,
+      "width": 520,
+      "height": 720,
+      "label": "SOURCE CAPTURE",
+      "color": "5"
+    },
+    {
+      "id": "b202000000000002",
+      "type": "group",
+      "x": 560,
+      "y": -40,
+      "width": 920,
+      "height": 720,
+      "label": "SPECIFICATION MAP",
+      "color": "6"
+    },
+    {
+      "id": "c303000000000003",
+      "type": "link",
+      "x": 20,
+      "y": 40,
+      "width": 400,
+      "height": 110,
+      "url": "https://jsoncanvas.org/spec/1.0/",
+      "color": "5"
+    },
+    {
+      "id": "d404000000000004",
+      "type": "file",
+      "x": 20,
+      "y": 210,
+      "width": 400,
+      "height": 150,
+      "file": "source-capture.md",
+      "subpath": "# Nodes",
+      "color": "4"
+    },
+    {
+      "id": "e505000000000005",
+      "type": "text",
+      "x": 20,
+      "y": 420,
+      "width": 400,
+      "height": 180,
+      "text": "# Capture receipt\n\n**Tool:** Defuddle CLI\n**Format:** Markdown\n**Metadata:** title, description, domain\n**Captured:** 2026-10-28",
+      "color": "3"
+    },
+    {
+      "id": "f606000000000006",
+      "type": "text",
+      "x": 860,
+      "y": 40,
+      "width": 320,
+      "height": 140,
+      "text": "# JSON Canvas 1.0\n\nA portable graph made of **nodes** and **edges**.",
+      "color": "6"
+    },
+    {
+      "id": "a707000000000007",
+      "type": "text",
+      "x": 620,
+      "y": 260,
+      "width": 280,
+      "height": 160,
+      "text": "# Nodes\n\nText · File · Link · Group\n\nPosition, size, color, z-order",
+      "color": "5"
+    },
+    {
+      "id": "b808000000000008",
+      "type": "text",
+      "x": 1140,
+      "y": 260,
+      "width": 280,
+      "height": 160,
+      "text": "# Edges\n\nSource → target\n\nSides, endpoints, labels, color",
+      "color": "2"
+    },
+    {
+      "id": "c909000000000009",
+      "type": "text",
+      "x": 620,
+      "y": 500,
+      "width": 280,
+      "height": 120,
+      "text": "# Integrity\n\nUnique IDs\nNo dangling references",
+      "color": "4"
+    },
+    {
+      "id": "da0a00000000000a",
+      "type": "text",
+      "x": 1140,
+      "y": 500,
+      "width": 280,
+      "height": 120,
+      "text": "# Portable result\n\nValid JSON\nOpen, inspectable, editable",
+      "color": "3"
+    }
+  ],
+  "edges": [
+    {
+      "id": "eb0b00000000000b",
+      "fromNode": "c303000000000003",
+      "fromSide": "bottom",
+      "toNode": "d404000000000004",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "extract",
+      "color": "5"
+    },
+    {
+      "id": "fc0c00000000000c",
+      "fromNode": "d404000000000004",
+      "fromSide": "bottom",
+      "toNode": "e505000000000005",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "record",
+      "color": "4"
+    },
+    {
+      "id": "ad0d00000000000d",
+      "fromNode": "d404000000000004",
+      "fromSide": "right",
+      "toNode": "f606000000000006",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "map",
+      "color": "6"
+    },
+    {
+      "id": "be0e00000000000e",
+      "fromNode": "f606000000000006",
+      "fromSide": "bottom",
+      "toNode": "a707000000000007",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "contains",
+      "color": "5"
+    },
+    {
+      "id": "cf0f00000000000f",
+      "fromNode": "f606000000000006",
+      "fromSide": "bottom",
+      "toNode": "b808000000000008",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "connects with",
+      "color": "2"
+    },
+    {
+      "id": "d010000000000010",
+      "fromNode": "a707000000000007",
+      "fromSide": "bottom",
+      "toNode": "c909000000000009",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "validate",
+      "color": "4"
+    },
+    {
+      "id": "e111000000000011",
+      "fromNode": "b808000000000008",
+      "fromSide": "bottom",
+      "toNode": "da0a00000000000a",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "serialize",
+      "color": "3"
+    },
+    {
+      "id": "f212000000000012",
+      "fromNode": "c909000000000009",
+      "fromSide": "right",
+      "toNode": "da0a00000000000a",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "proves",
+      "color": "4"
+    }
+  ]
+}

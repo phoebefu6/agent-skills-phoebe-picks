@@ -1,6 +1,6 @@
 # Unexplored Wishlist
 
-*Current as of 2026-08-14 · 92 source-backed candidates · none of the Skills below has completed the gallery’s source-read plus ground-up field-test protocol.*
+*Current as of 2026-10-28 · 90 source-backed candidates · none of the Skills below has completed the gallery’s source-read plus ground-up field-test protocol.*
 
 This is the complete working inventory behind the public wishlist. Repository popularity is a discovery signal, not a recommendation. A Skill moves off this list only after its source is learned, about 80% of its key method is exercised in a new artifact, and the result passes the publication rubric.
 
@@ -16,10 +16,10 @@ This is the complete working inventory behind the public wishlist. Repository po
 | LLMs and agents | 11 |
 | Product | 6 |
 | Design and creative | 6 |
-| Knowledge bases and research | 15 |
+| Knowledge bases and research | 13 |
 | Office workflows | 5 |
 | One-person company | 5 |
-| **Total** | **92** |
+| **Total** | **90** |
 
 ## Content creation and KOL (6)
 
@@ -128,7 +128,7 @@ This is the complete working inventory behind the public wishlist. Repository po
 | 49 | `color-expert` | Design · Color systems | A semantic color system tested across light and dark themes, data states, contrast requirements, and brand expression. | [nexu-io/open-design](https://github.com/nexu-io/open-design/tree/main/skills/color-expert) |
 | 50 | `design-brief` | Design · Briefing | A decision-ready creative brief connecting audience, problem, promise, constraints, references, deliverables, and success criteria. | [nexu-io/open-design](https://github.com/nexu-io/open-design/tree/main/skills/design-brief) |
 
-## Knowledge bases and research (15)
+## Knowledge bases and research (13)
 
 | Rank | Skill | Focus | Planned ground-up test | Source |
 | ---: | --- | --- | --- | --- |
@@ -138,8 +138,6 @@ This is the complete working inventory behind the public wishlist. Repository po
 | 24 | `obsidian-markdown` | Knowledge base · Obsidian | A connected Obsidian vault using properties, wikilinks, embeds, callouts, and maps of content. | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-markdown) |
 | 25 | `obsidian-bases` | Knowledge base · Structured views | A database-like knowledge dashboard with filtered table, card, list, and summary views. | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-bases) |
 | 76 | `notion-spec-to-implementation` | Knowledge base · Specs to delivery | A linked Notion workflow that turns a source specification into implementation tasks, decisions, progress evidence, and durable project memory. | [openai/skills](https://github.com/openai/skills/tree/main/skills/.curated/notion-spec-to-implementation) |
-| 77 | `defuddle` | Knowledge base · Web capture | A clean web-to-knowledge capture flow preserving title, author, source, useful structure, metadata, citations, and readable Markdown. | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills/tree/main/skills/defuddle) |
-| 78 | `json-canvas` | Knowledge base · Visual maps | A machine-readable knowledge canvas connecting notes, sources, claims, questions, and decisions through inspectable nodes and edges. | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills/tree/main/skills/json-canvas) |
 | 79 | `obsidian-cli` | Knowledge base · Vault automation | A safe vault-maintenance workflow for search, capture, metadata updates, link checks, and batch operations with backups and dry runs. | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-cli) |
 | 80 | `library-curator` | Knowledge base · Library curation | A curated resource library with explicit inclusion rules, taxonomy, summaries, provenance, duplicate handling, quality signals, and maintenance cadence. | [nexu-io/open-design](https://github.com/nexu-io/open-design/tree/main/skills/library-curator) |
 | 81 | `weread-year-in-review-video-template` | Knowledge base · WeRead reflection | A WeRead year-in-review knowledge story connecting books, highlights, themes, reading patterns, memorable ideas, and an editable visual narrative. | [nexu-io/open-design](https://github.com/nexu-io/open-design/tree/main/skills/weread-year-in-review-video-template) |

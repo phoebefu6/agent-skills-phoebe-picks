@@ -44,6 +44,8 @@ Star this repo if you want a growing shortlist of Skills that show their work:
 
 | Skill | Built from scratch | Source snapshot | Result |
 | --- | --- | --- | --- |
+| `defuddle` | [Source to Canvas Lab: Capture](demos/source-to-canvas-lab/#defuddle) | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills/tree/main/skills/defuddle), explored 2026-10-28 | Published pick, 8.2/10 overall rating, 4/4 concept families used |
+| `json-canvas` | [Source to Canvas Lab: Map](demos/source-to-canvas-lab/#json-canvas) | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills/tree/main/skills/json-canvas), explored 2026-10-28 | Published pick, 9.0/10 overall rating, 9/10 concept families used |
 | `frontend-design` | [Product Design Studio](demos/product-design-studio/#frontend-design) | [anthropics/skills](https://github.com/anthropics/skills), explored 2026-07-17 | Published pick, 8.6/10 overall rating |
 | `canvas-design` | [Product Design Studio](demos/product-design-studio/#canvas-design) | [anthropics/skills](https://github.com/anthropics/skills), explored 2026-07-17 | Published pick, 7.8/10 overall rating |
 | `emil-design-eng` | [Product Design Studio](demos/product-design-studio/#emil-design-eng) | [emilkowalski/skills](https://github.com/emilkowalski/skills), explored 2026-07-17 | Published pick, 8.4/10 overall rating |
@@ -114,6 +116,8 @@ Weak, risky, or not-useful Skills do not become recommendations.
 
 | Skill | Status | Why it matters |
 | --- | --- | --- |
+| `defuddle` | Published | Turn noisy HTML pages into compact, durable Markdown with a lightweight metadata receipt. |
+| `json-canvas` | Published | Turn sources and notes into a portable visual graph whose IDs, fields, and connections can be validated. |
 | `frontend-design` | Published | Turn rough product ideas into usable first screens. |
 | `canvas-design` | Published | Turn product strategy into a visual philosophy and canvas. |
 | `emil-design-eng` | Published | Make product interactions feel fast, intentional, and crafted. |
@@ -173,6 +177,7 @@ agent-skills-phoebe-picks/
   demos/skill-evaluation-starter-kit/ # lead-magnets and emails field test
   demos/baoyu-infographic-publishing-map/ # Baoyu visual workflow and prompt receipt
   demos/skill-system-studio/        # Mindmap and Awesome Design MD joint field test
+  demos/source-to-canvas-lab/       # Defuddle capture and JSON Canvas open knowledge-map field test
   demos/hand-drawn-styles-field-test/ # Hand Drawn Styles recipe gallery and generated proof
   demos/lieflat-charts-signal-sheet/ # Lieflat Charts three-template editorial SVG field test
   demos/pm-decision-room/          # pm-skills lifecycle field test

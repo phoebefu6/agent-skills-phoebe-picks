@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A real source-to-knowledge-map field test of the Defuddle and JSON Canvas agent skills.">
+    <script>if (new URLSearchParams(location.search).has("preview")) document.documentElement.classList.add("preview-mode");</script>
+    <title>Source to Canvas Lab · Agent Skills Phoebe Picks</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../../#picks"><span class="brand-dot" aria-hidden="true"></span>Source to Canvas Lab</a>
+      <a href="../../#picks">Back to the gallery</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">TWO-SKILL FIELD TEST · 28 OCTOBER 2026</p>
+        <h1>Turn a web page into<br><em>working memory.</em></h1>
+        <p class="lede"><strong>Defuddle</strong> removes the page furniture. <strong>JSON Canvas</strong> turns the useful structure into an open, inspectable map.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#artifact">Explore the artifact</a>
+          <a class="button" href="json-canvas-spec.canvas" download>Download .canvas</a>
+        </div>
+        <dl class="receipt">
+          <div><dt>Source</dt><dd>JSON Canvas Spec 1.0</dd></div>
+          <div><dt>Capture</dt><dd>96 extracted Markdown lines</dd></div>
+          <div><dt>Map</dt><dd>10 nodes · 8 edges</dd></div>
+          <div><dt>Integrity</dt><dd data-integrity>Checking…</dd></div>
+        </dl>
+      </section>
+
+      <section class="artifact" id="artifact" aria-labelledby="artifact-title">
+        <div class="section-copy">
+          <p class="eyebrow">THE SAME DATA, TWO VIEWS</p>
+          <h2 id="artifact-title">Inspect the transformation.</h2>
+          <p>The map below is rendered directly from the downloadable <code>.canvas</code> file. Switch to the capture to see the cleaned evidence it came from.</p>
+        </div>
+        <div class="switcher" role="group" aria-label="Artifact view">
+          <button class="active" type="button" data-view-button="canvas" aria-pressed="true">Canvas map</button>
+          <button type="button" data-view-button="capture" aria-pressed="false">Clean capture</button>
+        </div>
+
+        <div class="canvas-shell" data-view="canvas">
+          <div class="canvas-toolbar">
+            <span><i class="status-dot"></i> Live JSON Canvas renderer</span>
+            <span data-canvas-status>Loading artifact…</span>
+          </div>
+          <div class="canvas-viewport">
+            <div class="canvas-stage" data-canvas-stage aria-label="Rendered JSON Canvas knowledge map"></div>
+          </div>
+        </div>
+
+        <article class="capture-shell" data-view="capture" hidden>
+          <div class="capture-meta">
+            <span>DEFUDDLE RECEIPT</span>
+            <a href="source-capture.md">Open Markdown source</a>
+          </div>
+          <div class="capture-grid">
+            <aside>
+              <p>Title</p><strong>JSON Canvas Spec</strong>
+              <p>Domain</p><strong>jsoncanvas.org</strong>
+              <p>Output</p><strong>Markdown</strong>
+              <p>Navigation / ads</p><strong>Removed</strong>
+            </aside>
+            <div class="markdown-preview">
+              <h3>Top level</h3>
+              <p>The top level of JSON Canvas contains two arrays:</p>
+              <ul><li><code>nodes</code> — objects on the canvas</li><li><code>edges</code> — connections between nodes</li></ul>
+              <h3>Nodes</h3>
+              <p>Text, file, link, and group nodes share an ID, type, position, and dimensions. Array order determines their z-index.</p>
+              <h3>Edges</h3>
+              <p>Edges reference valid source and target IDs, with optional sides, endpoint shapes, labels, and colors.</p>
+              <h3>Color</h3>
+              <p>Colors use either a hex string or one of six portable preset values.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="skills" aria-labelledby="skills-title">
+        <div class="section-copy">
+          <p class="eyebrow">WHAT EACH SKILL CHANGED</p>
+          <h2 id="skills-title">One pipeline, two distinct jobs.</h2>
+        </div>
+        <div class="skill-grid">
+          <article id="defuddle">
+            <span class="skill-number">01</span>
+            <p class="eyebrow">DEFUDDLE</p>
+            <h3>Clean capture with a receipt.</h3>
+            <ul>
+              <li>Parsed an HTML specification into Markdown</li>
+              <li>Saved a durable local source file</li>
+              <li>Extracted title, description, and domain metadata</li>
+              <li>Preserved the canonical source link and capture date</li>
+            </ul>
+            <a href="source-capture.md">Inspect the capture →</a>
+          </article>
+          <article id="json-canvas">
+            <span class="skill-number">02</span>
+            <p class="eyebrow">JSON CANVAS</p>
+            <h3>Open map with testable integrity.</h3>
+            <ul>
+              <li>Used text, file, link, and group nodes</li>
+              <li>Placed groups first to preserve z-order</li>
+              <li>Connected labeled edges with explicit sides</li>
+              <li>Validated unique IDs and every edge reference</li>
+            </ul>
+            <a href="json-canvas-spec.canvas">Inspect the data →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="validation" aria-labelledby="validation-title">
+        <div>
+          <p class="eyebrow">MACHINE-CHECKED PROOF</p>
+          <h2 id="validation-title">The pretty view is not the proof.</h2>
+          <p>The file underneath must still parse, keep every ID unique, and resolve every connection.</p>
+        </div>
+        <ol data-checks>
+          <li><span>01</span><strong>JSON parses</strong><em>Pending</em></li>
+          <li><span>02</span><strong>IDs are unique</strong><em>Pending</em></li>
+          <li><span>03</span><strong>Edges resolve</strong><em>Pending</em></li>
+          <li><span>04</span><strong>Node fields exist</strong><em>Pending</em></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer><p>Built from a real capture and a real <code>.canvas</code> file.</p><a href="../../#picks">Explore more published Skills</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

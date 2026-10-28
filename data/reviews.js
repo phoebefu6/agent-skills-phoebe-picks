@@ -42,7 +42,7 @@ const WISHLIST_REPOSITORY_SNAPSHOTS = {
   "anthropics/skills": { githubStars: 165758, checkedAt: "2026-08-02", repoUrl: "https://github.com/anthropics/skills" },
   "coreyhaines31/marketingskills": { githubStars: 43591, checkedAt: "2026-08-13", repoUrl: "https://github.com/coreyhaines31/marketingskills" },
   "github/awesome-copilot": { githubStars: 37071, checkedAt: "2026-07-27", repoUrl: "https://github.com/github/awesome-copilot" },
-  "kepano/obsidian-skills": { githubStars: 43403, checkedAt: "2026-07-27", repoUrl: "https://github.com/kepano/obsidian-skills" },
+  "kepano/obsidian-skills": { githubStars: 50288, checkedAt: "2026-10-28", repoUrl: "https://github.com/kepano/obsidian-skills" },
   "ndpvt-web/arxiv-claude-skills": { githubStars: 6, checkedAt: "2026-07-27", repoUrl: "https://github.com/ndpvt-web/arxiv-claude-skills" },
   "nexu-io/open-design": { githubStars: 83147, checkedAt: "2026-08-02", repoUrl: "https://github.com/nexu-io/open-design" },
   "openai/skills": { githubStars: 24214, checkedAt: "2026-07-27", repoUrl: "https://github.com/openai/skills" },
@@ -52,6 +52,104 @@ const WISHLIST_REPOSITORY_SNAPSHOTS = {
 };
 
 const PICKS = [
+  {
+    id: "defuddle",
+    name: "defuddle",
+    source: "Obsidian Skills",
+    sourceUrl: "https://github.com/kepano/obsidian-skills/blob/main/skills/defuddle/SKILL.md",
+    sourceRepo: "kepano/obsidian-skills",
+    sourcePath: "skills/defuddle/SKILL.md",
+    githubStars: 50288,
+    starsCheckedAt: "2026-10-28",
+    status: "published",
+    recommendation: "Published pick: useful when an HTML page needs to become compact, durable Markdown before research or knowledge work begins.",
+    dateExplored: "2026-10-28",
+    scenarios: ["research", "automation", "agent-workflow"],
+    platforms: ["claude-code", "codex", "hermes", "cursor", "gemini-cli", "opencode"],
+    badges: ["Web capture", "Clean Markdown", "Metadata"],
+    summary: "A narrow extraction Skill that removes page furniture and saves the useful content as readable Markdown.",
+    phoebeNote: "Use it at the front of a research workflow when navigation, ads, and page chrome would waste context or muddy the source record.",
+    coreConcepts: [
+      "Use Defuddle CLI for standard HTML pages when clean readable content is the goal.",
+      "Choose Markdown output with the --md flag.",
+      "Save the result to a durable file with an explicit output path.",
+      "Extract title, description, and domain metadata separately when the capture needs a receipt."
+    ],
+    conceptCoverage: "4/4 concept families were exercised against the live JSON Canvas 1.0 specification: HTML parsing, Markdown output, file persistence, and title, description, and domain metadata extraction.",
+    groundUpBuild: "Captured the JSON Canvas specification from the web, preserved it as source-capture.md, and used that evidence as the input to the Source to Canvas Lab.",
+    rating: 8.2,
+    ratingScale: 10,
+    ratingSummary: "Exceptionally efficient for one job and easy to verify, though its minimal guidance leaves provenance conventions and failure handling to the surrounding workflow.",
+    good: [
+      "Turns a visually busy HTML page into compact Markdown with one inspectable command.",
+      "Supports durable file output instead of leaving evidence trapped in transient context.",
+      "Exposes focused metadata properties that make a lightweight capture receipt possible."
+    ],
+    improve: [
+      "The Skill does not define a standard provenance header, capture date, or canonical URL block for saved Markdown.",
+      "It offers little guidance for paywalls, client-rendered pages, parse failures, or partial extraction.",
+      "The global installation instruction is heavier than an npx or project-local option for occasional use."
+    ],
+    useCases: [
+      "Researchers can turn public articles and documentation into citation-ready working notes.",
+      "AI builders can reduce context noise before summarization, comparison, or retrieval tasks.",
+      "Students can preserve readable course references without copying navigation and page furniture."
+    ],
+    demo: "demos/source-to-canvas-lab/index.html#defuddle",
+    galleryLink: "demos/source-to-canvas-lab/index.html#defuddle"
+  },
+  {
+    id: "json-canvas",
+    name: "json-canvas",
+    source: "Obsidian Skills",
+    sourceUrl: "https://github.com/kepano/obsidian-skills/blob/main/skills/json-canvas/SKILL.md",
+    sourceRepo: "kepano/obsidian-skills",
+    sourcePath: "skills/json-canvas/SKILL.md",
+    githubStars: 50288,
+    starsCheckedAt: "2026-10-28",
+    status: "published",
+    recommendation: "Published pick: useful when notes, sources, claims, and decisions need an open visual map whose structure can be validated as data.",
+    dateExplored: "2026-10-28",
+    scenarios: ["research", "data-viz", "agent-workflow"],
+    platforms: ["claude-code", "codex", "hermes", "cursor", "gemini-cli", "opencode"],
+    badges: ["Open format", "Knowledge map", "Validated graph"],
+    summary: "A practical specification Skill for creating and editing portable .canvas graphs with explicit nodes, groups, edges, and integrity checks.",
+    phoebeNote: "Use it when a mind map should remain editable and machine-checkable instead of becoming a flat image.",
+    coreConcepts: [
+      "Create a .canvas file with top-level nodes and edges arrays.",
+      "Generate unique 16-character hexadecimal IDs across nodes and edges.",
+      "Use text, file, link, and group nodes with their required fields.",
+      "Preserve z-order by placing groups before the nodes they contain.",
+      "Lay out nodes on an aligned grid with deliberate spacing and group padding.",
+      "Connect valid source and target IDs with optional sides, arrow ends, labels, and colors.",
+      "Encode Markdown text with real newline characters rather than literal backslash-n sequences.",
+      "Use portable preset colors or valid hex colors.",
+      "Validate JSON, uniqueness, required fields, enum values, and every edge reference.",
+      "Support edit workflows that re-read and revalidate an existing canvas after mutation."
+    ],
+    conceptCoverage: "9/10 concept families were exercised in json-canvas-spec.canvas: top-level structure, unique 16-character IDs, all four node types, group-first z-order, grid layout, labeled directional edges, real Markdown newlines, preset colors, and four integrity checks. A second edit pass was skipped because this was a new-canvas build.",
+    groundUpBuild: "Built a portable ten-node, eight-edge JSON Canvas from the Defuddle capture, then rendered that same file interactively in the Source to Canvas Lab.",
+    rating: 9.0,
+    ratingScale: 10,
+    ratingSummary: "A precise, highly reusable open-format Skill whose validation rules make visual knowledge work safer and more inspectable than screenshot-based maps.",
+    good: [
+      "Explains the complete portable data model without forcing a specific visual application.",
+      "Covers all node types, useful edge options, layout judgment, and the easy-to-miss newline pitfall.",
+      "Ends with concrete integrity checks for duplicate IDs, dangling references, missing fields, and malformed values."
+    ],
+    improve: [
+      "The long single-file reference would scan faster with a compact create-versus-edit router at the top.",
+      "It describes spacing heuristics but does not provide a deterministic overlap or bounds checker.",
+      "The Skill could include a tiny reusable validator script so every agent does not reimplement the same checks."
+    ],
+    useCases: [
+      "Researchers can connect sources, claims, questions, and decisions in one auditable evidence map.",
+      "Product teams can keep roadmaps and dependency maps portable across tools that support JSON Canvas.",
+      "Students can build editable concept maps whose structure is still readable as plain JSON."
+    ],
+    demo: "demos/source-to-canvas-lab/index.html#json-canvas",
+    galleryLink: "demos/source-to-canvas-lab/index.html#json-canvas"
+  },
   {
     id: "frontend-design",
     name: "frontend-design",
@@ -1571,7 +1669,7 @@ const PICKS = [
       "Use geographic projections and paths when the analytical question has a spatial dimension."
     ],
     conceptCoverage: "9/10 key concept families were exercised: data joins, scales and color, SVG shapes, axes, transitions, zoom and drag, brushing, force simulation, and hierarchy. Geography was deliberately skipped because the Skill dataset has no meaningful spatial dimension.",
-    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 92 candidates, with a force-cluster map, linear wishlist-rank map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
+    groundUpBuild: "Built Skill Constellation from scratch: a linked exploration of the source-backed wishlist, now 90 candidates, with a force-cluster map, linear wishlist-rank map and brush, hierarchy treemap, interactive category ring, search, filtering, responsive layout, and an inspectable Skill detail panel.",
     rating: 8.3,
     ratingScale: 10,
     ratingSummary: "Broad and practical coverage of D3's core mental models, layouts, and interactions; the learning path and production guidance could be sharper.",
@@ -2288,28 +2386,6 @@ const WISHLIST_CANDIDATES = [
     category: "knowledge-base",
     focus: "Knowledge base · Specs to delivery",
     buildTarget: "A linked Notion workflow that turns a source specification into implementation tasks, decisions, progress evidence, and durable project memory."
-  },
-  {
-    rank: 77,
-    id: "defuddle",
-    sourceRepo: "kepano/obsidian-skills",
-    sourcePath: "skills/defuddle/SKILL.md",
-    sourceUrl: "https://github.com/kepano/obsidian-skills/tree/main/skills/defuddle",
-    githubStars: 43329,
-    category: "knowledge-base",
-    focus: "Knowledge base · Web capture",
-    buildTarget: "A clean web-to-knowledge capture flow preserving title, author, source, useful structure, metadata, citations, and readable Markdown."
-  },
-  {
-    rank: 78,
-    id: "json-canvas",
-    sourceRepo: "kepano/obsidian-skills",
-    sourcePath: "skills/json-canvas/SKILL.md",
-    sourceUrl: "https://github.com/kepano/obsidian-skills/tree/main/skills/json-canvas",
-    githubStars: 43329,
-    category: "knowledge-base",
-    focus: "Knowledge base · Visual maps",
-    buildTarget: "A machine-readable knowledge canvas connecting notes, sources, claims, questions, and decisions through inspectable nodes and edges."
   },
   {
     rank: 79,
