@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warehouse Readiness Trial</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="trial.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Data operations · 08 Nov 2026 · Synthetic case</p>
+      <h1>Ready by 09:00?</h1>
+      <p class="intro">A two-Skill field test for a warehouse migration. Define what “ready” means, then trace an eight-point drop in the first reporting window.</p>
+      <nav aria-label="Field tests"><a href="#design-kpis">01 KPI design</a><a href="#metric-diagnostics">02 Metric diagnostics</a></nav>
+    </header>
+
+    <section id="design-kpis" aria-labelledby="design-title">
+      <p class="eyebrow">01 / Design KPIs</p>
+      <h2 id="design-title">Set the cutover gate</h2>
+      <p>At the weekly migration review, the warehouse owner and BI lead decide whether to migrate the next dashboard cohort. The pilot covers the dashboard-days scheduled in each complete Monday–Friday window.</p>
+      <details open>
+        <summary>Outcome · On-time dashboard readiness</summary>
+        <p><strong>Definition.</strong> Scheduled dashboard-days with a Gold refresh completed and validation passed by 09:00 SGT, divided by all scheduled dashboard-days. Missing status counts as a miss. Exclude only dashboard-days removed from the schedule before the window opens. Count each dashboard once per scheduled day and weight by dashboard-day.</p>
+        <p><strong>Source and ownership.</strong> The warehouse owner maintains the schedule, refresh audit and validation contract. The BI lead reviews the dashboard rollup. A production implementation would left-join one canonical refresh status per dashboard-day to the frozen schedule.</p>
+        <p><strong>Provisional gate.</strong> 95% for the next pilot week. The baseline was 96/100 and the current window was 88/100. At the same volume, recovering seven misses would reach 95%. Six misses cluster in one feed, so the pilot also needs at least one recovery elsewhere. This is a low-confidence planning threshold pending a second rehearsal and a confirmed recovery plan.</p>
+      </details>
+      <details>
+        <summary>Drivers · Upstream delivery and Gold processing</summary>
+        <ul>
+          <li><strong>Upstream delivery by 08:30.</strong> Scheduled dashboard-days with all required Silver inputs received by 08:30 divided by scheduled dashboard-days. Use the dependency map and ingestion audit. Data Engineering investigates a drop.</li>
+          <li><strong>Gold processing by 09:00 after timely upstream delivery.</strong> Timely-input dashboard-days whose Gold refresh completes by 09:00 divided by all timely-input dashboard-days. Use the Gold refresh audit. The warehouse team investigates a drop. Always show the denominator alongside the rate.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Guardrails · Visibility and validation</summary>
+        <ul>
+          <li><strong>Audit coverage.</strong> At least 99% of scheduled dashboard-days must have a recorded outcome. Count populated outcomes against the frozen schedule. A missing record still counts as a readiness miss.</li>
+          <li><strong>Critical validation failures.</strong> Zero critical failures among completed refreshes, from the validation log. Show refresh coverage and hold the next wave if checks are missing or a critical failure is recorded.</li>
+        </ul>
+        <p>Guardrail thresholds are pilot assumptions. The sample below demonstrates audit coverage, while critical failure counts and full driver telemetry would come from the validation and timestamp logs.</p>
+      </details>
+      <details>
+        <summary>Tradeoffs · Alternatives and measurement checks</summary>
+        <p>Average job duration can improve while the slowest dashboards miss opening time. Dashboard usage depends on adoption and does not isolate migration health. On-time readiness reflects the deadline the team controls, but equally weighted dashboard-days can mask a single critical dashboard. Review the critical dashboard list before each wave.</p>
+        <p>Before production use, reconcile the dashboard totals to the refresh audit, test duplicate and absent records, verify cutoff conversion to SGT, and agree on the critical dashboard list and exception policy.</p>
+      </details>
+    </section>
+
+    <section id="metric-diagnostics" aria-labelledby="diagnostic-title">
+      <p class="eyebrow">02 / Metric Diagnostics</p>
+      <h2 id="diagnostic-title">Trace the missed deadline</h2>
+      <p>Compare 26–30 Oct with 2–6 Nov 2026. Both fictional windows cover five weekdays under the same 09:00 SGT rule. The diagnostic asks how much of the decline came from a changing cohort mix versus lower readiness within cohorts.</p>
+      <div class="metrics">
+        <div><span>Baseline</span><strong id="baseline">—</strong></div>
+        <div><span>Current</span><strong id="current">—</strong></div>
+        <div><span>Movement</span><strong id="movement">—</strong></div>
+      </div>
+      <noscript>Enable JavaScript to reproduce the rollup and decomposition from the synthetic fixture.</noscript>
+      <details open>
+        <summary>Reproduce · Source and denominator checks</summary>
+        <p>The fixture represents mutually exclusive cohort/feed rollups from a frozen schedule and audit. It has no row-level logs. Both periods contain 100 scheduled dashboard-days, and a separate mock BI snapshot supplies the topline comparison.</p>
+        <p id="reconciliation"></p>
+        <div class="table-scroll" role="region" aria-label="Fixture table" tabindex="0">
+          <table>
+            <caption>Synthetic audit counts by period, cohort and feed</caption>
+            <thead><tr><th scope="col">Period</th><th scope="col">Cohort</th><th scope="col">Feed</th><th scope="col">Scheduled</th><th scope="col">On time</th><th scope="col">Audited</th></tr></thead>
+            <tbody id="audit-rows"></tbody>
+          </table>
+        </div>
+      </details>
+      <details open>
+        <summary>Decompose · Cohort mix and within-cohort readiness</summary>
+        <p id="bridge"></p>
+        <p>Apply baseline cohort rates to the current cohort mix to isolate mix. Apply current cohort rates at the same mix to isolate within-cohort movement. The bridge uses that order consistently.</p>
+        <div class="table-scroll" role="region" aria-label="Contribution table" tabindex="0">
+          <table>
+            <caption>Contribution to the overall readiness change</caption>
+            <thead><tr><th scope="col">Cohort</th><th scope="col">Baseline rate</th><th scope="col">Current rate</th><th scope="col">Mix effect</th><th scope="col">Within-cohort effect</th></tr></thead>
+            <tbody id="contribution-rows"></tbody>
+          </table>
+        </div>
+      </details>
+      <details open>
+        <summary>Act · Inspect the feed with the most misses</summary>
+        <p id="feed-finding"></p>
+        <p><strong>Unresolved.</strong> The fixture shows where misses concentrated. Timing logs and validation outcomes are needed to separate late inputs, slow Gold processing and failed checks.</p>
+        <p><strong>Next rehearsal.</strong> Data Engineering traces those missed dashboard-days through ingestion, refresh and validation. The BI lead and warehouse owner review the recovered count and guardrails before opening the next cohort.</p>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

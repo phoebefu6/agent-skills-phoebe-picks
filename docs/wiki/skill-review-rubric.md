@@ -78,6 +78,8 @@ Promote a Skill to `published` only when it has:
 
 When a proof artifact adapts source template code, record the upstream license and preserve its required notice in the artifact. A strong field test does not erase commercial-use restrictions; keep the Skill exploring when the license needs a separate business-use decision.
 
+For analytical field tests using synthetic data, keep the fixture and calculations inspectable. Label which workflow stages the simulation exercised and which checks need production evidence. A reconciliation between mock sources demonstrates the method and does not establish production data quality.
+
 ## Current First Sprint
 
 The first sprint focuses on design, UI, UX, and frontend Skills because they help build the gallery itself:

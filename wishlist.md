@@ -15,6 +15,52 @@ The public gallery should only show Skills that feel useful enough to recommend.
 
 ## Evaluation Queue
 
+### Warehouse Readiness Trial · 2026-11-08
+
+Both Skills remain **Exploring**. The canonical [openai/plugins repository](https://github.com/openai/plugins) displayed approximately 7.8k stars when checked on 2026-11-08, and the review found no verified qualifying ranking. Platform tested was Codex in ChatGPT Work. Both trials used the same synthetic migration scenario and no production connections.
+
+#### Design KPIs · 8.5/10
+
+[Exact Skill source](https://github.com/openai/plugins/blob/main/plugins/data-analytics/skills/design-kpis/SKILL.md) · [KPI design proof](demos/warehouse-readiness-trial/index.html#design-kpis)
+
+**Coverage.** 6/6 workflow stages exercised in the simulation. The build defined a cutover decision and audience, used a mock baseline and source map, compared candidates, selected one outcome plus drivers and guardrails, derived a provisional target, and delivered a metric contract. Production baselines, telemetry and ownership acceptance remain untested.
+
+**Strengths**
+
+1. Anchors the metric in a specific decision and names who acts on the result.
+2. Distinguishes the outcome, diagnostic drivers and safeguards, so a fast refresh cannot silently pass with bad data.
+3. Separates metric choice from target-setting, making the seven-recovery assumption visible.
+
+**Improvements**
+
+1. Include a ready-to-use schema for owners, schedule freeze and eligibility rules.
+2. Offer a small-sample threshold example showing when to use counts as well as percentages.
+3. Give a concrete example of how to implement a critical-dashboard override alongside the aggregate.
+
+**Daily uses.** Define warehouse cutover gates, set BI refresh SLAs, or design adoption and reliability scorecards for new data products.
+
+#### Metric Diagnostics · 8.7/10
+
+[Exact Skill source](https://github.com/openai/plugins/blob/main/plugins/data-analytics/skills/metric-diagnostics/SKILL.md) · [Metric diagnostics proof](demos/warehouse-readiness-trial/index.html#metric-diagnostics) · [Reproducible fixture and calculations](demos/warehouse-readiness-trial/trial.js)
+
+**Coverage.** 6/6 workflow stages exercised at aggregate level. The build framed the comparison, reconciled the fixture to a mock BI snapshot, reproduced the topline, selected cohort and feed cuts, calculated a zero-residual mix bridge, and specified the next evidence to inspect. Row-level freshness, join validation and causal follow-up remain untested.
+
+**Strengths**
+
+1. Reproduces the topline and denominator before investigating the decline.
+2. Separates cohort mix from within-cohort performance and makes the reconciliation residual visible.
+3. Distinguishes verified concentration from hypotheses that require timestamps and validation outcomes.
+
+**Improvements**
+
+1. Supply a reusable decomposition example that fixes the order and explains the interaction term.
+2. Provide a compact checklist for tracking exclusions, duplicate grain and late arrivals across windows.
+3. Offer a standard handoff for incident owners, with hypotheses and the next evidence required to close each one.
+
+**Daily uses.** Investigate WBR metric changes, triage dashboard freshness incidents, or diagnose conversion declines across segments.
+
+### Existing candidates
+
 | Skill | Source / reference | Stars snapshot | Platform fit | Scenario | Ground-up build target | 80% concept coverage | Rating /10 | Date explored | Status | Gallery link |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `frontend-design` | `anthropics/skills`, `skills/frontend-design` | 161,869 on 2026-07-17 | Claude Code, Codex, Hermes AI, Cursor, Gemini CLI | Product design, frontend, UI | Signal Desk product screen | 6/6 key concepts visible | 8.6/10 | 2026-07-17 | Published | `demos/product-design-studio/index.html#frontend-design` |
